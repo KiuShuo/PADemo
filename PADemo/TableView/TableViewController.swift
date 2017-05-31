@@ -31,6 +31,7 @@ class TableViewController: BaseViewController {
         tableView.mas_makeConstraints { (make) in
             make!.edges.equalTo()
         }
+        
         tableView.tableFooterView = UIView()
     }
     

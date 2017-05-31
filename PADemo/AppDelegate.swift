@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 模拟器
             test()
         #endif
+        
+        
+        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
+        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
 
         return true
     }
