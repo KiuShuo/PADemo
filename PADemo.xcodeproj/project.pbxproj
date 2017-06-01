@@ -44,6 +44,7 @@
 		8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF457A1EB1BE6900CA4F75 /* LaunchScreen.storyboard */; };
 		8DEF45871EB1BE6900CA4F75 /* PADemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF45861EB1BE6900CA4F75 /* PADemoTests.swift */; };
 		8DEF45921EB1BE6900CA4F75 /* PADemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF45911EB1BE6900CA4F75 /* PADemoUITests.swift */; };
+		8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF362F11EDE9BA60095A78A /* PAView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		8DEF458D1EB1BE6900CA4F75 /* PADemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PADemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEF45911EB1BE6900CA4F75 /* PADemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PADemoUITests.swift; sourceTree = "<group>"; };
 		8DEF45931EB1BE6900CA4F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DF362F11EDE9BA60095A78A /* PAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAView.swift; sourceTree = "<group>"; };
 		92C64CF9E161A0D993766D1B /* Pods_PADemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PADemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -222,6 +224,7 @@
 		8DBB1AC91EC4606100D507E6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				8DF362F11EDE9BA60095A78A /* PAView.swift */,
 				8DA3A5D91ED56115008425A9 /* NSString+Attribute.h */,
 				8DA3A5DA1ED56115008425A9 /* NSString+Attribute.m */,
 				8D6D13641ECB71B20084BBA8 /* PABaseNavigationController.swift */,
@@ -512,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D6D135F1ECB6F100084BBA8 /* UIColor+Extension.swift in Sources */,
+				8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */,
 				8D6D13631ECB6F7C0084BBA8 /* UImageView+Extension.swift in Sources */,
 				8DBB1ACB1EC4606900D507E6 /* BaseViewController.swift in Sources */,
 				8D6E40491EB322C500E388C9 /* Model.swift in Sources */,

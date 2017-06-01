@@ -98,14 +98,15 @@ CGFloat PAStringWidthMakeWithText(NSString *string, CGFloat fontSize) {
     }
     // 转换成attributedString
     NSMutableAttributedString *attributedStr = [NSString attributedString:string fontSize:fontSize lineSpacing:0];
-    
-    CGFloat height = PAStringHeightMakeWithText(@"万家", fontSize, 0, [UIScreen mainScreen].bounds.size.width);
-    CGRect rect =
-        [attributedStr boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, height)
-                                    options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                    context:nil];
+    return PAStringWidthMakeWithAttributedString(attributedStr);
+}
+
+CGFloat PAStringWidthMakeWithAttributedString(NSAttributedString *attributedString) {
+    CGRect rect = [attributedString boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)
+                                options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                context:nil];
     CGFloat width = rect.size.width;
-    return width;
+    return  width;
 }
 
 + (NSMutableAttributedString *)setupAttributeString:(NSString *)BlackText highlightText:(NSString *)highlightText {

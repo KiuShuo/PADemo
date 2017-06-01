@@ -53,6 +53,8 @@ CGFloat PAStringHeightMakeWithAttributedString(NSAttributedString *attributedStr
  */
 CGFloat PAStringWidthMakeWithText(NSString *string, CGFloat fontSize);
 
+CGFloat PAStringWidthMakeWithAttributedString(NSAttributedString *attributedString);
+
 
 + (NSMutableAttributedString *)setupAttributeString:(NSString *)BlackText highlightText:(NSString *)highlightText;
 

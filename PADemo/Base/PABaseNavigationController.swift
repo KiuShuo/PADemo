@@ -8,11 +8,10 @@
 
 import UIKit
 
-typealias customLeftBackButtonAction  = (()->())
+typealias CustomLeftBackButtonAction  = (() -> Void)
 
 class PABaseNavigationController: UINavigationController {
     
-    var callBack: (() -> Void)?
     var isPushing: Bool = false
     
     override func viewDidLoad() {
@@ -29,39 +28,15 @@ class PABaseNavigationController: UINavigationController {
             isPushing = true
         }
         debugLog("push to controller = \(viewController)")
-        if viewController.navigationItem.leftBarButtonItem == nil ,self.viewControllers.count > 0{
+        if viewController.navigationItem.leftBarButtonItem == nil ,self.viewControllers.count > 0 {
+            debugLog(viewController.navigationItem.leftBarButtonItem ?? "")
             viewController.navigationItem.setLeftBarButton(self.customLeftBackButton(clickAction: nil), animated: true)
         }
         super.pushViewController(viewController, animated: animated)
     }
-    
-    override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
-        return super.popToViewController(viewController, animated: animated)
-    }
-    
-    override func popViewController(animated: Bool) -> UIViewController? {
-        return super.popViewController(animated: animated)
-    }
-    
-    override func popToRootViewController(animated: Bool) -> [UIViewController]? {
-        return super.popToRootViewController(animated: animated)
-    }
 }
 
-
-//MARK: - touchEvent
-extension PABaseNavigationController{
-    func popself(){
-        if callBack != nil{
-            callBack!()
-        }else{
-            _ = popViewController(animated: true)
-        }
-    }
-}
-
-
-extension PABaseNavigationController:UIGestureRecognizerDelegate{
+extension PABaseNavigationController: UIGestureRecognizerDelegate {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == self.interactivePopGestureRecognizer {
@@ -76,7 +51,7 @@ extension PABaseNavigationController:UIGestureRecognizerDelegate{
 }
 
 //MARK: - UINavigationControllerDelegate
-extension PABaseNavigationController:UINavigationControllerDelegate{
+extension PABaseNavigationController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         isPushing = false
@@ -85,14 +60,18 @@ extension PABaseNavigationController:UINavigationControllerDelegate{
 }
 
 //MARK: - method
-extension PABaseNavigationController{
+extension PABaseNavigationController {
     
-    func customLeftBackButton(clickAction:customLeftBackButtonAction?) -> UIBarButtonItem {
-        callBack = clickAction
-        
-        let button = UIButton(type: .custom)
+    func customLeftBackButton(clickAction: CustomLeftBackButtonAction?) -> UIBarButtonItem {
+        let button = PAButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 30.0, height: 18.0)
-        button.addTarget(self, action: #selector(popself), for: .touchUpInside)
+        button.addClickEvent {
+            if let clickAction = clickAction {
+                clickAction()
+            } else {
+                _ = self.popViewController(animated: true)
+            }
+        }
         button.setImage(UIImage(named:"leftBackButton"), for: .normal)
         // 让按钮内部的所有内容左对齐
         button.contentHorizontalAlignment = .left

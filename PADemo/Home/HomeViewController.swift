@@ -67,7 +67,14 @@ extension HomeViewController: UITableViewDelegate {
             return
         }
         
-        navigationController?.pushViewController(toVC, animated: true)
+        let baseNavgationController = PABaseNavigationController(rootViewController: toVC)
+        let navgationItem = baseNavgationController.customLeftBackButton(clickAction: {
+            toVC.dismiss(animated: true, completion: nil)
+        })
+        
+        toVC.navigationItem.setLeftBarButton(navgationItem, animated: true)
+        self.present(baseNavgationController, animated: true, completion: nil)
+//        navigationController?.pushViewController(toVC, animated: true)
         
     }
 }

@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Style.setupStyle()
         #if !(arch(i386) || arch(x86_64))
             // 真机
+            test()
         #else
             // 模拟器
-            test()
         #endif
         
         

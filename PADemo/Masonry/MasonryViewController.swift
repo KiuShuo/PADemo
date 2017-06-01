@@ -9,7 +9,7 @@
 import UIKit
 import Masonry
 
-class MasonryViewController: BaseViewController  {
+class MasonryViewController: BaseViewController {
     
     let button = UIButton(type: .custom)
     
@@ -19,8 +19,15 @@ class MasonryViewController: BaseViewController  {
         setupButton()
     }
     
+    func clickBt() {
+        debugLog(navigationItem.leftBarButtonItem ?? "")
+        let vc = DetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func setupButton() {
         view.addSubview(button)
+        button.addTarget(self, action: #selector(clickBt), for: .touchUpInside)
         button.setTitle("点击我", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.backgroundColor = UIColor.orange
