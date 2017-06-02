@@ -39,6 +39,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell")
+        cell?.accessoryType = .detailButton
         let controllerModel = controllerModels[indexPath.row]
         cell?.textLabel?.text = controllerModel.identifier
         return cell!

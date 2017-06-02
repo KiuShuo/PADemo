@@ -17,7 +17,8 @@ class DetailViewController: BaseViewController {
     }
     // "现场查看是否有铅衣等防护用品，且可使用；比如齿科的全景X光机；无放射科则不适用\n（需有照片）"
     let text = "现场查看是否有铅衣等防护用品，且可使用；比如齿科的全景X光机；无放射科则不适用（需有照片）"
-
+    let shortText = "现场查看是否有铅衣等"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,31 +29,12 @@ class DetailViewController: BaseViewController {
         // PADateHandel.learnCalendar()
         
         // range
-        PARange.learnRange()
+        // PARange.learnRange()
         
-        debugLog(navigationItem.leftBarButtonItem ?? "")
+        stringWidth()
         
+        stringHeight()
         
-        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 10, height: 30))
-        view.addSubview(label)
-        let attributedString = PAAttributedString.attributedString(string: "abcde")
-//        let mA = NSMutableAttributedString(attributedString: attributedString)
-        let width = attributedString.size().width + 10.0
-        debugLog("width = \(width)")
-        label.attributedText = attributedString
-        let width2 = label.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: 30)).width
-        debugLog("width2 = \(width2)")
-        label.mas_makeConstraints { (make) in
-            make!.left.equalTo()(100)
-            make!.top.equalTo()(100)
-            make!.height.equalTo()(30)
-//            make!.width.equalTo()(width)
-        }
-        
-        label.backgroundColor = UIColor.green
-        label.layer.cornerRadius = 4
-        label.layer.borderWidth = 0.5
-        label.layer.borderColor = UIColor.red.cgColor
     }
     
     // 根据文本计算label size
@@ -75,6 +57,29 @@ class DetailViewController: BaseViewController {
         }
     }
 
+}
+
+// MARK: - 字符串 Size
+extension DetailViewController {
+    
+    func stringWidth() {
+        let w = PAStringWidthMakeWithText(shortText, 15)
+        debugLog("w = \(w)")
+        
+        let w1 = shortText.width(font: UIFont.systemFont(ofSize: 15))
+        debugLog("w1 = \(w1)")
+    }
+    
+    func stringHeight() {
+        let h = PAStringHeightMakeWithText(shortText, 15, 0, UIScreen.main.bounds.size.width)
+        debugLog("h = \(h)")
+        
+        let h1 = text.height(font: UIFont.systemFont(ofSize: 15), width: UIScreen.main.bounds.size.width) + 5
+        debugLog("h1 = \(h1)")
+        
+    }
+    
+    
 }
 
 // MARK: Range
