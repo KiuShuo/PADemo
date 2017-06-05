@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8E0EFAB884E0B5B71F6F1FA837623AA13C439796",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "86D6C5E3264A7B0270DC84CA357EA487DCA61E8B" : 9223372036854775807,
+    "8E0EFAB884E0B5B71F6F1FA837623AA13C439796" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "31B9E631-A233-4733-8DE8-018B472E0675",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "86D6C5E3264A7B0270DC84CA357EA487DCA61E8B" : "",
+    "8E0EFAB884E0B5B71F6F1FA837623AA13C439796" : "PADemo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PADemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PADemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KiuShuo\/--kiushuo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "86D6C5E3264A7B0270DC84CA357EA487DCA61E8B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KiuShuo\/PADemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8E0EFAB884E0B5B71F6F1FA837623AA13C439796"
+    }
+  ]
+}
