@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 extension UIImage {
     /// 用颜色创建一张图片
@@ -58,13 +59,13 @@ extension UIImage {
         switch self.imageOrientation {
         case .down,.downMirrored:
             transform = transform.translatedBy(x: self.size.width, y: self.size.height)
-            transform = transform.rotated(by: CGFloat(M_PI))
+            transform = transform.rotated(by: CGFloat(Double.pi))
         case .left,.leftMirrored:
             transform = transform.translatedBy(x: self.size.width, y: 0)
-            transform = transform.rotated(by: CGFloat(M_PI_2))
+            transform = transform.rotated(by: CGFloat(Double.pi / 2))
         case .right,.rightMirrored:
             transform = transform.translatedBy(x: 0, y: self.size.height)
-            transform = transform.rotated(by: CGFloat(-M_PI_2))
+            transform = transform.rotated(by: CGFloat(-Double.pi / 2))
         default:
             break
         }
@@ -95,4 +96,76 @@ extension UIImage {
         return img
         
     }
+    
+    func watermarkImage(_ text:String) ->UIImage? {
+        let newImageName = "/Documents/\(text)cacheImage@3x.png"
+        let pngPath = NSHomeDirectory()+newImageName
+        if let img = UIImage.init(contentsOfFile: pngPath) {
+            return img
+        }
+        
+        if (UIDevice.current.systemVersion as NSString).floatValue >= 4.0{
+            UIGraphicsBeginImageContextWithOptions(self.size, false, 3.0)
+        }else {
+            UIGraphicsBeginImageContext(self.size);
+        }
+        self.draw(in: CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height))
+        let height:CGFloat = PAString.heightForString(text, width: PADeviceSize.screenWidth, font: UIFont.systemFont(ofSize: 12))
+        let rect = CGRect.init(x: 0, y: (self.size.height-height)*0.5, width: self.size.width, height: height)
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        (text as NSString).draw(in: rect , withAttributes: [NSFontAttributeName:UIFont.boldSystemFont(ofSize: 12),NSParagraphStyleAttributeName:style,NSForegroundColorAttributeName:UIColor.white])
+        
+        
+        if let watermarkImage = UIGraphicsGetImageFromCurrentImageContext() {
+            UIGraphicsEndImageContext()
+            if let data = UIImagePNGRepresentation(watermarkImage) as NSData? {
+                data.write(toFile: pngPath, atomically: true)
+                
+                return watermarkImage
+            }
+            
+        }
+        
+        return nil
+    }
+    
+    // 使用URLString获取一张图片
+    @discardableResult
+    class func getImageWithURLString(_ urlString: String, showLoadingView: Bool = false, completion: @escaping (_ image: UIImage?) -> ()) -> SDWebImageOperation? {
+        if let url = URL.init(string: urlString) {
+            if SDWebImageManager.shared().cachedImageExists(for: url) {
+                let key = SDWebImageManager.shared().cacheKey(for: url)
+                let image = SDImageCache.shared().imageFromDiskCache(forKey:key)
+                completion(image)
+                return nil
+            } else if SDWebImageManager.shared().diskImageExists(for: url){
+                let key = SDWebImageManager.shared().cacheKey(for: url)
+                let image = SDImageCache.shared().imageFromDiskCache(forKey: key)
+                completion(image)
+                return nil
+            } else {
+                if showLoadingView {
+                    PAMBManager.sharedInstance.showLoading(view: nil)
+                }
+                let operation =
+                    SDWebImageManager.shared().downloadImage(
+                        with: url,
+                        options: SDWebImageOptions.init(rawValue: 0),
+                        progress: nil,
+                        completed: { [showLoadingView, completion] (image, error, cacheType, finished, imageURL) in
+                            if showLoadingView {
+                                PAMBManager.sharedInstance.hideAlert(view: nil)
+                            }
+                            completion(image)
+                        }
+                )
+                return operation
+            }
+        } else {
+            completion(nil)
+            return nil
+        }
+    }
 }
+

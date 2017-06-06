@@ -80,6 +80,8 @@
 		8D12DBED1EB1C8F1005B9AE9 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		8D12DBEF1EB1C992005B9AE9 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8D2199091EB1F93A0024B5CB /* ControllerModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ControllerModel.plist; sourceTree = "<group>"; };
+		8D5C9D991EE6B26C00749599 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		8D5C9D9A1EE6B2D500749599 /* PADate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PADate.playground; sourceTree = "<group>"; };
 		8D66E9351EE1361400DBBE41 /* NSString+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Attribute.h"; sourceTree = "<group>"; };
 		8D66E9361EE1361400DBBE41 /* NSString+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Attribute.m"; sourceTree = "<group>"; };
 		8D66E9371EE1361400DBBE41 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -171,6 +173,15 @@
 				698963C09D820B5FEECEE9E7 /* Pods-PADemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8D5C9D971EE6B24500749599 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				8D5C9D991EE6B26C00749599 /* MyPlayground.playground */,
+				8D5C9D9A1EE6B2D500749599 /* PADate.playground */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 		8D66E9341EE1361400DBBE41 /* Extension */ = {
@@ -317,6 +328,7 @@
 		8DEF45701EB1BE6900CA4F75 /* PADemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D5C9D971EE6B24500749599 /* Playground */,
 				8D66E94F1EE1375700DBBE41 /* WJExtension */,
 				8D66E9341EE1361400DBBE41 /* Extension */,
 				8D87DAC21ED9178400EA6D70 /* PATableViewModel */,
