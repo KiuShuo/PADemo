@@ -78,6 +78,14 @@
 			<key>isStoryboard</key>
 			<string>0</string>
 		</dict>
+		<dict>
+			<key>id</key>
+			<string>10</string>
+			<key>identifier</key>
+			<string>PATableViewModelDemoController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
 	</array>
 </dict>
 </plist>

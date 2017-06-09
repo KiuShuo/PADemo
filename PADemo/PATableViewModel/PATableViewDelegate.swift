@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Masonry
 
 class PATableViewDelegate: NSObject,  UITableViewDelegate, UITableViewDataSource {
     

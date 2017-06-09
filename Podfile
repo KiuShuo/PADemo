@@ -6,6 +6,6 @@ target 'PADemo' do
 pod 'Masonry', '~> 1.0.2'
 pod 'ObjectMapper', '~> 2.2.5'
 pod 'HexColors','2.3.0'
-pod 'SDWebImage', '~> 4.0.0'
+pod 'SDWebImage', '3.7.5'
 
 end

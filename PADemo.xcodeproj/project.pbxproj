@@ -17,7 +17,6 @@
 		8D66E93B1EE1361400DBBE41 /* NSString+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D66E9361EE1361400DBBE41 /* NSString+Attribute.m */; };
 		8D66E93C1EE1361400DBBE41 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66E9371EE1361400DBBE41 /* UIColor+Extension.swift */; };
 		8D66E93D1EE1361400DBBE41 /* UIDevice+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66E9381EE1361400DBBE41 /* UIDevice+Extention.swift */; };
-		8D66E93E1EE1361400DBBE41 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66E9391EE1361400DBBE41 /* UIImage+Extension.swift */; };
 		8D66E93F1EE1361400DBBE41 /* UImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66E93A1EE1361400DBBE41 /* UImageView+Extension.swift */; };
 		8D66E9571EE1375700DBBE41 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66E9501EE1375700DBBE41 /* Array+Extension.swift */; };
 		8D66E9581EE1375700DBBE41 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66E9511EE1375700DBBE41 /* Date+Extension.swift */; };
@@ -35,6 +34,10 @@
 		8D87DAC41ED9178400EA6D70 /* PATableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DAC31ED9178400EA6D70 /* PATableViewModel.swift */; };
 		8D87DAC61ED9179100EA6D70 /* PACellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DAC51ED9179100EA6D70 /* PACellModel.swift */; };
 		8D87DAC81ED91C9300EA6D70 /* PATableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DAC71ED91C9300EA6D70 /* PATableViewDelegate.swift */; };
+		8D8F15A51EE7B0500019AC1C /* PATableViewModelDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F15A41EE7B0500019AC1C /* PATableViewModelDemoController.swift */; };
+		8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F15A61EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift */; };
+		8D8F15A91EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F15A71EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib */; };
+		8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */; };
 		8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */; };
 		8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CC1EB9A5A1008B314E /* NotificationCenterController.swift */; };
 		8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CE1EB9A609008B314E /* Utile.swift */; };
@@ -86,7 +89,6 @@
 		8D66E9361EE1361400DBBE41 /* NSString+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Attribute.m"; sourceTree = "<group>"; };
 		8D66E9371EE1361400DBBE41 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8D66E9381EE1361400DBBE41 /* UIDevice+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extention.swift"; sourceTree = "<group>"; };
-		8D66E9391EE1361400DBBE41 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		8D66E93A1EE1361400DBBE41 /* UImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UImageView+Extension.swift"; sourceTree = "<group>"; };
 		8D66E9501EE1375700DBBE41 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		8D66E9511EE1375700DBBE41 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -104,6 +106,10 @@
 		8D87DAC31ED9178400EA6D70 /* PATableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModel.swift; sourceTree = "<group>"; };
 		8D87DAC51ED9179100EA6D70 /* PACellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACellModel.swift; sourceTree = "<group>"; };
 		8D87DAC71ED91C9300EA6D70 /* PATableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewDelegate.swift; sourceTree = "<group>"; };
+		8D8F15A41EE7B0500019AC1C /* PATableViewModelDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModelDemoController.swift; sourceTree = "<group>"; };
+		8D8F15A61EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModelDemoCell.swift; sourceTree = "<group>"; };
+		8D8F15A71EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PATableViewModelDemoCell.xib; sourceTree = "<group>"; };
+		8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		8D99C5C31EB98831008B314E /* PADemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PADemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D99C5C91EB9A586008B314E /* NSNotificationCenter+PACenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+PACenter.h"; sourceTree = "<group>"; };
 		8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+PACenter.m"; sourceTree = "<group>"; };
@@ -191,8 +197,8 @@
 				8D66E9361EE1361400DBBE41 /* NSString+Attribute.m */,
 				8D66E9371EE1361400DBBE41 /* UIColor+Extension.swift */,
 				8D66E9381EE1361400DBBE41 /* UIDevice+Extention.swift */,
-				8D66E9391EE1361400DBBE41 /* UIImage+Extension.swift */,
 				8D66E93A1EE1361400DBBE41 /* UImageView+Extension.swift */,
+				8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -234,6 +240,9 @@
 				8D87DAC31ED9178400EA6D70 /* PATableViewModel.swift */,
 				8D87DAC51ED9179100EA6D70 /* PACellModel.swift */,
 				8D87DAC71ED91C9300EA6D70 /* PATableViewDelegate.swift */,
+				8D8F15A41EE7B0500019AC1C /* PATableViewModelDemoController.swift */,
+				8D8F15A61EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift */,
+				8D8F15A71EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib */,
 			);
 			path = PATableViewModel;
 			sourceTree = "<group>";
@@ -489,6 +498,7 @@
 				8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */,
 				8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */,
 				8D21990A1EB1F93A0024B5CB /* ControllerModel.plist in Resources */,
+				8D8F15A91EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib in Resources */,
 				8D1031441ECE883A007F49CA /* CustomTableViewCell.xib in Resources */,
 				8DEF45771EB1BE6900CA4F75 /* Main.storyboard in Resources */,
 			);
@@ -563,6 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */,
 				8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */,
 				8DBB1ACB1EC4606900D507E6 /* BaseViewController.swift in Sources */,
 				8D66E95D1EE1375700DBBE41 /* Timer+WeakSelf.swift in Sources */,
@@ -573,6 +584,7 @@
 				8D6D13651ECB71B20084BBA8 /* PABaseNavigationController.swift in Sources */,
 				8DBB1ACE1EC485F000D507E6 /* TableViewController.swift in Sources */,
 				8DBB1AC51EC4604500D507E6 /* CustomNavigationItemController.swift in Sources */,
+				8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */,
 				8DBB1AC81EC4604500D507E6 /* MasonryViewController.swift in Sources */,
 				8D66E9571EE1375700DBBE41 /* Array+Extension.swift in Sources */,
 				8D66E93B1EE1361400DBBE41 /* NSString+Attribute.m in Sources */,
@@ -588,9 +600,9 @@
 				8DD07E351EC5583A00EA2B79 /* CollectionViewController.swift in Sources */,
 				8D66E9581EE1375700DBBE41 /* Date+Extension.swift in Sources */,
 				8DEF45721EB1BE6900CA4F75 /* AppDelegate.swift in Sources */,
+				8D8F15A51EE7B0500019AC1C /* PATableViewModelDemoController.swift in Sources */,
 				8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */,
 				8DBB1AC71EC4604500D507E6 /* HomeViewController.swift in Sources */,
-				8D66E93E1EE1361400DBBE41 /* UIImage+Extension.swift in Sources */,
 				8D87DAC41ED9178400EA6D70 /* PATableViewModel.swift in Sources */,
 				8D66E95C1EE1375700DBBE41 /* String+Extension.swift in Sources */,
 				8DBB1AC61EC4604500D507E6 /* DetailViewController.swift in Sources */,

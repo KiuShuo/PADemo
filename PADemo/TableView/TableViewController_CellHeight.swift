@@ -19,6 +19,7 @@
 
 
 import UIKit
+import Masonry
 
 class TableViewController_CellHeight: BaseViewController {
     
@@ -27,27 +28,43 @@ class TableViewController_CellHeight: BaseViewController {
         let tableView = UITableView()
         tableView.separatorColor = UIColor.red
         tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let height: CGFloat = 35.5
-        tableView.rowHeight = height
-        // ceil(tableView的高度 / cell的高度)
-        let count = ceil(PADeviceSize.screenHeight / height)
-        debugLog("需要创建的cell个数 = \(count)")
         
+//        let height: CGFloat = 35.5
+//        tableView.rowHeight = height
+        // ceil(tableView的高度 / cell的高度)
+//        let count = ceil(PADeviceSize.screenHeight / height)
+//        debugLog("需要创建的cell个数 = \(count)")
+        
+        setupData()
+//        tableView.estimatedRowHeight = 20
         view.addSubview(tableView)
         tableView.mas_makeConstraints { (make) in
             make!.edges.equalTo()
         }
     }
     
+    var dataSource: [String] = []
+    
+    func setupData() {
+        var text = "唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！"
+        for i in 0..<10 {
+            text += text
+            text += "--\(i)"
+            dataSource.append(text)
+        }
+    }
+    
     let customTableViewCellIdentifier = String(describing: CustomTableViewCell.self)
     
     func registCell() -> UITableViewCell? {
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: customTableViewCellIdentifier)
+//        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: customTableViewCellIdentifier)
         var cell = tableView.dequeueReusableCell(withIdentifier: customTableViewCellIdentifier)
         // 获取资源文件路径：
         /*
@@ -55,6 +72,9 @@ class TableViewController_CellHeight: BaseViewController {
             只能获取到nib、plist等resource资源文件的路径 无法获取.swift .xib等文件的路径
             Products/PADemo.app文件对应的包内容中的文件，都可以看做是资源文件
          */
+        if cell != nil {
+            return cell!
+        }
         if let _ = Bundle.main.path(forResource: "\(customTableViewCellIdentifier)", ofType: "nib") {
             cell = nil
             let nib = UINib(nibName: customTableViewCellIdentifier, bundle: nil)
@@ -70,16 +90,39 @@ class TableViewController_CellHeight: BaseViewController {
 extension TableViewController_CellHeight: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: customTableViewCellIdentifier)
+        var cell = registCell() as? CustomTableViewCell
         if cell == nil {
-            cell = registCell()
+            cell = registCell() as? CustomTableViewCell
         }
-        cell?.textLabel?.text = "第\(indexPath.row)行"
+        cell?.titleLabel?.text = dataSource[indexPath.row]
         return cell!
+    }
+    
+    
+}
+
+extension TableViewController_CellHeight: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if let cell = registCell() as? CustomTableViewCell {
+//            cell.titleLabel?.text = dataSource[indexPath.row]
+//            var con: MASConstraint?
+//            cell.contentView.mas_makeConstraints({ (make) in
+//               con = make!.width.equalTo()(UIScreen.main.bounds.size.width)
+//            })
+//            let height = cell.contentView.systemLayoutSizeFitting(CGSize(width: 0, height: 10000000)).height + 1 / UIScreen.main.scale
+//            con?.uninstall()
+//            return height
+//        }
+        
+        
+        let height = PAStringHeightMakeWithText(dataSource[indexPath.row], 17, 0, UIScreen.main.bounds.size.width - 20) + 20
+        return height
+//        return 0
     }
     
 }

@@ -44,7 +44,7 @@ struct PACellModel {
         self.classType = classType
     }
     
-    init(identifier: String?, classType: AnyClass) {
+    init(identifier: String? = nil, classType: AnyClass) {
         if let identifier = identifier {
             self.identifier = identifier
         } else {
@@ -52,7 +52,7 @@ struct PACellModel {
         }
         self.classType = classType
         if Bundle.main.path(forResource: String(describing: classType), ofType: "nib") != nil {
-            self.isRegisterByClass = true
+            self.isRegisterByClass = false
         } 
     }
 }

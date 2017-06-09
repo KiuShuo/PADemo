@@ -110,7 +110,7 @@ extension UIImage {
             UIGraphicsBeginImageContext(self.size);
         }
         self.draw(in: CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height))
-        let height:CGFloat = PAString.heightForString(text, width: PADeviceSize.screenWidth, font: UIFont.systemFont(ofSize: 12))
+        let height:CGFloat = PAStringHeightMakeWithText(text, 12, 0, PADeviceSize.screenWidth)
         let rect = CGRect.init(x: 0, y: (self.size.height-height)*0.5, width: self.size.width, height: height)
         let style = NSMutableParagraphStyle()
         style.alignment = .center
@@ -131,41 +131,41 @@ extension UIImage {
     }
     
     // 使用URLString获取一张图片
-    @discardableResult
-    class func getImageWithURLString(_ urlString: String, showLoadingView: Bool = false, completion: @escaping (_ image: UIImage?) -> ()) -> SDWebImageOperation? {
-        if let url = URL.init(string: urlString) {
-            if SDWebImageManager.shared().cachedImageExists(for: url) {
-                let key = SDWebImageManager.shared().cacheKey(for: url)
-                let image = SDImageCache.shared().imageFromDiskCache(forKey:key)
-                completion(image)
-                return nil
-            } else if SDWebImageManager.shared().diskImageExists(for: url){
-                let key = SDWebImageManager.shared().cacheKey(for: url)
-                let image = SDImageCache.shared().imageFromDiskCache(forKey: key)
-                completion(image)
-                return nil
-            } else {
-                if showLoadingView {
-                    PAMBManager.sharedInstance.showLoading(view: nil)
-                }
-                let operation =
-                    SDWebImageManager.shared().downloadImage(
-                        with: url,
-                        options: SDWebImageOptions.init(rawValue: 0),
-                        progress: nil,
-                        completed: { [showLoadingView, completion] (image, error, cacheType, finished, imageURL) in
-                            if showLoadingView {
-                                PAMBManager.sharedInstance.hideAlert(view: nil)
-                            }
-                            completion(image)
-                        }
-                )
-                return operation
-            }
-        } else {
-            completion(nil)
-            return nil
-        }
-    }
+//    @discardableResult
+//    class func getImageWithURLString(_ urlString: String, showLoadingView: Bool = false, completion: @escaping (_ image: UIImage?) -> ()) -> SDWebImageOperation? {
+//        if let url = URL.init(string: urlString) {
+//            if SDWebImageManager.shared().cachedImageExists(for: url) {
+//                let key = SDWebImageManager.shared().cacheKey(for: url)
+//                let image = SDImageCache.shared().imageFromDiskCache(forKey:key)
+//                completion(image)
+//                return nil
+//            } else if SDWebImageManager.shared().diskImageExists(for: url){
+//                let key = SDWebImageManager.shared().cacheKey(for: url)
+//                let image = SDImageCache.shared().imageFromDiskCache(forKey: key)
+//                completion(image)
+//                return nil
+//            } else {
+//                if showLoadingView {
+//                    PAMBManager.sharedInstance.showLoading(view: nil)
+//                }
+//                let operation =
+//                    SDWebImageManager.shared().downloadImage(
+//                        with: url,
+//                        options: SDWebImageOptions.init(rawValue: 0),
+//                        progress: nil,
+//                        completed: { [showLoadingView, completion] (image, error, cacheType, finished, imageURL) in
+//                            if showLoadingView {
+//                                PAMBManager.sharedInstance.hideAlert(view: nil)
+//                            }
+//                            completion(image)
+//                        }
+//                )
+//                return operation
+//            }
+//        } else {
+//            completion(nil)
+//            return nil
+//        }
+//    }
 }
 

@@ -11,31 +11,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="PADemo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PATableViewModelDemoCell" customModule="PADemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvR-EU-pRw">
-                        <rect key="frame" x="10" y="10" width="300" height="66.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmv-0l-ogd">
+                        <rect key="frame" x="10" y="10" width="300" height="23.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="XvR-EU-pRw" secondAttribute="trailing" constant="10" id="3bG-lE-rR5"/>
-                    <constraint firstItem="XvR-EU-pRw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Qg3-cg-Ri8"/>
-                    <constraint firstItem="XvR-EU-pRw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fGg-kf-zcl"/>
-                    <constraint firstAttribute="bottom" secondItem="XvR-EU-pRw" secondAttribute="bottom" constant="10" id="lnS-0E-FTg"/>
+                    <constraint firstItem="Lmv-0l-ogd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="10C-vf-4i1"/>
+                    <constraint firstAttribute="trailing" secondItem="Lmv-0l-ogd" secondAttribute="trailing" constant="10" id="5Ne-GO-Uj0"/>
+                    <constraint firstAttribute="bottom" secondItem="Lmv-0l-ogd" secondAttribute="bottom" constant="10" id="S3m-P6-1eA"/>
+                    <constraint firstItem="Lmv-0l-ogd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="TxK-nk-lTp"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="titleLabel" destination="XvR-EU-pRw" id="Wdf-ck-8kY"/>
+                <outlet property="titleLabel" destination="Lmv-0l-ogd" id="rWX-Wc-hwX"/>
             </connections>
-            <point key="canvasLocation" x="34" y="75.5"/>
         </tableViewCell>
     </objects>
 </document>

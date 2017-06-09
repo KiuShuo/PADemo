@@ -3,42 +3,45 @@
 import UIKit
 
 var str = "Hello, playground"
-/*
- var dateFormatter = NSDateFormatter()
+
+ var dateFormatter = DateFormatter()
  dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
  var dateAsString = "2015-10-08 14:25:37"
- var date1 = dateFormatter.dateFromString(dateAsString)!
+ var date1 = dateFormatter.date(from: dateAsString)!
  dateAsString = "2018-03-05 08:14:19"
- var date2 = dateFormatter.dateFromString(dateAsString)!
+ var date2 = dateFormatter.date(from: dateAsString)!
  
  
- var diffDateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second], fromDate: date1, toDate: date2, options: NSCalendarOptions.init(rawValue: 0))
- print("The difference between dates is: \(diffDateComponents.year) years, \(diffDateComponents.month) months, \(diffDateComponents.day) days, \(diffDateComponents.hour) hours, \(diffDateComponents.minute) minutes, \(diffDateComponents.second) seconds")
+ var diffDateComponents = NSCalendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date1, to: date2)
+ print("The difference between dates is: \(diffDateComponents.year) years, \(diffDateComponents.month) months, \(diffDateComponents.day) days, \(diffDateComponents.hour) hours, \(diffDateComponents.minute) minutes, \(String(describing: diffDateComponents.second)) seconds")
  
+
+
+
+
+let dateComponentsFormatter = DateComponentsFormatter()
+ dateComponentsFormatter.unitsStyle = DateComponentsFormatter.UnitsStyle.full
+ let interval = date2.timeIntervalSince(date1)
+ print(dateComponentsFormatter.string(from: interval) ?? "")
+
  
- let dateComponentsFormatter = NSDateComponentsFormatter()
- dateComponentsFormatter.unitsStyle = NSDateComponentsFormatterUnitsStyle.Full
- let interval = date2.timeIntervalSinceDate(date1)
- print(dateComponentsFormatter.stringFromTimeInterval(interval))
- 
- 
- dateComponentsFormatter.allowedUnits = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second]
- let autoFormattedDifference = dateComponentsFormatter.stringFromDate(date1, toDate: date2)
- print(autoFormattedDifference)
- 
- 
- 
+ dateComponentsFormatter.allowedUnits = [NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day, NSCalendar.Unit.hour, NSCalendar.Unit.minute, NSCalendar.Unit.second]
+ let autoFormattedDifference = dateComponentsFormatter.string(from: date1, to: date2)
+ print(autoFormattedDifference ?? "")
+
+
+
  
  func getDateDifferenceValue(dateStr: String) -> String? {
  let currentDate = NSDate()
- let dateFormatter = NSDateFormatter()
+ let dateFormatter = DateFormatter()
  dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
- let date = dateFormatter.dateFromString(dateStr)
+ let date = dateFormatter.date(from: dateStr)
  
- let dateComponentsFormatter = NSDateComponentsFormatter()
- dateComponentsFormatter.unitsStyle = NSDateComponentsFormatterUnitsStyle.Full
- dateComponentsFormatter.allowedUnits = [NSCalendarUnit.Hour, NSCalendarUnit.Minute]
- let autoFormattedDifference = dateComponentsFormatter.stringFromDate(currentDate, toDate: date!)
+ let dateComponentsFormatter = DateComponentsFormatter()
+ dateComponentsFormatter.unitsStyle = DateComponentsFormatter.UnitsStyle.full
+ dateComponentsFormatter.allowedUnits = [NSCalendar.Unit.hour, NSCalendar.Unit.minute]
+ let autoFormattedDifference = dateComponentsFormatter.string(from: currentDate as Date, to: date!)
  return autoFormattedDifference
  }
  
@@ -47,37 +50,37 @@ var str = "Hello, playground"
  
  
  func dateAfterDayCount(count: Int) -> String {
- let secondsPerDay = NSTimeInterval(count * 24 * 60 * 60)
+ let secondsPerDay = TimeInterval(count * 24 * 60 * 60)
  let curDate = NSDate(timeIntervalSinceNow: secondsPerDay)
  
- let dateFormat = NSDateFormatter()
+ let dateFormat = DateFormatter()
  dateFormat.dateFormat = "YYYY-MM-dd HH:mm:ss"
- let dateStr = dateFormat.stringFromDate(curDate)
+ let dateStr = dateFormat.string(from: curDate as Date)
  
  let strTime = "\(dateStr)"
  return strTime
  }
  
- dateAfterDayCount(1)
+ dateAfterDayCount(count: 1)
  
  
  let dateStr = "2016-08-01 15:00:00"
- let dateStrFormatter = dateFormatter.dateFromString(dateStr)!
+ let dateStrFormatter = dateFormatter.date(from: dateStr)!
  // let difference = getDateDifferenceValue(dateStr)
  
  let date01 = NSDate()
  print(date01.compare(dateStrFormatter))
  
- if date01.compare(dateStrFormatter) == NSComparisonResult.OrderedDescending {
+ if date01.compare(dateStrFormatter) == ComparisonResult.orderedDescending {
  print("Date1 is Later than Date2")
  }
- else if date01.compare(dateStrFormatter) == NSComparisonResult.OrderedAscending {
+ else if date01.compare(dateStrFormatter) == ComparisonResult.orderedAscending {
  print("Date1 is Earlier than Date2")
  }
- else if date01.compare(dateStrFormatter) == NSComparisonResult.OrderedSame {
+ else if date01.compare(dateStrFormatter) == ComparisonResult.orderedSame {
  print("Same dates")
  }
- */
+
 
 
 func comparaDate(currentDate: NSDate, date: NSDate) -> Int {
@@ -89,10 +92,10 @@ func comparaDate(currentDate: NSDate, date: NSDate) -> Int {
     return 0
 }
 
-let dateStr = "2016-08-31 16:34"
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-let date = dateFormatter.date(from: dateStr)
+let dateStr1 = "2016-08-31 16:34"
+let dateFormatter1 = DateFormatter()
+dateFormatter1.dateFormat = "yyyy-MM-dd HH:mm"
+let date = dateFormatter1.date(from: dateStr1)
 print(comparaDate(currentDate: NSDate(), date: date! as NSDate))
 /*
  if 当前时间 < 就诊时间 {

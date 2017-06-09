@@ -129,8 +129,8 @@ import Foundation
         guard let color = color else {
             return
         }
-        let image = UIImage(color: color, size: self.frame.size)
-        self.setBackgroundImage(image, for: state)
+//        let image = UIImage(color: color, size: self.frame.size)
+//        self.setBackgroundImage(image, for: state)
     }
 
     
