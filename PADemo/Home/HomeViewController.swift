@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController {
         if let bundlePath = Bundle.main.path(forResource: "ControllerModel", ofType: "plist"),
             let resultDic = NSDictionary(contentsOfFile: bundlePath) as? [String: Any],
             let controllerModelDics = resultDic["result"] as? [[String: String]] {
-            self.controllerModels = Mapper<ControllerModel>().mapArray(JSONArray: controllerModelDics)
+            self.controllerModels = Mapper<ControllerModel>().mapArray(JSONArray: controllerModelDics)!
         }
     }
 
