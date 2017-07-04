@@ -24,5 +24,4 @@ class SearchResultViewController: BaseViewController {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 
-
 }

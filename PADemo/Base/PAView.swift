@@ -126,7 +126,7 @@ import Foundation
     }
     
     private func setBackgroundColor(_ color: UIColor?, for state: UIControlState) {
-        guard let color = color else {
+        guard color != nil else {
             return
         }
 //        let image = UIImage(color: color, size: self.frame.size)

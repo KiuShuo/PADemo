@@ -2,6 +2,56 @@
 
 import UIKit
 
+var str1: Any? = "1"
+var oneValue: Int = 0
+let str = oneValue as? String
+str
+
+
+//func test(letf: inout Any, righ: Any?) {
+//    if let righ = righ {
+//        letf = righ
+//    }
+//}
+//
+//test(letf: &oneValue, righ: str1)
+//oneValue
+
+/*
+func remoteNotification() {
+    /// 远程通知判断是否允许alert badge sound 可以通过type.rawValue是否为0来判断是都允许了远程通知 当然这也是一种计较模糊的判断，因为
+    let notificationTypes: UIUserNotificationType = [.alert, .badge, .sound]
+    let notificationTypes0: UIUserNotificationType = [.alert, .badge]
+    let notificationTypes1: UIUserNotificationType = [.alert, .sound]
+    let notificationTypes2: UIUserNotificationType = [.badge, .sound]
+    let notificationTypes3: UIUserNotificationType = [.badge]
+    let notificationTypes4: UIUserNotificationType = [.sound]
+    let notificationTypes5: UIUserNotificationType = [.alert]
+    
+    notificationTypes0.rawValue
+    notificationTypes1.rawValue
+    notificationTypes2.rawValue
+    notificationTypes3.rawValue
+    notificationTypes4.rawValue
+    notificationTypes5.rawValue
+    
+    print("notificationTypes.rawValue = \(notificationTypes.rawValue)")
+    if let types = UIApplication.shared.currentUserNotificationSettings?.types {
+        if types.rawValue != 0 {
+            print("允许推送")
+        } else {
+            print("未允许推送")
+        }
+    } else {
+        print("未允许推送")
+    }
+}
+
+remoteNotification()
+*/
+
+
+/*
 let key = "abc.123"
 debugPrint("key.characters = \(key.characters)")
 let delimiter = "."
@@ -9,9 +59,8 @@ let arr = key.components(separatedBy: delimiter).filter { !$0.isEmpty }.map { $0
 debugPrint("arr = \(arr)")
 
 let keyComponents = ArraySlice(key.components(separatedBy: delimiter).filter { !$0.isEmpty }.map { $0.characters })
-
 debugPrint("keyComponents = \(keyComponents)")
-
+*/
 
 //let name = "Marie Curie"
 //if let firstSpace = name.characters.index(of: " ") {

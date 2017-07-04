@@ -4,10 +4,28 @@
 //
 //  Created by shuo on 2017/4/27.
 //  Copyright © 2017年 shuo. All rights reserved.
-//
+//  Masonry + AutoLayout
 
 import UIKit
 import Masonry
+
+
+/**
+ 
+ updateConstraints 主要作用是更新view的约束，并调用其所有子视图的该方法去更新约束。
+ 
+ 
+ setNeedsLayout()
+ 
+ layoutIfNeeded()
+ 
+ layoutSubviews()
+ 
+ setNeedsLayout会立一个flag 用来标记视图或者其子视图需要进行布局更新；
+ layoutIfNeeded会调用layoutSubviews
+ 
+ */
+
 
 class MasonryViewController: BaseViewController {
     
@@ -36,6 +54,20 @@ class MasonryViewController: BaseViewController {
             make!.width.equalTo()(100)
             make!.height.equalTo()(26)
         }
+        print("buttonFrame = \(button.frame)")
+        view.layoutIfNeeded()
+//        view.layoutSubviews()
+//        view.setNeedsLayout()
+        print("buttonFrame = \(button.frame)")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("buttonFrame = \(button.frame)")
     }
 
 }

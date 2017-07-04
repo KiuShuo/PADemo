@@ -29,7 +29,6 @@ class PABaseNavigationController: UINavigationController {
         }
         debugLog("push to controller = \(viewController)")
         if viewController.navigationItem.leftBarButtonItem == nil ,self.viewControllers.count > 0 {
-            debugLog(viewController.navigationItem.leftBarButtonItem ?? "")
             viewController.navigationItem.setLeftBarButton(self.customLeftBackButton(clickAction: nil), animated: true)
         }
         super.pushViewController(viewController, animated: animated)

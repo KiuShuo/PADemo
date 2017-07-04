@@ -29,6 +29,10 @@
 		8D6D13591ECB6B7F0084BBA8 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */; };
 		8D6D135D1ECB6EE90084BBA8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D135C1ECB6EE90084BBA8 /* Style.swift */; };
 		8D6D13651ECB71B20084BBA8 /* PABaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D13641ECB71B20084BBA8 /* PABaseNavigationController.swift */; };
+		8D6E2C971EF8EBCA00934C9B /* TextfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E2C961EF8EBCA00934C9B /* TextfieldViewController.swift */; };
+		8D6E2C991EF8EDBA00934C9B /* TextFieldDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E2C981EF8EDBA00934C9B /* TextFieldDetailViewController.swift */; };
+		8D6E2C9B1EF8EE7A00934C9B /* UIViewController+PAExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E2C9A1EF8EE7A00934C9B /* UIViewController+PAExtension.swift */; };
+		8D6E2C9F1EF922BD00934C9B /* PAUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E2C9E1EF922BD00934C9B /* PAUtil.swift */; };
 		8D6E40491EB322C500E388C9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E40481EB322C500E388C9 /* Model.swift */; };
 		8D8201201ECB480C000809E4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D82011F1ECB480C000809E4 /* WebViewController.swift */; };
 		8D87DAC41ED9178400EA6D70 /* PATableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87DAC31ED9178400EA6D70 /* PATableViewModel.swift */; };
@@ -101,6 +105,10 @@
 		8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		8D6D135C1ECB6EE90084BBA8 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		8D6D13641ECB71B20084BBA8 /* PABaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PABaseNavigationController.swift; sourceTree = "<group>"; };
+		8D6E2C961EF8EBCA00934C9B /* TextfieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldViewController.swift; sourceTree = "<group>"; };
+		8D6E2C981EF8EDBA00934C9B /* TextFieldDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDetailViewController.swift; sourceTree = "<group>"; };
+		8D6E2C9A1EF8EE7A00934C9B /* UIViewController+PAExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PAExtension.swift"; sourceTree = "<group>"; };
+		8D6E2C9E1EF922BD00934C9B /* PAUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAUtil.swift; sourceTree = "<group>"; };
 		8D6E40481EB322C500E388C9 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8D82011F1ECB480C000809E4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8D87DAC31ED9178400EA6D70 /* PATableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModel.swift; sourceTree = "<group>"; };
@@ -193,12 +201,14 @@
 		8D66E9341EE1361400DBBE41 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8D6E2C9E1EF922BD00934C9B /* PAUtil.swift */,
 				8D66E9351EE1361400DBBE41 /* NSString+Attribute.h */,
 				8D66E9361EE1361400DBBE41 /* NSString+Attribute.m */,
 				8D66E9371EE1361400DBBE41 /* UIColor+Extension.swift */,
 				8D66E9381EE1361400DBBE41 /* UIDevice+Extention.swift */,
 				8D66E93A1EE1361400DBBE41 /* UImageView+Extension.swift */,
 				8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */,
+				8D6E2C9A1EF8EE7A00934C9B /* UIViewController+PAExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,6 +232,8 @@
 			children = (
 				8D6D13561ECB68A00084BBA8 /* SearchViewController.swift */,
 				8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */,
+				8D6E2C961EF8EBCA00934C9B /* TextfieldViewController.swift */,
+				8D6E2C981EF8EDBA00934C9B /* TextFieldDetailViewController.swift */,
 			);
 			path = SearchController;
 			sourceTree = "<group>";
@@ -581,8 +593,10 @@
 				8D66E93C1EE1361400DBBE41 /* UIColor+Extension.swift in Sources */,
 				8D6D13571ECB68A00084BBA8 /* SearchViewController.swift in Sources */,
 				8D66E9591EE1375700DBBE41 /* Dictionary+Extension.swift in Sources */,
+				8D6E2C971EF8EBCA00934C9B /* TextfieldViewController.swift in Sources */,
 				8D6D13651ECB71B20084BBA8 /* PABaseNavigationController.swift in Sources */,
 				8DBB1ACE1EC485F000D507E6 /* TableViewController.swift in Sources */,
+				8D6E2C9B1EF8EE7A00934C9B /* UIViewController+PAExtension.swift in Sources */,
 				8DBB1AC51EC4604500D507E6 /* CustomNavigationItemController.swift in Sources */,
 				8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */,
 				8DBB1AC81EC4604500D507E6 /* MasonryViewController.swift in Sources */,
@@ -603,6 +617,8 @@
 				8D8F15A51EE7B0500019AC1C /* PATableViewModelDemoController.swift in Sources */,
 				8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */,
 				8DBB1AC71EC4604500D507E6 /* HomeViewController.swift in Sources */,
+				8D6E2C9F1EF922BD00934C9B /* PAUtil.swift in Sources */,
+				8D6E2C991EF8EDBA00934C9B /* TextFieldDetailViewController.swift in Sources */,
 				8D87DAC41ED9178400EA6D70 /* PATableViewModel.swift in Sources */,
 				8D66E95C1EE1375700DBBE41 /* String+Extension.swift in Sources */,
 				8DBB1AC61EC4604500D507E6 /* DetailViewController.swift in Sources */,
@@ -771,6 +787,7 @@
 				INFOPLIST_FILE = PADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = pingan.com.PADemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ca85e8b0-23fc-49e1-871d-26a93909eea0";
@@ -791,6 +808,7 @@
 				INFOPLIST_FILE = PADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = pingan.com.PADemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ca85e8b0-23fc-49e1-871d-26a93909eea0";

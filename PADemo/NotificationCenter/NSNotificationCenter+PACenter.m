@@ -11,7 +11,7 @@
 @implementation NSNotificationCenter (PACenter)
 
 - (void)removeObserver:(id)observer {
-    NSLog(@"执行%@", observer);
+    //NSLog(@"执行%@", observer);
 }
 
 @end
