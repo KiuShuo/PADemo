@@ -24,6 +24,11 @@ import Masonry
  setNeedsLayout会立一个flag 用来标记视图或者其子视图需要进行布局更新；
  layoutIfNeeded会调用layoutSubviews
  
+ 
+ 
+ http://www.cocoachina.com/ios/20160530/16522.html
+ http://www.jianshu.com/p/e1eca032be15
+ http://www.jianshu.com/p/eb2c4bb4e3f1
  */
 
 
