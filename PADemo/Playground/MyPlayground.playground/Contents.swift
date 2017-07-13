@@ -237,3 +237,7 @@ debugPrint("keyComponents = \(keyComponents)")
  //per?.name = "dddd"
  
  */
+
+let arr: [String] = ["1", "2", "3"]
+arr.joined()
+arr.joined(separator: "-")

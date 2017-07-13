@@ -8,9 +8,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DetailViewController: BaseViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
     static func makeViewController(viewControllerClass: BaseViewController.Type) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: DetailViewController.self))
@@ -21,7 +23,16 @@ class DetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let imageUrlStr = "https://cdn.pixabay.com/photo/2017/03/13/10/31/greylag-goose-2139296_640.jpg"
+        _ = getImage(urlString: imageUrlStr)
+//        if let imageUrl = URL(string: "https://cdn.pixabay.com/photo/2017/03/13/10/31/greylag-goose-2139296_640.jpg") {
+//            let _ = SDWebImageDownloader.shared().downloadImage(with: imageUrl, options: .  useNSURLCache, progress: nil, completed: { (image, _, _, success) in
+//                if success {
+//                    self.imageView.image = image
+//                }
+//            })
+//        }
+
         // label size
         //setupAutoHeightLabel()
         
@@ -36,6 +47,30 @@ class DetailViewController: BaseViewController {
         stringHeight()
         
     }
+    
+    func getImage(urlString: String) -> UIImage? {
+        guard let url = URL(string: urlString) else {
+            return nil
+        }
+        do {
+            let data = try Data(contentsOf: url)
+            let image = UIImage(data: data)
+            saveImage(image: image!)
+            return image
+        } catch let error {
+            print("get image error = \(error)")
+        }
+        return nil
+    }
+    
+    private func saveImage(image: UIImage) {
+        
+        let result = PAFileManager.fileManager.saveDataToSandbox(image, directory: "Documents", fileName: "Image.jpg", key: "123")
+        print("\(result.0, result.1)")
+        
+        self.imageView.image = PAFileManager.fileManager.getDataFromSandbox("Image.jpg", directory: "Documents", key: "123")
+    }
+
     
     // 根据文本计算label size
     func setupAutoHeightLabel() {

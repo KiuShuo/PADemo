@@ -53,7 +53,7 @@ class TableViewController_CellHeight: BaseViewController {
     var dataSource: [String] = []
     
     func setupData() {
-        var text = "唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！"
+        var text = "唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！"
         for i in 0..<10 {
             text += text
             text += "--\(i)"
@@ -124,5 +124,6 @@ extension TableViewController_CellHeight: UITableViewDelegate {
         return height
 //        return 0
     }
+    
     
 }

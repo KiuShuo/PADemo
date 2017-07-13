@@ -15,11 +15,7 @@ import Masonry
  updateConstraints 主要作用是更新view的约束，并调用其所有子视图的该方法去更新约束。
  
  
- setNeedsLayout()
- 
- layoutIfNeeded()
- 
- layoutSubviews()
+ setNeedsLayout()、layoutIfNeeded()、layoutSubviews()
  
  setNeedsLayout会立一个flag 用来标记视图或者其子视图需要进行布局更新；
  layoutIfNeeded会调用layoutSubviews
@@ -48,6 +44,7 @@ import Masonry
  http://www.cocoachina.com/ios/20160530/16522.html
  http://www.jianshu.com/p/e1eca032be15
  http://www.jianshu.com/p/eb2c4bb4e3f1
+ http://gurglessh.github.io/2016/04/16/UIView%E7%9A%84layoutSubviews%E3%80%81layoutIfNeeded%E3%80%81setNeedsLayout%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB/
  */
 
 

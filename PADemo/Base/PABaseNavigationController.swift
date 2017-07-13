@@ -33,6 +33,10 @@ class PABaseNavigationController: UINavigationController {
         }
         super.pushViewController(viewController, animated: animated)
     }
+    
+    func handleNavigationTransition( ) {
+        
+    }
 }
 
 extension PABaseNavigationController: UIGestureRecognizerDelegate {

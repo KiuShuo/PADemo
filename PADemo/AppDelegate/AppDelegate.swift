@@ -17,6 +17,7 @@ extension UIDevice {
         #endif
         return isSim
     }()
+    
 }
 
 
@@ -27,10 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        replyPushNotificationAuthorization(application)
         Style.setupStyle()
         #if !(arch(i386) || arch(x86_64))
             // 真机
-            test()
         #else
             // 模拟器
         #endif
@@ -43,6 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         paUtilTest()
 
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
     }
 
     func paUtilTest() {

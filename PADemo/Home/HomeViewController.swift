@@ -13,6 +13,7 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var controllerModels: [ControllerModel] = []
+    fileprivate var baseNavgationController: PABaseNavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class HomeViewController: BaseViewController {
         if let bundlePath = Bundle.main.path(forResource: "ControllerModel", ofType: "plist"),
             let resultDic = NSDictionary(contentsOfFile: bundlePath) as? [String: Any],
             let controllerModelDics = resultDic["result"] as? [[String: String]] {
-            self.controllerModels = Mapper<ControllerModel>().mapArray(JSONArray: controllerModelDics)!
+            self.controllerModels = Mapper<ControllerModel>().mapArray(JSONArray: controllerModelDics)
         }
     }
 
@@ -67,14 +68,44 @@ extension HomeViewController: UITableViewDelegate {
             return
         }
         
-//        let baseNavgationController = PABaseNavigationController(rootViewController: toVC)
-//        let navgationItem = baseNavgationController.customLeftBackButton(clickAction: {
-//            toVC.dismiss(animated: true, completion: nil)
+//        baseNavgationController = PABaseNavigationController(rootViewController: toVC)
+//        let navgationItem = baseNavgationController?.customLeftBackButton(clickAction: { [weak self] in
+//            guard let`self` = self else { return }
+//            self.baseNavgationController?.dismiss(animated: true, completion: nil)
 //        })
-//        
+//        customScreenEdgePanGestureRecognizer(navigationController: baseNavgationController!)
 //        toVC.navigationItem.setLeftBarButton(navgationItem, animated: true)
-//        self.present(baseNavgationController, animated: true, completion: nil)
-        navigationController?.pushViewController(toVC, animated: true)
+//        self.present(baseNavgationController!, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(toVC, animated: true)
     }
+    
+    func customScreenEdgePanGestureRecognizer(navigationController: UINavigationController) {
+        var a: UIRectEdge = .right
+         let coustomGes = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgePan))
+        if let ges = getScreenEdgePanGestureRecognizer(view: navigationController.view) {
+            a = ges.edges
+            ges.require(toFail: coustomGes)
+        }
+       
+        coustomGes.edges = a
+        navigationController.view.addGestureRecognizer(coustomGes)
+    }
+    
+    func getScreenEdgePanGestureRecognizer(view: UIView) -> UIScreenEdgePanGestureRecognizer? {
+        if let gestureRecognizers = view.gestureRecognizers {
+            for ges in gestureRecognizers {
+                if ges is UIScreenEdgePanGestureRecognizer {
+                    return ges as? UIScreenEdgePanGestureRecognizer
+                }
+            }
+        }
+        return nil
+    }
+    
+    func screenEdgePan() {
+        baseNavgationController?.dismiss(animated: false, completion: nil)
+    }
+    
 }
 

@@ -10,8 +10,8 @@
 
 @implementation NSNotificationCenter (PACenter)
 
-- (void)removeObserver:(id)observer {
-    //NSLog(@"执行%@", observer);
-}
+//- (void)removeObserver:(id)observer {
+//    NSLog(@"扩展中执行%@", observer);
+//}
 
 @end

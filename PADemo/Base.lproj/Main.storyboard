@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOm-M4-1xo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-679" y="137"/>
+            <point key="canvasLocation" x="-697" y="135"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -76,10 +76,41 @@
         <!--Detail View Controller-->
         <scene sceneID="Ige-F4-rLs">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nNo-at-lHm" customClass="DetailViewController" customModule="PADemo" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nNo-at-lHm" customClass="DetailViewController" customModule="PADemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wrZ-RJ-GIh"/>
+                        <viewControllerLayoutGuide type="bottom" id="34K-J3-yo6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fr9-Mt-tF0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PJi-ql-jSE">
+                                <rect key="frame" x="50" y="120" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="XWA-iK-7na"/>
+                                    <constraint firstAttribute="width" constant="60" id="u63-vf-fIr"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpj-Lt-Rdu">
+                                <rect key="frame" x="33" y="305" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PJi-ql-jSE" firstAttribute="leading" secondItem="fr9-Mt-tF0" secondAttribute="leading" constant="50" id="YMB-7g-a2t"/>
+                            <constraint firstItem="PJi-ql-jSE" firstAttribute="top" secondItem="wrZ-RJ-GIh" secondAttribute="bottom" constant="100" id="aOR-jo-aMx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="PJi-ql-jSE" id="wYi-Dm-kbS"/>
+                    </connections>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkn-xm-qjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632.79999999999995" y="128.18590704647679"/>
+            <point key="canvasLocation" x="663" y="136"/>
         </scene>
     </scenes>
 </document>

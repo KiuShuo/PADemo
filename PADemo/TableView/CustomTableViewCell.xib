@@ -19,20 +19,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvR-EU-pRw">
-                        <rect key="frame" x="10" y="10" width="300" height="66.5"/>
+                        <rect key="frame" x="10" y="10" width="260" height="66.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAG-v7-nrf">
+                        <rect key="frame" x="275" y="5" width="40" height="76.5"/>
+                        <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="XvR-EU-pRw" secondAttribute="trailing" constant="10" id="3bG-lE-rR5"/>
+                    <constraint firstAttribute="trailing" secondItem="XvR-EU-pRw" secondAttribute="trailing" constant="50" id="3bG-lE-rR5"/>
+                    <constraint firstAttribute="bottom" secondItem="pAG-v7-nrf" secondAttribute="bottom" constant="5" id="CnW-jn-94X"/>
+                    <constraint firstAttribute="trailing" secondItem="pAG-v7-nrf" secondAttribute="trailing" constant="5" id="Pr3-hu-3SJ"/>
                     <constraint firstItem="XvR-EU-pRw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Qg3-cg-Ri8"/>
+                    <constraint firstItem="pAG-v7-nrf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="W5k-uA-Mky"/>
+                    <constraint firstItem="pAG-v7-nrf" firstAttribute="leading" secondItem="XvR-EU-pRw" secondAttribute="trailing" constant="5" id="eRl-C0-Nj4"/>
                     <constraint firstItem="XvR-EU-pRw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fGg-kf-zcl"/>
                     <constraint firstAttribute="bottom" secondItem="XvR-EU-pRw" secondAttribute="bottom" constant="10" id="lnS-0E-FTg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="rightView" destination="pAG-v7-nrf" id="OBR-kQ-9AM"/>
                 <outlet property="titleLabel" destination="XvR-EU-pRw" id="Wdf-ck-8kY"/>
             </connections>
             <point key="canvasLocation" x="34" y="75.5"/>

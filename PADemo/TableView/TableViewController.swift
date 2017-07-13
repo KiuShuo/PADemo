@@ -5,6 +5,7 @@
 //  Created by shuo on 2017/5/11.
 //  Copyright © 2017年 shuo. All rights reserved.
 //  tableView 代理函数的执行顺序、tableView.reloadData()后cellForRaw的执行时机
+//  tableViewCell 选中状态时子视图透明的解决
 
 import UIKit
 import HexColors
