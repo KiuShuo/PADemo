@@ -62,15 +62,7 @@ struct PACellModel {
 
 protocol PATableViewCellProtocol {
     /// 为服从协议的cell添加数据源
-    // var dataModel: PAModelBaseProtocol? { get set }
-    
-    func configureCell(dataModel: PAModelBaseProtocol?)
-}
-
-extension PATableViewCellProtocol {
-    func configureCell(dataModel: PAModelBaseProtocol?) {
-        //
-    }
+    var dataModel: PAModelBaseProtocol? { get set }
 }
 
 struct PAHeaderFooterViewModel {

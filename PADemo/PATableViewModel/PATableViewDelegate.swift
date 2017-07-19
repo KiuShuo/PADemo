@@ -38,8 +38,9 @@ class PATableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource 
             let tableCellForRowBlock: PATableCellForRowBlock = (tableView, indexPath, cell, cellModel)
             configureCell(tableCellForRowBlock)
         } else {
-            (cell as? PATableViewCellProtocol)?.configureCell(dataModel: cellModel.dataModel)
-            //cell.dataModel = cellModel.dataModel
+            if var aCell = cell as? PATableViewCellProtocol {
+                aCell.dataModel = cellModel.dataModel
+            }
         }
         return cell
     }
@@ -55,10 +56,9 @@ class PATableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource 
             }
             return tableView.fd_heightForCell(withIdentifier: cellModel.identifier, cacheBy: indexPath, configuration: { cell in
                 (cell as? UITableViewCell)?.fd_enforceFrameLayout = cellModel.isEnforceFrameLayout
-                (cell as? PATableViewCellProtocol)?.configureCell(dataModel: cellModel.dataModel)
-//                if var aCell = cell as? PATableViewCellProtocol {
-//                    aCell.dataModel = cellModel.dataModel
-//                }
+                if var aCell = cell as? PATableViewCellProtocol {
+                    aCell.dataModel = cellModel.dataModel
+                }
             })
         }
         return cellModel.height

@@ -591,53 +591,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PADemo/PATableViewModel/PATableViewModelDemoCell.swift"
-            timestampString = "522151902.818128"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "configureCell(dataModel:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PADemo.PATableViewModelDemoCell.configureCell (dataModel : Swift.Optional&lt;PADemo.PAModelBaseProtocol&gt;) -&gt; ()"
-                  moduleName = "PADemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liushuo199/Documents/LearnNote/PADemo/PADemo/PATableViewModel/PATableViewModelDemoCell.swift"
-                  timestampString = "522151912.910458"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PADemo.PATableViewModelDemoCell.configureCell (dataModel : Swift.Optional&lt;PADemo.PAModelBaseProtocol&gt;) -&gt; ()"
-                  moduleName = "PADemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liushuo199/Documents/LearnNote/PADemo/PADemo/PATableViewModel/PATableViewModelDemoCell.swift"
-                  timestampString = "522151912.911775"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "503">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

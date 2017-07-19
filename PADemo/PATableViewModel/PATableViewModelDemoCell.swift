@@ -12,7 +12,7 @@ extension String: PAModelBaseProtocol {
     
 }
 
-class PATableViewModelDemoCell: UITableViewCell {
+class PATableViewModelDemoCell: UITableViewCell, PATableViewCellProtocol {
 
     static let cellModel: PACellModel = PACellModel(classType: PATableViewModelDemoCell.self)
     
@@ -22,20 +22,13 @@ class PATableViewModelDemoCell: UITableViewCell {
         var title: String?
     }
     
-    
-    func configureCell(dataModel: PAModelBaseProtocol?) {
-        if let model = dataModel as? String {
-            titleLabel.text = model
+    var dataModel: PAModelBaseProtocol? {
+        didSet {
+            if let model = dataModel as? String {
+                titleLabel.text = model
+            }
         }
     }
-    
-//    var dataModel: PAModelBaseProtocol? {
-//        didSet {
-//            if let model = dataModel as? String {
-//                titleLabel.text = model
-//            }
-//        }
-//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

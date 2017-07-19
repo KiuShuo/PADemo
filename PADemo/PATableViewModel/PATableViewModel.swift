@@ -49,8 +49,6 @@ extension UITableView {
 
 class PATableViewModel {
     
-    static let tableviewCellDefaultHeight: CGFloat = 44.0
-    
     static func getSectionModel(_ cellModels: [PACellModel], sectionName: String? = nil, headerViewModel: PAHeaderFooterViewModel? = nil, footerViewModel: PAHeaderFooterViewModel? = nil) -> PASectionModel {
         var sectionModel = PASectionModel()
         sectionModel.sectionName = sectionName
