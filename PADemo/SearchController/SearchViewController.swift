@@ -22,13 +22,13 @@ class SearchViewController: BaseViewController {
     
     fileprivate var dataSource: [String] = ["1", "2", "3"]
 
-    fileprivate lazy var searchResultController: SearchResultViewController = {
-        let searchResultController = SearchResultViewController()
-        return searchResultController
-    }()
+//    fileprivate lazy var searchResultController: SearchResultViewController = {
+//        let searchResultController = SearchResultViewController()
+//        return searchResultController
+//    }()
     
     private lazy var searchController: UISearchController = {
-        let searchController = UISearchController(searchResultsController: self.searchResultController)
+        let searchController = UISearchController(searchResultsController: SearchResultViewController())
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = true

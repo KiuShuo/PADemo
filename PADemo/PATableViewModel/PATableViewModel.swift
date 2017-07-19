@@ -7,32 +7,45 @@
 //
 
 import Foundation
-import UIKit
 
-struct PASectionModel {
-    var headerTitle: String?
-    var footerTitle: String?
-    var headerView: UIView?
-    var footerView: UIView?
-    var headerHeight: CGFloat?
-    var footerHeight: CGFloat?
-    var headerViewModel: PAHeaderFooterViewModel?
-    var footerViewModel: PAHeaderFooterViewModel?
-    var cellModelArr: [PACellModel] = []
-    var sectionName: String?
+extension UITableView {
     
-    static func searchSection(with sectionName: String, sectionModels: [PASectionModel]) -> PASectionModel? {
-        for sectionModel in sectionModels {
-            if sectionName == sectionModel.sectionName {
-                return sectionModel
+    func dequeueReusableCellWithCellModel(_ cellModel: PACellModel) -> UITableViewCell {
+        let identifier = cellModel.identifier
+        var cell: UITableViewCell? = dequeueReusableCell(withIdentifier: identifier)
+        if cell == nil {
+            registCellWithCellModels([cellModel])
+            cell = dequeueReusableCell(withIdentifier: identifier)
+        }
+        return cell!
+    }
+    
+    func registCellWithCellModels(_ cellModels: [PACellModel]) {
+        cellModels.forEach { (cellModel) in
+            let identifier = cellModel.identifier
+            if cellModel.isRegisterByClass {
+                register(cellModel.classType, forCellReuseIdentifier: identifier)
+            } else {
+                register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
             }
         }
-        return nil
+    }
+    
+    func dequeueReusableHeaderFooterViewWithHeaderFooterModel(_ headerFooterViewModel: PAHeaderFooterViewModel) -> UITableViewHeaderFooterView {
+        let identifier = headerFooterViewModel.identifier
+        var headerFooterView: UITableViewHeaderFooterView? = dequeueReusableHeaderFooterView(withIdentifier: identifier)
+        if headerFooterView == nil {
+            if headerFooterViewModel.isRegisterByClass {
+                register(headerFooterViewModel.classType, forHeaderFooterViewReuseIdentifier: identifier)
+            } else {
+                register(UINib(nibName: identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: identifier)
+            }
+            headerFooterView = dequeueReusableHeaderFooterView(withIdentifier: identifier)
+        }
+        return headerFooterView!
     }
     
 }
-
-
 
 class PATableViewModel {
     
@@ -47,43 +60,7 @@ class PATableViewModel {
         return sectionModel
     }
     
-    static func dequeueReusableCellWithCellModel(_ cellModel: PACellModel, tableView: UITableView) -> UITableViewCell {
-        let identifier = cellModel.identifier
-        var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier)
-        if cell == nil {
-            registCellWithCellModels([cellModel], tableView: tableView)
-            cell = tableView.dequeueReusableCell(withIdentifier: identifier)
-        }
-        return cell!
-    }
-    
-    static func registCellWithCellModels(_ cellModels: [PACellModel], tableView: UITableView) {
-        cellModels.forEach { (cellModel) in
-            let identifier = cellModel.identifier
-            if cellModel.isRegisterByClass {
-                tableView.register(cellModel.classType, forCellReuseIdentifier: identifier)
-            } else {
-                tableView.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
-            }
-        }
-    }
-    
-    static func dequeueReusableHeaderFooterViewWithHeaderFooterModel(_ headerFooterViewModel: PAHeaderFooterViewModel, tableView: UITableView) -> UITableViewHeaderFooterView {
-        let identifier = headerFooterViewModel.identifier
-        var headerFooterView: UITableViewHeaderFooterView? = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
-        if headerFooterView == nil {
-            if headerFooterViewModel.isRegisterByClass {
-                tableView.register(headerFooterViewModel.classType, forHeaderFooterViewReuseIdentifier: identifier)
-            } else {
-                tableView.register(UINib(nibName: identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: identifier)
-            }
-            headerFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
-        }
-        return headerFooterView!
-    }
-    
 }
-
 
 // 常用扩展
 extension PATableViewModel {

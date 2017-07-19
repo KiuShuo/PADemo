@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WJExtension
 
 extension UIDevice {
     /// 是否为模拟器 #if (arch(i386) || arch(x86_64)) && os(iOS)
@@ -40,7 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
         _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
         
-        
+        let str = "1234"
+        let subStr = str.substring(from: 1)
+        #if DEBUG
+            print("debug subStr = \(subStr)")
+            #else
+            print("release subStr = \(subStr)")
+            #endif
         paUtilTest()
 
         return true

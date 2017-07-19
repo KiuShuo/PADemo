@@ -9,6 +9,7 @@
 
 import UIKit
 import SDWebImage
+import WJExtension
 
 class DetailViewController: BaseViewController {
     
@@ -106,10 +107,10 @@ extension DetailViewController {
     }
     
     func stringHeight() {
-        let h = PAStringHeightMakeWithText(shortText, 15, 0, UIScreen.main.bounds.size.width)
+        let h = PAStringHeightMakeWithText(shortText, 15, 0, UIScreen.width)
         debugLog("h = \(h)")
         
-        let h1 = text.height(font: UIFont.systemFont(ofSize: 15), width: UIScreen.main.bounds.size.width) + 5
+        let h1 = text.height(width: UIScreen.width, font: UIFont.systemFont(ofSize: 15)) + 5
         debugLog("h1 = \(h1)")
         
     }

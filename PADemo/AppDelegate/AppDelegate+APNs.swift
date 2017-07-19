@@ -40,7 +40,8 @@ import UIKit
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func replyPushNotificationAuthorization(_ application: UIApplication) {
-        creatLocalNotification()
+//        application.cancelAllLocalNotifications()
+         creatLocalNotification()
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             center.delegate = self
@@ -106,6 +107,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     /// iOS10之前：本地消息 + UIApplicationStateActive／UIApplicationStateInactive
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        application.cancelLocalNotification(notification)
         if UIApplication.shared.applicationState == .inactive {
             //
         }
@@ -118,18 +120,18 @@ extension AppDelegate {
     
     func creatLocalNotification() {
         if #available(iOS 10.0, *) {
+            var trigger: UNNotificationTrigger?
+            
             // 定时通知
             // 如果repeat = true, timeInterval > 60.0s
-            let timeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
-            var trigger: UNNotificationTrigger = timeTrigger
+            trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
             
             // 定期通知
             var dateComponents = DateComponents()
             dateComponents.weekday = 2
             dateComponents.hour = 11
             dateComponents.minute = 15
-            let calendarTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            trigger = calendarTrigger
+            // trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
             
             
             // 定点通知 住的地方(121.540041,31.187592) 公司(121.456442,31.182948)
@@ -137,8 +139,7 @@ extension AppDelegate {
             let region = CLCircularRegion(center: locationCenter, radius: 500, identifier: "平安大厦B座")
             region.notifyOnEntry = true // 
             region.notifyOnExit = true
-            let locationTrigger = UNLocationNotificationTrigger(region: region, repeats: true)
-            trigger = locationTrigger
+            // trigger = UNLocationNotificationTrigger(region: region, repeats: true)
             
             // 设置content
             let content = UNMutableNotificationContent()
@@ -154,6 +155,20 @@ extension AppDelegate {
             center.add(request, withCompletionHandler: { (error) in
                 print("添加本地推送error = \(String(describing: error))")
             })
+        } else {
+            let localNotification = UILocalNotification()
+            localNotification.fireDate = Date(timeIntervalSinceNow: 5.0) // 启动时间
+            localNotification.timeZone = TimeZone.current // 设置启动时间参考时区
+            localNotification.repeatInterval = .minute // 重复时间间隔
+            // localNotification.repeatCalendar = // 重复推送时间
+            if #available(iOS 8.2, *) {
+                localNotification.alertTitle = "这是一条本地消息（这是消息的title）"
+            }
+            localNotification.alertBody = "发送这条消息是用来测试本地推送服务（这是消息内容的body）"
+            localNotification.alertAction = "滑动解锁"  // ???
+            localNotification.soundName = "unbelievable.caf"
+            localNotification.userInfo = ["key1": "value1", "key2": "value2"]
+            UIApplication.shared.scheduleLocalNotification(localNotification)
         }
     }
     

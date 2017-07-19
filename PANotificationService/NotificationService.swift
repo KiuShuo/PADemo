@@ -7,7 +7,7 @@
 //
 
 import UserNotifications
-import SDWebImage
+import UIKit
 
 class NotificationService: UNNotificationServiceExtension {
 

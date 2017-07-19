@@ -25,7 +25,6 @@ class PATableViewModelDemoController: BaseViewController {
     var dataSource: [String] = []
     
     func updateTableView() {
-        
         tableViewDelegate.sectionModels = setupSectionModels()
         tableView.reloadData()
     }
@@ -59,6 +58,5 @@ class PATableViewModelDemoController: BaseViewController {
             dataSource.append(text)
         }
     }
-
     
 }

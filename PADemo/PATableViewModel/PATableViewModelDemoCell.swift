@@ -8,7 +8,11 @@
 
 import UIKit
 
-class PATableViewModelDemoCell: UITableViewCell, PATableViewCellProtocol {
+extension String: PAModelBaseProtocol {
+    
+}
+
+class PATableViewModelDemoCell: UITableViewCell {
 
     static let cellModel: PACellModel = PACellModel(classType: PATableViewModelDemoCell.self)
     
@@ -18,13 +22,20 @@ class PATableViewModelDemoCell: UITableViewCell, PATableViewCellProtocol {
         var title: String?
     }
     
-    var dataModel: Any? {
-        didSet {
-            if let model = dataModel as? String {
-                titleLabel.text = model
-            }
+    
+    func configureCell(dataModel: PAModelBaseProtocol?) {
+        if let model = dataModel as? String {
+            titleLabel.text = model
         }
     }
+    
+//    var dataModel: PAModelBaseProtocol? {
+//        didSet {
+//            if let model = dataModel as? String {
+//                titleLabel.text = model
+//            }
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

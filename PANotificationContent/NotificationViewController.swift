@@ -9,7 +9,6 @@
 import UIKit
 import UserNotifications
 import UserNotificationsUI
-import SDWebImage
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
     

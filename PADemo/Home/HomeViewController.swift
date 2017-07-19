@@ -21,7 +21,7 @@ class HomeViewController: BaseViewController {
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = 44.0
-        
+        let _ = UIImage(named: "")
         if let bundlePath = Bundle.main.path(forResource: "ControllerModel", ofType: "plist"),
             let resultDic = NSDictionary(contentsOfFile: bundlePath) as? [String: Any],
             let controllerModelDics = resultDic["result"] as? [[String: String]] {

@@ -241,3 +241,19 @@ debugPrint("keyComponents = \(keyComponents)")
 let arr: [String] = ["1", "2", "3"]
 arr.joined()
 arr.joined(separator: "-")
+
+class DataPool {
+    var value: Int = 0
+}
+
+struct CellModel {
+    var dataPool: DataPool = DataPool()
+}
+
+let dataPool = DataPool()
+dataPool.value = 100
+
+var cellModel = CellModel(dataPool: dataPool)
+cellModel.dataPool.value = 1
+dataPool.value
+
