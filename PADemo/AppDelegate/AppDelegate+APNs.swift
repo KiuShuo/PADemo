@@ -41,7 +41,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func replyPushNotificationAuthorization(_ application: UIApplication) {
 //        application.cancelAllLocalNotifications()
-         creatLocalNotification()
+       //  creatLocalNotification()
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             center.delegate = self

@@ -29,8 +29,17 @@ import Foundation
             self.layer.masksToBounds = true
         }
     }
+
+    func maskLayer(cornerRadius: CGSize, rectCorner: UIRectCorner) {
+        let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: rectCorner, cornerRadii: cornerRadius)
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = maskPath.cgPath
+        layer.mask = maskLayer
+        layer.masksToBounds = true
+    }
     
-    class func createSeperatorView()->UIView {
+    class func createSeperatorView() -> UIView {
         let view = UIView()
         view.backgroundColor = UIColor.paDividingColor()
         return view

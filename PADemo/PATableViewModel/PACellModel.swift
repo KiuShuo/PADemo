@@ -87,10 +87,14 @@ struct PASectionModel {
     //    var footerView: UIView?
     //    var headerHeight: CGFloat?
     //    var footerHeight: CGFloat?
-    var headerViewModel: PAHeaderFooterViewModel?
-    var footerViewModel: PAHeaderFooterViewModel?
+    var headerViewModel: PAHeaderFooterViewModel? = nil
+    var footerViewModel: PAHeaderFooterViewModel? = nil
     var cellModelArr: [PACellModel] = []
-    var sectionName: String?
+    var sectionName: String? = nil
+    
+    init(cellModelArr: [PACellModel]) {
+        self.cellModelArr = cellModelArr
+    }
     
     static func searchSection(with sectionName: String, sectionModels: [PASectionModel]) -> PASectionModel? {
         for sectionModel in sectionModels {

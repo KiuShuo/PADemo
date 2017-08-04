@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         replyPushNotificationAuthorization(application)
         Style.setupStyle()
@@ -36,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #else
             // 模拟器
         #endif
-        
         /// 添加系统的调试视图， 尽在iOS10之后可用，两只趾头点击状态栏显示
         let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
         _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
@@ -49,8 +47,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("release subStr = \(subStr)")
             #endif
         paUtilTest()
-
+        testReturn()
         return true
+    }
+    
+    func testReturn() {
+        if UIScreen.width > 100 {
+            return
+        }
+        print("1")
+        print("2")
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

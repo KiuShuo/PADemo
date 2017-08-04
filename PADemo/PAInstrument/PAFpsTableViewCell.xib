@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="599" id="KGk-i7-Jjw" customClass="PAFpsTableViewCell" customModule="PADemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="739" height="599"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="739" height="599"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" tag="1000" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6gl-VC-45a" userLabel="HealthProductDetals0">
+                        <rect key="frame" x="10" y="10" width="111.5" height="284.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6O-zD-AHx" userLabel="HealthProductDetals1">
+                        <rect key="frame" x="131" y="10" width="111.5" height="284.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-ut-qDP" userLabel="HealthProductDetals2">
+                        <rect key="frame" x="253" y="10" width="111.5" height="284.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCb-Jp-qoo" userLabel="HealthProductDetals3">
+                        <rect key="frame" x="374" y="10" width="111.5" height="284.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MUY-lc-7kM" userLabel="HealthProductDetals4">
+                        <rect key="frame" x="496" y="10" width="111.5" height="284.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1005" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-iR-rGU" userLabel="HealthProductDetals5">
+                        <rect key="frame" x="617" y="10" width="111.5" height="284.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1006" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3bu-Ku-K7N" userLabel="HealthProductDetals6">
+                        <rect key="frame" x="10" y="304.5" width="111.5" height="284"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1007" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RZG-2B-H9r" userLabel="HealthProductDetals7">
+                        <rect key="frame" x="131.5" y="304.5" width="111.5" height="284"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1008" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nff-04-WHn" userLabel="HealthProductDetals8">
+                        <rect key="frame" x="253" y="304.5" width="111.5" height="284"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1009" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kvD-vK-9mE" userLabel="HealthProductDetals9">
+                        <rect key="frame" x="374.5" y="304.5" width="111.5" height="284"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1010" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6H-8Z-MF7" userLabel="HealthProductDetals10">
+                        <rect key="frame" x="496" y="304.5" width="111.5" height="284"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1011" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oz8-xL-DnX" userLabel="HealthProductDetals11">
+                        <rect key="frame" x="617.5" y="304.5" width="111.5" height="284"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" red="0.13083147319999999" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="Mff-ut-qDP" firstAttribute="bottom" secondItem="6gl-VC-45a" secondAttribute="bottom" id="2ga-8w-Tjc"/>
+                    <constraint firstItem="MUY-lc-7kM" firstAttribute="top" secondItem="6gl-VC-45a" secondAttribute="top" id="2sN-67-jGn"/>
+                    <constraint firstItem="6gl-VC-45a" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="31y-oz-eIZ"/>
+                    <constraint firstItem="RZG-2B-H9r" firstAttribute="leading" secondItem="3bu-Ku-K7N" secondAttribute="trailing" constant="10" id="3Es-wM-6xd"/>
+                    <constraint firstItem="kvD-vK-9mE" firstAttribute="height" secondItem="3bu-Ku-K7N" secondAttribute="height" id="59g-tY-viK"/>
+                    <constraint firstItem="Oz8-xL-DnX" firstAttribute="bottom" secondItem="3bu-Ku-K7N" secondAttribute="bottom" id="5aF-D5-EQo"/>
+                    <constraint firstItem="MUY-lc-7kM" firstAttribute="bottom" secondItem="6gl-VC-45a" secondAttribute="bottom" id="6E1-Fy-Q8O"/>
+                    <constraint firstItem="U6O-zD-AHx" firstAttribute="top" secondItem="6gl-VC-45a" secondAttribute="top" id="7OI-Wb-bhR"/>
+                    <constraint firstItem="Nff-04-WHn" firstAttribute="leading" secondItem="RZG-2B-H9r" secondAttribute="trailing" constant="10" id="947-hQ-EbL"/>
+                    <constraint firstItem="kvD-vK-9mE" firstAttribute="leading" secondItem="Nff-04-WHn" secondAttribute="trailing" constant="10" id="A8V-4D-jpd"/>
+                    <constraint firstItem="Mff-ut-qDP" firstAttribute="top" secondItem="6gl-VC-45a" secondAttribute="top" id="AVB-7q-rTJ"/>
+                    <constraint firstItem="cCb-Jp-qoo" firstAttribute="leading" secondItem="Mff-ut-qDP" secondAttribute="trailing" constant="10" id="B7X-AE-nCZ"/>
+                    <constraint firstItem="Nff-04-WHn" firstAttribute="height" secondItem="3bu-Ku-K7N" secondAttribute="height" id="FQt-Uw-9nN"/>
+                    <constraint firstItem="RZG-2B-H9r" firstAttribute="bottom" secondItem="3bu-Ku-K7N" secondAttribute="bottom" id="Hxw-V9-9DL"/>
+                    <constraint firstItem="Nff-04-WHn" firstAttribute="bottom" secondItem="3bu-Ku-K7N" secondAttribute="bottom" id="IA0-e1-VNX"/>
+                    <constraint firstItem="3bu-Ku-K7N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ia1-NM-jfF"/>
+                    <constraint firstItem="U6O-zD-AHx" firstAttribute="height" secondItem="6gl-VC-45a" secondAttribute="height" id="KSa-eI-YCr"/>
+                    <constraint firstAttribute="bottom" secondItem="3bu-Ku-K7N" secondAttribute="bottom" constant="10" id="M0r-2V-PC3"/>
+                    <constraint firstItem="kvD-vK-9mE" firstAttribute="width" secondItem="3bu-Ku-K7N" secondAttribute="width" id="OPh-Kd-jl7"/>
+                    <constraint firstItem="cCb-Jp-qoo" firstAttribute="bottom" secondItem="6gl-VC-45a" secondAttribute="bottom" id="OYy-wb-ZMr"/>
+                    <constraint firstItem="uVe-iR-rGU" firstAttribute="top" secondItem="6gl-VC-45a" secondAttribute="top" id="Orp-JP-hoC"/>
+                    <constraint firstAttribute="trailing" secondItem="uVe-iR-rGU" secondAttribute="trailing" constant="10" id="PMJ-kj-oDA"/>
+                    <constraint firstItem="Oz8-xL-DnX" firstAttribute="top" secondItem="3bu-Ku-K7N" secondAttribute="top" id="Sgm-Az-Qbc"/>
+                    <constraint firstItem="RZG-2B-H9r" firstAttribute="top" secondItem="3bu-Ku-K7N" secondAttribute="top" id="SmG-X8-gNQ"/>
+                    <constraint firstItem="3bu-Ku-K7N" firstAttribute="height" secondItem="6gl-VC-45a" secondAttribute="height" id="XR5-5z-eME"/>
+                    <constraint firstItem="Mff-ut-qDP" firstAttribute="width" secondItem="6gl-VC-45a" secondAttribute="width" id="Y9z-Cr-Ods"/>
+                    <constraint firstItem="3bu-Ku-K7N" firstAttribute="top" secondItem="6gl-VC-45a" secondAttribute="bottom" constant="10" id="YT8-s7-Goa"/>
+                    <constraint firstItem="U6O-zD-AHx" firstAttribute="leading" secondItem="6gl-VC-45a" secondAttribute="trailing" constant="10" id="Ye3-sG-8mQ"/>
+                    <constraint firstItem="Oz8-xL-DnX" firstAttribute="leading" secondItem="m6H-8Z-MF7" secondAttribute="trailing" constant="10" id="atF-4d-61P"/>
+                    <constraint firstItem="uVe-iR-rGU" firstAttribute="bottom" secondItem="6gl-VC-45a" secondAttribute="bottom" id="cVi-H4-7gS"/>
+                    <constraint firstItem="cCb-Jp-qoo" firstAttribute="width" secondItem="6gl-VC-45a" secondAttribute="width" id="cmh-yU-o5t"/>
+                    <constraint firstItem="RZG-2B-H9r" firstAttribute="width" secondItem="3bu-Ku-K7N" secondAttribute="width" id="dPj-Wf-OO3"/>
+                    <constraint firstItem="RZG-2B-H9r" firstAttribute="height" secondItem="3bu-Ku-K7N" secondAttribute="height" id="eOT-NI-v0i"/>
+                    <constraint firstItem="kvD-vK-9mE" firstAttribute="bottom" secondItem="3bu-Ku-K7N" secondAttribute="bottom" id="emY-eI-O84"/>
+                    <constraint firstItem="Nff-04-WHn" firstAttribute="top" secondItem="3bu-Ku-K7N" secondAttribute="top" id="fbY-nR-9aV"/>
+                    <constraint firstItem="uVe-iR-rGU" firstAttribute="leading" secondItem="MUY-lc-7kM" secondAttribute="trailing" constant="10" id="fkB-Ac-0Rb"/>
+                    <constraint firstItem="uVe-iR-rGU" firstAttribute="width" secondItem="6gl-VC-45a" secondAttribute="width" id="gso-da-oe8"/>
+                    <constraint firstItem="Mff-ut-qDP" firstAttribute="leading" secondItem="U6O-zD-AHx" secondAttribute="trailing" constant="10" id="hI4-0z-PL6"/>
+                    <constraint firstAttribute="trailing" secondItem="Oz8-xL-DnX" secondAttribute="trailing" constant="10" id="ibm-5o-GmG"/>
+                    <constraint firstItem="Nff-04-WHn" firstAttribute="width" secondItem="3bu-Ku-K7N" secondAttribute="width" id="jb4-hS-CLi"/>
+                    <constraint firstItem="U6O-zD-AHx" firstAttribute="bottom" secondItem="6gl-VC-45a" secondAttribute="bottom" id="jn7-80-WBS"/>
+                    <constraint firstItem="MUY-lc-7kM" firstAttribute="leading" secondItem="cCb-Jp-qoo" secondAttribute="trailing" constant="10" id="m2q-YU-0da"/>
+                    <constraint firstItem="m6H-8Z-MF7" firstAttribute="height" secondItem="3bu-Ku-K7N" secondAttribute="height" id="nDw-ou-RnN"/>
+                    <constraint firstItem="Mff-ut-qDP" firstAttribute="height" secondItem="6gl-VC-45a" secondAttribute="height" id="nsY-uA-tWr"/>
+                    <constraint firstItem="m6H-8Z-MF7" firstAttribute="leading" secondItem="kvD-vK-9mE" secondAttribute="trailing" constant="10" id="oTv-tC-9yd"/>
+                    <constraint firstItem="MUY-lc-7kM" firstAttribute="width" secondItem="6gl-VC-45a" secondAttribute="width" id="p57-1x-UgN"/>
+                    <constraint firstItem="cCb-Jp-qoo" firstAttribute="top" secondItem="6gl-VC-45a" secondAttribute="top" id="pEs-s8-Pwh"/>
+                    <constraint firstItem="Oz8-xL-DnX" firstAttribute="width" secondItem="3bu-Ku-K7N" secondAttribute="width" id="pV7-DQ-0Fy"/>
+                    <constraint firstItem="Oz8-xL-DnX" firstAttribute="height" secondItem="3bu-Ku-K7N" secondAttribute="height" id="q1W-xX-rJv"/>
+                    <constraint firstItem="MUY-lc-7kM" firstAttribute="height" secondItem="6gl-VC-45a" secondAttribute="height" id="qVK-HZ-WGa"/>
+                    <constraint firstItem="6gl-VC-45a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="r1Y-Ft-bWh"/>
+                    <constraint firstItem="m6H-8Z-MF7" firstAttribute="width" secondItem="3bu-Ku-K7N" secondAttribute="width" id="sGM-U5-axu"/>
+                    <constraint firstItem="U6O-zD-AHx" firstAttribute="width" secondItem="6gl-VC-45a" secondAttribute="width" id="sUv-XJ-PzK"/>
+                    <constraint firstItem="cCb-Jp-qoo" firstAttribute="height" secondItem="6gl-VC-45a" secondAttribute="height" id="tmv-fP-RuV"/>
+                    <constraint firstItem="kvD-vK-9mE" firstAttribute="top" secondItem="3bu-Ku-K7N" secondAttribute="top" id="uk4-Hw-EpJ"/>
+                    <constraint firstItem="uVe-iR-rGU" firstAttribute="height" secondItem="6gl-VC-45a" secondAttribute="height" id="vQA-XA-0sH"/>
+                    <constraint firstItem="m6H-8Z-MF7" firstAttribute="top" secondItem="3bu-Ku-K7N" secondAttribute="top" id="xeQ-z7-4RV"/>
+                    <constraint firstItem="m6H-8Z-MF7" firstAttribute="bottom" secondItem="3bu-Ku-K7N" secondAttribute="bottom" id="zDY-g9-Be0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="234.5" y="329.5"/>
+        </tableViewCell>
+    </objects>
+</document>

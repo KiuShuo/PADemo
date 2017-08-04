@@ -97,14 +97,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M01-Kp-MON" customClass="PAView" customModule="PADemo" customModuleProvider="target">
+                                <rect key="frame" x="93" y="509" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.1308314732142857" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="UCh-sk-kOr"/>
+                                    <constraint firstAttribute="height" constant="128" id="lf3-rF-Odd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="topLeftCornerRadius">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="topRightCornerRadius">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="bottomLeftCornerRadius">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="M01-Kp-MON" secondAttribute="trailing" constant="42" id="IF9-gL-Sr9"/>
                             <constraint firstItem="PJi-ql-jSE" firstAttribute="leading" secondItem="fr9-Mt-tF0" secondAttribute="leading" constant="50" id="YMB-7g-a2t"/>
                             <constraint firstItem="PJi-ql-jSE" firstAttribute="top" secondItem="wrZ-RJ-GIh" secondAttribute="bottom" constant="100" id="aOR-jo-aMx"/>
+                            <constraint firstItem="34K-J3-yo6" firstAttribute="top" secondItem="M01-Kp-MON" secondAttribute="bottom" constant="30" id="y7C-EL-Huf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomRightView" destination="M01-Kp-MON" id="Su0-CC-raO"/>
                         <outlet property="imageView" destination="PJi-ql-jSE" id="wYi-Dm-kbS"/>
                     </connections>
                 </viewController>

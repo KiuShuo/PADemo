@@ -50,9 +50,8 @@ extension UITableView {
 class PATableViewModel {
     
     static func getSectionModel(_ cellModels: [PACellModel], sectionName: String? = nil, headerViewModel: PAHeaderFooterViewModel? = nil, footerViewModel: PAHeaderFooterViewModel? = nil) -> PASectionModel {
-        var sectionModel = PASectionModel()
+        var sectionModel = PASectionModel(cellModelArr: cellModels)
         sectionModel.sectionName = sectionName
-        sectionModel.cellModelArr = cellModels
         sectionModel.headerViewModel = headerViewModel
         sectionModel.footerViewModel = footerViewModel
         return sectionModel
@@ -65,7 +64,7 @@ extension PATableViewModel {
     
     static func getSectionModel(cellModelTupleArr: (PACellModel, Int)...) -> PASectionModel {
         var cellModels: [PACellModel] = []
-        cellModelTupleArr.forEach { (cellModelTuple) in
+        cellModelTupleArr.forEach { cellModelTuple in
             let (cellModel, cellCount) = (cellModelTuple.0, cellModelTuple.1)
             cellModels += [PACellModel](repeating: cellModel, count: cellCount)
         }

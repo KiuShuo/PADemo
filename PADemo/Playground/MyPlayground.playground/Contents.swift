@@ -2,12 +2,6 @@
 
 import UIKit
 
-var str1: Any? = "1"
-var oneValue: Int = 0
-let str = oneValue as? String
-str
-
-
 //func test(letf: inout Any, righ: Any?) {
 //    if let righ = righ {
 //        letf = righ
@@ -238,7 +232,14 @@ debugPrint("keyComponents = \(keyComponents)")
  
  */
 
-let arr: [String] = ["1", "2", "3"]
+print(Int32.max)
+print(Int64.max)
+print(Int64.max / 1000)
+
+let arr: [String] = ["1", "2", "3", "3"]
+Array(Set(arr))
+
+/*
 arr.joined()
 arr.joined(separator: "-")
 
@@ -256,4 +257,19 @@ dataPool.value = 100
 var cellModel = CellModel(dataPool: dataPool)
 cellModel.dataPool.value = 1
 dataPool.value
+
+var cellModel1 = cellModel
+cellModel1.dataPool.value
+
+let dataPool1 = DataPool()
+dataPool1.value = 2
+cellModel1 = CellModel(dataPool: dataPool1)
+cellModel.dataPool.value
+cellModel1.dataPool.value
+*/
+
+let a = CGFloat(520 - 20) / 67 * 20
+a
+
+
 

@@ -13,6 +13,7 @@ import WJExtension
 
 class DetailViewController: BaseViewController {
     
+    @IBOutlet weak var bottomRightView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     static func makeViewController(viewControllerClass: BaseViewController.Type) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -21,11 +22,15 @@ class DetailViewController: BaseViewController {
     // "现场查看是否有铅衣等防护用品，且可使用；比如齿科的全景X光机；无放射科则不适用\n（需有照片）"
     let text = "现场查看是否有铅衣等防护用品，且可使用；比如齿科的全景X光机；无放射科则不适用（需有照片）"
     let shortText = "现场查看是否有铅衣等"
+    let button = PAButton(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageUrlStr = "https://cdn.pixabay.com/photo/2017/03/13/10/31/greylag-goose-2139296_640.jpg"
-        _ = getImage(urlString: imageUrlStr)
+        testPAButton()
+//        testForPAView()
+        
+//        let imageUrlStr = "https://cdn.pixabay.com/photo/2017/03/13/10/31/greylag-goose-2139296_640.jpg"
+//        _ = getImage(urlString: imageUrlStr)
 //        if let imageUrl = URL(string: "https://cdn.pixabay.com/photo/2017/03/13/10/31/greylag-goose-2139296_640.jpg") {
 //            let _ = SDWebImageDownloader.shared().downloadImage(with: imageUrl, options: .  useNSURLCache, progress: nil, completed: { (image, _, _, success) in
 //                if success {
@@ -92,7 +97,63 @@ class DetailViewController: BaseViewController {
             make!.height.equalTo()(height)
         }
     }
+    
 
+}
+
+// PAViewTest
+extension DetailViewController {
+    
+    func testPAButton() {
+        button.backgroundColor = UIColor.blue
+        button.frame = CGRect(x: 10, y: 80, width: 50, height: 30)
+//        button.highlightedBackgroundColor = UIColor.green
+        view.addSubview(button)
+        button.addTarget(self, action: #selector(handelTouchDown), for: .touchDown)
+        button.addTarget(self, action: #selector(handelTouchCancel), for: .touchCancel)
+        button.addTarget(self, action: #selector(handelTouchCancel), for: .touchUpOutside)
+        button.addTarget(self, action: #selector(handelTouch), for: .touchUpInside)
+//        button.addObserver(self, forKeyPath: "state", options: .new, context: nil)
+    }
+    
+    func handelTouchDown() {
+        self.view.backgroundColor = UIColor.red
+    }
+    
+    func handelTouchCancel() {
+        self.view.backgroundColor = UIColor.white
+    }
+    
+    func handelTouch() {
+        self.view.backgroundColor = UIColor.white
+        print("dianji")
+    }
+    
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        print("123")
+//    }
+    
+    func testForPAView() {
+        let greenView = PAView()
+        greenView.frame = CGRect(x: 100, y: 200, width: 50, height: 30)
+        greenView.backgroundColor = UIColor.green
+        view.addSubview(greenView)
+        greenView.maskLayer(cornerRadius: CGSize(width: 5, height: 5), rectCorner: [.topLeft, .bottomRight])
+//        greenView.topLeftCornerRadius = CGSize(width: 5, height: 5)
+        
+//        raduisHandleView(view: greenView)
+    }
+    
+    func raduisHandleView(view:UIView){
+        let maskPath:UIBezierPath = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.topRight,.bottomRight], cornerRadii: CGSize(width: 25, height: 15))
+        
+        let maskLayer:CAShapeLayer = CAShapeLayer()
+        maskLayer.frame = view.bounds
+        maskLayer.path = maskPath.cgPath
+        
+        view.layer.mask = maskLayer
+    }
+    
 }
 
 // MARK: - 字符串 Size

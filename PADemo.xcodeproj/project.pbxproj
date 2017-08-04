@@ -14,6 +14,7 @@
 		8D12DBEE1EB1C8F1005B9AE9 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12DBED1EB1C8F1005B9AE9 /* Protocol.swift */; };
 		8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12DBEF1EB1C992005B9AE9 /* Extension.swift */; };
 		8D21990A1EB1F93A0024B5CB /* ControllerModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D2199091EB1F93A0024B5CB /* ControllerModel.plist */; };
+		8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */; };
 		8D421B011F1F63EB007426BF /* PACellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421AFE1F1F63EB007426BF /* PACellModel.swift */; };
 		8D421B021F1F63EB007426BF /* PATableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421AFF1F1F63EB007426BF /* PATableViewDelegate.swift */; };
 		8D421B031F1F63EB007426BF /* PATableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421B001F1F63EB007426BF /* PATableViewModel.swift */; };
@@ -53,16 +54,28 @@
 		8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F15A61EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift */; };
 		8D8F15A91EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F15A71EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib */; };
 		8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */; };
+		8D93A7F61F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93A7F41F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift */; };
+		8D93A7F71F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D93A7F51F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib */; };
+		8D93A7FA1F32D09A00FE8DA6 /* UIView+ZJRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D93A7F91F32D09A00FE8DA6 /* UIView+ZJRadius.m */; };
 		8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */; };
 		8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CC1EB9A5A1008B314E /* NotificationCenterController.swift */; };
 		8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CE1EB9A609008B314E /* Utile.swift */; };
+		8DB597461F331D5800E21E8B /* PAFpsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB597451F331D5800E21E8B /* PAFpsFile.swift */; };
 		8DBB1AC51EC4604500D507E6 /* CustomNavigationItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB1ABF1EC4604500D507E6 /* CustomNavigationItemController.swift */; };
 		8DBB1AC61EC4604500D507E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB1AC11EC4604500D507E6 /* DetailViewController.swift */; };
 		8DBB1AC71EC4604500D507E6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB1AC21EC4604500D507E6 /* HomeViewController.swift */; };
 		8DBB1AC81EC4604500D507E6 /* MasonryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB1AC41EC4604500D507E6 /* MasonryViewController.swift */; };
 		8DBB1ACB1EC4606900D507E6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB1ACA1EC4606900D507E6 /* BaseViewController.swift */; };
 		8DBB1ACE1EC485F000D507E6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBB1ACD1EC485F000D507E6 /* TableViewController.swift */; };
+		8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC26BCC1F299368001A831F /* PAFpsTableViewCell.swift */; };
+		8DC26BCF1F299368001A831F /* PAFpsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC26BCD1F299368001A831F /* PAFpsTableViewCell.xib */; };
+		8DC26BD11F29937A001A831F /* PAFpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC26BD01F29937A001A831F /* PAFpsViewController.swift */; };
 		8DD07E351EC5583A00EA2B79 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD07E341EC5583A00EA2B79 /* CollectionViewController.swift */; };
+		8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFA1F25E429004DDA1B /* TableViewController_CollectionView.swift */; };
+		8DDC6BFE1F25E441004DDA1B /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFC1F25E441004DDA1B /* CollectionTableViewCell.swift */; };
+		8DDC6BFF1F25E441004DDA1B /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFD1F25E441004DDA1B /* CollectionTableViewCell.xib */; };
+		8DDC6C041F25E48E004DDA1B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6C021F25E48E004DDA1B /* CollectionViewCell.swift */; };
+		8DDC6C051F25E48E004DDA1B /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC6C031F25E48E004DDA1B /* CollectionViewCell.xib */; };
 		8DEF45771EB1BE6900CA4F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF45751EB1BE6900CA4F75 /* Main.storyboard */; };
 		8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF45781EB1BE6900CA4F75 /* Assets.xcassets */; };
 		8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF457A1EB1BE6900CA4F75 /* LaunchScreen.storyboard */; };
@@ -130,6 +143,9 @@
 		8D12DBED1EB1C8F1005B9AE9 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		8D12DBEF1EB1C992005B9AE9 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8D2199091EB1F93A0024B5CB /* ControllerModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ControllerModel.plist; sourceTree = "<group>"; };
+		8D2A04A01F2ECA6C0006E79C /* PANotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PANotificationService.entitlements; sourceTree = "<group>"; };
+		8D2A04A11F2ECA710006E79C /* PANotificationContent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PANotificationContent.entitlements; sourceTree = "<group>"; };
+		8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAQuart2D_GraphicsController.swift; sourceTree = "<group>"; };
 		8D421AFE1F1F63EB007426BF /* PACellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACellModel.swift; sourceTree = "<group>"; };
 		8D421AFF1F1F63EB007426BF /* PATableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewDelegate.swift; sourceTree = "<group>"; };
 		8D421B001F1F63EB007426BF /* PATableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModel.swift; sourceTree = "<group>"; };
@@ -175,18 +191,31 @@
 		8D8F15A61EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModelDemoCell.swift; sourceTree = "<group>"; };
 		8D8F15A71EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PATableViewModelDemoCell.xib; sourceTree = "<group>"; };
 		8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		8D93A7F41F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsViewTableViewCell.swift; sourceTree = "<group>"; };
+		8D93A7F51F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAFpsViewTableViewCell.xib; sourceTree = "<group>"; };
+		8D93A7F81F32D09A00FE8DA6 /* UIView+ZJRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJRadius.h"; sourceTree = "<group>"; };
+		8D93A7F91F32D09A00FE8DA6 /* UIView+ZJRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJRadius.m"; sourceTree = "<group>"; };
 		8D99C5C31EB98831008B314E /* PADemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PADemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D99C5C91EB9A586008B314E /* NSNotificationCenter+PACenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+PACenter.h"; sourceTree = "<group>"; };
 		8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+PACenter.m"; sourceTree = "<group>"; };
 		8D99C5CC1EB9A5A1008B314E /* NotificationCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterController.swift; sourceTree = "<group>"; };
 		8D99C5CE1EB9A609008B314E /* Utile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utile.swift; sourceTree = "<group>"; };
+		8DB597451F331D5800E21E8B /* PAFpsFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsFile.swift; sourceTree = "<group>"; };
 		8DBB1ABF1EC4604500D507E6 /* CustomNavigationItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationItemController.swift; sourceTree = "<group>"; };
 		8DBB1AC11EC4604500D507E6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8DBB1AC21EC4604500D507E6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8DBB1AC41EC4604500D507E6 /* MasonryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasonryViewController.swift; sourceTree = "<group>"; };
 		8DBB1ACA1EC4606900D507E6 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8DBB1ACD1EC485F000D507E6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8DC26BCC1F299368001A831F /* PAFpsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsTableViewCell.swift; sourceTree = "<group>"; };
+		8DC26BCD1F299368001A831F /* PAFpsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAFpsTableViewCell.xib; sourceTree = "<group>"; };
+		8DC26BD01F29937A001A831F /* PAFpsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsViewController.swift; sourceTree = "<group>"; };
 		8DD07E341EC5583A00EA2B79 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8DDC6BFA1F25E429004DDA1B /* TableViewController_CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_CollectionView.swift; sourceTree = "<group>"; };
+		8DDC6BFC1F25E441004DDA1B /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		8DDC6BFD1F25E441004DDA1B /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
+		8DDC6C021F25E48E004DDA1B /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		8DDC6C031F25E48E004DDA1B /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		8DEF456E1EB1BE6900CA4F75 /* PADemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PADemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEF45761EB1BE6900CA4F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DEF45781EB1BE6900CA4F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -269,6 +298,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8D3AC0321F34218500DF9E50 /* Quart2D&Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */,
+			);
+			path = "Quart2D&Graphics";
+			sourceTree = "<group>";
+		};
 		8D42C8631F1355A200061C9C /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +319,7 @@
 		8D42C86F1F136D8C00061C9C /* PANotificationService */ = {
 			isa = PBXGroup;
 			children = (
+				8D2A04A01F2ECA6C0006E79C /* PANotificationService.entitlements */,
 				8DFE58241F176F9E0057BAD9 /* PAFileManager.swift */,
 				8D42C8701F136D8C00061C9C /* NotificationService.swift */,
 				8D42C8721F136D8C00061C9C /* Info.plist */,
@@ -292,6 +330,7 @@
 		8D42C8831F13754B00061C9C /* PANotificationContent */ = {
 			isa = PBXGroup;
 			children = (
+				8D2A04A11F2ECA710006E79C /* PANotificationContent.entitlements */,
 				8DFE58261F176FA40057BAD9 /* PAFileManager.swift */,
 				8D42C8841F13754B00061C9C /* NotificationViewController.swift */,
 				8D42C8861F13754B00061C9C /* MainInterface.storyboard */,
@@ -435,12 +474,39 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		8DC26BC51F299045001A831F /* PAInstrument */ = {
+			isa = PBXGroup;
+			children = (
+				8DC26BD01F29937A001A831F /* PAFpsViewController.swift */,
+				8D93A7F41F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift */,
+				8D93A7F51F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib */,
+				8DC26BCC1F299368001A831F /* PAFpsTableViewCell.swift */,
+				8DC26BCD1F299368001A831F /* PAFpsTableViewCell.xib */,
+				8D93A7F81F32D09A00FE8DA6 /* UIView+ZJRadius.h */,
+				8D93A7F91F32D09A00FE8DA6 /* UIView+ZJRadius.m */,
+				8DB597451F331D5800E21E8B /* PAFpsFile.swift */,
+			);
+			path = PAInstrument;
+			sourceTree = "<group>";
+		};
 		8DD07E331EC5582C00EA2B79 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
 				8DD07E341EC5583A00EA2B79 /* CollectionViewController.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		8DDC6BF91F25E3DD004DDA1B /* TableView+CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC6BFA1F25E429004DDA1B /* TableViewController_CollectionView.swift */,
+				8DDC6BFC1F25E441004DDA1B /* CollectionTableViewCell.swift */,
+				8DDC6BFD1F25E441004DDA1B /* CollectionTableViewCell.xib */,
+				8DDC6C021F25E48E004DDA1B /* CollectionViewCell.swift */,
+				8DDC6C031F25E48E004DDA1B /* CollectionViewCell.xib */,
+			);
+			path = "TableView+CollectionView";
 			sourceTree = "<group>";
 		};
 		8DEF45651EB1BE6900CA4F75 = {
@@ -472,10 +538,12 @@
 		8DEF45701EB1BE6900CA4F75 /* PADemo */ = {
 			isa = PBXGroup;
 			children = (
-				8D42C8621F13557000061C9C /* PADemo.entitlements */,
+				8D3AC0321F34218500DF9E50 /* Quart2D&Graphics */,
+				8D5C9D971EE6B24500749599 /* Playground */,
+				8DC26BC51F299045001A831F /* PAInstrument */,
+				8DDC6BF91F25E3DD004DDA1B /* TableView+CollectionView */,
 				8DFE58211F176A8E0057BAD9 /* Manager */,
 				8D673C8D1F14BCBC00175A6C /* AlertView */,
-				8D5C9D971EE6B24500749599 /* Playground */,
 				8D66E94F1EE1375700DBBE41 /* WJExtension */,
 				8D66E9341EE1361400DBBE41 /* Extension */,
 				8D87DAC21ED9178400EA6D70 /* PATableViewModel */,
@@ -496,6 +564,7 @@
 				8D2199091EB1F93A0024B5CB /* ControllerModel.plist */,
 				8DEF45751EB1BE6900CA4F75 /* Main.storyboard */,
 				8DEF45781EB1BE6900CA4F75 /* Assets.xcassets */,
+				8D42C8621F13557000061C9C /* PADemo.entitlements */,
 				8DEF457A1EB1BE6900CA4F75 /* LaunchScreen.storyboard */,
 				8DEF457D1EB1BE6900CA4F75 /* Info.plist */,
 				8D99C5C31EB98831008B314E /* PADemo-Bridging-Header.h */,
@@ -639,11 +708,21 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 6GA5676ZM3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					8D42C87D1F13754B00061C9C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 6GA5676ZM3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					8DEF456D1EB1BE6900CA4F75 = {
 						CreatedOnToolsVersion = 8.3;
@@ -655,7 +734,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -716,10 +795,14 @@
 				8D42C8691F13570000061C9C /* unbelievable.caf in Resources */,
 				8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */,
 				8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */,
+				8DDC6BFF1F25E441004DDA1B /* CollectionTableViewCell.xib in Resources */,
 				8D21990A1EB1F93A0024B5CB /* ControllerModel.plist in Resources */,
+				8D93A7F71F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib in Resources */,
 				8D8F15A91EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib in Resources */,
+				8DC26BCF1F299368001A831F /* PAFpsTableViewCell.xib in Resources */,
 				8D1031441ECE883A007F49CA /* CustomTableViewCell.xib in Resources */,
 				8DEF45771EB1BE6900CA4F75 /* Main.storyboard in Resources */,
+				8DDC6C051F25E48E004DDA1B /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +900,7 @@
 				8D6E40491EB322C500E388C9 /* Model.swift in Sources */,
 				8D66E93C1EE1361400DBBE41 /* UIColor+Extension.swift in Sources */,
 				8D42C8671F1355B400061C9C /* AppDelegate+APNs.swift in Sources */,
+				8DDC6BFE1F25E441004DDA1B /* CollectionTableViewCell.swift in Sources */,
 				8D6D13571ECB68A00084BBA8 /* SearchViewController.swift in Sources */,
 				8D66E9591EE1375700DBBE41 /* Dictionary+Extension.swift in Sources */,
 				8D6E2C971EF8EBCA00934C9B /* TextfieldViewController.swift in Sources */,
@@ -824,25 +908,33 @@
 				8DFE58231F176A9F0057BAD9 /* PAFileManager.swift in Sources */,
 				8DBB1ACE1EC485F000D507E6 /* TableViewController.swift in Sources */,
 				8D6E2C9B1EF8EE7A00934C9B /* UIViewController+PAExtension.swift in Sources */,
+				8DC26BD11F29937A001A831F /* PAFpsViewController.swift in Sources */,
 				8DBB1AC51EC4604500D507E6 /* CustomNavigationItemController.swift in Sources */,
 				8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */,
+				8DDC6C041F25E48E004DDA1B /* CollectionViewCell.swift in Sources */,
 				8DBB1AC81EC4604500D507E6 /* MasonryViewController.swift in Sources */,
 				8D66E9571EE1375700DBBE41 /* Array+Extension.swift in Sources */,
 				8D66E93B1EE1361400DBBE41 /* NSString+Attribute.m in Sources */,
 				8D66E93D1EE1361400DBBE41 /* UIDevice+Extention.swift in Sources */,
 				8D673C901F14BCBC00175A6C /* LayoutConstraintsExtension.swift in Sources */,
 				8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */,
+				8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */,
 				8D421B011F1F63EB007426BF /* PACellModel.swift in Sources */,
+				8D93A7F61F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift in Sources */,
 				8D1031431ECE883A007F49CA /* CustomTableViewCell.swift in Sources */,
 				8D66E93F1EE1361400DBBE41 /* UImageView+Extension.swift in Sources */,
 				8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */,
 				8D421B031F1F63EB007426BF /* PATableViewModel.swift in Sources */,
 				8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */,
+				8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */,
 				8D6D13591ECB6B7F0084BBA8 /* SearchResultViewController.swift in Sources */,
 				8DD07E351EC5583A00EA2B79 /* CollectionViewController.swift in Sources */,
 				8D66E9581EE1375700DBBE41 /* Date+Extension.swift in Sources */,
 				8D8F15A51EE7B0500019AC1C /* PATableViewModelDemoController.swift in Sources */,
+				8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */,
 				8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */,
+				8D93A7FA1F32D09A00FE8DA6 /* UIView+ZJRadius.m in Sources */,
+				8DB597461F331D5800E21E8B /* PAFpsFile.swift in Sources */,
 				8DBB1AC71EC4604500D507E6 /* HomeViewController.swift in Sources */,
 				8D42C8651F1355A200061C9C /* AppDelegate.swift in Sources */,
 				8D6E2C9F1EF922BD00934C9B /* PAUtil.swift in Sources */,
@@ -932,11 +1024,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6GA5676ZM3;
 				INFOPLIST_FILE = PANotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family.PANotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -946,12 +1041,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6GA5676ZM3;
 				INFOPLIST_FILE = PANotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family.PANotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -961,13 +1058,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6GA5676ZM3;
 				INFOPLIST_FILE = PANotificationContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family.PANotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -978,11 +1079,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 6GA5676ZM3;
 				INFOPLIST_FILE = PANotificationContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family.PANotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1088,8 +1192,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = PADemo/PADemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6GA5676ZM3;
 				INFOPLIST_FILE = PADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1097,8 +1201,8 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = wanjiaCDev;
+				PROVISIONING_PROFILE = "e084a94c-42c8-4734-b71d-695f00d31803";
+				PROVISIONING_PROFILE_SPECIFIER = wanjiaWildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "PADemo/PADemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1113,9 +1217,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = PADemo/PADemo.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: PingAn Wanjia Healthcare Investment Management Co., Ltd (6GA5676ZM3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6GA5676ZM3;
 				INFOPLIST_FILE = PADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1123,8 +1226,8 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = wanjiaCAdhoc;
+				PROVISIONING_PROFILE = "e084a94c-42c8-4734-b71d-695f00d31803";
+				PROVISIONING_PROFILE_SPECIFIER = wanjiaWildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "PADemo/PADemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
