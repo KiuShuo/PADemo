@@ -8,18 +8,12 @@
 
 import Foundation
 
-// Model的基础协议（‘基类’）
-public protocol PAModelBaseProtocol {
-    //
-}
-
-
 struct PACellModel {
     /// 用以区分相同标示符的cell
     var cellName: String?
     /// 重用标示符，默认情况下和类名相同(建议使用默认状态)
     var identifier: String
-    /// 默认高度为-1时，由PATableViewDelegate内部计算高度，适用于约束加完全的cell
+    /// 默认高度为-1时，由PATableDelegater内部计算高度，适用于约束加完全的cell
     var height: CGFloat = -1
     /// cell的注册方法 nib或class
     var isRegisterByClass: Bool = false

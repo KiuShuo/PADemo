@@ -15,9 +15,6 @@
 		8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12DBEF1EB1C992005B9AE9 /* Extension.swift */; };
 		8D21990A1EB1F93A0024B5CB /* ControllerModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D2199091EB1F93A0024B5CB /* ControllerModel.plist */; };
 		8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */; };
-		8D421B011F1F63EB007426BF /* PACellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421AFE1F1F63EB007426BF /* PACellModel.swift */; };
-		8D421B021F1F63EB007426BF /* PATableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421AFF1F1F63EB007426BF /* PATableViewDelegate.swift */; };
-		8D421B031F1F63EB007426BF /* PATableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D421B001F1F63EB007426BF /* PATableViewModel.swift */; };
 		8D42C8651F1355A200061C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42C8641F1355A200061C9C /* AppDelegate.swift */; };
 		8D42C8671F1355B400061C9C /* AppDelegate+APNs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42C8661F1355B400061C9C /* AppDelegate+APNs.swift */; };
 		8D42C8691F13570000061C9C /* unbelievable.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8D42C8681F1356EC00061C9C /* unbelievable.caf */; };
@@ -70,6 +67,14 @@
 		8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC26BCC1F299368001A831F /* PAFpsTableViewCell.swift */; };
 		8DC26BCF1F299368001A831F /* PAFpsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC26BCD1F299368001A831F /* PAFpsTableViewCell.xib */; };
 		8DC26BD11F29937A001A831F /* PAFpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC26BD01F29937A001A831F /* PAFpsViewController.swift */; };
+		8DCA857B1F3850B9009F648F /* PACellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85781F3850B9009F648F /* PACellModel.swift */; };
+		8DCA857C1F3850B9009F648F /* PATableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85791F3850B9009F648F /* PATableViewDelegate.swift */; };
+		8DCA857D1F3850B9009F648F /* PATableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA857A1F3850B9009F648F /* PATableViewModel.swift */; };
+		8DCA857F1F385157009F648F /* PATableViewModelTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA857E1F385157009F648F /* PATableViewModelTestModel.swift */; };
+		8DCA85811F3854E4009F648F /* PAPersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85801F3854E4009F648F /* PAPersonListViewController.swift */; };
+		8DCA85831F38568F009F648F /* PAPersonSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85821F38568F009F648F /* PAPersonSectionController.swift */; };
+		8DCA85861F385D20009F648F /* PAPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85841F385D20009F648F /* PAPersonCollectionViewCell.swift */; };
+		8DCA85871F385D20009F648F /* PAPersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA85851F385D20009F648F /* PAPersonCollectionViewCell.xib */; };
 		8DD07E351EC5583A00EA2B79 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD07E341EC5583A00EA2B79 /* CollectionViewController.swift */; };
 		8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFA1F25E429004DDA1B /* TableViewController_CollectionView.swift */; };
 		8DDC6BFE1F25E441004DDA1B /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFC1F25E441004DDA1B /* CollectionTableViewCell.swift */; };
@@ -146,9 +151,6 @@
 		8D2A04A01F2ECA6C0006E79C /* PANotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PANotificationService.entitlements; sourceTree = "<group>"; };
 		8D2A04A11F2ECA710006E79C /* PANotificationContent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PANotificationContent.entitlements; sourceTree = "<group>"; };
 		8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAQuart2D_GraphicsController.swift; sourceTree = "<group>"; };
-		8D421AFE1F1F63EB007426BF /* PACellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACellModel.swift; sourceTree = "<group>"; };
-		8D421AFF1F1F63EB007426BF /* PATableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewDelegate.swift; sourceTree = "<group>"; };
-		8D421B001F1F63EB007426BF /* PATableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModel.swift; sourceTree = "<group>"; };
 		8D42C8621F13557000061C9C /* PADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PADemo.entitlements; sourceTree = "<group>"; };
 		8D42C8641F1355A200061C9C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D42C8661F1355B400061C9C /* AppDelegate+APNs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+APNs.swift"; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 		8DC26BCC1F299368001A831F /* PAFpsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsTableViewCell.swift; sourceTree = "<group>"; };
 		8DC26BCD1F299368001A831F /* PAFpsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAFpsTableViewCell.xib; sourceTree = "<group>"; };
 		8DC26BD01F29937A001A831F /* PAFpsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsViewController.swift; sourceTree = "<group>"; };
+		8DCA85781F3850B9009F648F /* PACellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACellModel.swift; sourceTree = "<group>"; };
+		8DCA85791F3850B9009F648F /* PATableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewDelegate.swift; sourceTree = "<group>"; };
+		8DCA857A1F3850B9009F648F /* PATableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModel.swift; sourceTree = "<group>"; };
+		8DCA857E1F385157009F648F /* PATableViewModelTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModelTestModel.swift; sourceTree = "<group>"; };
+		8DCA85801F3854E4009F648F /* PAPersonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPersonListViewController.swift; sourceTree = "<group>"; };
+		8DCA85821F38568F009F648F /* PAPersonSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPersonSectionController.swift; sourceTree = "<group>"; };
+		8DCA85841F385D20009F648F /* PAPersonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DCA85851F385D20009F648F /* PAPersonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAPersonCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DD07E341EC5583A00EA2B79 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		8DDC6BFA1F25E429004DDA1B /* TableViewController_CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_CollectionView.swift; sourceTree = "<group>"; };
 		8DDC6BFC1F25E441004DDA1B /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -407,10 +417,10 @@
 		8D87DAC21ED9178400EA6D70 /* PATableViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8D421AFE1F1F63EB007426BF /* PACellModel.swift */,
-				8D421AFF1F1F63EB007426BF /* PATableViewDelegate.swift */,
-				8D421B001F1F63EB007426BF /* PATableViewModel.swift */,
+				8DCA85771F3850B9009F648F /* PATableViewModel */,
+				8DCA85761F385049009F648F /* IGListKit */,
 				8D8F15A41EE7B0500019AC1C /* PATableViewModelDemoController.swift */,
+				8DCA857E1F385157009F648F /* PATableViewModelTestModel.swift */,
 				8D8F15A61EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift */,
 				8D8F15A71EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib */,
 			);
@@ -487,6 +497,27 @@
 				8DB597451F331D5800E21E8B /* PAFpsFile.swift */,
 			);
 			path = PAInstrument;
+			sourceTree = "<group>";
+		};
+		8DCA85761F385049009F648F /* IGListKit */ = {
+			isa = PBXGroup;
+			children = (
+				8DCA85801F3854E4009F648F /* PAPersonListViewController.swift */,
+				8DCA85821F38568F009F648F /* PAPersonSectionController.swift */,
+				8DCA85841F385D20009F648F /* PAPersonCollectionViewCell.swift */,
+				8DCA85851F385D20009F648F /* PAPersonCollectionViewCell.xib */,
+			);
+			path = IGListKit;
+			sourceTree = "<group>";
+		};
+		8DCA85771F3850B9009F648F /* PATableViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8DCA85781F3850B9009F648F /* PACellModel.swift */,
+				8DCA85791F3850B9009F648F /* PATableViewDelegate.swift */,
+				8DCA857A1F3850B9009F648F /* PATableViewModel.swift */,
+			);
+			path = PATableViewModel;
 			sourceTree = "<group>";
 		};
 		8DD07E331EC5582C00EA2B79 /* Collection */ = {
@@ -794,6 +825,7 @@
 			files = (
 				8D42C8691F13570000061C9C /* unbelievable.caf in Resources */,
 				8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */,
+				8DCA85871F385D20009F648F /* PAPersonCollectionViewCell.xib in Resources */,
 				8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */,
 				8DDC6BFF1F25E441004DDA1B /* CollectionTableViewCell.xib in Resources */,
 				8D21990A1EB1F93A0024B5CB /* ControllerModel.plist in Resources */,
@@ -898,16 +930,20 @@
 				8DBB1ACB1EC4606900D507E6 /* BaseViewController.swift in Sources */,
 				8D66E95D1EE1375700DBBE41 /* Timer+WeakSelf.swift in Sources */,
 				8D6E40491EB322C500E388C9 /* Model.swift in Sources */,
+				8DCA85861F385D20009F648F /* PAPersonCollectionViewCell.swift in Sources */,
 				8D66E93C1EE1361400DBBE41 /* UIColor+Extension.swift in Sources */,
 				8D42C8671F1355B400061C9C /* AppDelegate+APNs.swift in Sources */,
 				8DDC6BFE1F25E441004DDA1B /* CollectionTableViewCell.swift in Sources */,
 				8D6D13571ECB68A00084BBA8 /* SearchViewController.swift in Sources */,
+				8DCA857B1F3850B9009F648F /* PACellModel.swift in Sources */,
 				8D66E9591EE1375700DBBE41 /* Dictionary+Extension.swift in Sources */,
 				8D6E2C971EF8EBCA00934C9B /* TextfieldViewController.swift in Sources */,
 				8D6D13651ECB71B20084BBA8 /* PABaseNavigationController.swift in Sources */,
 				8DFE58231F176A9F0057BAD9 /* PAFileManager.swift in Sources */,
 				8DBB1ACE1EC485F000D507E6 /* TableViewController.swift in Sources */,
+				8DCA85811F3854E4009F648F /* PAPersonListViewController.swift in Sources */,
 				8D6E2C9B1EF8EE7A00934C9B /* UIViewController+PAExtension.swift in Sources */,
+				8DCA857F1F385157009F648F /* PATableViewModelTestModel.swift in Sources */,
 				8DC26BD11F29937A001A831F /* PAFpsViewController.swift in Sources */,
 				8DBB1AC51EC4604500D507E6 /* CustomNavigationItemController.swift in Sources */,
 				8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */,
@@ -915,20 +951,20 @@
 				8DBB1AC81EC4604500D507E6 /* MasonryViewController.swift in Sources */,
 				8D66E9571EE1375700DBBE41 /* Array+Extension.swift in Sources */,
 				8D66E93B1EE1361400DBBE41 /* NSString+Attribute.m in Sources */,
+				8DCA85831F38568F009F648F /* PAPersonSectionController.swift in Sources */,
 				8D66E93D1EE1361400DBBE41 /* UIDevice+Extention.swift in Sources */,
 				8D673C901F14BCBC00175A6C /* LayoutConstraintsExtension.swift in Sources */,
 				8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */,
 				8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */,
-				8D421B011F1F63EB007426BF /* PACellModel.swift in Sources */,
 				8D93A7F61F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift in Sources */,
 				8D1031431ECE883A007F49CA /* CustomTableViewCell.swift in Sources */,
 				8D66E93F1EE1361400DBBE41 /* UImageView+Extension.swift in Sources */,
 				8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */,
-				8D421B031F1F63EB007426BF /* PATableViewModel.swift in Sources */,
 				8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */,
 				8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */,
 				8D6D13591ECB6B7F0084BBA8 /* SearchResultViewController.swift in Sources */,
 				8DD07E351EC5583A00EA2B79 /* CollectionViewController.swift in Sources */,
+				8DCA857D1F3850B9009F648F /* PATableViewModel.swift in Sources */,
 				8D66E9581EE1375700DBBE41 /* Date+Extension.swift in Sources */,
 				8D8F15A51EE7B0500019AC1C /* PATableViewModelDemoController.swift in Sources */,
 				8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */,
@@ -945,7 +981,7 @@
 				8D12DBEE1EB1C8F1005B9AE9 /* Protocol.swift in Sources */,
 				8D10313E1ECE8791007F49CA /* TableViewController_CellHeight.swift in Sources */,
 				8D66E95B1EE1375700DBBE41 /* Optional+Extension.swift in Sources */,
-				8D421B021F1F63EB007426BF /* PATableViewDelegate.swift in Sources */,
+				8DCA857C1F3850B9009F648F /* PATableViewDelegate.swift in Sources */,
 				8D8201201ECB480C000809E4 /* WebViewController.swift in Sources */,
 				8D6D135D1ECB6EE90084BBA8 /* Style.swift in Sources */,
 			);

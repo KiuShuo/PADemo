@@ -1,5 +1,5 @@
 //
-//  PATableViewDelegate.swift
+//  PATableDelegater.swift
 //  PADemo
 //
 //  Created by shuo on 2017/5/27.
@@ -8,10 +8,16 @@
 import Foundation
 import UITableView_FDTemplateLayoutCell
 
-class PATableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
+class PATableDelegater: NSObject, UITableViewDelegate, UITableViewDataSource {
     
+    weak var viewController: UIViewController?
+    weak var tableView: UITableView?
     /// 外部需传入的数据源
     var sectionModels: [PASectionModel] = []
+    
+    init(viewController: UIViewController? = nil) {
+        self.viewController = viewController
+    }
     
     typealias PATableCellForRowBlock = (tableView: UITableView, indexPath: IndexPath, cell: UITableViewCell, cellModel: PACellModel)
     typealias PATableDelegateConfigBlock = (tableView: UITableView, indexPath: IndexPath, cellModel: PACellModel)

@@ -10,7 +10,7 @@ import UIKit
 
 class PAFpsViewController: BaseViewController {
     
-    fileprivate let tableViewDelegate = PATableViewDelegate()
+    fileprivate let tableViewDelegate = PATableDelegater()
     
     var tableView: UITableView = {
         let tableView = UITableView()

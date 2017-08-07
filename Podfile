@@ -21,6 +21,11 @@ target 'PADemo' do
     pod 'HexColors','2.3.0'
     pod 'IQKeyboardManager', '3.3.7'
     pod 'EBForeNotification', '~> 1.0.7'
-    pod 'UITableView+FDTemplateLayoutCell', '1.6'
+    #    pod 'UITableView+FDTemplateLayoutCell', '1.6'
+    # https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git
+    pod 'UITableView+FDTemplateLayoutCell', :git => 'https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git', :branch => 'master'
+    pod 'IGListKit', :git => 'https://github.com/Instagram/IGListKit.git', :branch => 'master'
+    
+    
 end
 

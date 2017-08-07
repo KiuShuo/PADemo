@@ -11,52 +11,59 @@ import Masonry
 
 class PATableViewModelDemoController: BaseViewController {
 
+    let listTestModel = PAListTestModel()
     let tableView = UITableView()
-    let tableViewDelegate = PATableViewDelegate()
+    lazy var tableDelegater: PATableViewModelDemoControllerDelegater = {
+        return PATableViewModelDemoControllerDelegater(viewController: self)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupData()
         setupTableView()
         updateTableView()
     }
     
-    var dataSource: [String] = []
-    
     func updateTableView() {
-        tableViewDelegate.sectionModels = setupSectionModels()
+        tableDelegater.sectionModels = setupSectionModels()
         tableView.reloadData()
     }
     
     func setupSectionModels() -> [PASectionModel] {
-        
         var cellModels: [PACellModel] = []
-        dataSource.forEach { title in
+        let dataSource = listTestModel.personList()
+        dataSource.forEach { person in
             var cellModel = PATableViewModelDemoCell.cellModel
-            cellModel.dataModel = title
+            cellModel.dataModel = person
             cellModels.append(cellModel)
         }
         return [PATableViewModel.getSectionModel(cellModels)]
     }
     
     func setupTableView() {
-        tableView.delegate = tableViewDelegate
-        tableView.dataSource = tableViewDelegate
+        tableView.delegate = tableDelegater
+        tableView.dataSource = tableDelegater
         
         view.addSubview(tableView)
         tableView.tableFooterView = UIView()
         tableView.mas_makeConstraints { (make) in
             make!.edges.equalTo()
         }
+        
+//        tableViewDelegate.didSelectCell = {[weak self] param in
+//            guard let `self` = self else { return }
+//            let personListVC = PAPersonListViewController()
+//            self.navigationController?.pushViewController(personListVC, animated: true)
+//        }
     }
     
-    func setupData() {
-        var text = "唧唧复唧唧！"
-        for _ in 0..<10 {
-            text += text
-            dataSource.append(text)
-        }
+}
+
+class PATableViewModelDemoControllerDelegater: PATableDelegater {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let personListVC = PAPersonListViewController()
+        viewController?.navigationController?.pushViewController(personListVC, animated: true)
     }
     
 }

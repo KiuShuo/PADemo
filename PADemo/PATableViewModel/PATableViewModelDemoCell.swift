@@ -8,15 +8,12 @@
 
 import UIKit
 
-extension String: PAModelBaseProtocol {
-    
-}
-
 class PATableViewModelDemoCell: UITableViewCell, PATableViewCellProtocol {
 
-    static let cellModel: PACellModel = PACellModel(classType: PATableViewModelDemoCell.self)
+    static let cellModel: PACellModel = PACellModel(classType: PATableViewModelDemoCell.self, height: 80)
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
     
     struct PATableViewModel {
         var title: String?
@@ -24,8 +21,9 @@ class PATableViewModelDemoCell: UITableViewCell, PATableViewCellProtocol {
     
     var dataModel: PAModelBaseProtocol? {
         didSet {
-            if let model = dataModel as? String {
-                titleLabel.text = model
+            if let model = dataModel as? PAPerson {
+                titleLabel.text = model.name
+                ageLabel.text = "\(model.age)"
             }
         }
     }

@@ -47,6 +47,14 @@ extension UITableView {
     
 }
 
+extension PATableDelegater {
+    
+    func generateSectionModel(dataModels: [PAModelBaseProtocol], map: Any) {
+        
+    }
+    
+}
+
 class PATableViewModel {
     
     static func getSectionModel(_ cellModels: [PACellModel], sectionName: String? = nil, headerViewModel: PAHeaderFooterViewModel? = nil, footerViewModel: PAHeaderFooterViewModel? = nil) -> PASectionModel {
@@ -56,11 +64,6 @@ class PATableViewModel {
         sectionModel.footerViewModel = footerViewModel
         return sectionModel
     }
-    
-}
-
-// 常用扩展
-extension PATableViewModel {
     
     static func getSectionModel(cellModelTupleArr: (PACellModel, Int)...) -> PASectionModel {
         var cellModels: [PACellModel] = []

@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController_CollectionView: BaseViewController {
     
-    var tableViewDelegate: PATableViewDelegate = PATableViewDelegate()
+    var tableViewDelegate: PATableDelegater = PATableDelegater()
     let tableView = UITableView()
 
     override func viewDidLoad() {
