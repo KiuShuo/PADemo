@@ -8,6 +8,8 @@
 
 import UIKit
 import WJExtension
+import Fabric
+import Crashlytics
 
 extension UIDevice {
     /// 是否为模拟器 #if (arch(i386) || arch(x86_64)) && os(iOS)
@@ -48,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             #endif
         paUtilTest()
         testReturn()
+        
+        Crashlytics.start(withAPIKey: "74bb7fdc23f622142bcbb62da65d67521046c8d0")
+        Fabric.with([Crashlytics.self])
         return true
     }
     
@@ -69,6 +74,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("arrStr = \(arrStr)")
     }
 
-
 }
-

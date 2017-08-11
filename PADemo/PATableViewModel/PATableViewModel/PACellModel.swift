@@ -22,6 +22,7 @@ struct PACellModel {
     /// cell所需要的业务数据 复用比较多的cell中包含一个自己的CellDataModelClass，外部使用的地方统一生成该类型的Model
     var dataModel: PAModelBaseProtocol? = nil
     var isEnforceFrameLayout: Bool = false
+    var didSelecte: ((PACellModel) -> Void)? = nil
     
     /// - Parameters:
     ///   - identifier: 重用标示符
@@ -51,6 +52,18 @@ struct PACellModel {
             self.identifier = String(describing: classType)
         }
         self.height = height
+    }
+    
+    init(classType: AnyClass, dataModel: PAModelBaseProtocol? = nil, didSelecte: @escaping ((PACellModel) -> Void)) {
+        self.classType = classType
+        if Bundle.main.path(forResource: String(describing: classType), ofType: "nib") != nil {
+            self.isRegisterByClass = false
+        } else {
+            self.isRegisterByClass = true
+        }
+        self.identifier = String(describing: classType)
+        self.dataModel = dataModel
+        self.didSelecte = didSelecte
     }
 }
 
@@ -100,4 +113,3 @@ struct PASectionModel {
     }
     
 }
-

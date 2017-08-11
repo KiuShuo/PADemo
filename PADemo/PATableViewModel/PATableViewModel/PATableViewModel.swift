@@ -21,7 +21,7 @@ extension UITableView {
     }
     
     func registCellWithCellModels(_ cellModels: [PACellModel]) {
-        cellModels.forEach { (cellModel) in
+        cellModels.forEach { cellModel in
             let identifier = cellModel.identifier
             if cellModel.isRegisterByClass {
                 register(cellModel.classType, forCellReuseIdentifier: identifier)
@@ -45,9 +45,16 @@ extension UITableView {
         return headerFooterView!
     }
     
+    func generateSectionModel(dataModels: [PAModelBaseProtocol], map: Any) {
+        
+    }
+    
 }
 
 extension PATableDelegater {
+    // 生成一个sectionModel
+    
+    // 生成一组sectionModels
     
     func generateSectionModel(dataModels: [PAModelBaseProtocol], map: Any) {
         

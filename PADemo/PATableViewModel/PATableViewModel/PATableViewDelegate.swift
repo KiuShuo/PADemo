@@ -72,6 +72,10 @@ class PATableDelegater: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let cellModel = sectionModels[indexPath.section].cellModelArr[indexPath.row]
+        if let didSelecte = cellModel.didSelecte {
+            didSelecte(cellModel)
+        }
         if let didSelectCell = didSelectCell {
             let cellModel = sectionModels[indexPath.section].cellModelArr[indexPath.row]
             let tableDelegateConfigBlock: PATableDelegateConfigBlock = (tableView, indexPath, cellModel)

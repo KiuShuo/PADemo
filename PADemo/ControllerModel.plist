@@ -134,6 +134,14 @@
 			<key>isStoryboard</key>
 			<string>0</string>
 		</dict>
+		<dict>
+			<key>id</key>
+			<string>16</string>
+			<key>identifier</key>
+			<string>PAIntegrationSituationViewController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
 	</array>
 </dict>
 </plist>

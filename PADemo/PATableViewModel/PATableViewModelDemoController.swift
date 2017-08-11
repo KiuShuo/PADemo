@@ -19,7 +19,7 @@ class PATableViewModelDemoController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //tableView.rowHeight = 188
         setupTableView()
         updateTableView()
     }
@@ -33,8 +33,10 @@ class PATableViewModelDemoController: BaseViewController {
         var cellModels: [PACellModel] = []
         let dataSource = listTestModel.personList()
         dataSource.forEach { person in
-            var cellModel = PATableViewModelDemoCell.cellModel
-            cellModel.dataModel = person
+            let cellModel = PACellModel(classType: PATableViewModelDemoCell.self, dataModel: person, didSelecte: { aCellModel in
+                let personListVC = PAPersonListViewController()
+                self.navigationController?.pushViewController(personListVC, animated: true)
+            })
             cellModels.append(cellModel)
         }
         return [PATableViewModel.getSectionModel(cellModels)]
@@ -61,9 +63,9 @@ class PATableViewModelDemoController: BaseViewController {
 
 class PATableViewModelDemoControllerDelegater: PATableDelegater {
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let personListVC = PAPersonListViewController()
-        viewController?.navigationController?.pushViewController(personListVC, animated: true)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let personListVC = PAPersonListViewController()
+//        viewController?.navigationController?.pushViewController(personListVC, animated: true)
+//    }
     
 }

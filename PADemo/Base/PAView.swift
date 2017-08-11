@@ -41,7 +41,7 @@ import Foundation
     
     class func createSeperatorView() -> UIView {
         let view = UIView()
-        view.backgroundColor = UIColor.paDividingColor()
+        view.backgroundColor = UIColor.paDividing
         return view
     }
 }

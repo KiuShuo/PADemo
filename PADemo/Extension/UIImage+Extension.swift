@@ -44,8 +44,8 @@ extension UIImage {
     
     /// 便利方法, 返回常用按钮所需的两张图片, 第一张是normal状态的, 第二张是highlighted状态的
     static var buttonBackgroundImage: (bgImage: UIImage?, highlightBgImage: UIImage?) {
-        let bgImage   = UIImage(color: UIColor.paOrangeColor(), size: CGSize(width: 10, height: 10))?.roundingCorner(forRadius: 3)?.stretchable
-        let hlBgImage = UIImage(color: UIColor.paHighOrangeColor(), size: CGSize(width: 10, height: 10))?.roundingCorner(forRadius: 3)?.stretchable
+        let bgImage   = UIImage(color: UIColor.paOrange, size: CGSize(width: 10, height: 10))?.roundingCorner(forRadius: 3)?.stretchable
+        let hlBgImage = UIImage(color: UIColor.paHighOrange, size: CGSize(width: 10, height: 10))?.roundingCorner(forRadius: 3)?.stretchable
         return (bgImage, hlBgImage)
     }
     

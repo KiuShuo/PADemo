@@ -9,152 +9,131 @@
 import UIKit
 import HexColors
 
-let EMPTY_CELL_COLOR = "#F8F8F8"
-//黑色
-let COLOR_000000 = "#000000"
-
-//深红
-let PAORANGE = "#FF6602"
-
-//万家人才字体灰色
-let COLOR_949494 = "#949494"
-
-// 黑色(带点灰)字体黑
-let COLOR_353535 = "#353535"
-
-//白色
-let COLOR_FFFFFF = "#FFFFFF"
-
 extension UIColor {
     /**
-    创建颜色
+     创建颜色
+     - parameter R: 红
+     - parameter G: 绿
+     - parameter B: 蓝
+     - parameter A: 透明度
+     */
     
-    - parameter R: 红
-    - parameter G: 绿
-    - parameter B: 蓝
-    - parameter A: 透明度
-    */
-    class func colorWithRGBA(_ R: Float, G: Float, B: Float, A: Float = 1.0) -> UIColor {
-        return UIColor(red: CGFloat(R / 255.0), green: CGFloat(G / 255.0), blue: CGFloat(B / 255.0), alpha: CGFloat(A))
-    }
-    
-    class  func colorWithRGB(_ rgbValue:Int,alpha:CGFloat)->UIColor {
-        return UIColor.init(red:CGFloat((rgbValue & 0xFF0000)>>16)/CGFloat(255.0),
-                            green: ((CGFloat) (((rgbValue) & 0x00FF00) >> 8)) / 255.0,
-                            blue: ((CGFloat) ((rgbValue) & 0x0000FF)) / 255.0,
-                            alpha: alpha)
+    convenience init(R: Int, G: Int, B: Int, A: Float = 1.0) {
+        self.init(red:   CGFloat(Float(R) / 255.0),
+                  green: CGFloat(Float(G) / 255.0),
+                  blue:  CGFloat(Float(B) / 255.0),
+                  alpha: CGFloat(A))
     }
     
-    class func paOrangeColorStr()-> String {
-        return PAORANGE
+    convenience init(withRGBValue rgbValue: Int, alpha: Float = 1.0) {
+        let r = ((rgbValue & 0xFF0000) >> 16)
+        let g = ((rgbValue & 0x00FF00) >> 8)
+        let b =  (rgbValue & 0x0000FF)
+        self.init(R: r,
+                  G: g,
+                  B: b,
+                  A: alpha)
     }
     
-    class func colorWithRGB(_ rgbValue:Int)->UIColor{
-        return self.colorWithRGB(rgbValue, alpha: 1)
+    class var paOrange: UIColor {
+        return UIColor.init(withRGBValue: 0xFF6602)
     }
     
-    class func paOrangeColor()-> UIColor{
-        return UIColor(hexString: paOrangeColorStr())
+    class var paLightOrange: UIColor {
+        return UIColor.init(withRGBValue: 0xFAE5D8)
     }
     
-    class func paLightOrangeColor()->UIColor {
-        return UIColor(hexString: "#FAE5D8")
+    class var paHighOrange: UIColor {
+        return UIColor.init(withRGBValue: 0xF6B662)
     }
     
-    class func paHighOrangeColor()->UIColor {
-        return UIColor(hexString: "#f6b662")
-    }
-
-    //controller 页面背景颜色
-    class func paBackgroundColor()-> UIColor {
-        return UIColor(hexString: "#F8F8F8")
-    }
-    //考勤打卡遮板
-    class func paSignBackgroundColor()-> UIColor {
-        return UIColor(hexString: "#FDF8F5")
+    // controller 页面背景颜色
+    class var paBackground: UIColor {
+        return UIColor.init(withRGBValue: 0xF8F8F8)
     }
     
-    //cell 默认白色
-    class  func paBackgroundColor2()->UIColor {
-        return UIColor(hexString: COLOR_FFFFFF)
+    // 考勤打卡遮板
+    class var paSignBackground: UIColor {
+        return UIColor.init(withRGBValue: 0xFDF8F5)
     }
     
-    class func paBackgroundColor2Str() -> String {
-        return COLOR_FFFFFF
+    // cell 默认白色
+    class var paBackground2: UIColor {
+        return UIColor.init(withRGBValue: 0xFFFFFF)
     }
     
-    class func paLightWhiteColor() -> UIColor {
-        return UIColor(hexString: "#F0F0F0")
+    class var paLightWhite: UIColor {
+        return UIColor.init(withRGBValue: 0xF0F0F0)
     }
     
-    //cell选中色
-    class func paBackgroundColor3()->UIColor {
-        return UIColor.colorWithRGB(0xBDBDBD)
+    class var paBackground3: UIColor {
+        return UIColor.init(withRGBValue: 0xBDBDBD)
     }
     
-    //分割线颜色 边框颜色  标签底色
-    class func paDividingColor()->UIColor {
-        return UIColor(hexString: "#DFDFDF")
+    // 分割线颜色 边框颜色  标签底色
+    class var paDividing: UIColor {
+        return UIColor.init(withRGBValue: 0xDFDFDF)
     }
     
-    //灰色 较弱文字信息 副标题 引导词
-    class func paGrayColor()->UIColor {
-        return UIColor(hexString: COLOR_949494)
+    // 灰色 较弱文字信息 副标题 引导词
+    class var paGray: UIColor {
+        return UIColor.init(withRGBValue: 0x949494)
     }
     
-    //浅灰 背景色 板块底色
-    class func paLightGrayColor()->UIColor {
-        return UIColor(hexString: "#f4f4f4")
+    // 浅灰 背景色 板块底色
+    class var paLightGray: UIColor {
+        return UIColor.init(withRGBValue: 0xF4F4F4)
     }
     
-    class func paLightGrayColor2() -> UIColor {
-        return UIColor(hexString: "#E4E4E4")
-    }
-    //黑色
-    class func paBlackColor()->UIColor {
-        return UIColor(hexString: COLOR_353535)
+    class var paLightGray2: UIColor {
+        return UIColor.init(withRGBValue: 0xE4E4E4)
     }
     
-    class func paDeepBlackColor() -> UIColor {
-        return UIColor(hexString: COLOR_000000)
+    // 黑色
+    class var paBlack: UIColor {
+        return UIColor.init(withRGBValue: 0x353535)
     }
     
-    class func paLightBlackColor() -> UIColor {
-        return UIColor(hexString: "#999999")
+    class var paDeepBlack: UIColor {
+        return UIColor.init(withRGBValue: 0x000000)
     }
     
-    class func paFontBlackColor()->UIColor {
-        return UIColor(hexString: "#333333")
+    class var paLightBlack: UIColor {
+        return UIColor.init(withRGBValue: 0x999999)
     }
     
-    class func paFieldBackgroudColor()->UIColor {
-        return UIColor(hexString: "#f6f6f6")
+    class var paFontBlack: UIColor {
+        return UIColor.init(withRGBValue: 0x333333)
     }
     
-    class func paBtnBackgroundColor()->UIColor {
-        return UIColor(hexString: "#fcf2eb")
+    class var paFieldBackgroud: UIColor {
+        return UIColor.init(withRGBValue: 0xF6F6F6)
     }
     
-    //绿色
-    class func paGreenColor()->UIColor {
-        return UIColor(hexString: "#73d7ac")
+    // 绿色
+    class var paGreen: UIColor {
+        return UIColor.init(withRGBValue: 0x73D7AC)
     }
     
-    class func paCCCCColor()->UIColor {
-        return UIColor(hexString: "#CCCCCC")
+    class var paCCC: UIColor {
+        return UIColor.init(withRGBValue: 0xCCCCCC)
     }
     
-    class func paBlueColor()->UIColor {
-        return UIColor(hexString: "#3F96EB")
+    class var paBlue: UIColor {
+        return UIColor.init(withRGBValue: 0x3F96EB)
+    }
+    
+    class var paButtonBackground: UIColor {
+        return UIColor.init(withRGBValue: 0xFCF2EB)
     }
     
     // 按钮点击高亮背景颜色
-    class func paButtonHighlightedBackgroundColor()->UIColor {
-        return UIColor(hexString: "#ECECEC")
+    class var paButtonHighlightedBackground: UIColor {
+        return UIColor.init(withRGBValue: 0xECECEC)
     }
     
-    class func paLightGrayColor3()->UIColor {
-        return UIColor(hexString: "#dddddd")
+    class var paLightGray3: UIColor {
+        return UIColor.init(withRGBValue: 0xDDDDDD)
     }
     
 }

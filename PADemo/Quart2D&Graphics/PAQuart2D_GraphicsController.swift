@@ -51,11 +51,13 @@ class PAView04: UIView {
         let arcCenter = CGPoint(x: frame.width / 2, y: frame.height / 2)
         let radius = min(frame.width, frame.height) / 2 - 5
         let path = UIBezierPath(arcCenter: arcCenter, radius: radius, startAngle: startArc, endAngle: endArc, clockwise: true)
+        path.close()
         let context = UIGraphicsGetCurrentContext()
         context?.addPath(path.cgPath)
         let color = UIColor(red: progress, green: 0, blue: 1 - progress, alpha: 1)
-        color.setStroke()
-        context?.strokePath()
+        color.set()
+        //context?.strokePath()
+        context?.drawPath(using: .fillStroke)
     }
     
     override init(frame: CGRect) {

@@ -67,8 +67,8 @@ extension PAAlertView {
         contentButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         contentButton.frame = CGRect(x: 0, y: 0, width: 0, height: 50)
         contentButton.setTitle(content, for: .normal)
-        contentButton.setTitleColor(UIColor.paOrangeColor(), for: .normal)
-        contentButton.setTitleColor(UIColor.paHighOrangeColor(), for: .highlighted)
+        contentButton.setTitleColor(UIColor.paOrange, for: .normal)
+        contentButton.setTitleColor(UIColor.paHighOrange, for: .highlighted)
         alertView.addCustomView(view: contentButton)
         contentButton.addClickEvent { 
             if let clickContentButton = clickContentButton {
