@@ -17,8 +17,67 @@ class PASegmentedControlView: UIView {
         case topAndBottom
     }
     
-    var currentIndex: Int {
-        return _currentIndex
+    enum SelectionIndicatorPosition {
+        case top
+        case bottom
+        case none
+    }
+    
+    fileprivate lazy var selectionIndicator: UIView = {
+        let selectionIndicator = UIView()
+        selectionIndicator.backgroundColor = self.selectionIndicatorColor
+        selectionIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return selectionIndicator
+    }()
+    
+    var selectionIndicatorHeight: CGFloat = 2 {
+        didSet {
+            selectionIndicator.mas_updateConstraints { make in
+                make!.height.equalTo()(self.selectionIndicatorHeight)
+            }
+        }
+    }
+    
+    var selectionIndicatorColor: UIColor = UIColor.paOrange {
+        didSet {
+            self.selectionIndicator.backgroundColor = selectionIndicatorColor
+        }
+    }
+    
+    var selectionIndicatorPosition: SelectionIndicatorPosition = .none {
+        didSet {
+            switch selectionIndicatorPosition {
+            case .top:
+                selectionIndicator.isHidden = false
+                selectionIndicator.mas_updateConstraints { make in
+                    make!.top.equalTo()
+                }
+            case .bottom:
+                selectionIndicator.isHidden = false
+                selectionIndicator.mas_updateConstraints { make in
+                    make!.top.equalTo()(self.frame.size.height - self.selectionIndicatorHeight)
+                }
+            case .none:
+                selectionIndicator.isHidden = true
+            }
+        }
+    }
+    
+    fileprivate(set) var currentIndex: Int = -1 {
+        didSet {
+            if oldValue == currentIndex {
+                return
+            }
+            if oldValue >= 0 && oldValue < controls.count  {
+                controls[oldValue].isSelected = false
+            }
+            if currentIndex >= 0 && currentIndex < controls.count {
+                controls[currentIndex].isSelected = true
+                self.updateIndicatorMasonry()
+            } else {
+                currentIndex = 0
+            }
+        }
     }
     
     var separateStyle: SeparateStyle = .topAndBottom {
@@ -39,22 +98,6 @@ class PASegmentedControlView: UIView {
     var normalFont = UIFont.systemFont(ofSize: 14)
     var selectColor = UIColor.paOrange
     var selectFont = UIFont.boldSystemFont(ofSize: 15)
-    
-    fileprivate var _currentIndex: Int = -1 {
-        didSet {
-            if oldValue == _currentIndex {
-                return
-            }
-            if oldValue >= 0 && oldValue < controls.count  {
-                controls[oldValue].isSelected = false
-            }
-            if _currentIndex >= 0 && _currentIndex < controls.count {
-                controls[_currentIndex].isSelected = true
-            } else {
-                _currentIndex = 0
-            }
-        }
-    }
     
     private var controls = [PAControl]()
     private var topLine: UIImageView!
@@ -89,6 +132,15 @@ class PASegmentedControlView: UIView {
             make!.left.right().bottom().equalTo()(self)
             make!.height.mas_equalTo()(1.0 / UIScreen.main.scale)
         }
+        
+        selectionIndicator.isHidden = true
+        addSubview(selectionIndicator)
+        selectionIndicator.mas_makeConstraints { make in
+            make!.top.equalTo()(frame.size.height - self.selectionIndicatorHeight)
+            make!.height.equalTo()(self.selectionIndicatorHeight)
+            make!.left.equalTo()
+            make!.width.equalTo()
+        }
     }
     
     private func creatViews(with titles: [String]) {
@@ -121,6 +173,19 @@ class PASegmentedControlView: UIView {
         }
     }
     
+    private func updateIndicatorMasonry() {
+        let count = CGFloat(titles.count)
+        let width = frame.size.width / count
+        let masLeft = CGFloat(currentIndex) * width
+        selectionIndicator.mas_updateConstraints { make in
+            make!.left.equalTo()(masLeft)
+            make!.width.equalTo()(width)
+        }
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
+    }
+    
     func applyStyle() {
         for control in controls {
             control.normalColor = self.normalColor
@@ -150,7 +215,7 @@ class PASegmentedControlView: UIView {
     
     @objc private func clickControl(_ control: PAControl) {
         let index = self.controls.index(of: control) ?? 0
-        _currentIndex = index
+        currentIndex = index
         self.actionBlock?(index)
     }
 }
@@ -162,7 +227,7 @@ extension PASegmentedControlView: PASegmentedControlProtocol {
     
     func userScrollExtent(_ extent: CGFloat) {
         let index = Int(extent + 0.5)
-        _currentIndex = index
+        currentIndex = index
     }
     
     func reloadData(with titles: [String]) {
@@ -223,9 +288,3 @@ class PAControl: UIControl {
         }
     }
 }
-
-
-
-
-
-

@@ -24,11 +24,6 @@ struct PACellModel {
     var isEnforceFrameLayout: Bool = false
     var didSelecte: ((PACellModel) -> Void)? = nil
     
-    /// - Parameters:
-    ///   - identifier: 重用标示符
-    ///   - height: cell高度
-    ///   - isRegisterByClass: 是否为xib创建
-    ///   - classType: cell的类型
     init(identifier: String, height: CGFloat, isRegisterByClass: Bool = false, classType: AnyClass? = nil) {
         self.identifier = identifier
         self.height = height
@@ -36,21 +31,15 @@ struct PACellModel {
         self.classType = classType
     }
     
-    /// - Parameters:
-    ///   - identifier: 重用标示符 当其与String(describing: classType)相同时，可设置为nil
-    ///   - classType: cell的类型
-    init(classType: AnyClass, identifier: String? = nil, height: CGFloat = -1) {
+    init(classType: AnyClass, dataModel: PAModelBaseProtocol? = nil, height: CGFloat = -1) {
         self.classType = classType
         if Bundle.main.path(forResource: String(describing: classType), ofType: "nib") != nil {
             self.isRegisterByClass = false
         } else {
             self.isRegisterByClass = true
         }
-        if let identifier = identifier {
-            self.identifier = identifier
-        } else {
-            self.identifier = String(describing: classType)
-        }
+        self.identifier = String(describing: classType)
+        self.dataModel = dataModel
         self.height = height
     }
     
@@ -65,6 +54,7 @@ struct PACellModel {
         self.dataModel = dataModel
         self.didSelecte = didSelecte
     }
+    
 }
 
 protocol PATableViewCellProtocol {
@@ -73,13 +63,14 @@ protocol PATableViewCellProtocol {
 }
 
 struct PAHeaderFooterViewModel {
+    var headerFooterView: UITableViewHeaderFooterView?
     var headerFooterViewName: String?
     var identifier: String
-    var height: CGFloat
+    var height: CGFloat = -1
     var isRegisterByClass: Bool = false
     var classType: AnyClass?
     
-    init(identifier: String, height: CGFloat, isRegisterByClass: Bool = false, classType: AnyClass? = nil) {
+    init(identifier: String, height: CGFloat = -1, isRegisterByClass: Bool = false, classType: AnyClass? = nil) {
         self.identifier = identifier
         self.height = height
         self.isRegisterByClass = isRegisterByClass
@@ -88,28 +79,40 @@ struct PAHeaderFooterViewModel {
 }
 
 struct PASectionModel {
-    //    var headerTitle: String?
-    //    var footerTitle: String?
-    //    var headerView: UIView?
-    //    var footerView: UIView?
-    //    var headerHeight: CGFloat?
-    //    var footerHeight: CGFloat?
-    var headerViewModel: PAHeaderFooterViewModel? = nil
-    var footerViewModel: PAHeaderFooterViewModel? = nil
+    var headerViewModel: PAHeaderFooterViewModel?
+    var footerViewModel: PAHeaderFooterViewModel?
     var cellModelArr: [PACellModel] = []
-    var sectionName: String? = nil
+    var sectionName: String?
+    
+    init() {}
     
     init(cellModelArr: [PACellModel]) {
         self.cellModelArr = cellModelArr
     }
     
-    static func searchSection(with sectionName: String, sectionModels: [PASectionModel]) -> PASectionModel? {
-        for sectionModel in sectionModels {
-            if sectionName == sectionModel.sectionName {
-                return sectionModel
-            }
+    init(cellClassType: AnyClass, dataModels: [PAModelBaseProtocol]) {
+        let cellModels = dataModels.map { PACellModel(classType: cellClassType, dataModel: $0) }
+        self.init(cellModelArr: cellModels)
+    }
+    
+    init(cellModel: PACellModel, dataModels: [PAModelBaseProtocol]) {
+        var aCellModel = cellModel
+        let cellModels = dataModels.map { dataModel -> PACellModel in
+            aCellModel.dataModel = dataModel
+            return aCellModel
         }
-        return nil
+        self.init(cellModelArr: cellModels)
+    }
+    
+    static func searchSection(with sectionName: String, sectionModels: [PASectionModel]) -> PASectionModel? {
+        let filterResults = sectionModels.filter { sectionModel -> Bool in
+            return sectionModel.sectionName == sectionName
+        }
+        return filterResults.first
+    }
+    
+    subscript(indexPath: IndexPath) -> PACellModel {
+        return cellModelArr[indexPath.row]
     }
     
 }

@@ -19,11 +19,19 @@ class PAIntegrationSituationTopView: UIView {
     weak var delegate: PAViewGestureProtocol?
     
     override func awakeFromNib() {
-        // super.awakeFromNib()
+        super.awakeFromNib()
         
 //        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handelPanGesture(_:)))
 //        addGestureRecognizer(panGesture)
     }
+    
+//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//        let view = super.hitTest(point, with: event)
+//        if view is UIButton {
+//            return view
+//        }
+//        return nil
+//    }
     
     class func instanceFromXib() -> PAIntegrationSituationTopView {
         let view = Bundle.main.loadNibNamed("PAIntegrationSituationTopView", owner: nil, options: nil)?.first as! PAIntegrationSituationTopView
@@ -34,4 +42,7 @@ class PAIntegrationSituationTopView: UIView {
         delegate?.didPan(panGesture: panGesture)
     }
 
+    @IBAction func clickCenterButton(_ sender: UIButton) {
+        print("点击中间按钮")
+    }
 }

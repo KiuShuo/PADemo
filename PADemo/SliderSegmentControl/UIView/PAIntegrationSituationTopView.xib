@@ -14,7 +14,32 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PAIntegrationSituationTopView" customModule="PADemo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="357" height="181"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0E-LT-Vqj">
+                    <rect key="frame" x="0.0" y="0.0" width="357" height="181"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-g9-KvM">
+                            <rect key="frame" x="155" y="75.5" width="46" height="30"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="clickCenterButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="q3s-NS-IPi"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="0.4242466517857143" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="fi5-g9-KvM" firstAttribute="centerX" secondItem="x0E-LT-Vqj" secondAttribute="centerX" id="8fu-6A-BOj"/>
+                        <constraint firstItem="fi5-g9-KvM" firstAttribute="centerY" secondItem="x0E-LT-Vqj" secondAttribute="centerY" id="Xb5-hF-dig"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="x0E-LT-Vqj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5cW-p9-3rv"/>
+                <constraint firstAttribute="trailing" secondItem="x0E-LT-Vqj" secondAttribute="trailing" id="9wd-TE-PGr"/>
+                <constraint firstAttribute="bottom" secondItem="x0E-LT-Vqj" secondAttribute="bottom" id="HoW-w8-qzK"/>
+                <constraint firstItem="x0E-LT-Vqj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="V5B-3E-x6F"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="15.5" y="229.5"/>

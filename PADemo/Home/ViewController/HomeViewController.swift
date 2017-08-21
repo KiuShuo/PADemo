@@ -13,24 +13,75 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var controllerModels: [ControllerModel] = []
+    fileprivate lazy var tableDelegater: HomeViewControllerTableDelegater = {
+        let delegater = HomeViewControllerTableDelegater()
+        delegater.viewController = self
+        return delegater
+    }()
     fileprivate var baseNavgationController: PABaseNavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "首页"
-        tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 44.0
-        tableView.rowHeight = 44.0
+        
+        let footerView = UIView()
+        footerView.frame.size.height = 500
+        tableView.tableFooterView = footerView
+        tableView.tableFooterView?.backgroundColor = UIColor.green
+        //tableView.estimatedRowHeight = 44.0
+        //tableView.rowHeight = 44.0
+        tableView.delegate = tableDelegater
+        tableView.dataSource = tableDelegater
+        
         let _ = UIImage(named: "")
         if let bundlePath = Bundle.main.path(forResource: "ControllerModel", ofType: "plist"),
             let resultDic = NSDictionary(contentsOfFile: bundlePath) as? [String: Any],
             let controllerModelDics = resultDic["result"] as? [[String: String]] {
             self.controllerModels = Mapper<ControllerModel>().mapArray(JSONArray: controllerModelDics)!
         }
+        convertControllerModelsToSectionModels(controllerModels: controllerModels)
+    }
+    
+    func convertControllerModelsToSectionModels(controllerModels: [ControllerModel]) {
+        let cellModels = controllerModels.map { controllerModel -> PACellModel in
+            var cellModel = PACellModel(classType: HomeTableViewCell.self)
+            cellModel.dataModel = controllerModel
+            cellModel.isEnforceFrameLayout = true
+            return cellModel
+        }
+        tableDelegater.sectionModels = [PASectionModel(cellModelArr: cellModels)]
     }
 
 }
 
+class HomeViewControllerTableDelegater: PATableDelegater {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let cellModel = self.cellModel(indexPath)
+        guard let controllerModel = cellModel.dataModel as? ControllerModel else {
+            return
+        }
+
+        var toViewController: UIViewController?
+        
+        switch controllerModel.identifier {
+        case String(describing: CollectionViewController.self):
+            toViewController = CollectionViewController(collectionViewLayout: CollectionViewController.collectionViewLayout)
+        default:
+            if let controller = ControllerUtil.makeController(controllerModel: controllerModel) {
+                toViewController = controller
+            }
+        }
+        guard let toVC = toViewController else {
+            return
+        }
+        viewController?.navigationController?.pushViewController(toVC, animated: true)
+    }
+
+    
+}
+/*
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,5 +158,5 @@ extension HomeViewController: UITableViewDelegate {
         baseNavgationController?.dismiss(animated: false, completion: nil)
     }
     
-}
+}*/
 

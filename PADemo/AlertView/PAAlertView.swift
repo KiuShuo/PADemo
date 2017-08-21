@@ -124,6 +124,14 @@ class PAAlertViewAction {
     }
 }
 
+class PATextField: UITextField {
+    
+    var unitStr: String = ""
+    var unitFont: UIFont = UIFont.systemFont(ofSize: 16)
+    var unitColor: UIColor = UIColor.paOrange
+    
+}
+
 class PAAlertView: UIView {
     
     var actionSeparatorColor: UIColor = UIColor(red: 50/255,
@@ -158,6 +166,8 @@ class PAAlertView: UIView {
     var popupWidth: CGFloat = 255.0
     var popupMaxHeight: CGFloat = UIScreen.main.bounds.size.height - 20
     var textFieldHeight: CGFloat = 30.0
+    var onlyFillCustomView: Bool = false // 仅有自定义视图
+    
     private var coverViewHeight: CGFloat = 0
     private var buttonViewHeight: CGFloat = 0
     
@@ -175,8 +185,8 @@ class PAAlertView: UIView {
     private var maskControl: UIControl = UIControl()
     private var popupView: UIView = UIView()
     private var coverView: UIScrollView = UIScrollView()
-    private var buttonView: UIScrollView = UIScrollView()
-    private var textFields = [UITextField]()
+    var buttonView: UIScrollView = UIScrollView()
+    private var textFields = [PATextField]()
     private var customView: UIView?
     private var lastCoverSubView: UIView?
     private var titleLabel: UILabel = UILabel()
@@ -186,31 +196,34 @@ class PAAlertView: UIView {
     
     private var popupViewCenterYLayoutConstraint: NSLayoutConstraint?
     
+    init() {
+        super.init(frame: CGRect.zero)
+        backgroundColor = UIColor(red: 50/255, green: 51/255, blue: 53/255, alpha: 0.4)
+        addSubview(maskControl)
+        maskControl.pa_alignToParent(with: 0)
+    }
+    
     public convenience init(title: String?,
                             message: String?) {
         self.init()
-        backgroundColor = UIColor(red: 50/255, green: 51/255, blue: 53/255, alpha: 0.4)
         if let title = title {
             titleLabel.text = title
         }
         if let message = message {
             messageLabel.text = message
         }
-        
-        addSubview(maskControl)
-        maskControl.pa_alignToParent(with: 0)
     }
     
     public convenience init(title: String?, attributeString: NSAttributedString?) {
         self.init()
-        backgroundColor = UIColor(red: 50/255, green: 51/255, blue: 53/255, alpha: 0.4)
         if let title = title {
             titleLabel.text = title
         }
         self.attributeString = attributeString
-        
-        addSubview(maskControl)
-        maskControl.pa_alignToParent(with: 0)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     deinit {
@@ -220,9 +233,10 @@ class PAAlertView: UIView {
     func addAction(_ action: PAAlertViewAction) {
         actions.append(action)
     }
+    
     @discardableResult
-    func addTextField(configurationHandler: ((UITextField) -> Void)? = nil) -> UITextField {
-        let textField = UITextField()
+    func addTextField(configurationHandler: ((PATextField) -> Void)? = nil) -> PATextField {
+        let textField = PATextField()
         textField.borderStyle = .none
         textField.layer.borderWidth = separatorThickness
         textField.layer.borderColor = actionSeparatorColor.cgColor
@@ -240,7 +254,7 @@ class PAAlertView: UIView {
     func addKeyboardNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_ :)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(_ :)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+        
     }
     
     func addCustomView(view: UIView) {
@@ -265,7 +279,6 @@ class PAAlertView: UIView {
     @objc private func keyboardDidHide(_ notification: Notification) {
         popupViewCenterYLayoutConstraint?.constant = 0
     }
-    
     
     func show(isAnimated: Bool = true, completion: (() -> Void)? = nil) {
         let manager = IQKeyboardManager.shared()
@@ -295,10 +308,8 @@ class PAAlertView: UIView {
         roundOfPopupView()
         
         if isAnimated {
-            
             self.alpha = 0
             popupView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            
             UIView.animate(withDuration: 0.25, animations: {
                 self.alpha = 1
                 self.popupView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
@@ -330,7 +341,7 @@ class PAAlertView: UIView {
                 self.alertWindow = nil
             }
         })
-
+        
     }
     
     private func roundOfPopupView() {
@@ -389,9 +400,11 @@ class PAAlertView: UIView {
         coverView.pa_alignLeftToParent(with: 0)
         coverView.pa_alignRightToParent(with: 0)
         
-        configureTitleLabel()
-        configureMessageLabel()
-        configureTextField()
+        if !onlyFillCustomView {
+            configureTitleLabel()
+            configureMessageLabel()
+            configureTextField()
+        }
         configureCustomView()
         
         coverViewHeight += coverViewHeight > 0 ? 15 : 0
@@ -468,9 +481,21 @@ class PAAlertView: UIView {
             coverView.addSubview(textField)
             textField.translatesAutoresizingMaskIntoConstraints = false
             let textFieldWidth = popupWidth - 30
-            textField.pa_setWidth(textFieldWidth)
-            textField.pa_centerHorizontally()
-            textField.pa_setHeight(textFieldHeight)
+            let unitWidth = textField.unitStr.width(font: textField.unitFont)
+            if !textField.unitStr.isEmpty {
+                textField.pa_setWidth(textFieldWidth - unitWidth - 5)
+                let unitLabel = UILabel()
+                unitLabel.translatesAutoresizingMaskIntoConstraints = false
+                unitLabel.text = textField.unitStr
+                unitLabel.textColor = textField.unitColor
+                unitLabel.font = textField.unitFont
+                coverView.addSubview(unitLabel)
+                unitLabel.pa_alignToBottom(of: textField)
+                unitLabel.pa_alignToRight(of: coverView, margin: -15)
+            } else {
+                textField.pa_setWidth(textFieldWidth)
+            }
+            textField.pa_alignToLeft(of: coverView, margin: 15)
             textField.pa_place(below: messageLabel, margin: 15 + textFieldHeight * CGFloat(i))
             if i == textFields.count - 1 {
                 textField.pa_alignBottomToParent(with: 15)
@@ -493,15 +518,23 @@ class PAAlertView: UIView {
         }
         coverView.addSubview(customView)
         customView.translatesAutoresizingMaskIntoConstraints = false
-        customView.pa_setWidth(popupWidth - 30)
-        customView.pa_setHeight(customView.frame.size.height)
-        customView.pa_centerHorizontally()
-        if let lastCoverSubView = lastCoverSubView {
-            customView.pa_place(below: lastCoverSubView, margin: 15)
+        if onlyFillCustomView {
+            coverViewHeight = customView.frame.size.height
+            customView.pa_centerHorizontally()
+            customView.pa_centerVertically()
+            customView.pa_setWidth(popupWidth)
+            customView.pa_setHeight(customView.frame.size.height)
         } else {
-            customView.pa_alignTopToParent(with: 15)
+            customView.pa_setWidth(popupWidth - 30)
+            customView.pa_setHeight(customView.frame.size.height)
+            customView.pa_centerHorizontally()
+            if let lastCoverSubView = lastCoverSubView {
+                customView.pa_place(below: lastCoverSubView, margin: 15)
+            } else {
+                customView.pa_alignTopToParent(with: 15)
+            }
+            coverViewHeight += customView.frame.size.height + 15
         }
-        coverViewHeight += customView.frame.size.height + 15
     }
     
     private func configureButtonView() {

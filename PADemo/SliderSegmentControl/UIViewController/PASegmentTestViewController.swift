@@ -6,43 +6,46 @@
 //  Copyright © 2017年 shuo. All rights reserved.
 //
 
+
+/**
+ 界面构成：
+ [层级](--kiushuo/Image/带有一个header的多列表界面.png)
+ 
+ 核心点：
+ 
+
+*/
+
 import UIKit
 
 class PASegmentTestViewController: BaseViewController {
 
     fileprivate var tableViews: [PAIntegrationSituationTableView] = []
-    private var segmentedView = PASegmentedView()
+    fileprivate var segmentedView = PASegmentedView()
     fileprivate var topSituationView: PAIntegrationSituationTopView = {
         let topSituationView = PAIntegrationSituationTopView.instanceFromXib()
         return topSituationView
     }()
-    fileprivate var segmentControl: PASegmentControl = {
-        let frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: 40)
-        let segmentControl = PASegmentControl.baseSegmentControl(frame: frame, titles: ["积分获得", "积分转换"])
-        return segmentControl
-    }()
     fileprivate var lastSelectedIndex: Int = -1
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
     }
     
     private func setupUI() {
-        
-        let leftTableView = PAIntegrationSituationTableView()
-        let rightTableView = PAIntegrationSituationTableView()
+        let leftTableView = PAIntegrationSituationTableView(viewType: .left)
+        let rightTableView = PAIntegrationSituationTableView(viewType: .right)
+        tableViews = [leftTableView, rightTableView]
         leftTableView.configure()
         rightTableView.configure()
-        tableViews = [leftTableView, rightTableView]
-        
         view.addSubview(segmentedView)
         segmentedView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()(self.view)!.insets()(UIEdgeInsets.init(top: 64, left: 0, bottom: 0, right: 0))
+            make!.edges.equalTo()(self.view)!.insets()(UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0))
         }
         segmentedView.delegate = self
+        segmentedView.isRefreshEnable = true
+        segmentedView.isHeaderScrollEnable = true
         segmentedView.reloadData()
     }
 
@@ -60,8 +63,8 @@ extension PASegmentTestViewController: PASegmentedViewDelegate {
     
     func segmentedViewSegmentedControlView(in segmentedView: PASegmentedView) -> UIView {
         let segmentControl = PASegmentedControlView()
-        segmentControl.applyStyle()
-        segmentControl.separateStyle = .bottom
+        segmentControl.separateStyle = .topAndBottom
+        segmentControl.selectionIndicatorPosition = .bottom
         return segmentControl
     }
     
@@ -78,11 +81,20 @@ extension PASegmentTestViewController: PASegmentedViewDelegate {
     }
     
     func segmentedView(_ view: PASegmentedView, didShow index: Int) {
-        let view = self.tableViews[index]
-        if let lastTableView = tableViews[lastSelectedIndex, defaultValue: nil] {
-            self.view.removeGestureRecognizer(lastTableView.panGestureRecognizer)
+        let tableView = self.tableViews[index]
+        if tableView.isFirstLoad {
+            tableView.isFirstLoad = false
+            tableView.mj_header.beginRefreshing()
         }
-        lastSelectedIndex = index
-        self.view.addGestureRecognizer(view.panGestureRecognizer)
+        
+        let size = CGSize(width: UIScreen.width, height: CGFloat.greatestFiniteMagnitude)
+        let tableViewHeight = tableView.sizeThatFits(size).height - 146
+        if tableViewHeight < UIScreen.height - UIScreen.navigationHeight {
+            let footerView = UIView()
+            footerView.frame.size.height = UIScreen.height - UIScreen.navigationHeight - tableViewHeight
+            tableView.tableFooterView = footerView
+        }
     }
 }
+
+

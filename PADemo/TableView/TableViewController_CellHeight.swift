@@ -119,8 +119,7 @@ extension TableViewController_CellHeight: UITableViewDelegate {
 //            return height
 //        }
         
-        
-        let height = PAStringHeightMakeWithText(dataSource[indexPath.row], 17, 0, UIScreen.main.bounds.size.width - 20) + 20
+        let height = dataSource[indexPath.row].height(width: UIScreen.main.bounds.size.width - 20, font: UIFont.systemFont(ofSize: 17)) + 20
         return height
 //        return 0
     }

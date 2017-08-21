@@ -29,6 +29,7 @@ target 'PADemo' do
     pod 'Crashlytics', '3.8.4'
     pod 'RxSwift', '3.5.0'
     pod 'HJTabViewController', '~> 1.0'
+    pod 'MJRefresh', '3.1.12'
     
 end
 

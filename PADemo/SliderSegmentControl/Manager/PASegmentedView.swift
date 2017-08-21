@@ -8,11 +8,12 @@
 
 import UIKit
 import Masonry
+import MJRefresh
 
 @objc protocol PASegmentedControlProtocol: class {
-    func reloadData(with titles: [String]) -> Void
-    func userScrollExtent(_ extent: CGFloat) -> Void
-    func setAction(_ actionBlock: ((_ index: Int) -> Void)?) -> Void
+    func reloadData(with titles: [String])
+    func userScrollExtent(_ extent: CGFloat)
+    func setAction(_ actionBlock: ((_ index: Int) -> Void)?)
 }
 
 @objc protocol PASegmentedViewDelegate: class {
@@ -21,7 +22,7 @@ import Masonry
     
     func segmentedView(_ view: PASegmentedView, viewForIndex index: Int) -> UIView
     
-    @objc optional func segmentedView(_ view: PASegmentedView, didShow index: Int) -> Void
+    @objc optional func segmentedView(_ view: PASegmentedView, didShow index: Int)
     
     @objc optional func segmentedViewSegmentedControlView(in segmentedView: PASegmentedView) -> UIView
     // default is 0
@@ -33,18 +34,28 @@ import Masonry
     // default is segmentedViewHeaderView height
     @objc optional func segmentedViewHeaderMinHeight(in segmentedView: PASegmentedView) -> CGFloat
     // when scroll top or bottom, change the titles view height , will run this method
-    @objc optional func segmentedView(_ view: PASegmentedView, didChangeHeaderHeightTo height: CGFloat) -> Void
+    @objc optional func segmentedView(_ view: PASegmentedView, didChangeHeaderHeightTo height: CGFloat)
     
 }
 
 class PASegmentedView: UIView {
-    weak var delegate: PASegmentedViewDelegate?
+    enum HeaderLeaveWay {
+        case changeHeight
+        case changeOriginY
+    }
     
-    var currentIndex: Int {
-        get {
-            return _currentIndex
+    weak var delegate: PASegmentedViewDelegate?
+    var headerLeaveWay: HeaderLeaveWay = .changeHeight
+    var isRefreshEnable: Bool = false {
+        didSet {
+            if isRefreshEnable {
+                headerLeaveWay = .changeOriginY
+            }
         }
     }
+    var isHeaderScrollEnable: Bool = false
+    
+    fileprivate(set) var currentIndex: Int = -1
     
     // Height
     fileprivate var headerMaxHeight: CGFloat = 300
@@ -54,9 +65,6 @@ class PASegmentedView: UIView {
             self.updateHeaderViewConstraints()
         }
     }
-    
-    // page current/count
-    fileprivate var _currentIndex: Int = -1
     
     fileprivate var pageCount: Int = 0
     
@@ -75,13 +83,13 @@ class PASegmentedView: UIView {
         }
     }
     
-    // signal 
+    // signal
     fileprivate var isUserScroll: Bool = false
     fileprivate var isFirstLayout: Bool = true
     fileprivate var isFirstReloadData: Bool = true
     
     deinit {
-        self.removeObserver(from: viewArray[_currentIndex])
+        self.removeObserver(from: viewArray[currentIndex])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -100,7 +108,7 @@ class PASegmentedView: UIView {
         }
         
         scrollView = UIScrollView()
-        scrollView.backgroundColor = UIColor.clear
+        scrollView.backgroundColor = UIColor.white
         scrollView.isScrollEnabled = true
         scrollView.bounces = false
         scrollView.delegate = self
@@ -128,7 +136,7 @@ class PASegmentedView: UIView {
         
         if !self.isFirstReloadData {
             // 不是第一次reloadData的时候需要移除之前的Observe
-            self.removeObserver(from: self.viewArray[_currentIndex])
+            self.removeObserver(from: self.viewArray[currentIndex])
         }
         
         // 清理之前存在的view
@@ -168,24 +176,26 @@ class PASegmentedView: UIView {
         if self.headerView == nil {
             return
         }
-        
-        self.headerView.mas_updateConstraints { (make) in
-            make!.height.equalTo()(self.currentHeaderHeight)
-        }
-        self.delegate?.segmentedView?(self, didChangeHeaderHeightTo: self.currentHeaderHeight)
-        // 如果下滑，并将头部下拉了则重设每个scrollview的contentOffset
-        if currentHeaderHeight > headerMinHeight {
-            for v in self.viewArray {
-                if v != self.viewArray[_currentIndex] {
-                    if v is UITableView {
-                        // tableView需要去掉（headerMaxHeight - headerMinHeight）的header额外增加的高度
-                        v.contentOffset.y = -currentHeaderHeight + (headerMaxHeight - headerMinHeight)
-                    } else {
-                        v.contentOffset.y = -currentHeaderHeight
-                    }
+        if !isRefreshEnable {
+            if headerLeaveWay == .changeOriginY && self.currentHeaderHeight < self.headerMaxHeight {
+                self.headerView.mas_updateConstraints { make in
+                    make!.top.equalTo()(self.currentHeaderHeight - self.headerMaxHeight)
+                    make!.height.equalTo()(self.headerMaxHeight)
+                }
+            } else {
+                self.headerView.mas_updateConstraints { make in
+                    make!.top.equalTo()
+                    make!.height.equalTo()(self.currentHeaderHeight)
                 }
             }
+        } else {
+            self.headerView.mas_updateConstraints { make in
+                make!.top.equalTo()(self.currentHeaderHeight - self.headerMaxHeight)
+                make!.height.equalTo()(self.headerMaxHeight)
+            }
         }
+        
+        self.delegate?.segmentedView?(self, didChangeHeaderHeightTo: self.currentHeaderHeight)
     }
     
     fileprivate func selectDefaultIndex() {
@@ -193,11 +203,12 @@ class PASegmentedView: UIView {
         if index < 0 || index >= pageCount {
             index = 0
         }
-        _currentIndex = index
+        currentIndex = index
         self.scrollView(scrollTo: index, animated: false)
         self.segmentedControlView_P?.userScrollExtent(self.scrollView.contentOffset.x/self.frame.width)
         self.addObserver(to: viewArray[index])
     }
+    
 }
 
 // MARK: Create Layout Views
@@ -215,7 +226,7 @@ extension PASegmentedView {
         headerMaxHeight = (maxHeight ?? baseHeaderHeight) + segmentedHeight
         currentHeaderHeight = headerMaxHeight
         if headerView == nil {
-            headerView = UIView()
+            headerView = BaseHeaderView()
             headerView.backgroundColor = UIColor.white
             self.addSubview(headerView)
         } else {
@@ -251,9 +262,9 @@ extension PASegmentedView {
                 return
             }
             strongSelf.isUserScroll = false
-            strongSelf.removeObserver(from: strongSelf.viewArray[strongSelf._currentIndex])
+            strongSelf.removeObserver(from: strongSelf.viewArray[strongSelf.currentIndex])
             strongSelf.addObserver(to: strongSelf.viewArray[index])
-            strongSelf._currentIndex = index
+            strongSelf.currentIndex = index
             strongSelf.scrollView(scrollTo: index, animated: true)
         })
         segmentedControlView_P?.reloadData(with: titles)
@@ -301,9 +312,6 @@ extension PASegmentedView {
     
     // 处理tableView
     fileprivate func disposeTableView(_ tableView: UITableView, to index: Int) {
-        // 处理tableView的content等等
-        tableView.contentInset = UIEdgeInsets.init(top: headerMinHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentOffset = CGPoint.init(x: 0, y: -headerMinHeight)
         tableView.scrollIndicatorInsets = UIEdgeInsets.init(top: headerMaxHeight, left: 0, bottom: 0, right: 0)
         
         // 处理tableView.tableHeaderView
@@ -312,7 +320,7 @@ extension PASegmentedView {
             let viewWidth = UIScreen.main.bounds.width
             let viewHeight = view.frame.height
             view.frame.size.width = viewWidth
-            let tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: viewWidth, height: viewHeight + headerMaxHeight - headerMinHeight))
+            let tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: viewWidth, height: viewHeight + headerMaxHeight))
             tableHeaderView.backgroundColor = UIColor.clear
             tableHeaderView.addSubview(view)
             view.mas_makeConstraints({ (make) in
@@ -321,8 +329,8 @@ extension PASegmentedView {
             })
             tableView.tableHeaderView = tableHeaderView
         } else {
-            let tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.headerMaxHeight - self.headerMinHeight))
-            tableHeaderView.backgroundColor = UIColor.clear
+            let tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.headerMaxHeight))
+            tableHeaderView.backgroundColor = UIColor.red
             tableView.tableHeaderView = tableHeaderView
         }
         self.layoutView(tableView, to: index)
@@ -346,6 +354,7 @@ extension PASegmentedView {
             }
         }
     }
+    
 }
 
 // MARK: Observe
@@ -355,34 +364,78 @@ extension PASegmentedView {
                                forKeyPath: "contentOffset",
                                options: [NSKeyValueObservingOptions.old, NSKeyValueObservingOptions.new],
                                context: nil)
+        if isRefreshEnable {
+            scrollView.addObserver(self,
+                                   forKeyPath: "contentInset",
+                                   options: [NSKeyValueObservingOptions.old, NSKeyValueObservingOptions.new],
+                                   context: nil)
+        }
     }
     
     fileprivate func removeObserver(from scrollView: UIScrollView) {
         scrollView.removeObserver(self, forKeyPath: "contentOffset", context: nil)
+        if isRefreshEnable {
+            scrollView.removeObserver(self, forKeyPath: "contentInset", context: nil)
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        func changeOffsetY(dlt: CGFloat) {
-            if let scrollView = object as? UIScrollView {
-                for v in self.viewArray {
-                    if v != scrollView {
-                        v.contentOffset.y += dlt
+        guard let scrollView = object as? UIScrollView else {
+            return
+        }
+        if isRefreshEnable && keyPath == "contentInset" {
+            guard let tableView = scrollView as? UITableView else {
+                return
+            }
+            if tableView.contentInset.top >= MJRefreshHeaderHeight {
+                isUserInteractionEnabled = false
+                UIView.animate(withDuration: TimeInterval(MJRefreshFastAnimationDuration), animations: {
+                    self.headerView.mas_updateConstraints { make in
+                        make!.top.equalTo()(MJRefreshHeaderHeight)
+                    }
+                    self.layoutIfNeeded()
+                })
+            } else {
+                if headerView.mj_origin.y == 0 {
+                    return
+                }
+                UIView.animate(withDuration: TimeInterval(MJRefreshSlowAnimationDuration), animations: {
+                    self.headerView.mas_updateConstraints { make in
+                        make!.top.equalTo()(0)
+                    }
+                    self.layoutIfNeeded()
+                }, completion: { _ in
+                    self.isUserInteractionEnabled = true
+                })
+            }
+        }
+        
+        if keyPath == "contentOffset" {
+            let realOffsetY = scrollView.contentOffset.y + scrollView.contentInset.top
+            let tempHeight = headerMaxHeight - realOffsetY
+            if tempHeight < headerMinHeight {
+                for view in viewArray {
+                    if view != viewArray[currentIndex] {
+                        view.contentOffset.y += currentHeaderHeight - headerMinHeight
+                    }
+                }
+                currentHeaderHeight = headerMinHeight
+            } else {
+                currentHeaderHeight = tempHeight
+                for view in viewArray {
+                    if view != viewArray[currentIndex] {
+                        if view is UITableView {
+                            view.contentOffset.y = scrollView.contentOffset.y
+                        } else {
+                            view.contentOffset.y = scrollView.contentOffset.y + headerMaxHeight - headerMinHeight
+                        }
                     }
                 }
             }
         }
-        if let sv = object as? UIScrollView, keyPath == "contentOffset" {
-            let realOffsetY = sv.contentOffset.y + sv.contentInset.top
-            let tempHeight = headerMaxHeight - realOffsetY
-            if tempHeight < headerMinHeight {
-                changeOffsetY(dlt: currentHeaderHeight - headerMinHeight)
-                currentHeaderHeight = headerMinHeight
-            } else {
-                changeOffsetY(dlt: currentHeaderHeight - tempHeight)
-                currentHeaderHeight = tempHeight
-            }
-        }
+        
     }
+    
 }
 
 // MARK: ScrollDelegate & ScrollToIndex
@@ -398,14 +451,15 @@ extension PASegmentedView: UIScrollViewDelegate {
                 return
             }
             let index = Int((self.frame.width * 0.5 + scrollView.contentOffset.x) / self.frame.width)
-            if index == _currentIndex {
+            if index == currentIndex {
                 return
             }
-            self.removeObserver(from: self.viewArray[_currentIndex])
+            self.removeObserver(from: self.viewArray[currentIndex])
             self.addObserver(to: self.viewArray[index])
-            _currentIndex = index
+            currentIndex = index
             self.delegate?.segmentedView?(self, didShow: index)
             self.segmentedControlView_P?.userScrollExtent(scrollView.contentOffset.x/self.frame.width)
+            setupPangesture(index: index)
         }
     }
     
@@ -418,10 +472,26 @@ extension PASegmentedView: UIScrollViewDelegate {
         let contentOffset = CGPoint.init(x: x, y: 0)
         self.scrollView.setContentOffset(contentOffset, animated: animated)
         self.delegate?.segmentedView?(self, didShow: index)
+        setupPangesture(index: index)
     }
+    
+    private func setupPangesture(index: Int) {
+        if !isHeaderScrollEnable { return }
+        let currentView = self.viewArray[index]
+        if !(currentView is UITableView) {
+            return
+        }
+        
+        if isHeaderScrollEnable {
+            if let gestureRecognizers = self.gestureRecognizers {
+                for ges in gestureRecognizers {
+                    if ges is UIPanGestureRecognizer {
+                        self.removeGestureRecognizer(ges)
+                    }
+                }
+            }
+            self.addGestureRecognizer(currentView.panGestureRecognizer)
+        }
+    }
+    
 }
-
-
-
-
-

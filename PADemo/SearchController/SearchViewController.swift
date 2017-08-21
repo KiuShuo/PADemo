@@ -41,6 +41,8 @@ class SearchViewController: BaseViewController {
         tableView.estimatedRowHeight = 44.0
         setupTableView()
         setupSearchBar()
+//        automaticallyAdjustsScrollViewInsets = true
+//        extendedLayoutIncludesOpaqueBars = true
     }
     
     private func setupTableView() {

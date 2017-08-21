@@ -10,17 +10,17 @@ import Foundation
 
 extension UITableView {
     
-    func dequeueReusableCellWithCellModel(_ cellModel: PACellModel) -> UITableViewCell {
+    func dequeueReusableCell(withCellModel cellModel: PACellModel) -> UITableViewCell {
         let identifier = cellModel.identifier
         var cell: UITableViewCell? = dequeueReusableCell(withIdentifier: identifier)
         if cell == nil {
-            registCellWithCellModels([cellModel])
+            registCell(withCellModels: [cellModel])
             cell = dequeueReusableCell(withIdentifier: identifier)
         }
         return cell!
     }
     
-    func registCellWithCellModels(_ cellModels: [PACellModel]) {
+    func registCell(withCellModels cellModels: [PACellModel]) {
         cellModels.forEach { cellModel in
             let identifier = cellModel.identifier
             if cellModel.isRegisterByClass {
@@ -31,30 +31,23 @@ extension UITableView {
         }
     }
     
-    func dequeueReusableHeaderFooterViewWithHeaderFooterModel(_ headerFooterViewModel: PAHeaderFooterViewModel) -> UITableViewHeaderFooterView {
+    func dequeueReusableHeaderFooterView(withHeaderFooterModel headerFooterViewModel: PAHeaderFooterViewModel) -> UIView {
         let identifier = headerFooterViewModel.identifier
-        var headerFooterView: UITableViewHeaderFooterView? = dequeueReusableHeaderFooterView(withIdentifier: identifier)
+        var headerFooterView: UIView? = dequeueReusableHeaderFooterView(withIdentifier: identifier)
         if headerFooterView == nil {
-            if headerFooterViewModel.isRegisterByClass {
-                register(headerFooterViewModel.classType, forHeaderFooterViewReuseIdentifier: identifier)
+            if headerFooterViewModel.headerFooterView != nil {
+                headerFooterView = headerFooterViewModel.headerFooterView
             } else {
-                register(UINib(nibName: identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: identifier)
+                if headerFooterViewModel.isRegisterByClass {
+                    register(headerFooterViewModel.classType, forHeaderFooterViewReuseIdentifier: identifier)
+                } else {
+                    register(UINib(nibName: identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: identifier)
+                }
+                headerFooterView = dequeueReusableHeaderFooterView(withIdentifier: identifier)
             }
-            headerFooterView = dequeueReusableHeaderFooterView(withIdentifier: identifier)
         }
         return headerFooterView!
     }
-    
-    func generateSectionModel(dataModels: [PAModelBaseProtocol], map: Any) {
-        
-    }
-    
-}
-
-extension PATableDelegater {
-    // 生成一个sectionModel
-    
-    // 生成一组sectionModels
     
     func generateSectionModel(dataModels: [PAModelBaseProtocol], map: Any) {
         
@@ -80,6 +73,19 @@ class PATableViewModel {
         }
         let sectionModel = PATableViewModel.getSectionModel(cellModels)
         return sectionModel
+    }
+    
+}
+
+// future test...
+
+extension PATableDelegater {
+    // 生成一个sectionModel
+    
+    // 生成一组sectionModels
+    
+    func generateSectionModel(dataModels: [PAModelBaseProtocol], map: Any) {
+        
     }
     
 }

@@ -21,8 +21,9 @@ class TableViewController: BaseViewController {
         return tableView
     }()
     
+    
     var number: Int = 2
-    var dataSource: [String] = ["1", "2", "3"]
+    var dataSource: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,27 @@ class TableViewController: BaseViewController {
             make!.edges.equalTo()
         }
         
-        tableView.tableFooterView = UIView()
+        setupTablefooterView()
+    }
+    
+    func setupTablefooterView() {
+        /*
+         iOS 10之后：可以直接调用 tableView.tableFooterView?.frame.size.height = 500 来在任何地方修改footerView的高度，并且没有显示问题；
+         iOS 10之前：设置自定义footerView高度 并将其设置为tableView.tableFooterView后，高度不能直接更改
+         */
+        if #available(iOS 10.0, *) {
+            tableView.tableFooterView = UIView()
+            tableView.tableFooterView?.backgroundColor = UIColor.green
+            tableView.tableFooterView?.frame.size.height = 500
+        } else {
+            let footerView = UIView()
+            footerView.frame.size.height = 500
+            footerView.backgroundColor = UIColor.green
+            // 在设置tableFooterView之后不能再修改其高度，否则会出现高度改变了，但tableView的contenSize没有改变，表现为footerView显示不完全的 或过多显示
+            tableView.tableFooterView = footerView
+        }
+        
+        
     }
     
     func setupRightBuaButtonItem() {

@@ -9,11 +9,6 @@
 import Foundation
 import IGListKit
 
-// Model的基础协议（‘基类’）
-public protocol PAModelBaseProtocol {
-    //
-}
-
 extension NSObject: ListDiffable, PAModelBaseProtocol {
     
     public func diffIdentifier() -> NSObjectProtocol {

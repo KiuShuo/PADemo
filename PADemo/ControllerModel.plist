@@ -85,6 +85,8 @@
 			<string>PATableViewModelDemoController</string>
 			<key>isStoryboard</key>
 			<string>0</string>
+			<key>descriotion</key>
+			<string>tableViewModel、IGListKit;tableView.contentOffset; tableview.contentInset</string>
 		</dict>
 		<dict>
 			<key>id</key>
@@ -138,7 +140,15 @@
 			<key>id</key>
 			<string>16</string>
 			<key>identifier</key>
-			<string>PAIntegrationSituationViewController</string>
+			<string>PASegmentTestViewController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>16</string>
+			<key>identifier</key>
+			<string>AlertTestViewController</string>
 			<key>isStoryboard</key>
 			<string>0</string>
 		</dict>

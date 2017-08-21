@@ -13,6 +13,7 @@ class ControllerModel: NSObject, Mappable {
 
     var id: String?
     var identifier: String = ""
+    var descriotion: String = ""
     var isStoryboard: Bool = false // 1:true 0:false
     private var isStoryboardStr: String? {
         didSet {
@@ -29,6 +30,7 @@ class ControllerModel: NSObject, Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         identifier <- map["identifier"]
+        descriotion <- map["descriotion"]
         isStoryboardStr <- map["isStoryboard"]
         storyboardName <- map["storyboardName"]
     }

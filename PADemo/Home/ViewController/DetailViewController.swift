@@ -48,10 +48,25 @@ class DetailViewController: BaseViewController {
         // range
         // PARange.learnRange()
         
-        stringWidth()
+        testAttributedString()
+    }
+    
+    func testAttributedString() {
+        let aStr: NSMutableAttributedString = NSMutableAttributedString(string: "1000分")
+        let tFont = UIFont.systemFont(ofSize: 32)
+        let range = NSRange(location: 0, length: aStr.length - 1)
+        aStr.dz_setFont(tFont, range: range)
         
-        stringHeight()
+        let eFont = UIFont.systemFont(ofSize: 14)
+        let aRange = NSRange(location: aStr.length - 1, length: 1)
+        aStr.dz_setFont(eFont, range: aRange)
         
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 150, width: 100, height: 50))
+        view.addSubview(label)
+        label.textColor = UIColor.white
+        label.backgroundColor = UIColor.red
+        label.attributedText = aStr
     }
     
     func getImage(urlString: String) -> UIImage? {
@@ -78,25 +93,6 @@ class DetailViewController: BaseViewController {
     }
 
     
-    // 根据文本计算label size
-    func setupAutoHeightLabel() {
-        let label = UILabel()
-        view.addSubview(label)
-        label.backgroundColor = UIColor.red
-        label.text = text
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 24)
-        let paHeight = PAStringHeightMakeWithText(text, 24, 0, PADeviceSize.screenWidth - 20)
-        debugLog("paHeight = \(paHeight)")
-        let height = label.sizeThatFits(CGSize(width: PADeviceSize.screenWidth - 20, height: CGFloat.greatestFiniteMagnitude)).height
-        debugLog("height = \(height)")
-        label.mas_makeConstraints { (make) in
-            make!.top.equalTo()(74)
-            make!.left.equalTo()(10)
-            make!.right.equalTo()(-10)
-            make!.height.equalTo()(height)
-        }
-    }
     
 
 }
@@ -156,29 +152,6 @@ extension DetailViewController {
     
 }
 
-// MARK: - 字符串 Size
-extension DetailViewController {
-    
-    func stringWidth() {
-        let w = PAStringWidthMakeWithText(shortText, 15)
-        debugLog("w = \(w)")
-        
-        let w1 = shortText.width(font: UIFont.systemFont(ofSize: 15))
-        debugLog("w1 = \(w1)")
-    }
-    
-    func stringHeight() {
-        let h = PAStringHeightMakeWithText(shortText, 15, 0, UIScreen.width)
-        debugLog("h = \(h)")
-        
-        let h1 = text.height(width: UIScreen.width, font: UIFont.systemFont(ofSize: 15)) + 5
-        debugLog("h1 = \(h1)")
-        
-    }
-    
-    
-}
-
 // MARK: Range
 struct PARange {
     // Range类似于集合 以下为Range的常用方法
@@ -229,8 +202,7 @@ struct PAAttributedString {
 //        debugLog("resultString = \(resultString)")
 //        let aRange = NSRange(location: 0, length: mAttributedString.length - 1)
 //        return mAttributedString.attributedSubstring(from: aRange)
-        let width = PAStringWidthMakeWithAttributedString(mAttributedString)
-        debugLog("width1 = \(width)")
+
         
         return mAttributedString
     }

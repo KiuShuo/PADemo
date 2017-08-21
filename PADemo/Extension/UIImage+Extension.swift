@@ -110,7 +110,8 @@ extension UIImage {
             UIGraphicsBeginImageContext(self.size);
         }
         self.draw(in: CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height))
-        let height:CGFloat = PAStringHeightMakeWithText(text, 12, 0, PADeviceSize.screenWidth)
+        
+        let height:CGFloat = text.height(font: UIFont.systemFont(ofSize: 12))
         let rect = CGRect.init(x: 0, y: (self.size.height-height)*0.5, width: self.size.width, height: height)
         let style = NSMutableParagraphStyle()
         style.alignment = .center

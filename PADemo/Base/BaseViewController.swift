@@ -15,5 +15,8 @@ class BaseViewController: UIViewController {
         view.backgroundColor = UIColor.white
     }
     
-
+    deinit {
+        print(String(describing: self.classForCoder) + "析构方法执行")
+    }
+    
 }
