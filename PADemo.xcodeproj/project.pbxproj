@@ -11,6 +11,9 @@
 		8D10313E1ECE8791007F49CA /* TableViewController_CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10313D1ECE8791007F49CA /* TableViewController_CellHeight.swift */; };
 		8D1031431ECE883A007F49CA /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1031411ECE883A007F49CA /* CustomTableViewCell.swift */; };
 		8D1031441ECE883A007F49CA /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D1031421ECE883A007F49CA /* CustomTableViewCell.xib */; };
+		8D1136371F4BE0F000DCB258 /* PACycleContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1136361F4BE0F000DCB258 /* PACycleContainerView.swift */; };
+		8D1136391F4BE21900DCB258 /* PACycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1136381F4BE21900DCB258 /* PACycleViewController.swift */; };
+		8D11363D1F4C048D00DCB258 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D11363C1F4C048D00DCB258 /* UIView+Extension.swift */; };
 		8D12DBEE1EB1C8F1005B9AE9 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12DBED1EB1C8F1005B9AE9 /* Protocol.swift */; };
 		8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12DBEF1EB1C992005B9AE9 /* Extension.swift */; };
 		8D1F53CB1F453E4E005E89AE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F53C91F453E4E005E89AE /* DetailViewController.swift */; };
@@ -30,7 +33,7 @@
 		8D42C8851F13754B00061C9C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42C8841F13754B00061C9C /* NotificationViewController.swift */; };
 		8D42C8881F13754B00061C9C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D42C8861F13754B00061C9C /* MainInterface.storyboard */; };
 		8D42C88C1F13754B00061C9C /* PANotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8D42C87E1F13754B00061C9C /* PANotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8D65125D1F3BF24E00D9E434 /* PACycleContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6512571F3BF24E00D9E434 /* PACycleContainer.swift */; };
+		8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */; };
 		8D65125E1F3BF24E00D9E434 /* PASegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */; };
 		8D6512661F3C01C600D9E434 /* PAIntegrationSituationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6512651F3C01C600D9E434 /* PAIntegrationSituationTopView.swift */; };
 		8D6512681F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6512671F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib */; };
@@ -76,6 +79,9 @@
 		8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */; };
 		8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CC1EB9A5A1008B314E /* NotificationCenterController.swift */; };
 		8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CE1EB9A609008B314E /* Utile.swift */; };
+		8D9FBAC51F67E3AF0084B54E /* PACalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FBAC41F67E3AF0084B54E /* PACalculateViewController.swift */; };
+		8D9FBACC1F68CF740084B54E /* PACalculateRulesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9FBACA1F68CF740084B54E /* PACalculateRulesCell.swift */; };
+		8D9FBACD1F68CF740084B54E /* PACalculateRulesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9FBACB1F68CF740084B54E /* PACalculateRulesCell.xib */; };
 		8DB597461F331D5800E21E8B /* PAFpsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB597451F331D5800E21E8B /* PAFpsFile.swift */; };
 		8DB7C2941F4A923300E8FE53 /* BaseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7C2931F4A923300E8FE53 /* BaseHeaderView.swift */; };
 		8DB7C2971F4ADEF200E8FE53 /* NSMutableAttributedString+DZCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7C2961F4ADEF200E8FE53 /* NSMutableAttributedString+DZCategory.m */; };
@@ -94,7 +100,16 @@
 		8DCA85831F38568F009F648F /* PAPersonSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85821F38568F009F648F /* PAPersonSectionController.swift */; };
 		8DCA85861F385D20009F648F /* PAPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85841F385D20009F648F /* PAPersonCollectionViewCell.swift */; };
 		8DCA85871F385D20009F648F /* PAPersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA85851F385D20009F648F /* PAPersonCollectionViewCell.xib */; };
+		8DCD7F141F58F1B10060957B /* PACalculatorMainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD7F121F58F1B10060957B /* PACalculatorMainMenuCell.swift */; };
+		8DCD7F151F58F1B10060957B /* PACalculatorMainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCD7F131F58F1B10060957B /* PACalculatorMainMenuCell.xib */; };
 		8DD07E351EC5583A00EA2B79 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD07E341EC5583A00EA2B79 /* CollectionViewController.swift */; };
+		8DDC0EBD1F57BEC40035BE44 /* PACalculatorMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC0EBC1F57BEC40035BE44 /* PACalculatorMenuViewController.swift */; };
+		8DDC0EC11F57D8F80035BE44 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC0EC01F57D8F80035BE44 /* BaseTableViewController.swift */; };
+		8DDC0EC31F57D9A60035BE44 /* PAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC0EC21F57D9A60035BE44 /* PAListViewController.swift */; };
+		8DDC0EC51F57DCDA0035BE44 /* PACalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC0EC41F57DCDA0035BE44 /* PACalculatorModel.swift */; };
+		8DDC0EC71F57E2890035BE44 /* PACalculatorModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC0EC61F57E2890035BE44 /* PACalculatorModel.plist */; };
+		8DDC0ECE1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC0ECC1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift */; };
+		8DDC0ECF1F57E7840035BE44 /* PACalculatorDetailMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC0ECD1F57E7840035BE44 /* PACalculatorDetailMenuCell.xib */; };
 		8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFA1F25E429004DDA1B /* TableViewController_CollectionView.swift */; };
 		8DDC6BFE1F25E441004DDA1B /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFC1F25E441004DDA1B /* CollectionTableViewCell.swift */; };
 		8DDC6BFF1F25E441004DDA1B /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFD1F25E441004DDA1B /* CollectionTableViewCell.xib */; };
@@ -105,7 +120,10 @@
 		8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF457A1EB1BE6900CA4F75 /* LaunchScreen.storyboard */; };
 		8DEF45871EB1BE6900CA4F75 /* PADemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF45861EB1BE6900CA4F75 /* PADemoTests.swift */; };
 		8DEF45921EB1BE6900CA4F75 /* PADemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF45911EB1BE6900CA4F75 /* PADemoUITests.swift */; };
+		8DF2C4721F554EA5007D5CC7 /* CKSliderSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2C4711F554EA5007D5CC7 /* CKSliderSwitchView.swift */; };
+		8DF2C4741F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2C4731F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift */; };
 		8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF362F11EDE9BA60095A78A /* PAView.swift */; };
+		8DF8457B1F58FE08003DB6BA /* PACKSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8457A1F58FE08003DB6BA /* PACKSliderViewController.swift */; };
 		8DFE58231F176A9F0057BAD9 /* PAFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE58221F176A9F0057BAD9 /* PAFileManager.swift */; };
 		8DFE58251F176F9E0057BAD9 /* PAFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE58241F176F9E0057BAD9 /* PAFileManager.swift */; };
 		8DFE58271F176FA40057BAD9 /* PAFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE58261F176FA40057BAD9 /* PAFileManager.swift */; };
@@ -164,6 +182,9 @@
 		8D10313D1ECE8791007F49CA /* TableViewController_CellHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_CellHeight.swift; sourceTree = "<group>"; };
 		8D1031411ECE883A007F49CA /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8D1031421ECE883A007F49CA /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		8D1136361F4BE0F000DCB258 /* PACycleContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACycleContainerView.swift; sourceTree = "<group>"; };
+		8D1136381F4BE21900DCB258 /* PACycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACycleViewController.swift; sourceTree = "<group>"; };
+		8D11363C1F4C048D00DCB258 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8D12DBED1EB1C8F1005B9AE9 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		8D12DBEF1EB1C992005B9AE9 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8D1F53C91F453E4E005E89AE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -188,9 +209,9 @@
 		8D42C8841F13754B00061C9C /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		8D42C8871F13754B00061C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8D42C8891F13754B00061C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
 		8D5C9D991EE6B26C00749599 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		8D5C9D9A1EE6B2D500749599 /* PADate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PADate.playground; sourceTree = "<group>"; };
-		8D6512571F3BF24E00D9E434 /* PACycleContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACycleContainer.swift; sourceTree = "<group>"; };
 		8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PASegmentControl.swift; sourceTree = "<group>"; };
 		8D6512651F3C01C600D9E434 /* PAIntegrationSituationTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAIntegrationSituationTopView.swift; sourceTree = "<group>"; };
 		8D6512671F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAIntegrationSituationTopView.xib; sourceTree = "<group>"; };
@@ -239,6 +260,9 @@
 		8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+PACenter.m"; sourceTree = "<group>"; };
 		8D99C5CC1EB9A5A1008B314E /* NotificationCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterController.swift; sourceTree = "<group>"; };
 		8D99C5CE1EB9A609008B314E /* Utile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utile.swift; sourceTree = "<group>"; };
+		8D9FBAC41F67E3AF0084B54E /* PACalculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACalculateViewController.swift; sourceTree = "<group>"; };
+		8D9FBACA1F68CF740084B54E /* PACalculateRulesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACalculateRulesCell.swift; sourceTree = "<group>"; };
+		8D9FBACB1F68CF740084B54E /* PACalculateRulesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PACalculateRulesCell.xib; sourceTree = "<group>"; };
 		8DB597451F331D5800E21E8B /* PAFpsFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsFile.swift; sourceTree = "<group>"; };
 		8DB7C2931F4A923300E8FE53 /* BaseHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHeaderView.swift; sourceTree = "<group>"; };
 		8DB7C2951F4ADEF200E8FE53 /* NSMutableAttributedString+DZCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+DZCategory.h"; sourceTree = "<group>"; };
@@ -258,7 +282,16 @@
 		8DCA85821F38568F009F648F /* PAPersonSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPersonSectionController.swift; sourceTree = "<group>"; };
 		8DCA85841F385D20009F648F /* PAPersonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DCA85851F385D20009F648F /* PAPersonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAPersonCollectionViewCell.xib; sourceTree = "<group>"; };
+		8DCD7F121F58F1B10060957B /* PACalculatorMainMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACalculatorMainMenuCell.swift; sourceTree = "<group>"; };
+		8DCD7F131F58F1B10060957B /* PACalculatorMainMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PACalculatorMainMenuCell.xib; sourceTree = "<group>"; };
 		8DD07E341EC5583A00EA2B79 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8DDC0EBC1F57BEC40035BE44 /* PACalculatorMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACalculatorMenuViewController.swift; sourceTree = "<group>"; };
+		8DDC0EC01F57D8F80035BE44 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		8DDC0EC21F57D9A60035BE44 /* PAListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAListViewController.swift; sourceTree = "<group>"; };
+		8DDC0EC41F57DCDA0035BE44 /* PACalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACalculatorModel.swift; sourceTree = "<group>"; };
+		8DDC0EC61F57E2890035BE44 /* PACalculatorModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PACalculatorModel.plist; sourceTree = "<group>"; };
+		8DDC0ECC1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACalculatorDetailMenuCell.swift; sourceTree = "<group>"; };
+		8DDC0ECD1F57E7840035BE44 /* PACalculatorDetailMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PACalculatorDetailMenuCell.xib; sourceTree = "<group>"; };
 		8DDC6BFA1F25E429004DDA1B /* TableViewController_CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_CollectionView.swift; sourceTree = "<group>"; };
 		8DDC6BFC1F25E441004DDA1B /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		8DDC6BFD1F25E441004DDA1B /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -275,7 +308,10 @@
 		8DEF458D1EB1BE6900CA4F75 /* PADemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PADemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEF45911EB1BE6900CA4F75 /* PADemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PADemoUITests.swift; sourceTree = "<group>"; };
 		8DEF45931EB1BE6900CA4F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DF2C4711F554EA5007D5CC7 /* CKSliderSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKSliderSwitchView.swift; sourceTree = "<group>"; };
+		8DF2C4731F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAOffsetedSubviewButton.swift; sourceTree = "<group>"; };
 		8DF362F11EDE9BA60095A78A /* PAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAView.swift; sourceTree = "<group>"; };
+		8DF8457A1F58FE08003DB6BA /* PACKSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACKSliderViewController.swift; sourceTree = "<group>"; };
 		8DFE58221F176A9F0057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
 		8DFE58241F176F9E0057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
 		8DFE58261F176FA40057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
@@ -346,6 +382,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8D1136321F4BE0E300DCB258 /* CycleView */ = {
+			isa = PBXGroup;
+			children = (
+				8D1136331F4BE0E300DCB258 /* Model */,
+				8D1136341F4BE0E300DCB258 /* View */,
+				8D1136351F4BE0E300DCB258 /* ViewController */,
+			);
+			path = CycleView;
+			sourceTree = "<group>";
+		};
+		8D1136331F4BE0E300DCB258 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D1136341F4BE0E300DCB258 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D1136361F4BE0F000DCB258 /* PACycleContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D1136351F4BE0E300DCB258 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D1136381F4BE21900DCB258 /* PACycleViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		8D1F53C71F453E4E005E89AE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */,
+				8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */,
 			);
 			path = "Quart2D&Graphics";
 			sourceTree = "<group>";
@@ -430,8 +500,9 @@
 			children = (
 				8D65126F1F3DA3ED00D9E434 /* PASegmentedView.swift */,
 				8D6512701F3DA3ED00D9E434 /* PASegmentedControlView.swift */,
-				8D6512571F3BF24E00D9E434 /* PACycleContainer.swift */,
 				8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */,
+				8DF2C4711F554EA5007D5CC7 /* CKSliderSwitchView.swift */,
+				8DF2C4731F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -453,6 +524,7 @@
 			children = (
 				8D6512691F3C08ED00D9E434 /* PAIntegrationSituationTableViewController.swift */,
 				8D6512731F3DA43100D9E434 /* PASegmentTestViewController.swift */,
+				8DF8457A1F58FE08003DB6BA /* PACKSliderViewController.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -460,6 +532,7 @@
 		8D66E9341EE1361400DBBE41 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8D11363C1F4C048D00DCB258 /* UIView+Extension.swift */,
 				8DB7C2951F4ADEF200E8FE53 /* NSMutableAttributedString+DZCategory.h */,
 				8DB7C2961F4ADEF200E8FE53 /* NSMutableAttributedString+DZCategory.m */,
 				8D6512751F3DB34000D9E434 /* FoundationExtensions.swift */,
@@ -572,6 +645,7 @@
 				8DF362F11EDE9BA60095A78A /* PAView.swift */,
 				8D6D13641ECB71B20084BBA8 /* PABaseNavigationController.swift */,
 				8DBB1ACA1EC4606900D507E6 /* BaseViewController.swift */,
+				8DDC0EC01F57D8F80035BE44 /* BaseTableViewController.swift */,
 				8D6D135C1ECB6EE90084BBA8 /* Style.swift */,
 				8D1F53D11F454342005E89AE /* BaseModel.swift */,
 			);
@@ -621,6 +695,7 @@
 				8DCA85781F3850B9009F648F /* PACellModel.swift */,
 				8DCA857A1F3850B9009F648F /* PATableViewModel.swift */,
 				8DCA85791F3850B9009F648F /* PATableViewDelegate.swift */,
+				8DDC0EC21F57D9A60035BE44 /* PAListViewController.swift */,
 			);
 			path = PATableViewModel;
 			sourceTree = "<group>";
@@ -631,6 +706,48 @@
 				8DD07E341EC5583A00EA2B79 /* CollectionViewController.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		8DDC0EB81F57BE880035BE44 /* PAMedicineCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC0EB91F57BE880035BE44 /* Model */,
+				8DDC0EBA1F57BE880035BE44 /* View */,
+				8DDC0EBB1F57BE880035BE44 /* ViewController */,
+			);
+			name = PAMedicineCalculator;
+			path = VerticalSegmentControl;
+			sourceTree = "<group>";
+		};
+		8DDC0EB91F57BE880035BE44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC0EC41F57DCDA0035BE44 /* PACalculatorModel.swift */,
+				8DDC0EC61F57E2890035BE44 /* PACalculatorModel.plist */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8DDC0EBA1F57BE880035BE44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC0ECC1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift */,
+				8DDC0ECD1F57E7840035BE44 /* PACalculatorDetailMenuCell.xib */,
+				8DCD7F121F58F1B10060957B /* PACalculatorMainMenuCell.swift */,
+				8DCD7F131F58F1B10060957B /* PACalculatorMainMenuCell.xib */,
+				8D9FBACA1F68CF740084B54E /* PACalculateRulesCell.swift */,
+				8D9FBACB1F68CF740084B54E /* PACalculateRulesCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8DDC0EBB1F57BE880035BE44 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC0EBC1F57BEC40035BE44 /* PACalculatorMenuViewController.swift */,
+				8D9FBAC41F67E3AF0084B54E /* PACalculateViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8DDC6BF91F25E3DD004DDA1B /* TableView+CollectionView */ = {
@@ -673,10 +790,12 @@
 		8DEF45701EB1BE6900CA4F75 /* PADemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D5C9D971EE6B24500749599 /* Playground */,
+				8DDC0EB81F57BE880035BE44 /* PAMedicineCalculator */,
+				8D1136321F4BE0E300DCB258 /* CycleView */,
 				8DBB1AC91EC4606100D507E6 /* Base */,
 				8D65124D1F3BE94500D9E434 /* SliderSegmentControl */,
 				8D3AC0321F34218500DF9E50 /* Quart2D&Graphics */,
-				8D5C9D971EE6B24500749599 /* Playground */,
 				8DC26BC51F299045001A831F /* PAInstrument */,
 				8DDC6BF91F25E3DD004DDA1B /* TableView+CollectionView */,
 				8DFE58211F176A8E0057BAD9 /* Manager */,
@@ -933,6 +1052,8 @@
 				8D42C8691F13570000061C9C /* unbelievable.caf in Resources */,
 				8D6512681F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib in Resources */,
 				8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */,
+				8D9FBACD1F68CF740084B54E /* PACalculateRulesCell.xib in Resources */,
+				8DCD7F151F58F1B10060957B /* PACalculatorMainMenuCell.xib in Resources */,
 				8DCA85871F385D20009F648F /* PAPersonCollectionViewCell.xib in Resources */,
 				8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */,
 				8DDC6BFF1F25E441004DDA1B /* CollectionTableViewCell.xib in Resources */,
@@ -942,9 +1063,11 @@
 				8D93A7F71F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib in Resources */,
 				8D8F15A91EE7B0EC0019AC1C /* PATableViewModelDemoCell.xib in Resources */,
 				8D1F53D01F453E60005E89AE /* HomeTableViewCell.xib in Resources */,
+				8DDC0EC71F57E2890035BE44 /* PACalculatorModel.plist in Resources */,
 				8DC26BCF1F299368001A831F /* PAFpsTableViewCell.xib in Resources */,
 				8D65126E1F3C09F800D9E434 /* PAIntegrationSituationCell.xib in Resources */,
 				8D1031441ECE883A007F49CA /* CustomTableViewCell.xib in Resources */,
+				8DDC0ECF1F57E7840035BE44 /* PACalculatorDetailMenuCell.xib in Resources */,
 				8DEF45771EB1BE6900CA4F75 /* Main.storyboard in Resources */,
 				8DDC6C051F25E48E004DDA1B /* CollectionViewCell.xib in Resources */,
 			);
@@ -1065,6 +1188,7 @@
 				8D6D13571ECB68A00084BBA8 /* SearchViewController.swift in Sources */,
 				8DCA857B1F3850B9009F648F /* PACellModel.swift in Sources */,
 				8D66E9591EE1375700DBBE41 /* Dictionary+Extension.swift in Sources */,
+				8DCD7F141F58F1B10060957B /* PACalculatorMainMenuCell.swift in Sources */,
 				8D6E2C971EF8EBCA00934C9B /* TextfieldViewController.swift in Sources */,
 				8D6D13651ECB71B20084BBA8 /* PABaseNavigationController.swift in Sources */,
 				8DFE58231F176A9F0057BAD9 /* PAFileManager.swift in Sources */,
@@ -1075,7 +1199,9 @@
 				8D6512761F3DB34000D9E434 /* FoundationExtensions.swift in Sources */,
 				8D6E112F1F441D1400C3620D /* AlertTestViewController.swift in Sources */,
 				8DC26BD11F29937A001A831F /* PAFpsViewController.swift in Sources */,
+				8DF8457B1F58FE08003DB6BA /* PACKSliderViewController.swift in Sources */,
 				8DBB1AC51EC4604500D507E6 /* CustomNavigationItemController.swift in Sources */,
+				8DDC0EC51F57DCDA0035BE44 /* PACalculatorModel.swift in Sources */,
 				8D6512711F3DA3ED00D9E434 /* PASegmentedView.swift in Sources */,
 				8D65125E1F3BF24E00D9E434 /* PASegmentControl.swift in Sources */,
 				8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */,
@@ -1083,6 +1209,7 @@
 				8DDC6C041F25E48E004DDA1B /* CollectionViewCell.swift in Sources */,
 				8DBB1AC81EC4604500D507E6 /* MasonryViewController.swift in Sources */,
 				8D66E9571EE1375700DBBE41 /* Array+Extension.swift in Sources */,
+				8D9FBAC51F67E3AF0084B54E /* PACalculateViewController.swift in Sources */,
 				8DCA85831F38568F009F648F /* PAPersonSectionController.swift in Sources */,
 				8D66E93D1EE1361400DBBE41 /* UIDevice+Extention.swift in Sources */,
 				8D673C901F14BCBC00175A6C /* LayoutConstraintsExtension.swift in Sources */,
@@ -1090,17 +1217,25 @@
 				8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */,
 				8D93A7F61F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift in Sources */,
 				8D744B661F44298900A42548 /* AlertCustomView.swift in Sources */,
+				8D1136371F4BE0F000DCB258 /* PACycleContainerView.swift in Sources */,
 				8D1031431ECE883A007F49CA /* CustomTableViewCell.swift in Sources */,
 				8D66E93F1EE1361400DBBE41 /* UImageView+Extension.swift in Sources */,
 				8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */,
+				8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */,
 				8D6512721F3DA3ED00D9E434 /* PASegmentedControlView.swift in Sources */,
 				8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */,
 				8D6512741F3DA43100D9E434 /* PASegmentTestViewController.swift in Sources */,
+				8DDC0ECE1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift in Sources */,
 				8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */,
+				8DDC0EC31F57D9A60035BE44 /* PAListViewController.swift in Sources */,
 				8D6D13591ECB6B7F0084BBA8 /* SearchResultViewController.swift in Sources */,
 				8DB7C2941F4A923300E8FE53 /* BaseHeaderView.swift in Sources */,
+				8DF2C4741F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift in Sources */,
+				8D11363D1F4C048D00DCB258 /* UIView+Extension.swift in Sources */,
+				8DF2C4721F554EA5007D5CC7 /* CKSliderSwitchView.swift in Sources */,
 				8D6512661F3C01C600D9E434 /* PAIntegrationSituationTopView.swift in Sources */,
 				8DD07E351EC5583A00EA2B79 /* CollectionViewController.swift in Sources */,
+				8D9FBACC1F68CF740084B54E /* PACalculateRulesCell.swift in Sources */,
 				8DCA857D1F3850B9009F648F /* PATableViewModel.swift in Sources */,
 				8D65126D1F3C09F800D9E434 /* PAIntegrationSituationCell.swift in Sources */,
 				8D1F53D21F454342005E89AE /* BaseModel.swift in Sources */,
@@ -1109,7 +1244,6 @@
 				8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */,
 				8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */,
 				8D93A7FA1F32D09A00FE8DA6 /* UIView+ZJRadius.m in Sources */,
-				8D65125D1F3BF24E00D9E434 /* PACycleContainer.swift in Sources */,
 				8DB597461F331D5800E21E8B /* PAFpsFile.swift in Sources */,
 				8D1F53CC1F453E4E005E89AE /* HomeViewController.swift in Sources */,
 				8D42C8651F1355A200061C9C /* AppDelegate.swift in Sources */,
@@ -1117,7 +1251,10 @@
 				8D6E2C991EF8EDBA00934C9B /* TextFieldDetailViewController.swift in Sources */,
 				8D673C911F14BCBC00175A6C /* PAAlertView.swift in Sources */,
 				8D66E95A1EE1375700DBBE41 /* Dispatch+Extension.swift in Sources */,
+				8D1136391F4BE21900DCB258 /* PACycleViewController.swift in Sources */,
+				8DDC0EC11F57D8F80035BE44 /* BaseTableViewController.swift in Sources */,
 				8D12DBEE1EB1C8F1005B9AE9 /* Protocol.swift in Sources */,
+				8DDC0EBD1F57BEC40035BE44 /* PACalculatorMenuViewController.swift in Sources */,
 				8D10313E1ECE8791007F49CA /* TableViewController_CellHeight.swift in Sources */,
 				8D66E95B1EE1375700DBBE41 /* Optional+Extension.swift in Sources */,
 				8DCA857C1F3850B9009F648F /* PATableViewDelegate.swift in Sources */,

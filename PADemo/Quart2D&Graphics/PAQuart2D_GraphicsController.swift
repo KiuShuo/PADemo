@@ -17,8 +17,12 @@ class PAQuart2D_GraphicsController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         learnQuart2D_Graphics()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let viewController = RoundViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func learnQuart2D_Graphics() {
@@ -37,6 +41,11 @@ class PAQuart2D_GraphicsController: BaseViewController {
         let view04 = PAView04(frame: CGRect(x: 190, y: 74, width: 100, height: 200))
         view04.backgroundColor = UIColor.green
         view.addSubview(view04)
+        
+        
+        let view05 = PAView05(frame: CGRect(x: 10, y: 150, width: 170, height: 300))
+        view05.backgroundColor = UIColor.green
+        view.addSubview(view05)
     }
     
 }
@@ -131,6 +140,27 @@ class PAView03: UIView {
         return sin(param * CGFloat.pi / 180)
     }
     
+}
+
+class PAView05: UIView {
+    override func draw(_ rect: CGRect) {
+        
+        let color = UIColor.red
+        color.set() // 设置线条颜色
+        
+        // 根据传人的矩形画出内切圆／椭圆
+        //    let aPath = UIBezierPath(ovalInRect: CGRectMake(40, 40, 100, 100)) // 如果传入的是正方形，画出的就是内切圆
+        UIView.animate(withDuration: 3.0) { 
+            let aPath = UIBezierPath(ovalIn: CGRect(x: 40, y: 40, width: 100, height: 180)) // 如果传入的是长方形，画出的就是内切椭圆
+            
+            aPath.lineWidth = 5.0 // 线条宽度
+            
+            aPath.stroke()
+        }
+        // Draws line 根据坐标点连线，不填充
+        //    aPath.fill() // Draws line 根据坐标点连线，填充
+        
+    }
 }
 
 

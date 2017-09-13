@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import ObjectMapper
 
 // Model的基础协议（‘基类’）

@@ -68,12 +68,12 @@ extension PASegmentTestViewController: PASegmentedViewDelegate {
         return segmentControl
     }
     
-    func segmentedViewHeaderView(in segmentedView: PASegmentedView) -> UIView {
-        return topSituationView
+    func segmentedViewHeaderView(in segmentedView: PASegmentedView) -> UIView? {
+        return nil
     }
     
     func segmentedViewHeaderMaxHeight(in segmentedView: PASegmentedView) -> CGFloat {
-        return 146
+        return 0
     }
     
     func segmentedViewHeaderMinHeight(in segmentedView: PASegmentedView) -> CGFloat {

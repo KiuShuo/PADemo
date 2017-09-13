@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgR-Qp-4zs">
-                        <rect key="frame" x="10" y="10" width="44" height="21"/>
+                        <rect key="frame" x="10" y="10" width="44" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detaildetail" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZ9-92-2Rw">
-                        <rect key="frame" x="10" y="41" width="300" height="19.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="detaildetail" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZ9-92-2Rw">
+                        <rect key="frame" x="10" y="41.5" width="300" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -37,6 +37,7 @@
                     <constraint firstItem="RgR-Qp-4zs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="brX-p4-cR2"/>
                     <constraint firstItem="RgR-Qp-4zs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eL5-gc-P7V"/>
                     <constraint firstAttribute="trailing" secondItem="VZ9-92-2Rw" secondAttribute="trailing" constant="10" id="eYj-4a-Oxn"/>
+                    <constraint firstAttribute="bottom" secondItem="VZ9-92-2Rw" secondAttribute="bottom" constant="10" id="vgN-DO-KrG"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

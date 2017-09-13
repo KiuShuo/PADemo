@@ -25,7 +25,7 @@ class HomeViewController: BaseViewController {
         title = "首页"
         
         let footerView = UIView()
-        footerView.frame.size.height = 500
+        footerView.frame.size.height = 50
         tableView.tableFooterView = footerView
         tableView.tableFooterView?.backgroundColor = UIColor.green
         //tableView.estimatedRowHeight = 44.0
@@ -46,7 +46,7 @@ class HomeViewController: BaseViewController {
         let cellModels = controllerModels.map { controllerModel -> PACellModel in
             var cellModel = PACellModel(classType: HomeTableViewCell.self)
             cellModel.dataModel = controllerModel
-            cellModel.isEnforceFrameLayout = true
+            //cellModel.isEnforceFrameLayout = true
             return cellModel
         }
         tableDelegater.sectionModels = [PASectionModel(cellModelArr: cellModels)]

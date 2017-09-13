@@ -71,13 +71,14 @@ extension PATableDelegater: UITableViewDelegate {
         if tableView.dequeueReusableCell(withIdentifier: cellModel.identifier) == nil {
             tableView.registCell(withCellModels: [cellModel])
         }
-        return tableView.fd_heightForCell(withIdentifier: cellModel.identifier, cacheBy: indexPath, configuration: { cell in
+        let height =  tableView.fd_heightForCell(withIdentifier: cellModel.identifier, cacheBy: indexPath, configuration: { cell in
             (cell as? UITableViewCell)?.bounds.size.width = tableView.bounds.width
             (cell as? UITableViewCell)?.fd_enforceFrameLayout = cellModel.isEnforceFrameLayout
             if var aCell = cell as? PATableViewCellProtocol {
                 aCell.dataModel = cellModel.dataModel
             }
         })
+        return height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

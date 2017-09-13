@@ -26,7 +26,7 @@ class PAFpsViewController: BaseViewController {
     func setupTableView() {
         view.addSubview(tableView)
         tableView.mas_makeConstraints { make in
-            make!.edges.equalTo()
+            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
         }
         
         tableView.delegate = tableViewDelegate

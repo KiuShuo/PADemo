@@ -75,6 +75,15 @@ class PATableViewModel {
         return sectionModel
     }
     
+    static func tableViewCellClass(with name: String) -> UITableViewCell.Type? {
+        if let nameSpace = Bundle.main.infoDictionary?["CFBundleExecutable"] as? String {
+            if let tableViewCellClass = NSClassFromString(nameSpace + "." + name) as? UITableViewCell.Type {
+                return tableViewCellClass
+            }
+        }
+        return nil
+    }
+    
 }
 
 // future test...

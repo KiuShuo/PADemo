@@ -28,7 +28,7 @@ import MJRefresh
     // default is 0
     @objc optional func segmentedViewFirstStartSelectIndex(in segmentedView: PASegmentedView) -> Int
     // default is nil
-    @objc optional func segmentedViewHeaderView(in segmentedView: PASegmentedView) -> UIView
+    @objc optional func segmentedViewHeaderView(in segmentedView: PASegmentedView) -> UIView?
     // default is segmentedViewHeaderView height
     @objc optional func segmentedViewHeaderMaxHeight(in segmentedView: PASegmentedView) -> CGFloat
     // default is segmentedViewHeaderView height

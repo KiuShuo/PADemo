@@ -2,6 +2,89 @@
 
 import UIKit
 
+let arr: NSArray = [["a": "1"], ["a": "2"], ["1": "3"], ["b": "1"]]
+let aArr: NSMutableArray = NSMutableArray(array: arr.value(forKey: "a") as! NSArray)
+aArr.removeObject(identicalTo: NSNull())
+print(aArr)
+let bArr = arr.value(forKey: "b")
+print(bArr)
+let numArr = arr.value(forKey: "1")
+print(numArr)
+
+
+//let str: NSNumber = 98.6
+//print("str = \(str)")
+//print("str.doubleValue = \(str.doubleValue)")
+//let aStr = "\(str)"
+//print("aStr = \(aStr)")
+
+//let num = NSNumber(floatLiteral: str)
+//let numStr = num.stringValue
+//print("str = \(str)")
+//print("num = \(num)")
+//print("numStr = \(numStr)")
+//let a = "\(numStr)"
+//print("a = \(a)")
+
+//func valueFor(_ keyPathComponents: ArraySlice<String>, dictionary: [String: Any]) -> (Bool, Any?) {
+//    // Implement it as a tail recursive function.
+//    if keyPathComponents.isEmpty {
+//        return (false, nil)
+//    }
+//    
+//    if let keyPath = keyPathComponents.first {
+//        let object = dictionary[keyPath]
+//        if object is NSNull {
+//            return (true, nil)
+//        } else if keyPathComponents.count > 1, let dict = object as? [String: Any] {
+//            let tail = keyPathComponents.dropFirst()
+//            return valueFor(tail, dictionary: dict)
+//        } else if keyPathComponents.count > 1, let array = object as? [Any] {
+//            let tail = keyPathComponents.dropFirst()
+//            return valueFor(tail, array: array)
+//        } else {
+//            return (object != nil, object)
+//        }
+//    }
+//    
+//    return (false, nil)
+//}
+//
+//func valueFor(_ keyPathComponents: ArraySlice<String>, array: [Any]) -> (Bool, Any?) {
+//    // Implement it as a tail recursive function.
+//    
+//    if keyPathComponents.isEmpty {
+//        return (false, nil)
+//    }
+//    
+//    //Try to convert keypath to Int as index
+//    if let keyPath = keyPathComponents.first,
+//        let index = Int(keyPath) , index >= 0 && index < array.count {
+//        
+//        let object = array[index]
+//        
+//        if object is NSNull {
+//            return (true, nil)
+//        } else if keyPathComponents.count > 1, let array = object as? [Any]  {
+//            let tail = keyPathComponents.dropFirst()
+//            return valueFor(tail, array: array)
+//        } else if  keyPathComponents.count > 1, let dict = object as? [String: Any] {
+//            let tail = keyPathComponents.dropFirst()
+//            return valueFor(tail, dictionary: dict)
+//        } else {
+//            return (true, object)
+//        }
+//    }
+//    
+//    return (false, nil)
+//}
+//
+//
+//let dic: [String: Any] = ["key1": ["key2": ["name": "hehe"]]]
+//let result = valueFor(ArraySlice("key1.key2".components(separatedBy: ".")), dictionary: dic)
+//result.1
+
+
 //func test(letf: inout Any, righ: Any?) {
 //    if let righ = righ {
 //        letf = righ
@@ -232,12 +315,12 @@ debugPrint("keyComponents = \(keyComponents)")
  
  */
 
-print(Int32.max)
-print(Int64.max)
-print(Int64.max / 1000)
-
-let arr: [String] = ["1", "2", "3", "3"]
-Array(Set(arr))
+//print(Int32.max)
+//print(Int64.max)
+//print(Int64.max / 1000)
+//
+//let arr: [String] = ["1", "2", "3", "3"]
+//Array(Set(arr))
 
 /*
 arr.joined()
@@ -268,8 +351,8 @@ cellModel.dataPool.value
 cellModel1.dataPool.value
 */
 
-let a = CGFloat(520 - 20) / 67 * 20
-a
+//let a = CGFloat(520 - 20) / 67 * 20
+
 
 
 

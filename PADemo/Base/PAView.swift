@@ -19,17 +19,22 @@ import Foundation
     
     @IBInspectable var borderWidth: CGFloat = 0.5 {
         didSet {
-            self.layer.borderWidth = borderWidth
+            self.layer.borderWidth = borderWidth / UIScreen.main.scale
         }
     }
     
     @IBInspectable var cornerRadius: CGFloat = 3 {
         didSet {
             self.layer.cornerRadius = cornerRadius
-            self.layer.masksToBounds = true
         }
     }
-
+    
+    class func createSeperatorView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = UIColor.paDividing
+        return view
+    }
+    
     func maskLayer(cornerRadius: CGSize, rectCorner: UIRectCorner) {
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: rectCorner, cornerRadii: cornerRadius)
         let maskLayer = CAShapeLayer()
@@ -39,11 +44,6 @@ import Foundation
         layer.masksToBounds = true
     }
     
-    class func createSeperatorView() -> UIView {
-        let view = UIView()
-        view.backgroundColor = UIColor.paDividing
-        return view
-    }
 }
 
 // PALabel
@@ -57,7 +57,7 @@ import Foundation
     
     @IBInspectable var borderWidth: CGFloat = 0.5 {
         didSet {
-            self.layer.borderWidth = borderWidth
+            self.layer.borderWidth = borderWidth / UIScreen.main.scale
         }
     }
     
@@ -82,7 +82,7 @@ import Foundation
     
     @IBInspectable var borderWidth: CGFloat = 0.5 {
         didSet {
-            self.layer.borderWidth = borderWidth
+            self.layer.borderWidth = borderWidth / UIScreen.main.scale
         }
     }
     
@@ -103,7 +103,7 @@ import Foundation
     }
     
     /// 点击下去显示的颜色
-    @IBInspectable var highlightedBackgroundColor: UIColor = UIColor(hexString: "ECECEC")! {
+    @IBInspectable var highlightedBackgroundColor: UIColor = UIColor.init(withRGBValue: 0xECECEC) {
         didSet {
             setBackgroundColor(highlightedBackgroundColor, for: .highlighted)
         }
@@ -122,7 +122,7 @@ import Foundation
         }
     }
     
-    @IBInspectable var highlightedTitleColor: UIColor = UIColor(hexString: "FF6602")! {
+    @IBInspectable var highlightedTitleColor: UIColor = UIColor.init(withRGBValue: 0xFF6602) {
         didSet {
             self.setTitleColor(highlightedTitleColor, for: .highlighted)
         }
@@ -135,13 +135,13 @@ import Foundation
     }
     
     private func setBackgroundColor(_ color: UIColor?, for state: UIControlState) {
-        guard color != nil else {
+        guard let color = color else {
             return
         }
-//        let image = UIImage(color: color, size: self.frame.size)
-//        self.setBackgroundImage(image, for: state)
+        let image = UIImage(color: color, size: self.frame.size)
+        self.setBackgroundImage(image, for: state)
     }
-
+    
     
     var clickBlock: (() -> Void)? = nil
     

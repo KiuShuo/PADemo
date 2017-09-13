@@ -1,18 +1,17 @@
 //
-//  BaseViewController.swift
+//  BaseTableViewController.swift
 //  PADemo
 //
-//  Created by shuo on 2017/5/11.
+//  Created by shuo on 2017/8/31.
 //  Copyright © 2017年 shuo. All rights reserved.
 //
 
 import UIKit
 
-class BaseViewController: UIViewController {
-
+class BaseTableViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor.paBackground
     }
     

@@ -31,7 +31,7 @@ class TableViewController: BaseViewController {
         tableView.estimatedRowHeight = 44.0
         setupRightBuaButtonItem()
         tableView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()
+            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
         }
         
         setupTablefooterView()

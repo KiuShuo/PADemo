@@ -49,6 +49,18 @@ class DetailViewController: BaseViewController {
         // PARange.learnRange()
         
         testAttributedString()
+        
+        
+        let label = PALabel(frame: CGRect(x: 0, y: 100, width: 50, height: 50))
+        label.text = "哈哈"
+        label.textAlignment = .center
+        label.textColor = UIColor.black
+        label.font = UIFont.systemFont(ofSize: 17)
+        label.cornerRadius = 25
+        label.borderWidth = 1
+        label.borderColor = UIColor.black
+//        label.backgroundColor = UIColor.red
+        view.addSubview(label)
     }
     
     func testAttributedString() {

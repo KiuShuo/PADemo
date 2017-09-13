@@ -86,7 +86,10 @@
 			<key>isStoryboard</key>
 			<string>0</string>
 			<key>descriotion</key>
-			<string>tableViewModel、IGListKit;tableView.contentOffset; tableview.contentInset</string>
+			<string>tableViewModel;
+IGListKit;
+tableView.contentOffset; 
+tableview.contentInset</string>
 		</dict>
 		<dict>
 			<key>id</key>
@@ -149,6 +152,30 @@
 			<string>16</string>
 			<key>identifier</key>
 			<string>AlertTestViewController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>17</string>
+			<key>identifier</key>
+			<string>PACycleViewController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>18</string>
+			<key>identifier</key>
+			<string>PACalculatorMenuViewController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>19</string>
+			<key>identifier</key>
+			<string>PACKSliderViewController</string>
 			<key>isStoryboard</key>
 			<string>0</string>
 		</dict>

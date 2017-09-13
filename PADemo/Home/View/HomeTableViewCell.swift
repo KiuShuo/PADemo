@@ -19,16 +19,16 @@ class HomeTableViewCell: UITableViewCell, PATableViewCellProtocol {
                 return
             }
             titleLabel.text = controllerModel.identifier
-            detailLabel.text = controllerModel.descriotion.replacingOccurrences(of: ";", with: "\n")
+            detailLabel.text = controllerModel.descriotion
         }
     }
     
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let width = size.width
-        let labelSize = CGSize(width: UIScreen.width - 20, height: CGFloat.greatestFiniteMagnitude)
-        let height = 48 + detailLabel.sizeThatFits(labelSize).height
-        return CGSize(width: width, height: height)
-    }
+//    override func sizeThatFits(_ size: CGSize) -> CGSize {
+//        let width = size.width
+//        let labelSize = CGSize(width: UIScreen.width - 20, height: CGFloat.greatestFiniteMagnitude)
+//        let height = 48 + detailLabel.sizeThatFits(labelSize).height
+//        return CGSize(width: width, height: height)
+//    }
     
     
     override func awakeFromNib() {

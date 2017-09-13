@@ -63,6 +63,7 @@
                     <navigationItem key="navigationItem" id="YYa-nK-OTB"/>
                     <connections>
                         <outlet property="tableView" destination="Uss-iF-xbl" id="ZL4-5g-fRf"/>
+                        <segue destination="aCH-Pf-koa" kind="push" id="xRP-Ug-Wcp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,7 +166,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkn-xm-qjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="136"/>
+            <point key="canvasLocation" x="-12" y="816"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nvM-Ru-7zA">
+            <objects>
+                <viewController id="aCH-Pf-koa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HyT-1m-hZK"/>
+                        <viewControllerLayoutGuide type="bottom" id="YGW-15-siR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nDn-yV-2SQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-1G-rui" customClass="PACycleContainerView" customModule="PADemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YGW-15-siR" firstAttribute="top" secondItem="fBf-1G-rui" secondAttribute="bottom" id="0h5-2h-iZN"/>
+                            <constraint firstAttribute="trailing" secondItem="fBf-1G-rui" secondAttribute="trailing" id="SXR-v8-9dM"/>
+                            <constraint firstItem="fBf-1G-rui" firstAttribute="top" secondItem="HyT-1m-hZK" secondAttribute="bottom" constant="40" id="XWP-WV-d6C"/>
+                            <constraint firstItem="fBf-1G-rui" firstAttribute="leading" secondItem="nDn-yV-2SQ" secondAttribute="leading" id="jkQ-rQ-Rm5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="p1e-rK-aud"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="419-sX-Mwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="135"/>
         </scene>
     </scenes>
 </document>
