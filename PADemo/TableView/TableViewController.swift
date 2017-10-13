@@ -13,28 +13,40 @@ import HexColors
 class TableViewController: BaseViewController {
 
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
+        let tableView = UITableView(frame: CGRect.zero, style: .plain)
         tableView.separatorColor = UIColor(hexString: "#DFDFDF")
         tableView.separatorColor = UIColor.red
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 44.0
+        tableView.backgroundColor = UIColor.yellow
         return tableView
     }()
     
     
     var number: Int = 2
-    var dataSource: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    var dataSource: [String] = ["1"]//, "2", "3", "4", "5", "6", "7", "8", "9"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-        tableView.estimatedRowHeight = 44.0
-        setupRightBuaButtonItem()
+        view.backgroundColor = UIColor.green
+//        tableView.estimatedRowHeight = 44.0
+//        setupRightBuaButtonItem()
         tableView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
+//            make!.edges.equalTo()
+            make!.left.right().bottom()
+            make!.top.equalTo()//(10)
         }
         
-        setupTablefooterView()
+//        let redView = UIView()
+//        redView.backgroundColor = UIColor.red
+//        view.addSubview(redView)
+//        redView.mas_makeConstraints { (make) in
+//            make!.top.equalTo()
+//            make!.left.right().equalTo()
+//            make!.height.equalTo()(50 + 64)
+//        }
     }
     
     func setupTablefooterView() {
@@ -101,7 +113,7 @@ extension TableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         debugLog()
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -128,6 +140,31 @@ extension TableViewController: UITableViewDelegate {
         debugLog()
         return 44.0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        debugLog("tableView.insertTop = \(tableView.contentInset.top)")
+    }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let red = UIView()
+//        red.backgroundColor = UIColor.red
+//        return red
+//    }
+    
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let red = UIView()
+//        red.backgroundColor = UIColor.yellow
+//        return red
+//    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
     
     
 }

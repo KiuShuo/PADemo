@@ -13,6 +13,6 @@ func debugLog(_ items: Any..., file: String = #file, line: Int = #line, funcName
     let fileName: String = (file.components(separatedBy: "/").last ?? "").components(separatedBy: ".").first ?? ""
     debugPrint("file: \(fileName), line: \(line), func: \(funcName)")
     if !items.isEmpty {
-        debugPrint(items)
+        print(items)
     }
 }

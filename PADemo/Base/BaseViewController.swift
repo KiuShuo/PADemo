@@ -14,6 +14,8 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor.paBackground
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
+//        navigationItem.backBarButtonItem?.tintColor = UIColor.black
     }
     
     deinit {

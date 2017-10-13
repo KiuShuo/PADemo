@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh7-Ob-IUI">
-                        <rect key="frame" x="102" y="10" width="42" height="21"/>
+                        <rect key="frame" x="102" y="10" width="42" height="34.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,6 +34,7 @@
                 <constraints>
                     <constraint firstItem="dh7-Ob-IUI" firstAttribute="top" secondItem="Lmv-0l-ogd" secondAttribute="top" id="2qt-Vi-92P"/>
                     <constraint firstItem="Lmv-0l-ogd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Lu1-Z2-W6V"/>
+                    <constraint firstAttribute="bottom" secondItem="dh7-Ob-IUI" secondAttribute="bottom" constant="10" id="Sqy-3f-cfF"/>
                     <constraint firstItem="Lmv-0l-ogd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="bKM-wL-HMr"/>
                     <constraint firstItem="dh7-Ob-IUI" firstAttribute="leading" secondItem="Lmv-0l-ogd" secondAttribute="trailing" constant="50" id="odD-Vf-5ih"/>
                 </constraints>

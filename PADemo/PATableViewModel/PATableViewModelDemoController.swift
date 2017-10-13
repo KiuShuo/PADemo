@@ -66,19 +66,6 @@ class PATableViewModelDemoController: BaseViewController {
         headerViewModel.headerFooterView = headerView
         sectionModel.footerViewModel = headerViewModel
         return [sectionModel]
-        
-        /*
-         var cellModels: [PACellModel] = []
-         let dataSource = listTestModel.personList()
-         dataSource.forEach { person in
-         let cellModel = PACellModel(classType: PATableViewModelDemoCell.self, dataModel: person, didSelecte: { aCellModel in
-         let personListVC = PAPersonListViewController()
-         self.navigationController?.pushViewController(personListVC, animated: true)
-         })
-         cellModels.append(cellModel)
-         }
-         return [PATableViewModel.getSectionModel(cellModels)]
-         */
     }
     
     func setupTableView() {
@@ -88,14 +75,8 @@ class PATableViewModelDemoController: BaseViewController {
         view.addSubview(tableView)
         tableView.tableFooterView = UIView()
         tableView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()
+            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
         }
-        
-//        tableViewDelegate.didSelectCell = {[weak self] param in
-//            guard let `self` = self else { return }
-//            let personListVC = PAPersonListViewController()
-//            self.navigationController?.pushViewController(personListVC, animated: true)
-//        }
     }
     
 }

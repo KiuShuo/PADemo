@@ -28,7 +28,7 @@ import MJRefresh
     // default is 0
     @objc optional func segmentedViewFirstStartSelectIndex(in segmentedView: PASegmentedView) -> Int
     // default is nil
-    @objc optional func segmentedViewHeaderView(in segmentedView: PASegmentedView) -> UIView?
+    @objc optional func segmentedViewHeaderView(in segmentedView: PASegmentedView) -> UIView
     // default is segmentedViewHeaderView height
     @objc optional func segmentedViewHeaderMaxHeight(in segmentedView: PASegmentedView) -> CGFloat
     // default is segmentedViewHeaderView height
@@ -108,7 +108,7 @@ class PASegmentedView: UIView {
         }
         
         scrollView = UIScrollView()
-        scrollView.backgroundColor = UIColor.white
+        scrollView.backgroundColor = UIColor.clear
         scrollView.isScrollEnabled = true
         scrollView.bounces = false
         scrollView.delegate = self
@@ -226,7 +226,7 @@ extension PASegmentedView {
         headerMaxHeight = (maxHeight ?? baseHeaderHeight) + segmentedHeight
         currentHeaderHeight = headerMaxHeight
         if headerView == nil {
-            headerView = BaseHeaderView()
+            headerView = UIView()
             headerView.backgroundColor = UIColor.white
             self.addSubview(headerView)
         } else {
@@ -330,7 +330,7 @@ extension PASegmentedView {
             tableView.tableHeaderView = tableHeaderView
         } else {
             let tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.headerMaxHeight))
-            tableHeaderView.backgroundColor = UIColor.red
+            tableHeaderView.backgroundColor = UIColor.clear
             tableView.tableHeaderView = tableHeaderView
         }
         self.layoutView(tableView, to: index)
@@ -389,20 +389,20 @@ extension PASegmentedView {
             }
             if tableView.contentInset.top >= MJRefreshHeaderHeight {
                 isUserInteractionEnabled = false
+                self.headerView.mas_updateConstraints({ make in
+                    make!.top.equalTo()(MJRefreshHeaderHeight)
+                })
                 UIView.animate(withDuration: TimeInterval(MJRefreshFastAnimationDuration), animations: {
-                    self.headerView.mas_updateConstraints { make in
-                        make!.top.equalTo()(MJRefreshHeaderHeight)
-                    }
                     self.layoutIfNeeded()
                 })
             } else {
                 if headerView.mj_origin.y == 0 {
                     return
                 }
+                self.headerView.mas_updateConstraints({ make in
+                    make!.top.equalTo()(0)
+                })
                 UIView.animate(withDuration: TimeInterval(MJRefreshSlowAnimationDuration), animations: {
-                    self.headerView.mas_updateConstraints { make in
-                        make!.top.equalTo()(0)
-                    }
                     self.layoutIfNeeded()
                 }, completion: { _ in
                     self.isUserInteractionEnabled = true
@@ -478,10 +478,6 @@ extension PASegmentedView: UIScrollViewDelegate {
     private func setupPangesture(index: Int) {
         if !isHeaderScrollEnable { return }
         let currentView = self.viewArray[index]
-        if !(currentView is UITableView) {
-            return
-        }
-        
         if isHeaderScrollEnable {
             if let gestureRecognizers = self.gestureRecognizers {
                 for ges in gestureRecognizers {

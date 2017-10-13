@@ -46,7 +46,7 @@ class TableViewController_CellHeight: BaseViewController {
 //        tableView.estimatedRowHeight = 20
         view.addSubview(tableView)
         tableView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()
+            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
         }
     }
     
@@ -54,9 +54,9 @@ class TableViewController_CellHeight: BaseViewController {
     
     func setupData() {
         var text = "唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！"
-        for i in 0..<10 {
-            text += text
-            text += "--\(i)"
+        for i in 0..<1000 {
+//            text += text
+//            text += "--\(i)"
             dataSource.append(text)
         }
     }
@@ -73,7 +73,7 @@ class TableViewController_CellHeight: BaseViewController {
             Products/PADemo.app文件对应的包内容中的文件，都可以看做是资源文件
          */
         if cell != nil {
-            return cell!
+            return cell
         }
         if let _ = Bundle.main.path(forResource: "\(customTableViewCellIdentifier)", ofType: "nib") {
             cell = nil
@@ -94,10 +94,7 @@ extension TableViewController_CellHeight: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = registCell() as? CustomTableViewCell
-        if cell == nil {
-            cell = registCell() as? CustomTableViewCell
-        }
+        let cell = registCell() as? CustomTableViewCell
         cell?.titleLabel?.text = dataSource[indexPath.row]
         return cell!
     }
@@ -118,7 +115,6 @@ extension TableViewController_CellHeight: UITableViewDelegate {
 //            con?.uninstall()
 //            return height
 //        }
-        
         let height = dataSource[indexPath.row].height(width: UIScreen.main.bounds.size.width - 20, font: UIFont.systemFont(ofSize: 17)) + 20
         return height
 //        return 0

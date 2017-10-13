@@ -10,6 +10,19 @@ import Foundation
 
 extension UITableView {
     
+    private static var hadRegistedIdentifiersKey = "hadRegistedIdentifiersKey"
+    private var hadRegistedIdentifiers: [String] {
+        get {
+            if let hadResistedIdentifiers = objc_getAssociatedObject(self, &UITableView.hadRegistedIdentifiersKey) as? [String] {
+                return hadResistedIdentifiers
+            }
+            return [String]()
+        }
+        set {
+            objc_setAssociatedObject(self, &UITableView.hadRegistedIdentifiersKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
     func dequeueReusableCell(withCellModel cellModel: PACellModel) -> UITableViewCell {
         let identifier = cellModel.identifier
         var cell: UITableViewCell? = dequeueReusableCell(withIdentifier: identifier)
@@ -21,13 +34,17 @@ extension UITableView {
     }
     
     func registCell(withCellModels cellModels: [PACellModel]) {
-        cellModels.forEach { cellModel in
+        for cellModel in cellModels {
             let identifier = cellModel.identifier
+            if hadRegistedIdentifiers.contains(identifier) {
+                continue
+            }
             if cellModel.isRegisterByClass {
                 register(cellModel.classType, forCellReuseIdentifier: identifier)
             } else {
                 register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
             }
+            hadRegistedIdentifiers.append(identifier)
         }
     }
     

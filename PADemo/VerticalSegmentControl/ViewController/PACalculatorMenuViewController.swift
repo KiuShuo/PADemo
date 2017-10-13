@@ -21,11 +21,6 @@ class PACalculatorMenuViewController: BaseViewController {
         title = "医学计算器"
         setupData()
         setupTableView()
-        let arr: NSArray = [["a": "1"], ["a": "2"], ["1": "3"], ["b": "1"]]
-        let aArr = arr.value(forKey: "a")
-        let bArr = arr.value(forKey: "b")
-        let numArr = arr.value(forKey: "1")
-        
     }
     
     private func setupData() {

@@ -25,7 +25,7 @@ class PAListTestModel {
     
     func personList() -> [PAPerson] {
         var persons: [PAPerson] = []
-        for i in 0..<20 {
+        for i in 0..<100 {
             let person = PAPerson()
             person.name = "num_\(i)"
             person.age = 20 + i

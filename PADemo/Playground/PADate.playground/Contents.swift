@@ -4,6 +4,9 @@ import UIKit
 
 var str = "Hello, playground"
 
+let nowDate = Date().timeIntervalSince1970
+print(nowDate)
+/*
  var dateFormatter = DateFormatter()
  dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
  var dateAsString = "2015-10-08 14:25:37"
@@ -122,4 +125,4 @@ if comparaDate(currentDate: currentDate, date: date! as NSDate) == -1 {
 } else {
     print("24小时之后")
 }
-
+*/

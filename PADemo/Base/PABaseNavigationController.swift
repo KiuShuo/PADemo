@@ -14,6 +14,12 @@ class PABaseNavigationController: UINavigationController {
     
     var isPushing: Bool = false
     
+    private var fixedBarbuttonItem: UIBarButtonItem = {
+        let fixedItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        fixedItem.width = 8
+        return fixedItem
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,9 +35,27 @@ class PABaseNavigationController: UINavigationController {
         }
         debugLog("push to controller = \(viewController)")
         if viewController.navigationItem.leftBarButtonItem == nil ,self.viewControllers.count > 0 {
-            viewController.navigationItem.setLeftBarButton(self.customLeftBackButton(clickAction: nil), animated: true)
+            viewController.navigationItem.leftBarButtonItem = customLeftBackButton(clickAction: nil)
         }
         super.pushViewController(viewController, animated: animated)
+//        if #available(iOS 11.0, *) {
+//            for barSubView in navigationBar.subviews {
+//                if className(obj: barSubView).contains("BarContentView") {
+//                    for temView in barSubView.subviews {
+//                        if className(obj: temView).contains("BarStackView") {
+//                            temView.frame.origin.x = 8
+//                            break
+//                        }
+//                    }
+//                }
+//            }
+//        }
+    }
+    
+    func className(obj: Any) -> String {
+        let name: AnyClass! = object_getClass(obj)
+        let className = NSStringFromClass(name)
+        return String(className)
     }
     
     func handleNavigationTransition( ) {
@@ -67,7 +91,7 @@ extension PABaseNavigationController {
     
     func customLeftBackButton(clickAction: CustomLeftBackButtonAction?) -> UIBarButtonItem {
         let button = PAButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: 30.0, height: 18.0)
+        button.frame = CGRect(x: 0, y: 0, width: 32.0, height: 44.0)
         button.addClickEvent {
             if let clickAction = clickAction {
                 clickAction()
@@ -75,16 +99,8 @@ extension PABaseNavigationController {
                 _ = self.popViewController(animated: true)
             }
         }
-        button.setImage(UIImage(named:"leftBackButton"), for: .normal)
-        // 让按钮内部的所有内容左对齐
         button.contentHorizontalAlignment = .left
-        // 让按钮的内容往左边偏移10
-        button.contentEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 0)
-        let backButton = UIBarButtonItem(customView: button)
-        return backButton
+        button.setImage(UIImage(named:"leftBackButton"), for: .normal)
+        return UIBarButtonItem(customView: button)
     }
 }
-
-
-
-

@@ -75,7 +75,6 @@
 		8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */; };
 		8D93A7F61F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93A7F41F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift */; };
 		8D93A7F71F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D93A7F51F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib */; };
-		8D93A7FA1F32D09A00FE8DA6 /* UIView+ZJRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D93A7F91F32D09A00FE8DA6 /* UIView+ZJRadius.m */; };
 		8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */; };
 		8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CC1EB9A5A1008B314E /* NotificationCenterController.swift */; };
 		8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CE1EB9A609008B314E /* Utile.swift */; };
@@ -210,8 +209,8 @@
 		8D42C8871F13754B00061C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8D42C8891F13754B00061C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
-		8D5C9D991EE6B26C00749599 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		8D5C9D9A1EE6B2D500749599 /* PADate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PADate.playground; sourceTree = "<group>"; };
+		8D5C9D991EE6B26C00749599 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8D5C9D9A1EE6B2D500749599 /* PADate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PADate.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PASegmentControl.swift; sourceTree = "<group>"; };
 		8D6512651F3C01C600D9E434 /* PAIntegrationSituationTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAIntegrationSituationTopView.swift; sourceTree = "<group>"; };
 		8D6512671F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAIntegrationSituationTopView.xib; sourceTree = "<group>"; };
@@ -253,8 +252,6 @@
 		8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		8D93A7F41F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsViewTableViewCell.swift; sourceTree = "<group>"; };
 		8D93A7F51F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAFpsViewTableViewCell.xib; sourceTree = "<group>"; };
-		8D93A7F81F32D09A00FE8DA6 /* UIView+ZJRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJRadius.h"; sourceTree = "<group>"; };
-		8D93A7F91F32D09A00FE8DA6 /* UIView+ZJRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJRadius.m"; sourceTree = "<group>"; };
 		8D99C5C31EB98831008B314E /* PADemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PADemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D99C5C91EB9A586008B314E /* NSNotificationCenter+PACenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+PACenter.h"; sourceTree = "<group>"; };
 		8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+PACenter.m"; sourceTree = "<group>"; };
@@ -671,8 +668,6 @@
 				8D93A7F51F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib */,
 				8DC26BCC1F299368001A831F /* PAFpsTableViewCell.swift */,
 				8DC26BCD1F299368001A831F /* PAFpsTableViewCell.xib */,
-				8D93A7F81F32D09A00FE8DA6 /* UIView+ZJRadius.h */,
-				8D93A7F91F32D09A00FE8DA6 /* UIView+ZJRadius.m */,
 				8DB597451F331D5800E21E8B /* PAFpsFile.swift */,
 			);
 			path = PAInstrument;
@@ -1243,7 +1238,6 @@
 				8D8F15A51EE7B0500019AC1C /* PATableViewModelDemoController.swift in Sources */,
 				8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */,
 				8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */,
-				8D93A7FA1F32D09A00FE8DA6 /* UIView+ZJRadius.m in Sources */,
 				8DB597461F331D5800E21E8B /* PAFpsFile.swift in Sources */,
 				8D1F53CC1F453E4E005E89AE /* HomeViewController.swift in Sources */,
 				8D42C8651F1355A200061C9C /* AppDelegate.swift in Sources */,

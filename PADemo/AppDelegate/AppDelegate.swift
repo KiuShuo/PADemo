@@ -30,7 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let statusBarSize = UIApplication.shared.statusBarFrame.size
+        print("statusBarSize.height = \(statusBarSize.height)")
+        print("statusBarSize.width = \(statusBarSize.width)")
+        
+        DispatchQueue.global().async {
+            AMapServices.shared().apiKey = "PAGaodeMapCommonStruct.kGaodeMapKey"
+        }
         replyPushNotificationAuthorization(application)
+        
         Style.setupStyle()
         #if !(arch(i386) || arch(x86_64))
             // 真机
@@ -50,9 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             #endif
         paUtilTest()
         testReturn()
-        
-        Crashlytics.start(withAPIKey: "74bb7fdc23f622142bcbb62da65d67521046c8d0")
-        Fabric.with([Crashlytics.self])
         return true
     }
     

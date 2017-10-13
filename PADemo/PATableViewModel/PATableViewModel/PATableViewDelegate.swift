@@ -12,6 +12,7 @@ class PATableDelegater: NSObject {
     
     weak var viewController: UIViewController?
     weak var tableView: UITableView?
+    fileprivate var registedIdentifiers: [String] = []
     
     /// 外部需传入的数据源
     var sectionModels: [PASectionModel] = []
@@ -68,9 +69,7 @@ extension PATableDelegater: UITableViewDelegate {
         } else if tableView.rowHeight > -1 {
             return tableView.rowHeight
         }
-        if tableView.dequeueReusableCell(withIdentifier: cellModel.identifier) == nil {
-            tableView.registCell(withCellModels: [cellModel])
-        }
+        tableView.registCell(withCellModels: [cellModel])
         let height =  tableView.fd_heightForCell(withIdentifier: cellModel.identifier, cacheBy: indexPath, configuration: { cell in
             (cell as? UITableViewCell)?.bounds.size.width = tableView.bounds.width
             (cell as? UITableViewCell)?.fd_enforceFrameLayout = cellModel.isEnforceFrameLayout

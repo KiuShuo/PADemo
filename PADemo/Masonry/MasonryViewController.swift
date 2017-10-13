@@ -8,7 +8,7 @@
 
 import UIKit
 import Masonry
-
+import MBProgressHUD
 
 /**
  
@@ -55,7 +55,7 @@ class MasonryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.green
-        setupButton()
+//        setupButton()
     }
     
     func clickBt() {
@@ -66,14 +66,13 @@ class MasonryViewController: BaseViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // 通过改变约束来实现动画效果
-        
-        self.button.mas_updateConstraints { (make) in
-            make!.top.equalTo()(200)
-        }
+//        self.button.mas_updateConstraints { (make) in
+//            make!.top.equalTo()(200)
+//        }
         // 更新（或者添加）约束只是执行了setNeedsLayout 标记了需要重新布局，但是没有立即执行。所以我们需要在动画中调用这个方法layoutIfNeeded
-        UIView.animate(withDuration: 1.0) {
-            self.view.layoutIfNeeded()
-        }
+//        UIView.animate(withDuration: 1.0) {
+//            self.view.layoutIfNeeded()
+//        }
     }
     
     func setupButton() {

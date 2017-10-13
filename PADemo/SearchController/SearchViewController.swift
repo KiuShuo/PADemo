@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import IQKeyboardManager
 
-class SearchViewController: BaseViewController {
+class SearchViewController:  BaseViewController {
     
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -22,34 +23,74 @@ class SearchViewController: BaseViewController {
     
     fileprivate var dataSource: [String] = ["1", "2", "3"]
 
-//    fileprivate lazy var searchResultController: SearchResultViewController = {
-//        let searchResultController = SearchResultViewController()
-//        return searchResultController
-//    }()
-    
+    fileprivate lazy var searchResultController: SearchResultViewController = {
+        let searchResultController = SearchResultViewController()
+        return searchResultController
+    }()
+
     private lazy var searchController: UISearchController = {
-        let searchController = UISearchController(searchResultsController: SearchResultViewController())
+        let searchController = UISearchController(searchResultsController: self.searchResultController)
         searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
+        // 当点击搜索框后仍显示当前界面时，通过该变量控制是否显示灰色蒙层
+        searchController.dimsBackgroundDuringPresentation = true
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.delegate = self
         return searchController
     }()
+    // iOS11之前 点击搜索框后 开始搜索之前 是否需要显示当前界面
+    let needShowCurrentViewWhenClickSearchBarBeforeiOS11: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 44.0
         setupTableView()
         setupSearchBar()
-//        automaticallyAdjustsScrollViewInsets = true
-//        extendedLayoutIncludesOpaqueBars = true
+        
+        if #available(iOS 11.0, *) {
+            
+        } else {
+            if needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
+                automaticallyAdjustsScrollViewInsets = true
+            } else {
+                automaticallyAdjustsScrollViewInsets = false
+            }
+        }
+        extendedLayoutIncludesOpaqueBars = true
+    }
+    
+    /*
+     当当前界面是UIViewController, iOS11之前 点击搜索框后 开始搜索之前 需要显示当前界面 点击搜索->取消搜索->table view向下移动， 解决办法关闭IQKeyboardManager；
+     当当前controller是UITableViewController的时候IQKeyboardManager没有影响；
+     当不需要显示当前界面的时候 不需要让tableView跟随搜索框向上移动的时候不会向下移动。
+     iOS11之后也不会影响；
+     
+     */
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
+            IQKeyboardManager.shared().isEnabled = false
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
+            IQKeyboardManager.shared().isEnabled = true
+        }
     }
     
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.mas_makeConstraints { make in
-            make!.left.right().bottom().equalTo()
-            make!.top.equalTo()
+            if #available(iOS 11.0, *) {
+                make!.edges.equalTo()
+            } else {
+                if self.needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
+                    make!.edges.equalTo()
+                } else {
+                    make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
+                }
+            }
         }
     }
     
@@ -62,7 +103,6 @@ class SearchViewController: BaseViewController {
         tableView.tableHeaderView = searchBar
         tableView.subviews.first?.backgroundColor = UIColor.clear
     }
-
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -89,24 +129,32 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //
+//        IQKeyboardManager.shared().resignFirstResponder()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        //
+        if !needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
+            searchResultController.tableView.isHidden = false
+        }
     }
-    
     
 }
 
+// 通过在 updateSearchResults(for searchController:) 直接让结果页面的view.isHidden = false 或这下面的调整当前界面的view.isHidden来控制点击搜索框后是否立即显示搜索结果页面
+
 extension SearchViewController: UISearchControllerDelegate {
-    
-    func willPresentSearchController(_ searchController: UISearchController) {
-        tableView.isHidden = true
-    }
-    
-    func willDismissSearchController(_ searchController: UISearchController) {
-        tableView.isHidden = false
-    }
-    
+
+//    func willPresentSearchController(_ searchController: UISearchController) {
+//        if !needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
+//            tableView.isHidden = true
+//        }
+//    }
+//
+//    func willDismissSearchController(_ searchController: UISearchController) {
+//        if !needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
+//            tableView.isHidden = false
+//        }
+//    }
+
 }
+

@@ -44,7 +44,8 @@ class PASegmentTestViewController: BaseViewController {
             make!.edges.equalTo()(self.view)!.insets()(UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0))
         }
         segmentedView.delegate = self
-        segmentedView.isRefreshEnable = true
+//        segmentedView.isRefreshEnable = true
+        segmentedView.headerLeaveWay = .changeOriginY
         segmentedView.isHeaderScrollEnable = true
         segmentedView.reloadData()
     }
@@ -68,16 +69,16 @@ extension PASegmentTestViewController: PASegmentedViewDelegate {
         return segmentControl
     }
     
-    func segmentedViewHeaderView(in segmentedView: PASegmentedView) -> UIView? {
-        return nil
+    func segmentedViewHeaderView(in segmentedView: PASegmentedView) -> UIView {
+        return topSituationView
     }
     
     func segmentedViewHeaderMaxHeight(in segmentedView: PASegmentedView) -> CGFloat {
-        return 0
+        return 180
     }
     
     func segmentedViewHeaderMinHeight(in segmentedView: PASegmentedView) -> CGFloat {
-        return 0
+        return 180
     }
     
     func segmentedView(_ view: PASegmentedView, didShow index: Int) {

@@ -2,14 +2,31 @@
 
 import UIKit
 
-let arr: NSArray = [["a": "1"], ["a": "2"], ["1": "3"], ["b": "1"]]
-let aArr: NSMutableArray = NSMutableArray(array: arr.value(forKey: "a") as! NSArray)
-aArr.removeObject(identicalTo: NSNull())
-print(aArr)
-let bArr = arr.value(forKey: "b")
-print(bArr)
-let numArr = arr.value(forKey: "1")
-print(numArr)
+
+struct Person {
+    var name: String = "xiaoHong"
+}
+
+var persons = [Person(), Person(), Person()]
+//for (index, person) in <#items#> {
+//    <#code#>
+//}
+
+persons.enumerated().forEach { (index, _) in
+    persons[index].name = "hong"
+}
+persons
+print("persons = \(persons)")
+
+
+//let arr: NSArray = [["a": "1"], ["a": "2"], ["1": "3"], ["b": "1"]]
+//let aArr: NSMutableArray = NSMutableArray(array: arr.value(forKey: "a") as! NSArray)
+//aArr.removeObject(identicalTo: NSNull())
+//print(aArr)
+//let bArr = arr.value(forKey: "b")
+//print(bArr)
+//let numArr = arr.value(forKey: "1")
+//print(numArr)
 
 
 //let str: NSNumber = 98.6

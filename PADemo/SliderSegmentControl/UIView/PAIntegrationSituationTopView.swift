@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol PAViewGestureProtocol: NSObjectProtocol {
-    
-    func didPan(panGesture: UIPanGestureRecognizer)
-    
-}
+//protocol PAViewGestureProtocol: NSObjectProtocol {
+//    
+//    func didPan(panGesture: UIPanGestureRecognizer)
+//    
+//}
 
 class PAIntegrationSituationTopView: UIView {
 
-    weak var delegate: PAViewGestureProtocol?
+//    weak var delegate: PAViewGestureProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,9 +38,9 @@ class PAIntegrationSituationTopView: UIView {
         return view
     }
     
-    func handelPanGesture(_ panGesture: UIPanGestureRecognizer) {
-        delegate?.didPan(panGesture: panGesture)
-    }
+//    func handelPanGesture(_ panGesture: UIPanGestureRecognizer) {
+//        delegate?.didPan(panGesture: panGesture)
+//    }
 
     @IBAction func clickCenterButton(_ sender: UIButton) {
         print("点击中间按钮")

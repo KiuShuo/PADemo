@@ -15,7 +15,11 @@
 					<key>id</key>
 					<string>0</string>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698
+
+成年女性体表面积=0.00586*身高cm+0.0126*体重kg-0.0461
+
+儿童体表面积=0.0061*身高cm+0.0128*体重kg-0.1529</string>
 					<key>calculateCells</key>
 					<array>
 						<string>PACalculatorDetailMenuCell</string>
@@ -23,7 +27,9 @@
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>体重指数BMI=体重kg/（身高cm/100）^2
+
+注：BMI在18.5~24.9时属于正常范围，小于18.5为偏瘦，大于25为超重。</string>
 					<key>name</key>
 					<string>体重指数BMI</string>
 					<key>id</key>
@@ -33,7 +39,9 @@
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>男性基础能耗Harris-Benedic=66.473+13.752*体重kg+5.003*身高cm-6.755*年龄
+
+女性基础能耗Harris-Benedic=655.096+9.563*体重kg+1.85*身高cm-4.676*年龄</string>
 					<key>name</key>
 					<string>基础能耗Harris-Benedir</string>
 					<key>id</key>
@@ -41,7 +49,11 @@
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>婴儿小儿基础代谢率=体重kg*55kcal
+
+7岁小儿基础代谢率=体重kg*44kcal
+
+12岁小儿基础代谢率=体重kg*30kcal</string>
 					<key>name</key>
 					<string>小儿基础代谢率</string>
 					<key>id</key>
@@ -49,7 +61,9 @@
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>代谢性酸中毒代偿= 1.5 * HCO3⁻(mmol/L) + 8
+
+注：预计值为结果的正负2区间</string>
 					<key>name</key>
 					<string>代谢性酸中毒代偿</string>
 					<key>id</key>
@@ -57,7 +71,11 @@
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>男性低钠血症时补氯化钠值=（142-血清钠浓度mmol/L）*体重kg*0.035
+
+女性低钠血症时补氯化钠值=（142-血清钠浓度mmol/L）*体重kg*0.03
+
+注：公式以17mmol Na+相当于1g钠盐计算，当天先补1/2量，还需要加每日需要量4.5g，此为第一日补充量；其余一半钠可以在第2天补给。临床上应该注意，绝对依靠任何公式决定补钠量是不可取的，公式仅作为补钠安全剂量的估计。一般总是先补充缺钠量的一部分以解除急性症状，使血容量有所纠正。病情补液过程中药提防血容量过高，对心功能不全者将非常危险。纠正低钠血症的最大纠正速度：8-10mmol/L/d；如果有症状，按照1-2mmol/L/纠正直到症状消失，24小时纠正速度不超过12mmol/l。1L3%NaCl含513mmol Na+，1L0.9%NaCl(NS)含154mmol Na+。</string>
 					<key>name</key>
 					<string>低钠血症是补氯化钠值</string>
 					<key>id</key>
@@ -65,7 +83,9 @@
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>腰臀比WHR=腰腹围/臀围
+
+注：腰腹围长度计算以脐为标志，臀围以髂前上棘为标志。参考值：正常男性≥0.85，女性≥0.80为腹型肥胖</string>
 					<key>name</key>
 					<string>腰臀比</string>
 					<key>id</key>
@@ -80,35 +100,41 @@
 			<array>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>高血糖的钠校正= 血清钠mmol/L + 0.016 * (血清葡萄糖 mmol/L- 100)</string>
 					<key>name</key>
 					<string>高血糖的钠校正</string>
 					<key>id</key>
-					<string>0</string>
+					<string>7</string>
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>日胰岛素用量=(空腹血糖mmol/L - 5.6 ) * 体重kg * 0.6 / 11.1
+
+注：剂量区间：200-400mg// 这只是一根简单预测性计算，具体应用还要考虑到临床诸多因素，所以临床用计算值的三分之一为起点，分2-3次应用，再根据血糖测定值进行调整</string>
 					<key>name</key>
 					<string>日胰岛素用量</string>
 					<key>id</key>
-					<string>1</string>
+					<string>8</string>
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>血浆胰岛素与空腹血糖比值=血浆胰岛素浓度(μU/ml)/空腹血糖浓度(mg/100ml)
+
+注：正常值≤0.3，临床意义：胰岛素分泌瘤时比值增高</string>
 					<key>name</key>
 					<string>血浆胰岛素与空腹血糖比值</string>
 					<key>id</key>
-					<string>2</string>
+					<string>9</string>
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>有效甲状腺素比值(ETR)=标准血清放射性/受试者血清放射性
+
+注：正常值：0.86-1.14，平均1±0.07。临床意义：甲亢时ETR升高，甲减时ETR降低</string>
 					<key>name</key>
 					<string>有效甲状腺素比值（ETR）</string>
 					<key>id</key>
-					<string>3</string>
+					<string>10</string>
 				</dict>
 			</array>
 		</dict>
@@ -119,35 +145,43 @@
 			<array>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>男性肺龄=(0.0414 * 身高 - 2.19 -FEV1(L)) / 0.0244
+
+女性肺龄=(0.0342 * 身高 - 1.578 -FEV1(L)) / 0.0255
+
+注：FEV1(第一秒用力呼气体积)</string>
 					<key>name</key>
 					<string>肺龄</string>
 					<key>id</key>
-					<string>0</string>
+					<string>11</string>
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>气胸肺压缩体积=(患侧胸廓面积 - 患侧肺的面积) / 患侧胸廓面积 * 100
+
+注：当胸腔内气带宽度相当于患侧胸廓宽度1/4时，肺被压缩大约35%左右；当胸腔内气带宽度相当于患侧胸廓宽度1/3时，肺被压缩大约50%左右；当胸腔内气带宽度相当于患侧胸廓宽度1/2时，肺被压缩大约65%左右。 由于胸廓形状的个体差异，上述数值在不同患者可有一定的差别。 发生气胸时根据气胸线距胸壁的距离来分类，如小于3cm为小量，大于3cm为大量 胸腔积液量的分类是吧胸片以2和4肋为水平线分上中下三部分，下部为小量，中部为大量，上部为大量。</string>
 					<key>name</key>
 					<string>气胸肺压缩体积</string>
 					<key>id</key>
-					<string>1</string>
+					<string>12</string>
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>肺活量=潮气容积(VT) +补吸气容积( IRV) + 补呼气容积(ERV)
+
+注：正常范围：男性(4217±690)ml；女性(3105±452)ml</string>
 					<key>name</key>
 					<string>肺活量</string>
 					<key>id</key>
-					<string>2</string>
+					<string>13</string>
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>吸烟指数=每天吸烟支数（支）*吸烟年数（年）</string>
 					<key>name</key>
 					<string>吸烟指数</string>
 					<key>id</key>
-					<string>3</string>
+					<string>14</string>
 				</dict>
 			</array>
 		</dict>
@@ -158,19 +192,19 @@
 			<array>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>预产期=末次月经日期+280天</string>
 					<key>name</key>
 					<string>预产期</string>
 					<key>id</key>
-					<string>0</string>
+					<string>15</string>
 				</dict>
 				<dict>
 					<key>calculateRules</key>
-					<string>成年男性体表面积=0.00607*身高cm+0.0127*体重kg-0.0698</string>
+					<string>孕周=当前日期-末次月经日期</string>
 					<key>name</key>
 					<string>孕周</string>
 					<key>id</key>
-					<string>1</string>
+					<string>16</string>
 				</dict>
 			</array>
 		</dict>

@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import MBProgressHUD
 
 class HomeViewController: BaseViewController {
 
@@ -20,14 +21,38 @@ class HomeViewController: BaseViewController {
     }()
     fileprivate var baseNavgationController: PABaseNavigationController?
     
+    func testMBProgressHUD(isShow: Bool) {
+        if isShow {
+            MBProgressHUD.hide(for: self.view, animated: false)
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        } else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+    }
+    
+    func loading() {
+        // delay <= 0.3时 且 从详情界面快速返回
+        /**
+         // 同时满足下面三个条件，会出现loading圈不消失：
+         1. 在viewWillAppear中调用；
+         2. delay <= 0.3;
+         3. 从详情界面快速滑动返回（注意一定要滑动 一定要快）。
+         */
+        let delay: TimeInterval = 0.1
+        testMBProgressHUD(isShow: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            self.testMBProgressHUD(isShow: false)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "首页"
-        
-        let footerView = UIView()
-        footerView.frame.size.height = 50
-        tableView.tableFooterView = footerView
-        tableView.tableFooterView?.backgroundColor = UIColor.green
+            let footerView = UIView()
+            footerView.frame.size.height = 50
+            self.tableView.tableFooterView = footerView
+            self.tableView.tableFooterView?.backgroundColor = UIColor.green
+
         //tableView.estimatedRowHeight = 44.0
         //tableView.rowHeight = 44.0
         tableView.delegate = tableDelegater
@@ -40,6 +65,21 @@ class HomeViewController: BaseViewController {
             self.controllerModels = Mapper<ControllerModel>().mapArray(JSONArray: controllerModelDics)!
         }
         convertControllerModelsToSectionModels(controllerModels: controllerModels)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)        
+//        loading()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("self.view.subviews = \(self.view.subviews.count)")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("self.view.subviews = \(self.view.subviews.count)")
     }
     
     func convertControllerModelsToSectionModels(controllerModels: [ControllerModel]) {
@@ -76,10 +116,13 @@ class HomeViewControllerTableDelegater: PATableDelegater {
         guard let toVC = toViewController else {
             return
         }
+        /*
+        let navigation = PABaseNavigationController(rootViewController: toVC)
+        viewController?.present(navigation, animated: true, completion: nil)
+         */
         viewController?.navigationController?.pushViewController(toVC, animated: true)
     }
 
-    
 }
 /*
 extension HomeViewController: UITableViewDataSource {

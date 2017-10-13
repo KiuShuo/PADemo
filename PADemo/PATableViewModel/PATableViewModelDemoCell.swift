@@ -10,7 +10,7 @@ import UIKit
 
 class PATableViewModelDemoCell: UITableViewCell, PATableViewCellProtocol {
 
-    static let cellModel: PACellModel = PACellModel(classType: PATableViewModelDemoCell.self, height: 80)
+    static let cellModel: PACellModel = PACellModel(classType: PATableViewModelDemoCell.self, height: -1)
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
@@ -30,6 +30,11 @@ class PATableViewModelDemoCell: UITableViewCell, PATableViewCellProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        debugLog(String(describing: self.classForCoder) + "创建")
+    }
+    
+    deinit {
+        debugLog(String(describing: self.classForCoder) + "析构方法执行")
     }
     
 }

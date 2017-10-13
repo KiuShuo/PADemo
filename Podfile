@@ -14,12 +14,12 @@ target 'PADemo' do
     inhibit_all_warnings!
     use_frameworks!
     $WJFrameworkUrl = 'svn://172.19.21.212/wanjia/src/yidong/IOS/WJFramework/'
-    pod 'WJExtension', :svn => $WJFrameworkUrl +'WJExtension', :tag => '1.0.8'
+    pod 'WJExtension', :svn => $WJFrameworkUrl +'WJExtension', :tag => '1.1.2'
     pod 'SDWebImage', '3.7.5'
     pod 'Masonry', '1.0.2'
     pod 'ObjectMapper', '2.2.5'
     pod 'HexColors','2.3.0'
-    pod 'IQKeyboardManager', '3.3.7'
+    pod 'IQKeyboardManager', '5.0.3'
     pod 'EBForeNotification', '1.0.7'
     #    pod 'UITableView+FDTemplateLayoutCell', '1.6'
     # https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git
@@ -30,6 +30,15 @@ target 'PADemo' do
     pod 'RxSwift', '3.5.0'
     pod 'HJTabViewController', '~> 1.0'
     pod 'MJRefresh', '3.1.12'
+    pod 'MBProgressHUD', '0.9.2'
     
+    pod 'UMengUShare/Social/Sina', '6.4.2'
+    pod 'UMengUShare/Social/WeChat', '6.4.2'
+    pod 'UMengUShare/Social/QQ', '6.4.2'
+    pod 'UMengAnalytics', '4.2.4'
+    
+    pod 'AMap2DMap-NO-IDFA', '4.6.0' # 2D地图SDK(2D地图和3D地图不能同时使用)
+    pod 'AMapSearch-NO-IDFA', '4.5.0' #搜索服务SDK
+    pod 'AMapFoundation-NO-IDFA', '1.3.4'
 end
 
