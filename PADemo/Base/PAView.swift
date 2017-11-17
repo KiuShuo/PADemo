@@ -68,6 +68,36 @@ import Foundation
             self.layer.shouldRasterize = true
         }
     }
+    // 添加竖直方向的对齐方式
+    enum VerticalAlignment {
+        case top
+        case middle
+        case bottom
+    }
+    
+    var verticalAlignment: VerticalAlignment = .middle {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    override func drawText(in rect: CGRect) {
+        let actualRect = textRect(forBounds: rect, limitedToNumberOfLines: self.numberOfLines)
+        super.drawText(in: actualRect)
+    }
+    
+    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+        var textRect = super.textRect(forBounds: bounds, limitedToNumberOfLines: numberOfLines)
+        switch verticalAlignment {
+        case .top:
+            textRect.origin.y = bounds.origin.y
+        case .bottom:
+            textRect.origin.y = bounds.origin.y + bounds.size.height - textRect.size.height
+        default:
+            textRect.origin.y = bounds.origin.y + (bounds.size.height - textRect.size.height) / 2.0
+        }
+        return textRect
+    }
     
 }
 

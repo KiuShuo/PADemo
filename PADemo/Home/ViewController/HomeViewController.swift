@@ -6,6 +6,12 @@
 //  Copyright © 2017年 shuo. All rights reserved.
 //
 
+/*
+ 
+ [NSDecimalNumber 四舍五入到指定位数](http://www.colinhwang.com/2016/06/22/round-number/)
+ [Swift-NumberFormatter的简单使用](http://blog.csdn.net/longshihua/article/details/54630616)
+ */
+
 import UIKit
 import ObjectMapper
 import MBProgressHUD

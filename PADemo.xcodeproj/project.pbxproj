@@ -75,6 +75,7 @@
 		8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */; };
 		8D93A7F61F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93A7F41F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift */; };
 		8D93A7F71F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D93A7F51F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib */; };
+		8D94D3721FA041C600CD24C1 /* LearnMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D94D3711FA041C600CD24C1 /* LearnMenuViewController.swift */; };
 		8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */; };
 		8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CC1EB9A5A1008B314E /* NotificationCenterController.swift */; };
 		8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D99C5CE1EB9A609008B314E /* Utile.swift */; };
@@ -252,6 +253,7 @@
 		8D8F15AA1EE7B1740019AC1C /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		8D93A7F41F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFpsViewTableViewCell.swift; sourceTree = "<group>"; };
 		8D93A7F51F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAFpsViewTableViewCell.xib; sourceTree = "<group>"; };
+		8D94D3711FA041C600CD24C1 /* LearnMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMenuViewController.swift; sourceTree = "<group>"; };
 		8D99C5C31EB98831008B314E /* PADemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PADemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D99C5C91EB9A586008B314E /* NSNotificationCenter+PACenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+PACenter.h"; sourceTree = "<group>"; };
 		8D99C5CA1EB9A586008B314E /* NSNotificationCenter+PACenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+PACenter.m"; sourceTree = "<group>"; };
@@ -601,6 +603,14 @@
 			path = PATableViewModel;
 			sourceTree = "<group>";
 		};
+		8D94D36E1FA0417800CD24C1 /* LearnViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D94D3711FA041C600CD24C1 /* LearnMenuViewController.swift */,
+			);
+			path = LearnViewController;
+			sourceTree = "<group>";
+		};
 		8D99C5C81EB9A586008B314E /* NotificationCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,6 +795,7 @@
 		8DEF45701EB1BE6900CA4F75 /* PADemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D94D36E1FA0417800CD24C1 /* LearnViewController */,
 				8D5C9D971EE6B24500749599 /* Playground */,
 				8DDC0EB81F57BE880035BE44 /* PAMedicineCalculator */,
 				8D1136321F4BE0E300DCB258 /* CycleView */,
@@ -1192,6 +1203,7 @@
 				8D6E2C9B1EF8EE7A00934C9B /* UIViewController+PAExtension.swift in Sources */,
 				8DCA857F1F385157009F648F /* PATableViewModelTestModel.swift in Sources */,
 				8D6512761F3DB34000D9E434 /* FoundationExtensions.swift in Sources */,
+				8D94D3721FA041C600CD24C1 /* LearnMenuViewController.swift in Sources */,
 				8D6E112F1F441D1400C3620D /* AlertTestViewController.swift in Sources */,
 				8DC26BD11F29937A001A831F /* PAFpsViewController.swift in Sources */,
 				8DF8457B1F58FE08003DB6BA /* PACKSliderViewController.swift in Sources */,
@@ -1508,7 +1520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e084a94c-42c8-4734-b71d-695f00d31803";
-				PROVISIONING_PROFILE_SPECIFIER = wanjiaWildcard;
+				PROVISIONING_PROFILE_SPECIFIER = toBWildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "PADemo/PADemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1533,7 +1545,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e084a94c-42c8-4734-b71d-695f00d31803";
-				PROVISIONING_PROFILE_SPECIFIER = wanjiaWildcard;
+				PROVISIONING_PROFILE_SPECIFIER = toBWildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "PADemo/PADemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

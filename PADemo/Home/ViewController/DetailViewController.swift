@@ -27,6 +27,7 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         testPAButton()
+        attributedString()
 //        testForPAView()
         
 //        let imageUrlStr = "https://cdn.pixabay.com/photo/2017/03/13/10/31/greylag-goose-2139296_640.jpg"
@@ -68,9 +69,9 @@ class DetailViewController: BaseViewController {
         let tFont = UIFont.systemFont(ofSize: 32)
         let range = NSRange(location: 0, length: aStr.length - 1)
         aStr.dz_setFont(tFont, range: range)
-        
         let eFont = UIFont.systemFont(ofSize: 14)
         let aRange = NSRange(location: aStr.length - 1, length: 1)
+        aStr.dz_setBaselineOffset(1.5, range: aRange) // 设置基线偏移值 正直向上偏移 负值向下偏移
         aStr.dz_setFont(eFont, range: aRange)
         
         
@@ -104,7 +105,19 @@ class DetailViewController: BaseViewController {
         self.imageView.image = PAFileManager.fileManager.getDataFromSandbox("Image.jpg", directory: "Documents", key: "123")
     }
 
-    
+    func attributedString() {
+        let label = PALabel(frame: CGRect(x: 10, y: 230, width: 200, height: 40))
+        label.backgroundColor = UIColor.green
+        let originStr = "1234.56万"
+        let mAtt = NSMutableAttributedString(string: originStr)
+        mAtt.dz_setFont(UIFont.systemFont(ofSize: 11), range: NSMakeRange(originStr.characters.count - 1, 1))
+        mAtt.dz_setFont(UIFont.systemFont(ofSize: 24), range: NSMakeRange(0, originStr.characters.count - 1))
+        mAtt.dz_setBaselineOffset(1.5, range: NSMakeRange(originStr.characters.count - 1, 1))
+        label.textAlignment = .center
+        label.verticalAlignment = .bottom
+        label.attributedText = mAtt
+        view.addSubview(label)
+    }
     
 
 }
