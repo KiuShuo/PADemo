@@ -32,14 +32,48 @@ class AlertTestViewController: BaseViewController {
             print("点击确定按钮")
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    var clickTimes: Int = 0
+    @IBAction func clickCustonCoverButton(_ sender: UIButton) {
+        showCustomAlert()
     }
-    */
-
+    
+    func showCustomAlert() {
+        let alertView = PAAlertView()
+        alertView.canDismissByTapMask = true
+        let alertCustomCoverViewDelegate = AlertCustomCoverViewDelegate()
+        alertCustomCoverViewDelegate.clickTimes = clickTimes
+        alertView.alertCoverViewDelegate = alertCustomCoverViewDelegate
+        unowned let weakAlertView = alertView
+        let doneAction = PAAlertViewAction(title: "确定") { _ in
+            weakAlertView.update()
+            alertCustomCoverViewDelegate.clickTimes = self.clickTimes
+            self.clickTimes += 1
+        }
+        doneAction.isAutoDismissAlertView = false
+        alertView.addAction(doneAction)
+        alertView.show()
+    }
+    
 }
+
+class AlertCustomCoverViewDelegate: PAAlertCoverViewDelegate {
+    var clickTimes: Int = 0
+    func alertCoverView() -> UIView {
+        let view = UIView()
+        if clickTimes % 2 == 0 {
+            view.backgroundColor = UIColor.green
+        } else {
+            view.backgroundColor = UIColor.red
+        }
+        return view
+    }
+    
+    func alertCoverViewHeight() -> CGFloat {
+        if clickTimes % 2 == 0 {
+            return 150
+        }
+        return 100
+    }
+    
+}
+
