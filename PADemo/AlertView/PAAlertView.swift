@@ -9,79 +9,6 @@
 import UIKit
 import IQKeyboardManager
 
-// 常用扩展
-extension PAAlertView {
-    
-    // 一个按钮的alert
-    @discardableResult
-    static func showBaseAlert(title: String? = nil, message: String? = nil, buttonTitle: String = "确定", clickButton: (() -> Void)? = nil) -> PAAlertView {
-        let alertView = PAAlertView(title: title, message: message)
-        let doneAction = PAAlertViewAction(title: buttonTitle) { _ in
-            if let clickButton = clickButton {
-                clickButton()
-            }
-        }
-        alertView.addAction(doneAction)
-        alertView.show()
-        return alertView
-    }
-    
-    // 两个按钮的alert
-    @discardableResult
-    static func showBaseAlertWithTwoAction(title: String? = nil, message: String? = nil, cancelButtonStr: String = "取消", sureButtonStr: String = "确定", clickCancelButton: (() -> Void)? = nil, clickSureButton: (() -> Void)? = nil) -> PAAlertView {
-        let alertView = PAAlertView(title: title, message: message)
-        let cancelAction = PAAlertViewAction(title: cancelButtonStr) { _ in
-            if let clickCancelButton = clickCancelButton {
-                clickCancelButton()
-            }
-        }
-        alertView.addAction(cancelAction)
-        let doneAction = PAAlertViewAction(title: sureButtonStr) { _ in
-            if let clickSureButton = clickSureButton {
-                clickSureButton()
-            }
-        }
-        alertView.addAction(doneAction)
-        alertView.show()
-        return alertView
-    }
-    
-    // validateAlertView
-    static func validateAlertView(title: String? = nil, message: String? = nil, content: String, cancelButtonStr: String = "取消", sureButtonStr: String = "确定", clickCancelButton: (() -> Void)? = nil, clickSureButton: (() -> Void)? = nil, clickContentButton: (() -> Void)? = nil) -> PAAlertView {
-        let alertView = PAAlertView(title: title, message: message)
-        
-        let cancelAction = PAAlertViewAction(title: cancelButtonStr) { _ in
-            if let clickCancelButton = clickCancelButton {
-                clickCancelButton()
-            }
-        }
-        cancelAction.buttonTextColor = UIColor.black
-        alertView.addAction(cancelAction)
-        let doneAction = PAAlertViewAction(title: sureButtonStr) { _ in
-            if let clickSureButton = clickSureButton {
-                clickSureButton()
-            }
-        }
-        
-        let contentButton = PAButton(type: .custom)
-        contentButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        contentButton.frame = CGRect(x: 0, y: 0, width: 0, height: 50)
-        contentButton.setTitle(content, for: .normal)
-        contentButton.setTitleColor(UIColor.paOrange, for: .normal)
-        contentButton.setTitleColor(UIColor.paHighOrange, for: .highlighted)
-        alertView.addCustomView(view: contentButton)
-        contentButton.addClickEvent {
-            if let clickContentButton = clickContentButton {
-                clickContentButton()
-            }
-        }
-        alertView.addAction(doneAction)
-        
-        return alertView
-    }
-    
-}
-
 fileprivate protocol PAAlertViewActionDelegate: class {
     
     func didTap(action: PAAlertViewAction)
@@ -230,9 +157,14 @@ class PAAlertView: UIView {
     
     public convenience init(title: String?, attributeString: NSAttributedString?) {
         self.init()
+        let delegater = PABaseAlertCoverViewDelegater()
         if let title = title {
             titleLabel.text = title
+            delegater.title = title
+            delegater.titleFont = self.titleFont
+            delegater.titleTextColor = self.titleTextColor
         }
+        delegater.attributeString = attributeString
         self.attributeString = attributeString
     }
     
@@ -274,6 +206,14 @@ class PAAlertView: UIView {
     
     func addCustomView(view: UIView) {
         customView = view
+        if alertCoverViewDelegate is PABaseAlertCoverViewDelegater {
+            (alertCoverViewDelegate as! PABaseAlertCoverViewDelegater).customView = customView
+        } else if alertCoverViewDelegate == nil {
+            let delegater = PABaseAlertCoverViewDelegater()
+            alertCoverViewDelegate = delegater
+            delegater.customView = customView
+        }
+        
     }
     
     @objc private func keyboardDidShow(_ notification: Notification) {
@@ -440,104 +380,14 @@ class PAAlertView: UIView {
             customCoverView.pa_setHeight(customCoverViewHeight)
             coverViewHeight = customCoverViewHeight
         } else {
-            if !onlyFillCustomView {
-//                configureTitleLabel()
-//                configureMessageLabel()
-//                configureTextField()
-            }
-            if customView != nil {
-                configureCustomView()
-            } else {
-                if textFields.isEmpty {
-                    messageLabel.pa_alignBottomToParent(with: 15)
-                }
-            }
-            coverViewHeight += coverViewHeight > 0 ? 15 : 0
+            coverViewHeight = 0
         }
         if coverViewHeight > popupMaxHeight * 2.0 / 3.0 {
             coverViewHeight = popupMaxHeight * 2.0 / 3.0
         }
         coverView.pa_setHeight(coverViewHeight)
     }
-    /*
-    private func configureTitleLabel() {
-        titleLabel.numberOfLines = 0
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = titleTextColor
-        titleLabel.font = titleFont
-        coverView.addSubview(titleLabel)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        let titleLabelWidth: CGFloat = popupWidth - 30
-        titleLabel.pa_setWidth(titleLabelWidth)
-        titleLabel.pa_centerHorizontally()
-        let size = titleLabel.sizeThatFits(CGSize(width: popupWidth - 30, height: popupMaxHeight))
-        var height = size.height
-        if let title = titleLabel.text, !title.isEmpty {
-            lastCoverSubView = titleLabel
-            titleLabel.pa_alignTopToParent(with: 15)
-        } else {
-            titleLabel.pa_alignTopToParent(with: 0)
-            height = 0
-        }
-        titleLabel.pa_setHeight(height)
-        coverViewHeight = height > 0 ? (height + 15) : 0
-    }
-    
-    private func configureMessageLabel() {
-        messageLabel.numberOfLines = 0
-        messageLabel.textAlignment = messageTextAlignment
-        if let attributeString = attributeString {
-            messageLabel.attributedText = attributeString
-        } else {
-            messageLabel.textColor = messageTextColor
-            messageLabel.font = messageFont
-        }
-        coverView.addSubview(messageLabel)
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        let messageTextViewWidth: CGFloat = popupWidth - 30
-        messageLabel.pa_setWidth(messageTextViewWidth)
-        messageLabel.pa_centerHorizontally()
-        
-        let size = messageLabel.sizeThatFits(CGSize(width: messageTextViewWidth, height: CGFloat(popupMaxHeight)))
-        var messageHeight = size.height
-        if let message = messageLabel.text, !message.isEmpty {
-            lastCoverSubView = messageLabel
-            messageLabel.pa_place(below: titleLabel, margin: 15)
-            coverViewHeight += messageHeight + 15
-        } else {
-            messageHeight = 0
-            messageLabel.pa_place(below: titleLabel, margin: 0)
-        }
-        messageLabel.pa_setHeight(messageHeight)
-    }
-    
-    private func configureTextField() {
-        if textFields.isEmpty {
-            return
-        }
-        for i in 0..<textFields.count {
-            let textField = textFields[i]
-            let leftPlaceView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: textFieldHeight))
-            textField.leftViewMode = .always
-            textField.leftView = leftPlaceView
-            coverView.addSubview(textField)
-            textField.translatesAutoresizingMaskIntoConstraints = false
-            let textFieldWidth = popupWidth - 30
-            textField.pa_setWidth(textFieldWidth)
-            textField.pa_centerHorizontally()
-            textField.pa_setHeight(textFieldHeight)
-            textField.pa_place(below: messageLabel, margin: 15 + textFieldHeight * CGFloat(i))
-            if i == textFields.count - 1 {
-                textField.pa_alignBottomToParent(with: 15)
-            }
-            lastCoverSubView = textField
-        }
-        coverViewHeight += textFieldHeight * CGFloat(textFields.count) + 15
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        coverView.addGestureRecognizer(tapGesture)
-    }
-    */
+
     @objc private func dismissKeyboard() {
         UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
@@ -670,159 +520,6 @@ extension PAAlertView: PAAlertViewActionDelegate {
     
     func didTap(action: PAAlertViewAction) {
         self.dismiss()
-    }
-    
-}
-
-// titleLabel + messageLabel + customView
-class PABaseAlertCoverViewDelegater: PAAlertCoverViewDelegate {
-    // titleLabel...
-    var title: String?
-    var titleTextColor: UIColor = UIColor(red: 255/255, green: 102/255, blue: 2/255, alpha: 1)
-    var titleFont: UIFont = UIFont.systemFont(ofSize: 17)
-    lazy var titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.numberOfLines = 0
-        titleLabel.textAlignment = .center
-        titleLabel.text = self.title
-        titleLabel.textColor = self.titleTextColor
-        titleLabel.font = self.titleFont
-        return titleLabel
-    }()
-    // messageLable...
-    var messageTitle: String?
-    var attributeString: NSAttributedString?
-    var messageTextAlignment: NSTextAlignment = .center
-    var messageTextColor: UIColor = UIColor(red: 50/255,
-                                            green: 51/255,
-                                            blue: 53/255,
-                                            alpha: 1)
-    var messageFont = UIFont.systemFont(ofSize: 15)
-    lazy var messageLabel: UILabel = {
-        let messageLabel = UILabel()
-        messageLabel.numberOfLines = 0
-        messageLabel.textAlignment = self.messageTextAlignment
-        if let attributeString = self.attributeString {
-            messageLabel.attributedText = attributeString
-        } else {
-            messageLabel.text = self.messageTitle
-            messageLabel.textColor = self.messageTextColor
-            messageLabel.font = self.messageFont
-        }
-        return messageLabel
-    }()
-    // textField...
-    var textFields: [UITextField] = []
-    var textFieldHeight: CGFloat = 30.0
-    // customView...
-    var customView: UIView?
-    // coverView
-    lazy var coverView = UIView()
-    private var coverViewWidth: CGFloat = 255
-    var coverViewMaxHeight: CGFloat = UIScreen.main.bounds.size.height - 2 * UIApplication.shared.statusBarFrame.size.height
-    
-    var lastCoverSubView: UIView?
-    
-    func alertCoverView() -> UIView {
-        coverView.frame = CGRect(x: 0, y: 0, width: coverViewWidth, height: 0)
-        coverView.subviews.forEach { $0.removeFromSuperview() }
-        setupTitleLabel()
-        setupDetailLabel()
-        setupTextField()
-        setupCustomView()
-        if lastCoverSubView != nil {
-            lastCoverSubView!.pa_alignBottomToParent(with: -15) //.priority = 999
-        }
-        return coverView
-    }
-    
-    private func setupTitleLabel() {
-        guard let titleStr = title else {
-            return
-        }
-        titleLabel.text = titleStr
-        coverView.addSubview(titleLabel)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.pa_alignLeftToParent(with: 15)
-        titleLabel.pa_alignRightToParent(with: -15)
-        if lastCoverSubView != nil {
-            titleLabel.pa_place(below: lastCoverSubView!, margin: 15)
-        } else {
-            titleLabel.pa_alignTopToParent(with: 15)
-        }
-        let size = titleLabel.sizeThatFits(CGSize(width: coverViewWidth - 30, height: coverViewMaxHeight))
-        titleLabel.pa_setHeight(size.height)
-        lastCoverSubView = titleLabel
-    }
-    
-    private func setupDetailLabel() {
-        if messageTitle == nil && attributeString == nil {
-            return
-        }
-        coverView.addSubview(messageLabel)
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        messageLabel.pa_alignLeftToParent(with: 15)
-        messageLabel.pa_alignRightToParent(with: -15)
-        if lastCoverSubView != nil {
-            messageLabel.pa_place(below: lastCoverSubView!, margin: 15)
-        } else {
-            messageLabel.pa_alignTopToParent(with: 15)
-        }
-        let size = messageLabel.sizeThatFits(CGSize(width: coverViewWidth - 30, height: coverViewMaxHeight))
-        messageLabel.pa_setHeight(size.height)
-        lastCoverSubView = messageLabel
-    }
-    
-    private func setupTextField() {
-        if textFields.isEmpty {
-            return
-        }
-        for i in 0..<textFields.count {
-            let textField = textFields[i]
-            let leftPlaceView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: textFieldHeight))
-            textField.leftViewMode = .always
-            textField.leftView = leftPlaceView
-            coverView.addSubview(textField)
-            textField.translatesAutoresizingMaskIntoConstraints = false
-            let textFieldWidth = coverViewWidth - 30
-            textField.pa_setWidth(textFieldWidth)
-            textField.pa_centerHorizontally()
-            textField.pa_setHeight(textFieldHeight)
-            if lastCoverSubView != nil {
-                textField.pa_place(below: lastCoverSubView!, margin: 15 + textFieldHeight * CGFloat(i))
-            } else {
-                textField.pa_alignToParent(with: 15 + textFieldHeight * CGFloat(i))
-            }
-            if i == textFields.count - 1 {
-                lastCoverSubView = textField
-            }
-        }
-    }
-    
-    private func setupCustomView() {
-        guard let customView = customView else {
-            if lastCoverSubView != nil {
-                lastCoverSubView?.pa_alignBottomToParent(with: 15)
-            }
-            return
-        }
-        coverView.addSubview(customView)
-        customView.translatesAutoresizingMaskIntoConstraints = false
-        customView.pa_alignLeftToParent()
-        customView.pa_alignRightToParent()
-        if lastCoverSubView != nil {
-            customView.pa_place(below: lastCoverSubView!, margin: 15)
-        } else {
-            customView.pa_alignTopToParent(with: 0)
-        }
-        customView.pa_setHeight(customView.frame.size.height)
-        lastCoverSubView = customView
-    }
-    
-    func alertCoverViewHeight() -> CGFloat {
-        let height = coverView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
-        return height
     }
     
 }

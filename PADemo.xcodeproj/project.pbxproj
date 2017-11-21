@@ -34,6 +34,8 @@
 		8D42C8881F13754B00061C9C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D42C8861F13754B00061C9C /* MainInterface.storyboard */; };
 		8D42C88C1F13754B00061C9C /* PANotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8D42C87E1F13754B00061C9C /* PANotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */; };
+		8D5654261FC431FB008EE1CF /* PAViewDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5654251FC431FB008EE1CF /* PAViewDelegater.swift */; };
+		8D5654281FC432E6008EE1CF /* PABaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */; };
 		8D65125E1F3BF24E00D9E434 /* PASegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */; };
 		8D6512661F3C01C600D9E434 /* PAIntegrationSituationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6512651F3C01C600D9E434 /* PAIntegrationSituationTopView.swift */; };
 		8D6512681F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6512671F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib */; };
@@ -210,6 +212,8 @@
 		8D42C8871F13754B00061C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8D42C8891F13754B00061C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
+		8D5654251FC431FB008EE1CF /* PAViewDelegater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAViewDelegater.swift; sourceTree = "<group>"; };
+		8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PABaseAlertView.swift; sourceTree = "<group>"; };
 		8D5C9D991EE6B26C00749599 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8D5C9D9A1EE6B2D500749599 /* PADate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PADate.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PASegmentControl.swift; sourceTree = "<group>"; };
@@ -563,6 +567,8 @@
 			children = (
 				8D673C8E1F14BCBC00175A6C /* LayoutConstraintsExtension.swift */,
 				8D673C8F1F14BCBC00175A6C /* PAAlertView.swift */,
+				8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */,
+				8D5654251FC431FB008EE1CF /* PAViewDelegater.swift */,
 				8D6E112D1F441D1400C3620D /* AlertTestViewController.swift */,
 				8D6E112E1F441D1400C3620D /* AlertTestViewController.xib */,
 				8D744B631F44281900A42548 /* AlertCustuomView.xib */,
@@ -1180,6 +1186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB7C2971F4ADEF200E8FE53 /* NSMutableAttributedString+DZCategory.m in Sources */,
+				8D5654261FC431FB008EE1CF /* PAViewDelegater.swift in Sources */,
 				8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */,
 				8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */,
 				8DBB1ACB1EC4606900D507E6 /* BaseViewController.swift in Sources */,
@@ -1235,6 +1242,7 @@
 				8DDC0ECE1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift in Sources */,
 				8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */,
 				8DDC0EC31F57D9A60035BE44 /* PAListViewController.swift in Sources */,
+				8D5654281FC432E6008EE1CF /* PABaseAlertView.swift in Sources */,
 				8D6D13591ECB6B7F0084BBA8 /* SearchResultViewController.swift in Sources */,
 				8DB7C2941F4A923300E8FE53 /* BaseHeaderView.swift in Sources */,
 				8DF2C4741F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift in Sources */,
