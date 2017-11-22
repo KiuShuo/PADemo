@@ -40,13 +40,25 @@ class AlertTestViewController: BaseViewController {
     func showCustomAlert() {
         let alertView = PAAlertView()
         alertView.canDismissByTapMask = true
-        let alertCustomCoverViewDelegate = AlertCustomCoverViewDelegate()
-        alertCustomCoverViewDelegate.clickTimes = clickTimes
-        alertView.alertCoverViewDelegate = alertCustomCoverViewDelegate
+        let alertCustomCoverViewModel = AlertCustomCoverViewModel()
+        alertCustomCoverViewModel.backgroundColor = UIColor.green
+        alertCustomCoverViewModel.height = 150
+        
+        let delegater = AlertCustomCoverViewDelegate()
+        delegater.clickTimes = clickTimes
+        alertView.alertCoverViewDelegate = delegater
+        delegater.alertCustomCoverViewModel = alertCustomCoverViewModel
         unowned let weakAlertView = alertView
         let doneAction = PAAlertViewAction(title: "确定") { _ in
+            if alertCustomCoverViewModel.height == 150 {
+                alertCustomCoverViewModel.height = 100
+                alertCustomCoverViewModel.backgroundColor = UIColor.red
+            } else {
+                alertCustomCoverViewModel.height = 150
+                alertCustomCoverViewModel.backgroundColor = UIColor.green
+            }
             weakAlertView.update()
-            alertCustomCoverViewDelegate.clickTimes = self.clickTimes
+            delegater.clickTimes = self.clickTimes
             self.clickTimes += 1
         }
         doneAction.isAutoDismissAlertView = false
@@ -56,23 +68,23 @@ class AlertTestViewController: BaseViewController {
     
 }
 
+class AlertCustomCoverViewModel {
+    var backgroundColor: UIColor = UIColor.red
+    var height: CGFloat = 100
+}
+
 class AlertCustomCoverViewDelegate: PAAlertCoverViewDelegate {
+    var alertCustomCoverViewModel: AlertCustomCoverViewModel?
     var clickTimes: Int = 0
+    
     func alertCoverView() -> UIView {
         let view = UIView()
-        if clickTimes % 2 == 0 {
-            view.backgroundColor = UIColor.green
-        } else {
-            view.backgroundColor = UIColor.red
-        }
+        view.backgroundColor = alertCustomCoverViewModel?.backgroundColor
         return view
     }
     
     func alertCoverViewHeight() -> CGFloat {
-        if clickTimes % 2 == 0 {
-            return 150
-        }
-        return 100
+        return alertCustomCoverViewModel?.height ?? 0
     }
     
 }

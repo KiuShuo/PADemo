@@ -17,7 +17,6 @@ extension PAAlertView {
         }
         sureAction.isAutoDismissAlertView = false
         alertView.addAction(sureAction)
-        alertView.onlyFillCustomView = true
         let customView = PAIntegrationAlertCustomView.instanceFromXib()
         alertView.addKeyboardNotification()
         customView.frame = CGRect(x: 0, y: 0, width: 0, height: 55)
@@ -35,7 +34,7 @@ class PAIntegrationAlertCustomView: UIView {
     
     class func instanceFromXib() -> PAIntegrationAlertCustomView {
         let view = Bundle.main.loadNibNamed("AlertCustuomView", owner: nil, options: nil)?.first as! PAIntegrationAlertCustomView
-        //view.backgroundColor = UIColor.green
+        view.backgroundColor = UIColor.green
         return view
     }
     

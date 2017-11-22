@@ -15,19 +15,20 @@ fileprivate protocol PAAlertViewActionDelegate: class {
     
 }
 
+extension PAAlertView: PAAlertViewActionDelegate {
+    
+    func didTap(action: PAAlertViewAction) {
+        self.dismiss()
+    }
+    
+}
+
 // 顶部视图代理
 protocol PAAlertCoverViewDelegate {
     
     func alertCoverView() -> UIView
     
     func alertCoverViewHeight() -> CGFloat
-    
-}
-
-// 按钮视图代理
-protocol PAAlertButtonViewDelegate {
-    
-    
     
 }
 
@@ -75,33 +76,24 @@ class PAAlertView: UIView {
                                                 alpha: 0.12)
     
     var titleTextColor: UIColor = UIColor(red: 255/255, green: 102/255, blue: 2/255, alpha: 1)
-    
     var messageTextColor: UIColor = UIColor(red: 50/255,
                                             green: 51/255,
                                             blue: 53/255,
                                             alpha: 1)
     
-    var titleFont: UIFont = UIFont.boldSystemFont(ofSize: 17) {
-        didSet {
-            titleLabel.font = titleFont
-        }
-    }
+    var titleFont: UIFont = UIFont.boldSystemFont(ofSize: 17)
+    var messageFont: UIFont = UIFont.systemFont(ofSize: 15)
+    var messageTextAlignment: NSTextAlignment = .center
+    var textFieldHeight: CGFloat = 30.0
     
-    var messageFont: UIFont = UIFont.systemFont(ofSize: 15) {
-        didSet {
-            messageLabel.font = messageFont
-        }
-    }
     var isWindowLevelAlert: Bool = false
     var alertBackgroundColor: UIColor = UIColor.white
     var showInView: UIView?
-    var onlyFillCustomView: Bool = false // 按钮之上仅有自定义视图
     var canDismissByTapMask: Bool = false
     
-    var messageTextAlignment: NSTextAlignment = .center
     var popupWidth: CGFloat = 255.0
     var popupMaxHeight: CGFloat = UIScreen.main.bounds.size.height - 20
-    var textFieldHeight: CGFloat = 30.0
+    
     private var coverViewHeight: CGFloat = 0
     private var buttonViewHeight: CGFloat = 0
     
@@ -123,11 +115,9 @@ class PAAlertView: UIView {
     private var textFields = [UITextField]()
     private var customView: UIView?
     private var lastCoverSubView: UIView?
-    private var titleLabel: UILabel = UILabel()
-    private var messageLabel: UILabel = UILabel()
-    private var attributeString: NSAttributedString?
     private lazy var actions: [PAAlertViewAction] = [PAAlertViewAction]()
     private var popupViewCenterYLayoutConstraint: NSLayoutConstraint?
+    fileprivate var isUpdate: Bool = false
     
     init() {
         super.init(frame: CGRect.zero)
@@ -140,17 +130,12 @@ class PAAlertView: UIView {
                             message: String?) {
         self.init()
         let delegater = PABaseAlertCoverViewDelegater()
+        delegater.alertView = self
         if let title = title {
-            titleLabel.text = title
             delegater.title = title
-            delegater.titleFont = self.titleFont
-            delegater.titleTextColor = self.titleTextColor
         }
         if let message = message {
-            messageLabel.text = message
             delegater.messageTitle = message
-            delegater.messageFont = self.messageFont
-            delegater.messageTextColor = self.messageTextColor
         }
         alertCoverViewDelegate = delegater
     }
@@ -158,14 +143,12 @@ class PAAlertView: UIView {
     public convenience init(title: String?, attributeString: NSAttributedString?) {
         self.init()
         let delegater = PABaseAlertCoverViewDelegater()
+        delegater.alertView = self
         if let title = title {
-            titleLabel.text = title
             delegater.title = title
-            delegater.titleFont = self.titleFont
-            delegater.titleTextColor = self.titleTextColor
         }
         delegater.attributeString = attributeString
-        self.attributeString = attributeString
+        alertCoverViewDelegate = delegater
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -210,10 +193,10 @@ class PAAlertView: UIView {
             (alertCoverViewDelegate as! PABaseAlertCoverViewDelegater).customView = customView
         } else if alertCoverViewDelegate == nil {
             let delegater = PABaseAlertCoverViewDelegater()
-            alertCoverViewDelegate = delegater
+            delegater.alertView = self
             delegater.customView = customView
+            alertCoverViewDelegate = delegater
         }
-        
     }
     
     @objc private func keyboardDidShow(_ notification: Notification) {
@@ -283,7 +266,6 @@ class PAAlertView: UIView {
         }
     }
     
-    fileprivate var isUpdate: Bool = false
     func update() {
         isUpdate = true
         configureViews()
@@ -368,7 +350,7 @@ class PAAlertView: UIView {
         coverView.pa_alignTopToParent(with: 0)
         coverView.pa_alignLeftToParent(with: 0)
         coverView.pa_alignRightToParent(with: 0)
-
+        
         if let alertCoverViewDelegate = alertCoverViewDelegate {
             let customCoverView = alertCoverViewDelegate.alertCoverView()
             let customCoverViewHeight = alertCoverViewDelegate.alertCoverViewHeight()
@@ -386,35 +368,6 @@ class PAAlertView: UIView {
             coverViewHeight = popupMaxHeight * 2.0 / 3.0
         }
         coverView.pa_setHeight(coverViewHeight)
-    }
-
-    @objc private func dismissKeyboard() {
-        UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-    
-    private func configureCustomView() {
-        guard let customView = customView else {
-            return
-        }
-        coverView.addSubview(customView)
-        customView.translatesAutoresizingMaskIntoConstraints = false
-        if onlyFillCustomView {
-            coverViewHeight = customView.frame.size.height
-            customView.pa_centerHorizontally()
-            customView.pa_centerVertically()
-            customView.pa_setWidth(popupWidth)
-            customView.pa_setHeight(customView.frame.size.height)
-        } else {
-            customView.pa_setWidth(popupWidth - 30)
-            customView.pa_setHeight(customView.frame.size.height)
-            customView.pa_centerHorizontally()
-            if let lastCoverSubView = lastCoverSubView {
-                customView.pa_place(below: lastCoverSubView, margin: 15)
-            } else {
-                customView.pa_alignTopToParent(with: 15)
-            }
-            coverViewHeight += customView.frame.size.height + 15
-        }
     }
     
     private func configureButtonView() {
@@ -515,12 +468,3 @@ class PAAlertView: UIView {
     }
     
 }
-
-extension PAAlertView: PAAlertViewActionDelegate {
-    
-    func didTap(action: PAAlertViewAction) {
-        self.dismiss()
-    }
-    
-}
-
