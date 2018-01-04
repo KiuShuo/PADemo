@@ -81,7 +81,7 @@ class PAView04: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func sliderSlid(sender: UISlider) {
+    @objc func sliderSlid(sender: UISlider) {
         progress = CGFloat(sender.value)
         setNeedsDisplay()
     }

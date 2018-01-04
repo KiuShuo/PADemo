@@ -47,6 +47,10 @@ class PACycleViewController: BaseViewController {
     private func setupCycleView() {
         for _ in 0..<segmentTitles.count {
             let tableControl = PAListViewController()
+            let cellModel = PACellModel(classType: CustomTableViewCell.self, height: 88)
+            let cellModels = [PACellModel](repeatElement(cellModel, count: 10))
+            let sectionModel = PASectionModel(cellModelArr: cellModels)
+            tableControl.tableDelegater.sectionModels = [sectionModel]
             tableControllers.append(tableControl)
         }
         cycleContainewView.showsHorizontalScrollIndicator = false
@@ -80,6 +84,33 @@ extension PACycleViewController: UIScrollViewDelegate {
         segmentControl.setSelectedSegmentIndex(index, animated: true)
         currentSegmentSelectIndex = index
         showList(index: index)
+    }
+    
+}
+
+
+class PAIntagrationSituationScrollViewDelegate: NSObject, UIScrollViewDelegate {
+    
+//    var navigationView: PACustomNavigationView?
+//    var topSituationViewHeight: CGFloat = 0
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let distance = scrollView.contentOffset.y + scrollView.contentInset.top
+        print("distance = \(distance)")
+        // 导航的透明度控制
+//        var alpha = Float(distance / (topSituationViewHeight - UIScreen.navigationHeight))
+//        alpha = alpha < 0 ? 0 : alpha
+//        alpha = alpha > 1 ? 1 : alpha
+//        navigationView?.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: alpha)
+//        if alpha > 0.5 {
+//            navigationView?.backButton.tintColor = UIColor.black
+//            navigationView?.bottomDividingLine.isHidden = false
+//            navigationView?.titleLabel.textColor = UIColor.black
+//        } else {
+//            navigationView?.backButton.tintColor = UIColor.white
+//            navigationView?.bottomDividingLine.isHidden = true
+//            navigationView?.titleLabel.textColor = UIColor.white
+//        }
     }
     
 }

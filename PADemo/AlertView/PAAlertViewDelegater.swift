@@ -78,7 +78,7 @@ class PABaseAlertCoverViewDelegater: PAAlertCoverViewDelegate {
         setupTextField()
         setupCustomView()
         if lastCoverSubView != nil {
-            lastCoverSubView!.pa_alignBottomToParent(with: -distanceBottom).priority = 999
+            lastCoverSubView!.pa_alignBottomToParent(with: -distanceBottom).priority = UILayoutPriority(rawValue: 999)
         }
         return coverView
     }

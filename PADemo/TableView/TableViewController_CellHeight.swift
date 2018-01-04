@@ -20,8 +20,31 @@
 
 import UIKit
 import Masonry
+import MJRefresh
 
 class TableViewController_CellHeight: BaseViewController {
+    
+    lazy var headerImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "铂金背景"))
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: 151)
+        return imageView
+    }()
+    
+    lazy var headerView: UIView = {
+        let headerView = UIView()
+        headerView.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: 151)
+        headerView.addSubview(self.headerImageView)
+        headerView.addSubview(self.activityView)
+        return headerView
+    }()
+    
+    lazy var activityView: UIActivityIndicatorView = {
+        let activityView = UIActivityIndicatorView(frame: CGRect(x: UIScreen.width / 2 - 15, y: 30, width: 30, height: 30))
+        activityView.isHidden = true
+        return activityView
+    }()
     
     lazy var tableView: UITableView = {
         //let tableView = UITableView(frame: CGRect.zero, style: .grouped)
@@ -30,12 +53,29 @@ class TableViewController_CellHeight: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
+        tableView.tableHeaderView = self.headerView
         return tableView
     }()
     
+    func setupRefresh() {
+        tableView.mj_header = MJRefreshHeader(refreshingBlock: {
+//            self.navigationView.backgroundColor = UIColor.white
+            self.activityView.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                self.activityView.stopAnimating()
+                self.tableView.mj_header.endRefreshing()
+//                self.navigationView.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: 0)
+            })
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupRefresh()
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+        (tableView as UIScrollView).delegate = self
 //        let height: CGFloat = 35.5
 //        tableView.rowHeight = height
         // ceil(tableView的高度 / cell的高度)
@@ -45,18 +85,40 @@ class TableViewController_CellHeight: BaseViewController {
         setupData()
 //        tableView.estimatedRowHeight = 20
         view.addSubview(tableView)
+        extendedLayoutIncludesOpaqueBars = true
         tableView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
+            make!.edges.equalTo()(UIEdgeInsetsMake(0, 0, 0, 0))
         }
+        paNavigationBarHidden = true
+        setupNavigationView()
+    }
+    
+    let navigationView = PACustomNavigationView.instanceFromXib()
+    func setupNavigationView() {
+        navigationView.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: 0)
+        navigationView.backButton.tintColor = UIColor.white
+        view.addSubview(navigationView)
+        navigationView.mas_makeConstraints { (make) in
+            make!.left.top().right().equalTo()
+            make!.height.equalTo()(UIScreen.navigationHeight)
+        }
+        navigationView.tapBackButton = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        (tableView as UIScrollView).contentOffset.y = -200
     }
     
     var dataSource: [String] = []
     
     func setupData() {
         var text = "唧唧复唧唧，木兰当户织，不闻机杼声，但闻女叹息，问女何所思，问女何所忆！"
-        for i in 0..<1000 {
-//            text += text
-//            text += "--\(i)"
+        for i in 0..<3 {
+            text += text
+            text += "--\(i)"
             dataSource.append(text)
         }
     }
@@ -82,6 +144,60 @@ class TableViewController_CellHeight: BaseViewController {
             cell = tableView.dequeueReusableCell(withIdentifier: customTableViewCellIdentifier)
         }
         return cell
+    }
+    
+}
+
+extension TableViewController_CellHeight: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let distance = scrollView.contentOffset.y// + scrollView.contentInset.top
+        print("distance = \(distance)")
+        print("scrollView.contentInset.top = \(scrollView.contentInset.top)")
+        // 导航的透明度控制
+        var alpha = Float(distance / 151)
+        alpha = alpha < 0 ? 0 : alpha
+        alpha = alpha > 1 ? 1 : alpha
+        navigationView.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: alpha)
+        if alpha > 0.5 {
+            navigationView.backButton.tintColor = UIColor.black
+        } else {
+            navigationView.backButton.tintColor = UIColor.white
+        }
+        if distance < 0 {
+            activityView.isHidden = false
+            headerImageView.frame.size.height = 151 - distance
+            headerImageView.frame.origin.y = distance
+        } else {
+            activityView.isHidden = true
+        }
+//        if scrollView.contentInset.top > 0 {
+//            headerImageView.frame.size.height = 151 + scrollView.contentInset.top
+//            headerImageView.frame.origin.y = -scrollView.contentInset.top
+//        }
+        
+//        if distance <= 0 {
+//            var alpha = -Float(distance / UIScreen.navigationHeight)
+//            alpha = min(1, alpha)
+//            navigationView.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: alpha)
+//            if alpha > 0.5 {
+//                navigationView.backButton.tintColor = UIColor.black
+//            } else {
+//                navigationView.backButton.tintColor = UIColor.white
+//            }
+//        } else {
+//            // 导航的透明度控制
+//            var alpha = Float(distance / 151)
+////            alpha = max(0, alpha)
+//            alpha = min(1, alpha)
+//            navigationView.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: alpha)
+//            if alpha > 0.5 {
+//                navigationView.backButton.tintColor = UIColor.black
+//            } else {
+//                navigationView.backButton.tintColor = UIColor.white
+//            }
+//        }
+        
     }
     
 }
@@ -120,5 +236,14 @@ extension TableViewController_CellHeight: UITableViewDelegate {
 //        return 0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = PATableViewModelDemoController()
+//        vc.view.backgroundColor = UIColor.white
+        if indexPath.row % 2 == 0 {
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
 }

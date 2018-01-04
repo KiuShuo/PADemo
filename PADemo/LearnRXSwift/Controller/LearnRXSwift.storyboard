@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kqD-TD-CJT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Simple Validation View Controller-->
+        <scene sceneID="T40-QX-em6">
+            <objects>
+                <viewController storyboardIdentifier="SimpleValidationViewController" id="kqD-TD-CJT" customClass="SimpleValidationViewController" customModule="PADemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mgA-nR-W0W"/>
+                        <viewControllerLayoutGuide type="bottom" id="eFx-AW-sFA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZQn-2W-VgM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C0J-Zg-6VZ">
+                                <rect key="frame" x="20" y="120" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WAv-ON-AaD">
+                                <rect key="frame" x="20" y="211" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入有效的用户名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw6-sH-Qa5">
+                                <rect key="frame" x="20" y="170" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.40000000000000002" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入有效的用户密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMN-gX-2U0">
+                                <rect key="frame" x="20" y="261" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.40000000000000002" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRV-S9-NKG">
+                                <rect key="frame" x="20" y="312" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.2990513393" green="0.85192522319999997" blue="0.34578683040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JfF-wv-CS2"/>
+                                </constraints>
+                                <state key="normal" title="Do Something"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XMN-gX-2U0" firstAttribute="leading" secondItem="C0J-Zg-6VZ" secondAttribute="leading" id="5Mu-J7-qew"/>
+                            <constraint firstItem="C0J-Zg-6VZ" firstAttribute="leading" secondItem="ZQn-2W-VgM" secondAttribute="leading" constant="20" id="6pG-99-E5S"/>
+                            <constraint firstItem="WAv-ON-AaD" firstAttribute="leading" secondItem="C0J-Zg-6VZ" secondAttribute="leading" id="BGX-Hu-5KH"/>
+                            <constraint firstItem="rw6-sH-Qa5" firstAttribute="trailing" secondItem="C0J-Zg-6VZ" secondAttribute="trailing" id="DzM-od-lcr"/>
+                            <constraint firstAttribute="trailing" secondItem="C0J-Zg-6VZ" secondAttribute="trailing" constant="20" id="EKt-CK-hdo"/>
+                            <constraint firstItem="WAv-ON-AaD" firstAttribute="trailing" secondItem="C0J-Zg-6VZ" secondAttribute="trailing" id="G6J-XH-igK"/>
+                            <constraint firstItem="aRV-S9-NKG" firstAttribute="leading" secondItem="ZQn-2W-VgM" secondAttribute="leading" constant="20" id="Ls4-0a-wYK"/>
+                            <constraint firstItem="rw6-sH-Qa5" firstAttribute="top" secondItem="C0J-Zg-6VZ" secondAttribute="bottom" constant="20" id="Sdp-Vp-Zym"/>
+                            <constraint firstItem="aRV-S9-NKG" firstAttribute="top" secondItem="XMN-gX-2U0" secondAttribute="bottom" constant="30" id="ZzI-Mh-iud"/>
+                            <constraint firstItem="rw6-sH-Qa5" firstAttribute="leading" secondItem="C0J-Zg-6VZ" secondAttribute="leading" id="fl2-bl-aZl"/>
+                            <constraint firstAttribute="trailing" secondItem="aRV-S9-NKG" secondAttribute="trailing" constant="20" id="hGo-Qm-keK"/>
+                            <constraint firstItem="XMN-gX-2U0" firstAttribute="trailing" secondItem="C0J-Zg-6VZ" secondAttribute="trailing" id="mxf-Wp-fVP"/>
+                            <constraint firstItem="WAv-ON-AaD" firstAttribute="top" secondItem="rw6-sH-Qa5" secondAttribute="bottom" constant="20" id="ujX-5Z-OAC"/>
+                            <constraint firstItem="C0J-Zg-6VZ" firstAttribute="top" secondItem="mgA-nR-W0W" secondAttribute="bottom" constant="100" id="uuL-qb-Wmo"/>
+                            <constraint firstItem="XMN-gX-2U0" firstAttribute="top" secondItem="WAv-ON-AaD" secondAttribute="bottom" constant="20" id="zlf-tl-igu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doSomethingOutlet" destination="aRV-S9-NKG" id="Kak-uU-3Hj"/>
+                        <outlet property="passwordOutlet" destination="WAv-ON-AaD" id="ic2-qL-jen"/>
+                        <outlet property="passworkValidOutlet" destination="XMN-gX-2U0" id="ngI-Gn-xs7"/>
+                        <outlet property="userNameOutlet" destination="C0J-Zg-6VZ" id="FIc-kS-Crh"/>
+                        <outlet property="userNameValidOutlet" destination="rw6-sH-Qa5" id="JQr-QC-yRl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIG-bj-WLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-185" y="132"/>
+        </scene>
+    </scenes>
+</document>

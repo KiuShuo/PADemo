@@ -15,7 +15,7 @@ class PAPersonListViewController: BaseViewController {
     
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.white
         return view
     }()
     
@@ -25,11 +25,18 @@ class PAPersonListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(collectionView)
-        collectionView.mas_makeConstraints { make in
-            make!.edges.equalTo()
-        }
+        view.backgroundColor = UIColor.white
+//        view.addSubview(collectionView)
+//        collectionView.mas_makeConstraints { make in
+//            make!.edges.equalTo()
+//        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let redVC = BaseViewController()
+        redVC.view.backgroundColor = UIColor.red
+        let viewControlls = [navigationController!.viewControllers.first!, redVC]
+        navigationController?.setViewControllers(viewControlls, animated: true)
     }
 
 }

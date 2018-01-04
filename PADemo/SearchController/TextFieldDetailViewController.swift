@@ -78,7 +78,7 @@ class TextFieldDetailViewController: BaseViewController {
     }
     
     // 上一个界面的键盘什么时候消失？ 注释fix1 发现 当本届还未定义textField时，上一个界面的键盘就消失了。
-    func keyboardDismiss(_ info: Notification) {
+    @objc func keyboardDismiss(_ info: Notification) {
         if let frame = (info.userInfo?[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue {
             print("消失键盘的高度： \(frame.size.width)")
         }
@@ -86,7 +86,7 @@ class TextFieldDetailViewController: BaseViewController {
         print("dismiss keyboard )")
     }
     
-    func keyboardShow(_ info: Notification) {
+    @objc func keyboardShow(_ info: Notification) {
         if let frame = (info.userInfo?[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue {
             print("弹出键盘的高度： \(frame.size.width)")
         }

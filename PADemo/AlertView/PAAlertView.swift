@@ -273,7 +273,7 @@ class PAAlertView: UIView {
         isUpdate = false
     }
     
-    func dismiss() {
+    @objc func dismiss() {
         let manager = IQKeyboardManager.shared()
         manager.isEnabled = isKeyboardManagerEnable
         

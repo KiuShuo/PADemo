@@ -9,13 +9,18 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    
+    var paNavigationBarHidden: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor.paBackground
-//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
-//        navigationItem.backBarButtonItem?.tintColor = UIColor.black
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(paNavigationBarHidden, animated: animated)
     }
     
     deinit {

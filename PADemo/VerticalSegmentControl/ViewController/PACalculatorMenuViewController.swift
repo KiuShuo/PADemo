@@ -28,7 +28,7 @@ class PACalculatorMenuViewController: BaseViewController {
         if let bundlePath = Bundle.main.path(forResource: "PACalculatorModel", ofType: "plist"),
             let resultDic = NSDictionary(contentsOfFile: bundlePath) as? [String: Any],
             let jsonModels = resultDic["result"] as? [[String: Any]] {
-            let models = Mapper<PACalculatorMainMenuModel>().mapArray(JSONArray: jsonModels)!
+            let models = Mapper<PACalculatorMainMenuModel>().mapArray(JSONArray: jsonModels)
             let mainMenuModel = PACalculatorMainMenuModel()
             mainMenuModel.mainMenuName = "全部"
             models.forEach { model in

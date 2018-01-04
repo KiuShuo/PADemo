@@ -18,16 +18,17 @@ struct Style {
             return shadow
         }()
         
-        let textAttributes: [String: AnyObject] = [
-            NSForegroundColorAttributeName: UIColor.paBlack,
-            NSShadowAttributeName: shadow,
-            NSFontAttributeName: UIFont.systemFont(ofSize: 17)
+        let textAttributes: [NSAttributedStringKey: AnyObject] = [
+            NSAttributedStringKey.foregroundColor: UIColor.paBlack,
+            NSAttributedStringKey.shadow: shadow,
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17)
         ]
         UINavigationBar.appearance().titleTextAttributes = textAttributes
         UINavigationBar.appearance().barTintColor = UIColor.white
-        
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.paOrange,NSFontAttributeName:UIFont.systemFont(ofSize: 15)], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.paBlack], for: .highlighted)
+
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.paOrange, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15)], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.paBlack, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15.1)], for: .highlighted)
+
         
         UISearchBar.appearance().barStyle = .black
         UISearchBar.appearance().barTintColor = UIColor.paBackground

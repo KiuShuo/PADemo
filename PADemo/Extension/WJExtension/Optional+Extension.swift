@@ -1,5 +1,5 @@
 //
-//  Foundation+Extensions.swift
+//  Optional+Extensions.swift
 //  WJExtension
 //
 //  Created by 靳朋 on 2017/5/25.
@@ -7,7 +7,7 @@
 //
 import UIKit
 
-//MARK: - String
+// MARK: - String
 public protocol  OptionalSting {}
 extension String : OptionalSting {}
 public extension Optional where Wrapped: OptionalSting {
@@ -19,9 +19,21 @@ public extension Optional where Wrapped: OptionalSting {
             return ""
         }
     }
+    
+    
+    /// 解包可选字符串 并对空字符串设置默认值
+    ///
+    /// - Parameter defaultStr: 默认值
+    public func noneNull(defaultStr: String) -> String {
+        if self.noneNull.isEmpty {
+            return defaultStr
+        } else {
+            return self.noneNull
+        }
+    }
 }
 
-//MARK: - Int
+// MARK: - Int
 public protocol OptionalInt {}
 extension Int : OptionalInt {}
 public extension Optional where Wrapped: OptionalInt {
@@ -34,7 +46,7 @@ public extension Optional where Wrapped: OptionalInt {
     }
 }
 
-//MARK: - CGFloat
+// MARK: - CGFloat
 public protocol OptionalCGFloat {}
 extension CGFloat : OptionalCGFloat {}
 public extension Optional where Wrapped: OptionalCGFloat {
@@ -47,7 +59,7 @@ public extension Optional where Wrapped: OptionalCGFloat {
     }
 }
 
-//MARK: - Double
+// MARK: - Double
 public protocol OptionalDouble {}
 extension Double : OptionalDouble {}
 public extension Optional where Wrapped: OptionalDouble {

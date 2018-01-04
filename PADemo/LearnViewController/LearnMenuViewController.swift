@@ -21,6 +21,7 @@
  3.当前的Responder实现了如下两个方法：
  */
 import UIKit
+import MBProgressHUD
 
 class LearnMenuViewController: BaseViewController {
     
@@ -28,6 +29,7 @@ class LearnMenuViewController: BaseViewController {
         super.viewDidLoad()
         setupTapLabel()
         learnTextView()
+        paNavigationBarHidden = true
     }
     
     func setupTapLabel() {
@@ -82,9 +84,9 @@ class LearnMenuViewController: BaseViewController {
         let style = NSMutableParagraphStyle()
         style.paragraphSpacing = 3
         style.lineSpacing = 1.8
-        let length = detailDescribe.characters.count
+        let length = detailDescribe.count
         let range = NSMakeRange(0, length)
-        mAttributedString.addAttributes([NSParagraphStyleAttributeName: style], range: range)
+        mAttributedString.addAttributes([NSAttributedStringKey.paragraphStyle: style], range: range)
         textView.attributedText = mAttributedString
         view.addSubview(textView)
         textView.mas_makeConstraints { (make) in
@@ -96,11 +98,26 @@ class LearnMenuViewController: BaseViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        if textView.numberOfLines == 0 {
-           textView.numberOfLines = 6
-        } else {
-            textView.numberOfLines = 0
-        }
+//        if textView.numberOfLines == 0 {
+//           textView.numberOfLines = 6
+//        } else {
+//            textView.numberOfLines = 0
+//        }
+        testMBProgressHUD()
+    }
+    
+    func testMBProgressHUD() {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud?.backgroundColor = UIColor.green
+//        hud?.autoresizingMask = []
+//        hud?.frame.origin.y += 64
+//        hud.offset.y = 64
+//        hud?.mas_remakeConstraints { (make) in
+//            make!.top.equalTo()(64)
+//            make!.left.right().bottom().equalTo()
+//        }
+//        hud?.hide(true, afterDelay: 6)
     }
     
 }
+

@@ -46,11 +46,11 @@ class CustomNavigationItemController: BaseViewController {
         return closeItem
     }
 
-    func close() {
+    @objc func close() {
         debugLog("点击关闭按钮")
     }
     
-    func goBack() {
+    @objc func goBack() {
         navigationController?.popViewController(animated: true)
     }
     

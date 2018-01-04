@@ -19,9 +19,22 @@ class PATableViewModelDemoController: BaseViewController {
         return delegater
     }()
     
+    let navigationView = PACustomNavigationView.instanceFromXib()
+    func setupNavigationView() {
+        navigationView.backgroundColor = UIColor.white
+        navigationView.backButton.tintColor = UIColor.black
+        view.addSubview(navigationView)
+        navigationView.mas_makeConstraints { (make) in
+            make!.left.top().right().equalTo()
+            make!.height.equalTo()(UIScreen.navigationHeight)
+        }
+        navigationView.tapBackButton = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //tableView.rowHeight = 188
         setupTableView()
         updateTableView()
@@ -71,7 +84,7 @@ class PATableViewModelDemoController: BaseViewController {
     func setupTableView() {
         tableView.delegate = tableDelegater
         tableView.dataSource = tableDelegater
-        
+        tableView.backgroundColor = UIColor.paBackground
         view.addSubview(tableView)
         tableView.tableFooterView = UIView()
         tableView.mas_makeConstraints { (make) in

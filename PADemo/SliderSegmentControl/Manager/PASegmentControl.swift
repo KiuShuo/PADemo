@@ -20,8 +20,8 @@ extension PASegmentControl {
         segmentControl.selectionIndicatorHeight = 2.0
         
         segmentControl.selectionIndicatorColor = UIColor.paOrange
-        segmentControl.titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14.0), NSForegroundColorAttributeName: UIColor.paGray]
-        segmentControl.selectedTitleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14.0), NSForegroundColorAttributeName: UIColor.paOrange]
+        segmentControl.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14.0), NSAttributedStringKey.foregroundColor: UIColor.paGray]
+        segmentControl.selectedTitleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14.0), NSAttributedStringKey.foregroundColor: UIColor.paOrange]
         
         
         return segmentControl
@@ -78,18 +78,18 @@ class PASegmentControl: UIView {
         }
     }
     
-    public var titleTextAttributes: [String: AnyObject] = [
-        NSFontAttributeName: UIFont.systemFont(ofSize: 14),
-        NSForegroundColorAttributeName: UIColor.black
+    public var titleTextAttributes: [NSAttributedStringKey: AnyObject] = [
+        NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14),
+        NSAttributedStringKey.foregroundColor: UIColor.black
         ] {
         didSet {
             set(titleAttributes: titleTextAttributes, forControlState: .normal)
         }
     }
     
-    public var selectedTitleTextAttributes: [String: AnyObject] = [
-        NSFontAttributeName: UIFont.systemFont(ofSize: 14),
-        NSForegroundColorAttributeName: UIColor.black
+    public var selectedTitleTextAttributes: [NSAttributedStringKey: AnyObject] = [
+        NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14),
+        NSAttributedStringKey.foregroundColor: UIColor.black
         ] {
         didSet {
             set(titleAttributes: selectedTitleTextAttributes, forControlState: .selected)
@@ -257,8 +257,8 @@ fileprivate extension PASegmentControl {
             return 0
         }
         var textWidth: CGFloat = 0
-        let text = titles[index]
-        textWidth = ceil((text as NSString).size(attributes: titleTextAttributes).width)
+        let text = titles[index]        
+        textWidth = ceil((text as NSString).size(withAttributes: titleTextAttributes).width)
         return textWidth
     }
     
@@ -291,7 +291,7 @@ fileprivate extension PASegmentControl {
         segmentCollection.selectItem(at: IndexPath(item: selectedSegmentIndex, section: 0), animated: animated, scrollPosition: .centeredHorizontally)
     }
     
-    fileprivate func set(titleAttributes attributes: [String: AnyObject], forControlState state: UIControlState) {
+    fileprivate func set(titleAttributes attributes: [NSAttributedStringKey: AnyObject], forControlState state: UIControlState) {
         for cell in segmentCollection.visibleCells {
             if let textCell = cell as? PASegmentCell,
                 let title = textCell.displayButton.title(for: state) {

@@ -18,10 +18,10 @@ class TableViewController_CollectionView: BaseViewController {
         
         setupTableView()
         loadData()
-        
     }
     
     func setupTableView() {
+        tableView.backgroundColor = UIColor.green
         view.addSubview(tableView)
         tableView.dataSource = tableViewDelegate
         tableView.delegate = tableViewDelegate

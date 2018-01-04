@@ -180,7 +180,7 @@ import Foundation
         self.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
     }
     
-    func clickButton() {
+    @objc func clickButton() {
         if let clickBlock = clickBlock {
             clickBlock()
         }

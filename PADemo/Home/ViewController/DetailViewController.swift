@@ -9,7 +9,7 @@
 
 import UIKit
 import SDWebImage
-import WJExtension
+//import WJExtension
 
 class DetailViewController: BaseViewController {
     
@@ -20,7 +20,7 @@ class DetailViewController: BaseViewController {
         return storyboard.instantiateViewController(withIdentifier: String(describing: DetailViewController.self))
     }
     // "现场查看是否有铅衣等防护用品，且可使用；比如齿科的全景X光机；无放射科则不适用\n（需有照片）"
-    let text = "现场查看是否有铅衣等防护用品，且可使用；比如齿科的全景X光机；无放射科则不适用（需有照片）"
+    let text = "现场查看是否有铅衣等防护用品且可使用比如齿科的全景X光机无放射科则不适用（需有照片）"
     let shortText = "现场查看是否有铅衣等"
     let button = PAButton(type: .custom)
     
@@ -106,14 +106,21 @@ class DetailViewController: BaseViewController {
     }
 
     func attributedString() {
-        let label = PALabel(frame: CGRect(x: 10, y: 230, width: 200, height: 40))
+        let label = PALabel(frame: CGRect(x: 10, y: 230, width: 200, height: 80))
+        label.numberOfLines = 0
         label.backgroundColor = UIColor.green
-        let originStr = "1234.56万"
+        let originStr = text//"123456789012345678908875546888827364657681.56万"
         let mAtt = NSMutableAttributedString(string: originStr)
-        mAtt.dz_setFont(UIFont.systemFont(ofSize: 11), range: NSMakeRange(originStr.characters.count - 1, 1))
-        mAtt.dz_setFont(UIFont.systemFont(ofSize: 24), range: NSMakeRange(0, originStr.characters.count - 1))
-        mAtt.dz_setBaselineOffset(1.5, range: NSMakeRange(originStr.characters.count - 1, 1))
-        label.textAlignment = .center
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 0.34 // 行间距
+        let length = text.count
+        let range = NSMakeRange(0, length)
+        style.lineBreakMode = .byTruncatingTail
+        mAtt.addAttributes([NSAttributedStringKey.paragraphStyle: style], range: range)
+        mAtt.dz_setFont(UIFont.systemFont(ofSize: 11), range: NSMakeRange(originStr.count - 1, 1))
+        mAtt.dz_setFont(UIFont.systemFont(ofSize: 24), range: NSMakeRange(0, originStr.count - 1))
+        mAtt.dz_setBaselineOffset(1.5, range: NSMakeRange(originStr.count - 1, 1))
+        label.textAlignment = .left
         label.verticalAlignment = .bottom
         label.attributedText = mAtt
         view.addSubview(label)
@@ -137,15 +144,15 @@ extension DetailViewController {
 //        button.addObserver(self, forKeyPath: "state", options: .new, context: nil)
     }
     
-    func handelTouchDown() {
+    @objc func handelTouchDown() {
         self.view.backgroundColor = UIColor.red
     }
     
-    func handelTouchCancel() {
+    @objc func handelTouchCancel() {
         self.view.backgroundColor = UIColor.white
     }
     
-    func handelTouch() {
+    @objc func handelTouch() {
         self.view.backgroundColor = UIColor.white
         print("dianji")
     }
@@ -201,7 +208,7 @@ struct PARange {
         let end = string.index(string.startIndex, offsetBy: 4)
         let subRange: Range<String.Index> = start..<end // ！！！这里只能使用右半开区间 使用右闭区间报错 暂时不知道为什么
         debugLog("subRange = \(subRange)")
-        let subString = string.substring(with: subRange)
+        let subString = String(string[subRange])
         // 获取下标从1开始到下标为4之前的子字符串 bcd
         debugLog("subString = \(subString)")
     }
@@ -214,7 +221,7 @@ struct PAAttributedString {
     static func attributedString(string: String) -> NSAttributedString {
         let attributedString = NSAttributedString(string: " " + string + "  ")
         let mAttributedString = NSMutableAttributedString(attributedString: attributedString)
-        let range = NSRange(location: string.characters.count + 1, length: 1)
+        let range = NSRange(location: string.count + 1, length: 1)
         let textAttachment = NSTextAttachment()
 //        // font.descender, font.lineHeight, font.lineHeight
         textAttachment.bounds = CGRect(x: 0, y: 0, width: 10, height: 10)
@@ -222,7 +229,7 @@ struct PAAttributedString {
         let replaceAttributedString = NSAttributedString(attachment: textAttachment)
         mAttributedString.replaceCharacters(in: range, with: replaceAttributedString)
 //
-        mAttributedString.addAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 10)], range: NSMakeRange(0, mAttributedString.length))
+        mAttributedString.addAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 10)], range: NSMakeRange(0, mAttributedString.length))
 //        let resultString = mAttributedString.string
 //        debugLog("resultString = \(resultString)")
 //        let aRange = NSRange(location: 0, length: mAttributedString.length - 1)
@@ -251,9 +258,9 @@ struct PADateHandel {
     
     static func age(with birthDay: String, ageName: String = "岁", monthName: String = "个月") -> String {
         var dateFormat = "yyyy-MM-dd"
-        if birthDay.characters.count == 10 {
+        if birthDay.count == 10 {
             dateFormat = "yyyy-MM-dd"
-        } else if birthDay.characters.count == 19 {
+        } else if birthDay.count == 19 {
             dateFormat = "yyyy-MM-dd HH:mm:ss"
         } else {
             return ""

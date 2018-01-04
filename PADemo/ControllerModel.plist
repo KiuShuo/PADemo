@@ -187,6 +187,32 @@ tableview.contentInset</string>
 			<key>isStoryboard</key>
 			<string>0</string>
 		</dict>
+		<dict>
+			<key>id</key>
+			<string>21</string>
+			<key>identifier</key>
+			<string>TableViewController_WebView</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>22</string>
+			<key>identifier</key>
+			<string>SettingViewController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>23</string>
+			<key>identifier</key>
+			<string>SimpleValidationViewController</string>
+			<key>isStoryboard</key>
+			<string>1</string>
+			<key>storyboardName</key>
+			<string>LearnRXSwift</string>
+		</dict>
 	</array>
 </dict>
 </plist>

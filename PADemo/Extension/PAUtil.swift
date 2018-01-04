@@ -21,7 +21,7 @@ struct PAUtil {
             return result + connector + i
         }
         let index = str.index(str.startIndex, offsetBy: 1)
-        return str.substring(from: index)
+        return String(str[index...])
     }
     
     

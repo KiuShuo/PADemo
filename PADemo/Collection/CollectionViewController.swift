@@ -27,8 +27,22 @@ class CollectionViewController: UICollectionViewController {
     }
     
     func setupRightBuaButtonItem() {
-        let rightItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(refresh_4))
+//        let customButton = UIButton()
+//        customButton.setTitle("历史记录", for: .normal)
+//        customButton.addTarget(self, action: #selector(pushNewViewController), for: .touchUpInside)
+//        customButton.setTitleColor(UIColor.paOrange, for: .normal)
+//        customButton.setTitleColor(UIColor.paBlack, for: .highlighted)
+//        let rightItem = UIBarButtonItem(customView: customButton)
+        let rightItem = UIBarButtonItem(title: "历史记录", style: .done, target: self, action: #selector(pushNewViewController))
+        UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(pushNewViewController))
+        
         navigationItem.setRightBarButton(rightItem, animated: true)
+    }
+    
+    @objc func pushNewViewController() {
+        let detail = DetailViewController()
+        navigationController?.pushViewController(detail, animated: true)
+//        self.navigationController?.navigationBar.tintAdjustmentMode = .normal
     }
     
     // reloadData
@@ -54,7 +68,7 @@ class CollectionViewController: UICollectionViewController {
     }
     
     // reloadItems + reloadData
-    func refresh_4() {
+    @objc func refresh_4() {
         refresh_2()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.refresh_1()

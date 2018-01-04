@@ -2,21 +2,70 @@
 
 import UIKit
 
+class Test {
+    var dog: Dog? {
+        didSet {
+            print("dog 123")
+        }
+    }
+    var person: Person? {
+        didSet {
+            print("person 123")
+        }
+    }
+}
+
+class Dog {
+    var name: String = "hehe" {
+        didSet {
+            print("dog newName = \(name)")
+        }
+    }
+}
+
 
 struct Person {
-    var name: String = "xiaoHong"
+    var name: String = "xiaoHong" {
+        didSet {
+            print("person newName = \(name)")
+        }
+    }
 }
 
-var persons = [Person(), Person(), Person()]
-//for (index, person) in <#items#> {
-//    <#code#>
+let dog = Dog()
+var per = Person()
+
+let test = Test()
+test.dog = dog
+test.person = per
+
+test.dog?.name = "haha"
+test.person?.name = "ming"
+
+test.dog?.name = "haha1"
+test.person?.name = "ming1hh"
+
+func formatFloat(f: Float) -> String {
+    if fmodf(f, 1) == 0 {
+        return String(format: "%.0f", f)
+    } else if fmodf(f * 10, 1) == 0 {
+        return String(format: "%.1f", f)
+    } else {
+        return String(format: "%.2f", f)
+    }
+}
+formatFloat(f: 10.12500)
+//
+//var persons = [Person(), Person(), Person()]
+////for (index, person) in <#items#> {
+////    <#code#>
+////}
+//
+//persons.enumerated().forEach { (index, _) in
+//    persons[index].name = "hong"
 //}
-
-persons.enumerated().forEach { (index, _) in
-    persons[index].name = "hong"
-}
-persons
-print("persons = \(persons)")
+//persons
+//print("persons = \(persons)")
 
 
 //let arr: NSArray = [["a": "1"], ["a": "2"], ["1": "3"], ["b": "1"]]

@@ -31,22 +31,10 @@ class TableViewController: BaseViewController {
         super.viewDidLoad()
         view.addSubview(tableView)
         view.backgroundColor = UIColor.green
-//        tableView.estimatedRowHeight = 44.0
-//        setupRightBuaButtonItem()
         tableView.mas_makeConstraints { (make) in
-//            make!.edges.equalTo()
             make!.left.right().bottom()
             make!.top.equalTo()//(10)
         }
-        
-//        let redView = UIView()
-//        redView.backgroundColor = UIColor.red
-//        view.addSubview(redView)
-//        redView.mas_makeConstraints { (make) in
-//            make!.top.equalTo()
-//            make!.left.right().equalTo()
-//            make!.height.equalTo()(50 + 64)
-//        }
     }
     
     func setupTablefooterView() {
@@ -79,9 +67,6 @@ class TableViewController: BaseViewController {
         debugLog("begin reloadData")
         tableView.reloadData()
         debugLog("end reloadData")
-//        for i in 0...1000000 {
-//            debugPrint("\(i)")
-//        }
     }
     
     // tableView.reloadRows(at: [IndexPath], with: UITableViewRowAnimation)后，cellForRaw的执行时机
@@ -94,7 +79,7 @@ class TableViewController: BaseViewController {
 
     
     // 先执行 reloadData 再执行 reloadRow
-    func refresh_3() {
+    @objc func refresh_3() {
         refresh_1()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.refresh_2()
@@ -144,18 +129,7 @@ extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         debugLog("tableView.insertTop = \(tableView.contentInset.top)")
     }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let red = UIView()
-//        red.backgroundColor = UIColor.red
-//        return red
-//    }
-    
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let red = UIView()
-//        red.backgroundColor = UIColor.yellow
-//        return red
-//    }
+
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0

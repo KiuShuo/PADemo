@@ -7,22 +7,9 @@
 //
 
 import UIKit
-import WJExtension
+//import WJExtension
 import Fabric
 import Crashlytics
-
-extension UIDevice {
-    /// 是否为模拟器 #if (arch(i386) || arch(x86_64)) && os(iOS)
-    static let isSimulator: Bool = {
-        var isSim = false
-        #if arch(i386) || arch(x86_64)
-            isSim = true
-        #endif
-        return isSim
-    }()
-    
-}
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,10 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let statusBarSize = UIApplication.shared.statusBarFrame.size
-        print("statusBarSize.height = \(statusBarSize.height)")
-        print("statusBarSize.width = \(statusBarSize.width)")
-        
         DispatchQueue.global().async {
             AMapServices.shared().apiKey = "PAGaodeMapCommonStruct.kGaodeMapKey"
         }
@@ -45,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #else
             // 模拟器
         #endif
-        /// 添加系统的调试视图， 尽在iOS10之后可用，两只趾头点击状态栏显示
+        /// 添加系统的调试视图， 尽在iOS10之后可用，两只手指点击状态栏显示
         let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
         _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
         

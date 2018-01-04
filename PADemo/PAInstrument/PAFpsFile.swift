@@ -133,7 +133,7 @@ extension UIView {
     }
     
     // 粘贴圆角法
-    func drawRoundedCorner(image: UIImage? = nil, radius: CGFloat, roundingCorners: UIRectCorner = .allCorners, fillColor: UIColor) {
+    @objc func drawRoundedCorner(image: UIImage? = nil, radius: CGFloat, roundingCorners: UIRectCorner = .allCorners, fillColor: UIColor) {
         let subImage = UIGraphicsDrawAntiRoundedCornerImage(radius: radius, size: self.frame.size, fillColor: fillColor)
         if let aImageView = self.viewWithTag(999111223) as? UIImageView {
             aImageView.image = subImage

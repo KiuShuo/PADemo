@@ -39,6 +39,9 @@ class ControllerModel: NSObject, Mappable {
 
 class ControllerUtil {
     
+    static let mainStoryboard = "Main"
+    static let learnRXSwiftStoryboard = "LearnRXSwift"
+    
     static func viewControllerClass(with name: String) -> UIViewController.Type? {
         if let nameSpace = Bundle.main.infoDictionary?["CFBundleExecutable"] as? String {
             if let viewControllerClass = NSClassFromString(nameSpace + "." + name) as? UIViewController.Type {
