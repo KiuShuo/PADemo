@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOm-M4-1xo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-697" y="135"/>
+            <point key="canvasLocation" x="-865" y="134"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -63,7 +63,7 @@
                     <navigationItem key="navigationItem" id="YYa-nK-OTB"/>
                     <connections>
                         <outlet property="tableView" destination="Uss-iF-xbl" id="ZL4-5g-fRf"/>
-                        <segue destination="aCH-Pf-koa" kind="show" id="xRP-Ug-Wcp"/>
+                        <segue destination="aCH-Pf-koa" kind="show" identifier="showDetail" id="xRP-Ug-Wcp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

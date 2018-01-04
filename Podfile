@@ -29,7 +29,7 @@ target 'PADemo' do
     pod 'Crashlytics', '3.8.4'
     pod 'RxSwift', '4.0.0'
     pod 'RxCocoa',  '4.0.0'
-    pod 'HJTabViewController', '~> 1.0'
+#    pod 'HJTabViewController', '~> 1.0'
     pod 'MJRefresh', '3.1.12'
     pod 'MBProgressHUD', '0.9.2'
     

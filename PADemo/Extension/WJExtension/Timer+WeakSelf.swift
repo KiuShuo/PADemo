@@ -27,7 +27,7 @@ public extension Timer {
         return Timer.init(timeInterval: ti, target: self, selector: #selector(Timer.weak_timerAction(_:)), userInfo: action, repeats: repeats)
     }
     
-    public class func weak_timerAction(_ timer:Timer){
+    @objc public class func weak_timerAction(_ timer:Timer){
         if timer.userInfo != nil {
             let timerUserInfo = timer.userInfo! as! ObjectWrapper<(()->())?>
             if timerUserInfo.value != nil {

@@ -13,16 +13,20 @@ import UIKit
 public extension String {
     
     public func substring(to charIndex: UInt) -> String {
-        return substring(to: index(startIndex, offsetBy: Int(charIndex)))
+        let toIndex = index(startIndex, offsetBy: Int(charIndex))
+        return String(self[...toIndex])
     }
     
     public func substring(from charIndex: UInt) -> String {
-        return substring(from: index(startIndex, offsetBy: Int(charIndex)))
+        let fromIndex = index(startIndex, offsetBy: Int(charIndex))
+        return String(self[fromIndex...])
     }
     
     public func substring(in range: Range<UInt>) -> String {
-        if Int(range.upperBound) > characters.count { return self }
-        return substring(with: index(startIndex, offsetBy: Int(range.lowerBound))..<index(startIndex, offsetBy: Int(range.upperBound)))
+        if Int(range.upperBound) > count { return self }
+        let fromIndex = index(startIndex, offsetBy: Int(range.lowerBound))
+        let toIndex = index(startIndex, offsetBy: Int(range.upperBound))
+        return String(self[fromIndex..<toIndex])
     }
     
    

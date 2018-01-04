@@ -34,7 +34,7 @@ class CollectionViewController: UICollectionViewController {
 //        customButton.setTitleColor(UIColor.paBlack, for: .highlighted)
 //        let rightItem = UIBarButtonItem(customView: customButton)
         let rightItem = UIBarButtonItem(title: "历史记录", style: .done, target: self, action: #selector(pushNewViewController))
-        UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(pushNewViewController))
+//        UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(pushNewViewController))
         
         navigationItem.setRightBarButton(rightItem, animated: true)
     }

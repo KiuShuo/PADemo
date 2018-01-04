@@ -1292,7 +1292,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EBForeNotification/EBForeNotification.framework",
-				"${BUILT_PRODUCTS_DIR}/HJTabViewController/HJTabViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
@@ -1308,7 +1307,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EBForeNotification.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HJTabViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
@@ -1715,7 +1713,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 558E1E08579E39225467C89E /* Pods-PADemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1741,7 +1738,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 698963C09D820B5FEECEE9E7 /* Pods-PADemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: PingAn Wanjia Healthcare Investment Management Co., Ltd (6GA5676ZM3)";
