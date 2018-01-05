@@ -28,6 +28,8 @@
 		8D304BD01FECAFBC00474A37 /* SettingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D304BCE1FECAFBC00474A37 /* SettingItems.swift */; };
 		8D304BD11FECAFBC00474A37 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D304BCF1FECAFBC00474A37 /* SettingCell.swift */; };
 		8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */; };
+		8D4041E21FFF5C8E0065308F /* LRRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4041E11FFF5C8E0065308F /* LRRegistViewController.swift */; };
+		8D4041E41FFF7D980065308F /* LRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4041E31FFF7D980065308F /* LRxSwiftViewController.swift */; };
 		8D42C8651F1355A200061C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42C8641F1355A200061C9C /* AppDelegate.swift */; };
 		8D42C8671F1355B400061C9C /* AppDelegate+APNs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42C8661F1355B400061C9C /* AppDelegate+APNs.swift */; };
 		8D42C8691F13570000061C9C /* unbelievable.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8D42C8681F1356EC00061C9C /* unbelievable.caf */; };
@@ -115,7 +117,7 @@
 		8DC71B0A1FFE2350001BA435 /* RXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71B051FFE2350001BA435 /* RXBaseViewController.swift */; };
 		8DC71B0B1FFE2350001BA435 /* LearnRXSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC71B081FFE2350001BA435 /* LearnRXSwift.storyboard */; };
 		8DC71B0C1FFE2350001BA435 /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71B091FFE2350001BA435 /* SimpleValidationViewController.swift */; };
-		8DC71B0E1FFE296E001BA435 /* ValidationServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71B0D1FFE296E001BA435 /* ValidationServer.swift */; };
+		8DC71B0E1FFE296E001BA435 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC71B0D1FFE296E001BA435 /* ValidationService.swift */; };
 		8DCA857B1F3850B9009F648F /* PACellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85781F3850B9009F648F /* PACellModel.swift */; };
 		8DCA857C1F3850B9009F648F /* PATableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA85791F3850B9009F648F /* PATableViewDelegate.swift */; };
 		8DCA857D1F3850B9009F648F /* PATableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA857A1F3850B9009F648F /* PATableViewModel.swift */; };
@@ -225,6 +227,8 @@
 		8D304BCE1FECAFBC00474A37 /* SettingItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingItems.swift; sourceTree = "<group>"; };
 		8D304BCF1FECAFBC00474A37 /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAQuart2D_GraphicsController.swift; sourceTree = "<group>"; };
+		8D4041E11FFF5C8E0065308F /* LRRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRRegistViewController.swift; sourceTree = "<group>"; };
+		8D4041E31FFF7D980065308F /* LRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRxSwiftViewController.swift; sourceTree = "<group>"; };
 		8D42C8621F13557000061C9C /* PADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PADemo.entitlements; sourceTree = "<group>"; };
 		8D42C8641F1355A200061C9C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D42C8661F1355B400061C9C /* AppDelegate+APNs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+APNs.swift"; sourceTree = "<group>"; };
@@ -320,7 +324,7 @@
 		8DC71B051FFE2350001BA435 /* RXBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RXBaseViewController.swift; sourceTree = "<group>"; };
 		8DC71B081FFE2350001BA435 /* LearnRXSwift.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LearnRXSwift.storyboard; sourceTree = "<group>"; };
 		8DC71B091FFE2350001BA435 /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
-		8DC71B0D1FFE296E001BA435 /* ValidationServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServer.swift; sourceTree = "<group>"; };
+		8DC71B0D1FFE296E001BA435 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		8DCA85781F3850B9009F648F /* PACellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACellModel.swift; sourceTree = "<group>"; };
 		8DCA85791F3850B9009F648F /* PATableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewDelegate.swift; sourceTree = "<group>"; };
 		8DCA857A1F3850B9009F648F /* PATableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATableViewModel.swift; sourceTree = "<group>"; };
@@ -796,7 +800,7 @@
 		8DC71B061FFE2350001BA435 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				8DC71B0D1FFE296E001BA435 /* ValidationServer.swift */,
+				8DC71B0D1FFE296E001BA435 /* ValidationService.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -806,6 +810,8 @@
 			children = (
 				8DC71B081FFE2350001BA435 /* LearnRXSwift.storyboard */,
 				8DC71B091FFE2350001BA435 /* SimpleValidationViewController.swift */,
+				8D4041E11FFF5C8E0065308F /* LRRegistViewController.swift */,
+				8D4041E31FFF7D980065308F /* LRxSwiftViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1359,6 +1365,7 @@
 				8DCA85861F385D20009F648F /* PAPersonCollectionViewCell.swift in Sources */,
 				8D1F53CF1F453E60005E89AE /* HomeTableViewCell.swift in Sources */,
 				8D65126A1F3C08ED00D9E434 /* PAIntegrationSituationTableViewController.swift in Sources */,
+				8D4041E21FFF5C8E0065308F /* LRRegistViewController.swift in Sources */,
 				8D7BD4591FECB10B00B53815 /* PAPlaceholderTextView.swift in Sources */,
 				8D66E93C1EE1361400DBBE41 /* UIColor+Extension.swift in Sources */,
 				8D42C8671F1355B400061C9C /* AppDelegate+APNs.swift in Sources */,
@@ -1406,7 +1413,7 @@
 				8D80D2011FFE302C0080386B /* RegisterViewModel.swift in Sources */,
 				8DC71B0C1FFE2350001BA435 /* SimpleValidationViewController.swift in Sources */,
 				8D1136371F4BE0F000DCB258 /* PACycleContainerView.swift in Sources */,
-				8DC71B0E1FFE296E001BA435 /* ValidationServer.swift in Sources */,
+				8DC71B0E1FFE296E001BA435 /* ValidationService.swift in Sources */,
 				8D1031431ECE883A007F49CA /* CustomTableViewCell.swift in Sources */,
 				8D66E93F1EE1361400DBBE41 /* UImageView+Extension.swift in Sources */,
 				8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */,
@@ -1414,6 +1421,7 @@
 				8D6512721F3DA3ED00D9E434 /* PASegmentedControlView.swift in Sources */,
 				8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */,
 				8D6512741F3DA43100D9E434 /* PASegmentTestViewController.swift in Sources */,
+				8D4041E41FFF7D980065308F /* LRxSwiftViewController.swift in Sources */,
 				8DDC0ECE1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift in Sources */,
 				8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */,
 				8DDC0EC31F57D9A60035BE44 /* PAListViewController.swift in Sources */,

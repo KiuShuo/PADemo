@@ -29,8 +29,6 @@ public extension String {
         return String(self[fromIndex..<toIndex])
     }
     
-   
-    
 }
 
 // MARK: - String + Transform

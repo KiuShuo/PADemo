@@ -1,5 +1,5 @@
 //
-//  ValidationServer.swift
+//  ValidationService.swift
 //  PADemo
 //
 //  Created by shuo on 2018/1/4.
@@ -16,9 +16,9 @@ enum Result {
     case failed(message: String)
 }
 
-class ValidationServer {
+class ValidationService {
     
-    static let instance = ValidationServer()
+    static let instance = ValidationService()
     
     private init() {}
     
