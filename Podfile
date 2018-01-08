@@ -15,6 +15,7 @@ target 'PADemo' do
     use_frameworks!
 #    $WJFrameworkUrl = 'svn://172.19.21.212/wanjia/src/yidong/IOS/WJFramework/'
 #    pod 'WJExtension', :svn => $WJFrameworkUrl +'WJExtension', :tag => '1.1.2'
+#    pod 'WJExtension', :path => $WJFrameworkUrl +'WJExtension', :tag => '1.1.2'
     pod 'SDWebImage', '3.7.5'
     pod 'Masonry', '1.0.2'
     pod 'ObjectMapper', '3.1.0'

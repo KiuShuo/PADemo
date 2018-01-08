@@ -33,7 +33,6 @@ class RegisterViewModel {
                     .observeOn(MainScheduler.instance)
                     .catchErrorJustReturn(.failed(message: "username检测出错"))
             }.share(replay: 1)
-        
     }
     
 }
