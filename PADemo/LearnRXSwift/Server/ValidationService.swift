@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import RxSwift
 import RxCocoa
 
@@ -15,6 +16,44 @@ enum Result {
     case empty
     case failed(message: String)
 }
+
+extension Result {
+    var isValid: Bool {
+        switch self {
+        case .ok:
+            return true
+        default:
+            return false
+        }
+    }
+}
+
+extension Result {
+    var textColor: UIColor {
+        switch self {
+        case .ok:
+            return .green
+        case .empty:
+            return .black
+        case .failed:
+            return .red
+        }
+    }
+}
+
+extension Result {
+    var description: String {
+        switch self {
+        case .ok(let message):
+            return message
+        case .empty:
+            return ""
+        case .failed(let message):
+            return message
+        }
+    }
+}
+
 // 验证 服务 类
 class ValidationService {
     
