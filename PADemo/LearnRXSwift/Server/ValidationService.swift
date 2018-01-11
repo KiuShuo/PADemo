@@ -15,7 +15,7 @@ enum Result {
     case empty
     case failed(message: String)
 }
-
+// 验证 服务 类
 class ValidationService {
     
     static let instance = ValidationService()

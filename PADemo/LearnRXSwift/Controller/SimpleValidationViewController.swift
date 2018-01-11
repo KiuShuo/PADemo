@@ -41,7 +41,7 @@ class SimpleValidationViewController: RXBaseViewController {
         // 所有输入是否有效 -> 绿色按钮是否可点击
         everythingValid.bind(to: doSomethingOutlet.rx.isEnabled).disposed(by: disposeBag)
         
-        doSomethingOutlet.rx.tap.subscribe(onNext: { [weak self] in self?.showLearnRxSwiftViewController() }).disposed(by: disposeBag)
+        doSomethingOutlet.rx.tap.subscribe(onNext: { [weak self] in self?.showAlertView() }).disposed(by: disposeBag)
     }
     
     func showAlertView() {
@@ -52,5 +52,10 @@ class SimpleValidationViewController: RXBaseViewController {
     func showLearnRxSwiftViewController() {
         performSegue(withIdentifier: "toLRxSwiftViewController", sender: nil)
     }
+    
+    @IBAction func clickLearnButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toLRxSwiftViewController", sender: nil)
+    }
+    
 
 }

@@ -66,6 +66,15 @@
                                     <segue destination="hZ7-lY-cLz" kind="showDetail" id="CER-pN-azr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vu5-Ln-avO">
+                                <rect key="frame" x="158.5" y="577" width="57" height="34"/>
+                                <state key="normal" title="LEARN">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.39607843139999999" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickLearnButton:" destination="kqD-TD-CJT" eventType="touchUpInside" id="A0l-HH-EDb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -78,10 +87,12 @@
                             <constraint firstItem="eFx-AW-sFA" firstAttribute="top" secondItem="fuU-G3-ADJ" secondAttribute="bottom" constant="100" id="JOD-kF-GQ2"/>
                             <constraint firstItem="fuU-G3-ADJ" firstAttribute="centerX" secondItem="ZQn-2W-VgM" secondAttribute="centerX" id="Kct-nI-yxJ"/>
                             <constraint firstItem="aRV-S9-NKG" firstAttribute="leading" secondItem="ZQn-2W-VgM" secondAttribute="leading" constant="20" id="Ls4-0a-wYK"/>
+                            <constraint firstItem="Vu5-Ln-avO" firstAttribute="top" secondItem="fuU-G3-ADJ" secondAttribute="bottom" constant="10" id="RrE-yw-Wtb"/>
                             <constraint firstItem="rw6-sH-Qa5" firstAttribute="top" secondItem="C0J-Zg-6VZ" secondAttribute="bottom" constant="20" id="Sdp-Vp-Zym"/>
                             <constraint firstItem="aRV-S9-NKG" firstAttribute="top" secondItem="XMN-gX-2U0" secondAttribute="bottom" constant="30" id="ZzI-Mh-iud"/>
                             <constraint firstItem="rw6-sH-Qa5" firstAttribute="leading" secondItem="C0J-Zg-6VZ" secondAttribute="leading" id="fl2-bl-aZl"/>
                             <constraint firstAttribute="trailing" secondItem="aRV-S9-NKG" secondAttribute="trailing" constant="20" id="hGo-Qm-keK"/>
+                            <constraint firstItem="Vu5-Ln-avO" firstAttribute="centerX" secondItem="ZQn-2W-VgM" secondAttribute="centerX" id="i5w-TF-Svl"/>
                             <constraint firstItem="XMN-gX-2U0" firstAttribute="trailing" secondItem="C0J-Zg-6VZ" secondAttribute="trailing" id="mxf-Wp-fVP"/>
                             <constraint firstItem="WAv-ON-AaD" firstAttribute="top" secondItem="rw6-sH-Qa5" secondAttribute="bottom" constant="20" id="ujX-5Z-OAC"/>
                             <constraint firstItem="C0J-Zg-6VZ" firstAttribute="top" secondItem="mgA-nR-W0W" secondAttribute="bottom" constant="100" id="uuL-qb-Wmo"/>
