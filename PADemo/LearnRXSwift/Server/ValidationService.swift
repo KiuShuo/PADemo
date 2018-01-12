@@ -72,7 +72,7 @@ class ValidationService {
             return Observable.just(.empty)
         }
         if username.count < minCharactersCount {
-            return Observable.just(.failed(message: "用户名长度必须大于6"))
+            return Observable.just(.failed(message: "用户名长度必须大于\(minCharactersCount)"))
         }
         if usernameValid(username) {
             return Observable.just(.failed(message: "用户名已存在"))
@@ -88,6 +88,28 @@ class ValidationService {
             return false
         }
         return usernameArr.contains(username)
+    }
+    
+    // 校验输入的密码是否正确
+    func validatePassword(_ password: String) -> Result {
+        if password.isEmpty {
+            return .empty
+        }
+        if password.count < minCharactersCount {
+            return .failed(message: "密码长度必须大于\(minCharactersCount)")
+        }
+        return .ok(message: "密码正确")
+    }
+    
+    // 对比两次输入的密码是否一致
+    func validateRepeatPassword(_ password: String, _ repeatPassword: String) -> Result {
+        if repeatPassword.isEmpty {
+            return .empty
+        }
+        if password == repeatPassword {
+            return .ok(message: "密码正确")
+        }
+        return .failed(message: "两次输入的密码不一致")
     }
     
 }

@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+// map share combineLatest
+
 class LRxSwiftViewController: RXBaseViewController {
 
     @IBOutlet weak var textField: UITextField!
@@ -26,8 +28,6 @@ class LRxSwiftViewController: RXBaseViewController {
     }
     
     func observableLearn() {
-//        print("123")
-        
         // just 创建一个sequence 只能发出一种特定事件，能正常结束
         /*
         let justObservable = Observable.just("呵呵")
@@ -51,19 +51,21 @@ extension LRxSwiftViewController {
     
     func rxMapLearn() {
         //mapLearn()
-        flatMapLearn()
+        //flatMapLearn()
+        flatMapLatestLearn()
     }
     
     func mapLearn() {
+        // 通过一个转换函数，将Observable中的每一个元素转换一遍
         // 通过传入一个函数闭包 将一个sequence转换成一个新的sequence
         let observable = Observable.of(1, 2, 3).map { $0 * $0 }
         observable.subscribe(onNext: { print($0) }).disposed(by: disposeBag)
         // 可省写为
         Observable.of(1, 2, 3).map { $0 * $0 }.subscribe(onNext: { print($0) }).disposed(by: disposeBag)
     }
-    
+    // map和flatMap的区别：flatMap是将每一个元素都转换成了Observable，map转换成的不一定是Observable
     func flatMapLearn() {
-        
+        // 将Observable的元素转换为其他的Observable，然后将这些Observable合并
         struct Player {
             var score: Variable<Int>
         }
@@ -81,6 +83,21 @@ extension LRxSwiftViewController {
         🐶.score.value = 90
         player.value = 🐭
         🐱.score.value = 110
+    }
+    
+    func flatMapLatestLearn() {
+        let first = BehaviorSubject(value: "1")
+        let second = BehaviorSubject(value: "2")
+        let variable = Variable(first)
+        
+        let newObservable = variable.asObservable().flatMapLatest { return $0 }
+        newObservable.subscribe(onNext: { print($0) } ).disposed(by: disposeBag)
+        
+        first.onNext("a")
+        second.onNext("b")
+        variable.value = second
+        first.onNext("c")
+        second.onNext("d")
     }
     
 }

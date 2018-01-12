@@ -17,11 +17,17 @@ class RegisterViewModel {
     // 对username的处理应该有一个结果，通过监听这个结果来改变界面，所以定义为Observable
     let usernameUsable: Observable<Result>
     
+    var password = Variable<String>("")
+    let passwordUsable: Observable<Result>
+    
+//    var repeatPassword = Variable<String>("")
+//    let repeatPasswordUsable: Observable<Result>
+    
     init() {
         let service = ValidationService.instance
         /**
-         username作为Observable被观察者
-         因为需要根据用户名Observable返回一个处理结果作为新的Obasevable，所以使用变换操作map
+         username作为Observable<String>被观察者
+         因为需要根据用户名Observable<String>返回一个处理结果作为新的Obasevable<Result>，所以使用变换操作map
          flatMapLatest相较于其他几个的特点是：只会接受最新的value事件
          service.validateUsername(username) 获取新的Observable
          observeOn 设置后续工作在哪个线程；observeOn(MainScheduler.instance) 设置后续工作在主线程中进行
@@ -33,6 +39,15 @@ class RegisterViewModel {
                     .observeOn(MainScheduler.instance)
                     .catchErrorJustReturn(.failed(message: "username检测出错"))
             }.share(replay: 1)
+        
+        passwordUsable = password.asObservable().map { password in
+            return service.validatePassword(password)
+        }.share(replay: 1)
+        
+//        repeatPasswordUsable = repeatPassword.asObservable().map({ repeatPassword in
+//            return service.validateRepeatPassword(password.value, <#T##repeatPassword: String##String#>)
+//        })
+        
     }
     
 }
