@@ -21,10 +21,11 @@ class LRxSwiftViewController: RXBaseViewController {
     }
     
     @IBAction func begin(_ sender: UIButton) {
-        //perform(Selector(textField.text!))
+//        perform(Selector(textField.text!))
 //        observableLearn()
-        //subjectLearn()
-        rxMapLearn()
+//        subjectLearn()
+//        rxMapLearn()
+        rxShareReplayLearn()
     }
     
     func observableLearn() {
@@ -46,12 +47,30 @@ class LRxSwiftViewController: RXBaseViewController {
 
 }
 
+// shareReplay
+extension LRxSwiftViewController {
+    
+    
+    func rxShareReplayLearn() {
+        let testReplay = Observable.just("A").map { print($0) }.share(replay: 1)
+        
+        testReplay.subscribe { event in
+            print(event)
+        }.disposed(by: disposeBag)
+
+        testReplay.subscribe { event in
+            print(event)
+        }.disposed(by: disposeBag)
+    }
+    
+}
+
 // ... Map 变换操作
 extension LRxSwiftViewController {
     
     func rxMapLearn() {
-        //mapLearn()
-        //flatMapLearn()
+//        mapLearn()
+//        flatMapLearn()
         flatMapLatestLearn()
     }
     
@@ -78,13 +97,22 @@ extension LRxSwiftViewController {
         observable.subscribe(onNext: { print($0) }).disposed(by: disposeBag)
         
         🐶.score.value = 81
-        player.value = 🐱 // 更换了value 相当于有添加了一个sequence 两个sequence都可以接收。
-        🐶.score.value = 85
-        🐶.score.value = 90
+//        🐱.score.value = 91
+//        🐭.score.value = 101
+        player.value = 🐱 // 更换了value 相当于又添加了一个sequence 两个sequence都可以接收。
+        🐶.score.value = 82
+        🐱.score.value = 93
+//        🐭.score.value = 104
         player.value = 🐭
-        🐱.score.value = 110
+        🐶.score.value = 83
+        🐱.score.value = 93
+        🐭.score.value = 103
     }
     
+    // 相较于flatMap，flatMapLatest只会接受最新的value事件
+    /*
+     将Observable的元素转换成其他的Observable，然后取这些Observables中的最新一个。
+     */
     func flatMapLatestLearn() {
         let first = BehaviorSubject(value: "1")
         let second = BehaviorSubject(value: "2")
@@ -94,7 +122,7 @@ extension LRxSwiftViewController {
         newObservable.subscribe(onNext: { print($0) } ).disposed(by: disposeBag)
         
         first.onNext("a")
-        second.onNext("b")
+//        second.onNext("b")
         variable.value = second
         first.onNext("c")
         second.onNext("d")
