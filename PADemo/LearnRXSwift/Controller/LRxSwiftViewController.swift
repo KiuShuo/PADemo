@@ -50,17 +50,66 @@ class LRxSwiftViewController: RXBaseViewController {
 // shareReplay
 extension LRxSwiftViewController {
     
-    
     func rxShareReplayLearn() {
         let testReplay = Observable.just("A").map { print($0) }.share(replay: 1)
-        
         testReplay.subscribe { event in
             print(event)
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
 
         testReplay.subscribe { event in
             print(event)
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
+
+        testReplay.subscribe { event in
+            print(event)
+            }.disposed(by: disposeBag)
+
+        testReplay.subscribe { event in
+            print(event)
+            }.disposed(by: disposeBag)
+
+        
+        // shareReplay 表示共享最后几次的结果
+        let sequenceOfInts = PublishSubject<Int>()
+        let a = sequenceOfInts.map { i -> Int in
+            print("MAP")
+            return i * 2
+        }.share(replay: 1)
+        _ = a.subscribe(onNext: { print("--1---\($0)") })
+        _ = a.subscribe(onNext: { print("--2---\($0)") })
+        _ = a.subscribe(onNext: { print("--3---\($0)") })
+        sequenceOfInts.on(.next(5))
+        sequenceOfInts.on(.next(6))
+        sequenceOfInts.on(.completed)
+        /*
+         // no shareReplay(1)
+         MAP
+         --1---10
+         MAP
+         --2---10
+         MAP
+         --3---10
+         MAP
+         --1---12
+         MAP
+         --2---12
+         MAP
+         --3---12
+         
+         // shareReplay(1)
+         /*
+         使用shareReplay(1)后，对多次订阅者Observer 同一次事件发出时map中的转换代码仅执行了一次；
+         如果不使用shareReplay(1)，则同一事件发出时，每个Observer都会执行一次map中的代码。
+         */
+         MAP
+         --1---10
+         --2---10
+         --3---10
+         MAP
+         --1---12
+         --2---12
+         --3---12
+         */
     }
     
 }
