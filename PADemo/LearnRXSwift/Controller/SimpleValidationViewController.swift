@@ -56,6 +56,5 @@ class SimpleValidationViewController: RXBaseViewController {
     @IBAction func clickLearnButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toLRxSwiftViewController", sender: nil)
     }
-    
 
 }

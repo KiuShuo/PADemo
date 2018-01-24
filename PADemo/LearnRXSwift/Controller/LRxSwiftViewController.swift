@@ -25,7 +25,8 @@ class LRxSwiftViewController: RXBaseViewController {
 //        observableLearn()
 //        subjectLearn()
 //        rxMapLearn()
-        rxShareReplayLearn()
+//        rxShareReplayLearn2()
+        learnUnitOperator()
     }
     
     func observableLearn() {
@@ -47,28 +48,187 @@ class LRxSwiftViewController: RXBaseViewController {
 
 }
 
-// shareReplay
+
+// 联合操作 把多个Observable流合成单个Observable流
 extension LRxSwiftViewController {
     
-    func rxShareReplayLearn() {
-        let testReplay = Observable.just("A").map { print($0) }.share(replay: 1)
-        testReplay.subscribe { event in
-            print(event)
-            }.disposed(by: disposeBag)
-
-        testReplay.subscribe { event in
-            print(event)
-            }.disposed(by: disposeBag)
-
-        testReplay.subscribe { event in
-            print(event)
-            }.disposed(by: disposeBag)
-
-        testReplay.subscribe { event in
-            print(event)
-            }.disposed(by: disposeBag)
-
+    func learnUnitOperator() {
+//        rxCombineLatest()
+//        rxStartWith()
+//        rxMerge()
+//        rxZip()
+        rxSwitchLastest()
+    }
+    
+    // startWith 将一些元素插入到序列的头部 会在Observable的头部插入一些元素
+    func rxStartWith() {
+        Observable.of("1", "2", "3", "4")
+            .startWith("a")
+            .startWith("b")
+            .startWith("c")
+            .subscribe(onNext: { print($0) })
+            .disposed(by: disposeBag)
+    }
+    
+    // merge 将多个Observables合并成一个，根据时间轴发出对应的事件
+    func rxMerge() {
+        let first = PublishSubject<Int>()
+        let second = PublishSubject<Int>()
+        Observable.merge(first, second)
+        .subscribe(onNext: { print($0) })
+        .disposed(by: disposeBag)
         
+        first.onNext(10)
+        second.onNext(20)
+        first.onNext(13)
+        second.onNext(1)
+    }
+    /*
+     zip 操作符将多个(最多不超过8个) Observables 的元素通过一个函数组合起来，然后将这个组合的结果发出来。它会严格的按照序列的索引数进行组合。例如，返回的 Observable 的第一个元素，是由每一个源 Observables 的第一个元素组合出来的。它的第二个元素 ，是由每一个源 Observables 的第二个元素组合出来的。它的第三个元素 ，是由每一个源 Observables 的第三个元素组合出来的，以此类推。它的元素数量等于源 Observables 中元素数量最少的那个。
+     */
+    func rxZip() {
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+        Observable.zip(first, second) { $0 + $1 }
+        .subscribe(onNext: { print($0) })
+        .disposed(by: disposeBag)
+        
+        first.onNext("1")
+        first.onNext("2")
+        second.onNext("A")
+        first.onNext("3")
+        second.onNext("B")
+    }
+    
+    /*
+     combineLatest 操作符将多个(最多不超过8个) Observables 中最新的元素通过一个函数组合起来，然后将这个组合的结果发出来。这些源 Observables 中任何一个发出一个元素，他都会发出一个元素（前提是，这些 Observables 曾经发出过元素）
+     */
+    func rxCombineLatest() {
+        let first = PublishSubject<String>()
+        let second = PublishSubject<String>()
+        Observable.combineLatest(first, second) { $0 + $1 }.subscribe(onNext: { print($0) }).disposed(by: disposeBag)
+        first.onNext("1")
+        second.onNext("A")
+        first.onNext("2")
+        first.onNext("3")
+        second.onNext("B")
+        second.onNext("C")
+        second.onNext("D")
+    }
+    
+    /*
+     switchLatest可以对事件流进行转换，本来监听的subject1，我可以通过更改variable里面的value更换事件源。变成监听subject2了
+     */
+    func rxSwitchLastest() {
+        let subject1 = BehaviorSubject(value: "A")
+        let subject2 = BehaviorSubject(value: "1")
+        
+        let variable = Variable(subject1)
+        variable.asObservable()
+            .switchLatest()
+            .subscribe(onNext: { print($0) })
+            .disposed(by: disposeBag)
+        
+        subject1.onNext("B")
+        subject1.onNext("C")
+        subject2.onNext("2")
+        subject2.onNext("3")
+        
+        variable.value = subject2
+        subject1.onNext("D")
+        subject1.onNext("E")
+        subject2.onNext("4")
+        subject2.onNext("5")
+        /*
+         打印结果： A B C 3 4 5
+         */
+    }
+    
+}
+
+// shareReplay、replay
+extension LRxSwiftViewController {
+    
+    func rxShareReplayLearn2() {
+        let sequenceOfInts = PublishSubject<Int>()
+        let a = sequenceOfInts.map { i -> Int in
+            print("MAP")
+            return i * 2
+            } //.share(replay: 2)
+        _ = a.subscribe(onNext: { print("--1---\($0)") })
+        sequenceOfInts.on(.next(1))
+        sequenceOfInts.on(.next(2))
+        _ = a.subscribe(onNext: { print("--2---\($0)") })
+        sequenceOfInts.on(.next(3))
+        sequenceOfInts.on(.next(4))
+        _ = a.subscribe(onNext: { print("--3---\($0)") })
+        sequenceOfInts.on(.next(5))
+        sequenceOfInts.on(.next(6))
+        
+        sequenceOfInts.on(.completed)
+        /*
+         // share(replay: 1) replay值为1时的执行结果
+         MAP
+         --1---2
+         MAP
+         --1---4
+         --2---4
+         MAP
+         --1---6
+         --2---6
+         MAP
+         --1---8
+         --2---8
+         --3---8
+         MAP
+         --1---10
+         --2---10
+         --3---10
+         MAP
+         --1---12
+         --2---12
+         --3---12
+         
+         // share(replay: 2) replay值为2时的执行结果
+         MAP
+         --1---2
+         MAP
+         --1---4
+         --2---2
+         --2---4
+         MAP
+         --1---6
+         --2---6
+         MAP
+         --1---8
+         --2---8
+         --3---6
+         --3---8
+         MAP
+         --1---10
+         --2---10
+         --3---10
+         MAP
+         --1---12
+         --2---12
+         --3---12
+         
+         // share(replay: replayCount)
+         replayCount类似于ReplaySubject中buffersize的作用，通过设置replayCount的值来控制将最新的replayCount个元素发送给观察者。
+         同时，无论replayCount的值是多少，都可以看出Map的打印次数是不变的，即只和事件的发出次数有关，也就再次验证了share的主要作用：共享资源。
+         */
+    }
+    
+    /*
+     replay(n) 操作符将Observable转换成可连接的Observable,并且这个可被连接的Observable将缓存最新的n个元素。当有新的观察者对他进行订阅时，他就把这些被缓存的元素发送给观察者。
+     
+     可被连接的Observable和普通的Observable非常相似，不过在被订阅后不会发出元素，直到connect操作符被应用为止，这样一来你可以控制Observable在什么时候开始发出元素。
+     
+     share(replay: n) 该操作符将使的观察者共享资源Observable，并且缓存最新的n个元素，将这些元素直接发送给新的观察者。
+     
+     */
+    
+    func rxShareReplayLearn() {
         // shareReplay 表示共享最后几次的结果
         let sequenceOfInts = PublishSubject<Int>()
         let a = sequenceOfInts.map { i -> Int in
@@ -82,7 +242,7 @@ extension LRxSwiftViewController {
         sequenceOfInts.on(.next(6))
         sequenceOfInts.on(.completed)
         /*
-         // no shareReplay(1)
+         // 没有share(replay: 1)
          MAP
          --1---10
          MAP
@@ -96,10 +256,10 @@ extension LRxSwiftViewController {
          MAP
          --3---12
          
-         // shareReplay(1)
+         // 有share(replay: 1)
          /*
-         使用shareReplay(1)后，对多次订阅者Observer 同一次事件发出时map中的转换代码仅执行了一次；
-         如果不使用shareReplay(1)，则同一事件发出时，每个Observer都会执行一次map中的代码。
+         使用share后，对多次订阅者Observer 同一次事件发出时map中的转换代码仅执行了一次；
+         如果不使用share(replay: 1)，则同一事件发出时，每个Observer都会执行一次map中的代码。
          */
          MAP
          --1---10
