@@ -28,6 +28,7 @@ class LRRegistViewController: RXBaseViewController {
          因为有了监听，就要有监听资源的回收，所以我们创建了一个disposeBag来盛放我们这些监听的资源。
          bbb
          do something in master
+         do something in master2
          */
         usernameTextField.rx.text.orEmpty.bind(to: viewModel.username).disposed(by: disposeBag)
         
