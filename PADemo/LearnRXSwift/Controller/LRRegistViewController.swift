@@ -26,8 +26,6 @@ class LRRegistViewController: RXBaseViewController {
          usernameTextField.rx.text.orEmpty 是RxCocoa中的东西，他把textField中的text变成了一个Observable。
          bind(to:) 绑定，也就是监听，viewMolel.username此时作为Observer来监听Observable usernameTextField的text的变化。
          因为有了监听，就要有监听资源的回收，所以我们创建了一个disposeBag来盛放我们这些监听的资源。
-         do something in master
-         do something in master2
          */
         usernameTextField.rx.text.orEmpty.bind(to: viewModel.username).disposed(by: disposeBag)
         
