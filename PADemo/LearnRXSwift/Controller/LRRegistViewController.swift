@@ -1,7 +1,7 @@
 //
 //  LRRegistViewController.swift
 //  PADemo
-//
+//  do something in branchA 2
 //  Created by shuo on 2018/1/5.
 //  Copyright © 2018年 shuo. All rights reserved.
 //  do something in branchA
