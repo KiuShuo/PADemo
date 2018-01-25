@@ -1,10 +1,10 @@
 //
 //  LRRegistViewController.swift
 //  PADemo
-//  do something in branchA 2
+//
 //  Created by shuo on 2018/1/5.
 //  Copyright © 2018年 shuo. All rights reserved.
-//  do something in branchA
+//  
 
 import UIKit
 
@@ -22,7 +22,7 @@ class LRRegistViewController: RXBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let viewModel = RegisterViewModel()
-        /** aaa
+        /**
          usernameTextField.rx.text.orEmpty 是RxCocoa中的东西，他把textField中的text变成了一个Observable。
          bind(to:) 绑定，也就是监听，viewMolel.username此时作为Observer来监听Observable usernameTextField的text的变化。
          因为有了监听，就要有监听资源的回收，所以我们创建了一个disposeBag来盛放我们这些监听的资源。
