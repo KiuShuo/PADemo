@@ -10,6 +10,7 @@ import Foundation
 
 
 func debugLog(_ items: Any..., file: String = #file, line: Int = #line, funcName: String = #function) {
+    // mas 1
     let fileName: String = (file.components(separatedBy: "/").last ?? "").components(separatedBy: ".").first ?? ""
     debugPrint("file: \(fileName), line: \(line), func: \(funcName)")
     if !items.isEmpty {
