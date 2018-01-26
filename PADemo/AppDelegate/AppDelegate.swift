@@ -62,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let arr = ["abc", "defg", "hahah"]
         let arrStr = PAUtil.dismantleStringArray(arr, by: "-")
         print("arrStr = \(arrStr)")
-        // feature dev 1
     }
 
 }
