@@ -17,7 +17,7 @@ class LRxSwiftViewController: RXBaseViewController {
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
     }
     
     @IBAction func begin(_ sender: UIButton) {

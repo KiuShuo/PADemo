@@ -213,6 +213,14 @@ tableview.contentInset</string>
 			<key>storyboardName</key>
 			<string>LearnRXSwift</string>
 		</dict>
+		<dict>
+			<key>id</key>
+			<string>26</string>
+			<key>identifier</key>
+			<string>NoteTimerViewController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
 	</array>
 </dict>
 </plist>

@@ -73,21 +73,6 @@ class HomeViewController: BaseViewController {
         convertControllerModelsToSectionModels(controllerModels: controllerModels)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)        
-//        loading()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("self.view.subviews = \(self.view.subviews.count)")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("self.view.subviews = \(self.view.subviews.count)")
-    }
-    
     func convertControllerModelsToSectionModels(controllerModels: [ControllerModel]) {
         let cellModels = controllerModels.map { controllerModel -> PACellModel in
             var cellModel = PACellModel(classType: HomeTableViewCell.self)

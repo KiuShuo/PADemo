@@ -62,6 +62,32 @@ class DetailViewController: BaseViewController {
         label.borderColor = UIColor.black
 //        label.backgroundColor = UIColor.red
         view.addSubview(label)
+        
+        setupNavigationItem()
+    }
+    
+    func setupNavigationItem() {
+        let rightItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(clickRightBarButton))
+        self.navigationItem.setRightBarButton(rightItem, animated: true)
+    }
+    
+    @objc func clickRightBarButton() {
+        let atimer = Timer(timeInterval: 1.0, target: self, selector: #selector(repeatDoSomething), userInfo: nil, repeats: true)
+        RunLoop.main.add(atimer, forMode: .commonModes)
+        atimer.fire()
+        timer = atimer
+    }
+    
+    var timer: Timer?
+    var i = 0
+    
+    @objc func repeatDoSomething() {
+        i = i + 1
+        print("123")
+        if i == 10 {
+            timer?.invalidate()
+            timer = nil
+        }
     }
     
     func testAttributedString() {

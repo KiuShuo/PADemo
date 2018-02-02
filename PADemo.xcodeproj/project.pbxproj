@@ -65,6 +65,7 @@
 		8D6D13591ECB6B7F0084BBA8 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */; };
 		8D6D135D1ECB6EE90084BBA8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D135C1ECB6EE90084BBA8 /* Style.swift */; };
 		8D6D13651ECB71B20084BBA8 /* PABaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D13641ECB71B20084BBA8 /* PABaseNavigationController.swift */; };
+		8D6DABE92024434F00D6C114 /* NoteTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6DABE82024434F00D6C114 /* NoteTimerViewController.swift */; };
 		8D6E112F1F441D1400C3620D /* AlertTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E112D1F441D1400C3620D /* AlertTestViewController.swift */; };
 		8D6E11301F441D1400C3620D /* AlertTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6E112E1F441D1400C3620D /* AlertTestViewController.xib */; };
 		8D6E2C971EF8EBCA00934C9B /* TextfieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6E2C961EF8EBCA00934C9B /* TextfieldViewController.swift */; };
@@ -270,6 +271,7 @@
 		8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		8D6D135C1ECB6EE90084BBA8 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		8D6D13641ECB71B20084BBA8 /* PABaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PABaseNavigationController.swift; sourceTree = "<group>"; };
+		8D6DABE82024434F00D6C114 /* NoteTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTimerViewController.swift; sourceTree = "<group>"; };
 		8D6E112D1F441D1400C3620D /* AlertTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTestViewController.swift; sourceTree = "<group>"; };
 		8D6E112E1F441D1400C3620D /* AlertTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertTestViewController.xib; sourceTree = "<group>"; };
 		8D6E2C961EF8EBCA00934C9B /* TextfieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldViewController.swift; sourceTree = "<group>"; };
@@ -648,6 +650,22 @@
 			path = SearchController;
 			sourceTree = "<group>";
 		};
+		8D6DABE6202442E600D6C114 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				8D6DABE72024430300D6C114 /* ViewController */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		8D6DABE72024430300D6C114 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D6DABE82024434F00D6C114 /* NoteTimerViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		8D80D2031FFE351E0080386B /* WJExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -940,6 +958,7 @@
 		8DEF45701EB1BE6900CA4F75 /* PADemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D6DABE6202442E600D6C114 /* Note */,
 				8D9E6E031FF36ED50028648C /* LearnRXSwift */,
 				8D94D36E1FA0417800CD24C1 /* LearnViewController */,
 				8D5C9D971EE6B24500749599 /* Playground */,
@@ -1416,6 +1435,7 @@
 				8D9FBAC51F67E3AF0084B54E /* PACalculateViewController.swift in Sources */,
 				8DCA85831F38568F009F648F /* PAPersonSectionController.swift in Sources */,
 				8D66E93D1EE1361400DBBE41 /* UIDevice+Extention.swift in Sources */,
+				8D6DABE92024434F00D6C114 /* NoteTimerViewController.swift in Sources */,
 				8D673C901F14BCBC00175A6C /* LayoutConstraintsExtension.swift in Sources */,
 				8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */,
 				8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */,
