@@ -30,21 +30,27 @@ class NoteTimerViewController: BaseViewController {
         creatTimer()
     }
     
-    var timer: Timer?
+//    var timer: Timer?
     var i = 0
     
     func creatTimer() {
         if #available(iOS 10.0, *) {
-            Timer.ini
-            
-            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-                self?.handelTimerAction()
-            }
-//            timer?.fire()
-//            timer = Timer.init(fire: Date(), interval: 5.0, repeats: true, block: { [weak self] _ in
+//            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
 //                self?.handelTimerAction()
-//            })
-//            RunLoop.current.add(timer!, forMode: .defaultRunLoopMode)
+//            }
+//            timer?.fire()
+            DispatchQueue.global().async {
+                print("Thread.current = \(Thread.current)")
+                let timer = Timer.init(fire: Date(), interval: 1, repeats: true, block: { [weak self] _ in
+                    DispatchQueue.main.async {
+                        self?.handelTimerAction()
+                    }
+                })
+            
+                self.perform(#selector(self.calculate), with: self, afterDelay: 2.0)
+                RunLoop.current.add(timer, forMode: .commonModes)
+                RunLoop.current.run()
+            }
         } else {
             // Fallback on earlier versions
             let timer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(handelTimerAction), userInfo: nil, repeats: true)
@@ -52,12 +58,23 @@ class NoteTimerViewController: BaseViewController {
         }
     }
     
+    @objc func calculate() {
+//        var result = 1
+//        for i in 0...10000000 {
+//            result = result + i
+//        }
+//        print("result = \(result)")
+        print("Thread.current = \(Thread.current)")
+        sleep(3)
+    }
+    
     @objc func handelTimerAction() {
-        print("timer....")
-        i += 1
-        if i == 5 {
-            timer?.invalidate()
-        }
+//        print("timer....")
+        print(Date().toString(by: "hh:mm:ss:SSS"))
+//        i += 1
+//        if i == 5 {
+//            timer?.invalidate()
+//        }
     }
 
 }
