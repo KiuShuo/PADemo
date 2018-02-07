@@ -53,9 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         application.applicationIconBadgeNumber = 0
-        // master dev 1
-        // master dev 2
-        // master dev 3
     }
 
     func paUtilTest() {
