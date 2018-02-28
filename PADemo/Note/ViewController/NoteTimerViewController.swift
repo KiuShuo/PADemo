@@ -69,7 +69,6 @@ class NoteTimerViewController: BaseViewController {
     }
     
     @objc func handelTimerAction() {
-//        print("timer....")
         print(Date().toString(by: "hh:mm:ss:SSS"))
 //        i += 1
 //        if i == 5 {
