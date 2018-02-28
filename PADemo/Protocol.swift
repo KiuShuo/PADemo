@@ -11,8 +11,7 @@ import UIKit
 
 protocol ViewControllerMaker {
     
-//    associatedtype T
-    
+    // associatedtype T
     static func makeViewController(viewControllerClass: BaseViewController.Type) -> UIViewController
     
 }
