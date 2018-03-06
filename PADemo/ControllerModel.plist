@@ -221,6 +221,14 @@ tableview.contentInset</string>
 			<key>isStoryboard</key>
 			<string>0</string>
 		</dict>
+		<dict>
+			<key>id</key>
+			<string>27</string>
+			<key>identifier</key>
+			<string>NoteThreadViewController</string>
+			<key>isStoryboard</key>
+			<string>0</string>
+		</dict>
 	</array>
 </dict>
 </plist>

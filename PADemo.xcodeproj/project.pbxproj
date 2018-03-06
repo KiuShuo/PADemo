@@ -17,6 +17,8 @@
 		8D11363D1F4C048D00DCB258 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D11363C1F4C048D00DCB258 /* UIView+Extension.swift */; };
 		8D12DBEE1EB1C8F1005B9AE9 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12DBED1EB1C8F1005B9AE9 /* Protocol.swift */; };
 		8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D12DBEF1EB1C992005B9AE9 /* Extension.swift */; };
+		8D1505F7204E408C00EB2112 /* NoteThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1505F5204E408C00EB2112 /* NoteThreadViewController.swift */; };
+		8D1505F8204E408C00EB2112 /* NoteThreadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D1505F6204E408C00EB2112 /* NoteThreadViewController.xib */; };
 		8D1F53CB1F453E4E005E89AE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F53C91F453E4E005E89AE /* DetailViewController.swift */; };
 		8D1F53CC1F453E4E005E89AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F53CA1F453E4E005E89AE /* HomeViewController.swift */; };
 		8D1F53CF1F453E60005E89AE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F53CD1F453E60005E89AE /* HomeTableViewCell.swift */; };
@@ -216,6 +218,8 @@
 		8D11363C1F4C048D00DCB258 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8D12DBED1EB1C8F1005B9AE9 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		8D12DBEF1EB1C992005B9AE9 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		8D1505F5204E408C00EB2112 /* NoteThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteThreadViewController.swift; sourceTree = "<group>"; };
+		8D1505F6204E408C00EB2112 /* NoteThreadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteThreadViewController.xib; sourceTree = "<group>"; };
 		8D1F53C91F453E4E005E89AE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8D1F53CA1F453E4E005E89AE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8D1F53CD1F453E60005E89AE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -662,6 +666,8 @@
 			isa = PBXGroup;
 			children = (
 				8D6DABE82024434F00D6C114 /* NoteTimerViewController.swift */,
+				8D1505F5204E408C00EB2112 /* NoteThreadViewController.swift */,
+				8D1505F6204E408C00EB2112 /* NoteThreadViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1245,6 +1251,7 @@
 				8D65126E1F3C09F800D9E434 /* PAIntegrationSituationCell.xib in Resources */,
 				8D1031441ECE883A007F49CA /* CustomTableViewCell.xib in Resources */,
 				8DDC0ECF1F57E7840035BE44 /* PACalculatorDetailMenuCell.xib in Resources */,
+				8D1505F8204E408C00EB2112 /* NoteThreadViewController.xib in Resources */,
 				8DEF45771EB1BE6900CA4F75 /* Main.storyboard in Resources */,
 				8D80D2171FFE351E0080386B /* Info.plist in Resources */,
 				8DDC6C051F25E48E004DDA1B /* CollectionViewCell.xib in Resources */,
@@ -1439,6 +1446,7 @@
 				8D673C901F14BCBC00175A6C /* LayoutConstraintsExtension.swift in Sources */,
 				8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */,
 				8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */,
+				8D1505F7204E408C00EB2112 /* NoteThreadViewController.swift in Sources */,
 				8D93A7F61F32CC4F00FE8DA6 /* PAFpsViewTableViewCell.swift in Sources */,
 				8D80D2121FFE351E0080386B /* Optional+Extension.swift in Sources */,
 				8D744B661F44298900A42548 /* AlertCustomView.swift in Sources */,
@@ -1759,7 +1767,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6GA5676ZM3;
 				INFOPLIST_FILE = PADemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
@@ -1784,7 +1792,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6GA5676ZM3;
 				INFOPLIST_FILE = PADemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
