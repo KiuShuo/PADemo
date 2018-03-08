@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>test javascript</title>
+            </head>
+    <body>
+        <div>
+            <!--为什么使用ttf.调用，下面会讲到-->
+            <button onclick="nslog('JS与OC交互');">点击我然后看xcode的log</button>
+        </div>
+        </div>
+        <a href="javascript:void(0);" class="sharebtn" onclick="share('分享标题', 'http://cc.cocimg.com/api/uploads/170425/b2d6e7ea5b3172e6c39120b7bfd662fb.jpg', location.href)">分享活动，领30元红包</a>
+        </div>
+        <script>
+            //简单分享
+            function share(title, imgUrl, link) {
+                //便于WKWebView测试
+                //window.webkit.messageHandlers.share.postMessage({title: title, imgUrl: imgUrl, link: link});
+                //这里需要OC实现
+            }
+        
+            function sumValue (a, b) {
+                return a + b;
+            }
+        
+         </script>
+    </body>
+</html>
+
+
+
+

@@ -22,6 +22,17 @@ class WebViewController: BaseViewController {
         webView.navigationDelegate = self
         let request = URLRequest(url: urlEncode()!)
         webView.load(request)
+        setupNavigationItem()
+    }
+    
+    func setupNavigationItem() {
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(goUIWebViewController))
+        self.navigationItem.setRightBarButton(barButtonItem, animated: true)
+    }
+    
+    @objc func goUIWebViewController() {
+        let webViewController = KSUIWebViewController()
+        self.navigationController?.pushViewController(webViewController, animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

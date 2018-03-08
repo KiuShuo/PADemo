@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8149C1C7B9C3A6A9A88A776D /* Pods_PADemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C64CF9E161A0D993766D1B /* Pods_PADemo.framework */; };
 		880FAF162007AFD5007CF8C1 /* LRProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FAF152007AFD5007CF8C1 /* LRProtocol.swift */; };
+		8D0F5D6520510F3E00736B94 /* KSUIWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F5D6420510F3E00736B94 /* KSUIWebViewController.swift */; };
+		8D0F5D672051105500736B94 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 8D0F5D662051105500736B94 /* test.html */; };
 		8D10313E1ECE8791007F49CA /* TableViewController_CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10313D1ECE8791007F49CA /* TableViewController_CellHeight.swift */; };
 		8D1031431ECE883A007F49CA /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1031411ECE883A007F49CA /* CustomTableViewCell.swift */; };
 		8D1031441ECE883A007F49CA /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D1031421ECE883A007F49CA /* CustomTableViewCell.xib */; };
@@ -210,6 +212,8 @@
 		698963C09D820B5FEECEE9E7 /* Pods-PADemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PADemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PADemo/Pods-PADemo.release.xcconfig"; sourceTree = "<group>"; };
 		880FAF152007AFD5007CF8C1 /* LRProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRProtocol.swift; sourceTree = "<group>"; };
 		8865647EF1F6C3D4634993D0 /* Pods_PANotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PANotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0F5D6420510F3E00736B94 /* KSUIWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSUIWebViewController.swift; sourceTree = "<group>"; };
+		8D0F5D662051105500736B94 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		8D10313D1ECE8791007F49CA /* TableViewController_CellHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_CellHeight.swift; sourceTree = "<group>"; };
 		8D1031411ECE883A007F49CA /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8D1031421ECE883A007F49CA /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
@@ -694,6 +698,8 @@
 			isa = PBXGroup;
 			children = (
 				8D82011F1ECB480C000809E4 /* WebViewController.swift */,
+				8D0F5D6420510F3E00736B94 /* KSUIWebViewController.swift */,
+				8D0F5D662051105500736B94 /* test.html */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -1237,6 +1243,7 @@
 				8DCD7F151F58F1B10060957B /* PACalculatorMainMenuCell.xib in Resources */,
 				8DCA85871F385D20009F648F /* PAPersonCollectionViewCell.xib in Resources */,
 				8D6BC7291FDD171C0004E1C6 /* PACustomNavigationView.xib in Resources */,
+				8D0F5D672051105500736B94 /* test.html in Resources */,
 				8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */,
 				8DDC6BFF1F25E441004DDA1B /* CollectionTableViewCell.xib in Resources */,
 				8D21990A1EB1F93A0024B5CB /* ControllerModel.plist in Resources */,
@@ -1458,6 +1465,7 @@
 				8D66E93F1EE1361400DBBE41 /* UImageView+Extension.swift in Sources */,
 				8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */,
 				8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */,
+				8D0F5D6520510F3E00736B94 /* KSUIWebViewController.swift in Sources */,
 				8D6512721F3DA3ED00D9E434 /* PASegmentedControlView.swift in Sources */,
 				8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */,
 				8D6512741F3DA43100D9E434 /* PASegmentTestViewController.swift in Sources */,
