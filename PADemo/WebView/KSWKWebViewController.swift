@@ -38,7 +38,7 @@ class KSWKWebViewController: BaseViewController {
         wkWebView.configuration.userContentController.add(self, name: "addShareButton")
     }
     
-    // 退出页面之前需要remove掉添加的script message
+    // 退出页面之前需要remove掉添加的script message，否则会造成内存泄漏
     override func didMove(toParentViewController parent: UIViewController?) {
         if parent == nil {
             wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: "share")
@@ -93,14 +93,12 @@ extension KSWKWebViewController: WKScriptMessageHandler {
 extension KSWKWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         // 加载完页面后调用里面的JS代码
         webView.evaluateJavaScript("sumValue(1, 2)") { (response, error) in
             let result = response as? Int
             print(result ?? -1)
             print(error ?? "success")
         }
-        
     }
     
     

@@ -26,6 +26,30 @@ class KSUIWebViewController: BaseViewController {
         webView.delegate = self
     }
     
+    func setupNavigationRightItemButton(type: String) {
+        var rightItemButton: UIBarButtonItem?
+        if type == "1" {
+            rightItemButton = UIBarButtonItem(title: "分享", style: .done, target: self, action: #selector(doShare))
+        } else if type == "2" {
+            rightItemButton = UIBarButtonItem(title: "个人中心", style: .done, target: self, action: #selector(goPersonalCenter))
+        }
+        if let rightItemButton = rightItemButton {
+            self.navigationItem.setRightBarButton(rightItemButton, animated: true)
+        }
+    }
+    
+    @objc func doShare() {
+        print("分享")
+    }
+    
+    @objc func goPersonalCenter() {
+        print("区个人中心")
+    }
+    
+    deinit {
+        print("执行了")
+    }
+    
     var context: JSContext!
 }
 
@@ -56,6 +80,18 @@ extension KSUIWebViewController: UIWebViewDelegate {
         }
         let nativeShareObject = unsafeBitCast(nativeShare, to: AnyObject.self)
         context.setObject(nativeShareObject, forKeyedSubscript: "share" as NSCopying & NSObjectProtocol)
+        
+        let configureRightNavigationItem: @convention(block) (String) -> Void = { [weak self] itemType in
+            print("current thread = \(Thread.current)")
+            DispatchQueue.main.async(execute: {
+                self?.setupNavigationRightItemButton(type: itemType)
+            })
+        }
+        let configureRightNavigationItemCovent = unsafeBitCast(configureRightNavigationItem, to: AnyObject.self)
+        context.setObject(configureRightNavigationItemCovent, forKeyedSubscript: "addNavigationRightItem" as NSCopying & NSObjectProtocol)
+        
     }
+    
+    
     
 }

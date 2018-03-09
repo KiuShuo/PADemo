@@ -23,9 +23,8 @@
         
         <script>
             
+            // 固定格式，FuncName由前端和native端协商确定，postMessage({}) 打括号中用来放参数，没有参数时打括号不能省略
             // window.webkit.messageHandlers.FuncName.postMessage({});
-            // 注意：如上，没用参数的时候也需要在postMessage({})后面加打括号
-            
             function addNavigationRightItem(itemType) {
                 window.webkit.messageHandlers.addShareButton.postMessage({itemType: itemType});
             }
