@@ -12,12 +12,29 @@
         </div>
         <a href="javascript:void(0);" class="sharebtn" onclick="share('分享标题', 'http://cc.cocimg.com/api/uploads/170425/b2d6e7ea5b3172e6c39120b7bfd662fb.jpg', location.href)">分享活动，领30元红包</a>
         </div>
+        
+        </div>
+            <button onclick="addNavigationRightItem('1');">添加分享按钮</button>
+        </div>
+        
+        </div>
+            <button onclick="addNavigationRightItem('2');">添加个人中心按钮</button>
+        </div>
+        
         <script>
+            
+            // window.webkit.messageHandlers.FuncName.postMessage({});
+            // 注意：如上，没用参数的时候也需要在postMessage({})后面加打括号
+            
+            function addNavigationRightItem(itemType) {
+                window.webkit.messageHandlers.addShareButton.postMessage({itemType: itemType});
+            }
+            // 根据不同的参数来添加不同的按钮
+            // addNavigationRightItem("1")
             //简单分享
             function share(title, imgUrl, link) {
                 //便于WKWebView测试
-                //window.webkit.messageHandlers.share.postMessage({title: title, imgUrl: imgUrl, link: link});
-                //这里需要OC实现
+                window.webkit.messageHandlers.share.postMessage({title: title, imgUrl: imgUrl, link: link});
             }
         
             function sumValue (a, b) {

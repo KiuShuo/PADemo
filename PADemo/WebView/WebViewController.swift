@@ -26,8 +26,14 @@ class WebViewController: BaseViewController {
     }
     
     func setupNavigationItem() {
-        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(goUIWebViewController))
-        self.navigationItem.setRightBarButton(barButtonItem, animated: true)
+        let uiBarButtonItem = UIBarButtonItem(title: "UI", style: .done, target: self, action: #selector(goUIWebViewController))
+        let wkBarButtonItem = UIBarButtonItem(title: "WK", style: .done, target: self, action: #selector(goWKWebViewController))
+        self.navigationItem.setRightBarButtonItems([uiBarButtonItem, wkBarButtonItem], animated: true)
+    }
+    
+    @objc func goWKWebViewController() {
+        let wkViewController = KSWKWebViewController()
+        navigationController?.pushViewController(wkViewController, animated: true)
     }
     
     @objc func goUIWebViewController() {

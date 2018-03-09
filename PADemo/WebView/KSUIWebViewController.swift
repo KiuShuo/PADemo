@@ -24,16 +24,8 @@ class KSUIWebViewController: BaseViewController {
         let request = URLRequest(url: url)
         webView.loadRequest(request)
         webView.delegate = self
-        
-//        let jsSourceContents = try String(contentsOfFile: filepath)
-//        //
-//        context.evaluateScript(jsSourceContents)
-        
     }
     
-    // JS调用原生
-    
-    // 原生调用JS
     var context: JSContext!
 }
 
@@ -47,7 +39,7 @@ extension KSUIWebViewController: UIWebViewDelegate {
         // 原生调用JS
         let jsValue = context.objectForKeyedSubscript("sumValue")
         let resultValue = jsValue?.call(withArguments: [1, 2])
-        let result = resultValue?.toDouble()
+        let result = resultValue?.toInt32()
         print("retult = \(result ?? 0)")
         
         // JS调用原生
