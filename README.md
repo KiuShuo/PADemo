@@ -11,12 +11,3 @@
 
 1. 切换tableView的同时，给底部的view添加当前tableView的滑动手势；  
 2. 直接将hederView的手势漏给tableView.
-
-
-
-master1 
-
-
-feat 1
-
-feat 2
