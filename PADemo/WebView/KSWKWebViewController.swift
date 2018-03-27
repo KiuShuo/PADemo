@@ -36,6 +36,7 @@ class KSWKWebViewController: BaseViewController {
         // Adds a script message handler.
         wkWebView.configuration.userContentController.add(self, name: "share")
         wkWebView.configuration.userContentController.add(self, name: "addShareButton")
+        wkWebView.configuration.userContentController.add(self, name: "placeOrderForWJCollege")
     }
     
     // 退出页面之前需要remove掉添加的script message，否则会造成内存泄漏
@@ -43,6 +44,7 @@ class KSWKWebViewController: BaseViewController {
         if parent == nil {
             wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: "share")
             wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: "addShareButton")
+            wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: "placeOrderForWJCollege")
         }
     }
     
@@ -83,6 +85,10 @@ extension KSWKWebViewController: WKScriptMessageHandler {
             let body = message.body as? [String: String]
             if let itemType = body?["itemType"] {
                 setupNavigationRightItemButton(type: itemType)
+            }
+        case "placeOrderForWJCollege":
+            if let body = message.body as? [String: String] {
+                print(body)
             }
         default: ()
         }

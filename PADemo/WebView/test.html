@@ -21,6 +21,11 @@
             <button onclick="addNavigationRightItem('2');">添加个人中心按钮</button>
         </div>
         
+        </div>
+        <button onclick="placeOrder('12345', '100');">下单</button>
+        </div>
+
+        
         <script>
             
             // 固定格式，FuncName由前端和native端协商确定，postMessage({}) 大括号中用来放参数，没有参数时打括号不能省略
@@ -35,6 +40,14 @@
                 //便于WKWebView测试
                 window.webkit.messageHandlers.share.postMessage({title: title, imgUrl: imgUrl, link: link});
             }
+        
+        
+        function placeOrder(orderNum, price) {
+            // 安卓
+            window.prompt("pawjscheme://placeOrderForWJCollege?orderNum="+orderNum+"&price"+price);
+            // iOS
+            window.webkit.messageHandlers.placeOrderForWJCollege.postMessage({orderNum: orderNum, price: price});
+        }
         
             function sumValue (a, b) {
                 return a + b;
