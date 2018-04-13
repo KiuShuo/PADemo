@@ -100,10 +100,22 @@ extension KSWKWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // 加载完页面后调用里面的JS代码
-        webView.evaluateJavaScript("sumValue(1, 2)") { (response, error) in
-            let result = response as? Int
-            print(result ?? -1)
-            print(error ?? "success")
+        webView.evaluateJavaScript("wjShare(3)") { (response, error) in
+            if let result = response as? [String: String] {
+                print(result)
+            } else {
+//            print(result ?? -1)
+                print(error ?? "success")
+            }
+        }
+        
+        webView.evaluateJavaScript("sumValue(1, 3)") { (response, error) in
+            if let result = response as? Int {
+                print(result)
+            } else {
+                //            print(result ?? -1)
+                print(error ?? "success")
+            }
         }
     }
     

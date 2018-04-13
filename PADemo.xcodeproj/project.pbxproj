@@ -50,6 +50,7 @@
 		8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */; };
 		8D5654261FC431FB008EE1CF /* PAAlertViewDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5654251FC431FB008EE1CF /* PAAlertViewDelegater.swift */; };
 		8D5654281FC432E6008EE1CF /* PABaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */; };
+		8D61BF57206CB91600597764 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D61BF56206CB91600597764 /* KVOViewController.swift */; };
 		8D65125E1F3BF24E00D9E434 /* PASegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */; };
 		8D6512661F3C01C600D9E434 /* PAIntegrationSituationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6512651F3C01C600D9E434 /* PAIntegrationSituationTopView.swift */; };
 		8D6512681F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6512671F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib */; };
@@ -263,6 +264,7 @@
 		8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PABaseAlertView.swift; sourceTree = "<group>"; };
 		8D5C9D991EE6B26C00749599 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8D5C9D9A1EE6B2D500749599 /* PADate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PADate.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8D61BF56206CB91600597764 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
 		8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PASegmentControl.swift; sourceTree = "<group>"; };
 		8D6512651F3C01C600D9E434 /* PAIntegrationSituationTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAIntegrationSituationTopView.swift; sourceTree = "<group>"; };
 		8D6512671F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAIntegrationSituationTopView.xib; sourceTree = "<group>"; };
@@ -591,6 +593,14 @@
 			path = Playground;
 			sourceTree = "<group>";
 		};
+		8D61BF55206CB89100597764 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				8D61BF56206CB91600597764 /* KVOViewController.swift */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
 		8D65124D1F3BE94500D9E434 /* SliderSegmentControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,6 +693,7 @@
 		8D6DABE6202442E600D6C114 /* Note */ = {
 			isa = PBXGroup;
 			children = (
+				8D61BF55206CB89100597764 /* KVO */,
 				8D6DABE72024430300D6C114 /* ViewController */,
 			);
 			path = Note;
@@ -1474,6 +1485,7 @@
 				8DDC6C041F25E48E004DDA1B /* CollectionViewCell.swift in Sources */,
 				8DBB1AC81EC4604500D507E6 /* MasonryViewController.swift in Sources */,
 				8D9FBAC51F67E3AF0084B54E /* PACalculateViewController.swift in Sources */,
+				8D61BF57206CB91600597764 /* KVOViewController.swift in Sources */,
 				8DCA85831F38568F009F648F /* PAPersonSectionController.swift in Sources */,
 				8D66E93D1EE1361400DBBE41 /* UIDevice+Extention.swift in Sources */,
 				8D46877A2058CEB400A9D1D8 /* ObserverSet.swift in Sources */,
