@@ -46,5 +46,7 @@ target 'PADemo' do
     pod 'AMap2DMap-NO-IDFA', '4.6.0' # 2D地图SDK(2D地图和3D地图不能同时使用)
     pod 'AMapSearch-NO-IDFA', '4.5.0' #搜索服务SDK
     pod 'AMapFoundation-NO-IDFA', '1.3.4'
+    
+    pod 'YYModel', '1.0.4'
 end
 

@@ -2,6 +2,24 @@
 
 import UIKit
 
+// double -> String -> ... > String
+let aDouble: Double = 64.99
+print("aDouble = \(aDouble)")
+let aStr =  NSString.init(format: "%f", aDouble)
+print("aStr = \(aStr)")
+//String(describing: aDouble)
+
+let aNum = NSNumber.init(value: aDouble)
+print("aNum = \(aNum)")
+
+let newNum = NSDecimalNumber.init(value: aNum.doubleValue)
+print("newNum = \(newNum)")
+
+let aNStr =  NSString.init(format: "%@", aNum)
+print("aNStr = \(aNStr)")
+
+//let num = NSNumber(floatLiteral: )
+
 
 func isValidPhone(_ str: String?) -> Bool {
     let predicate = NSPredicate(format: "SELF MATCHES %@", "^1([3|4|5|6|7|8|9][0-9]{1})[0-9]{8}$")
@@ -62,7 +80,7 @@ func formatFloat(f: Float) -> String {
         return String(format: "%.2f", f)
     }
 }
-formatFloat(f: 10.12500)
+formatFloat(f: 10.99)
 //
 //var persons = [Person(), Person(), Person()]
 ////for (index, person) in <#items#> {

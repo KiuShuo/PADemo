@@ -56,31 +56,25 @@ class TableViewController_CellHeight: BaseViewController {
         tableView.tableHeaderView = self.headerView
         return tableView
     }()
+    let blackView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
     
     func setupRefresh() {
         tableView.mj_header = MJRefreshHeader(refreshingBlock: {
-//            self.navigationView.backgroundColor = UIColor.white
             self.activityView.startAnimating()
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                 self.activityView.stopAnimating()
                 self.tableView.mj_header.endRefreshing()
-//                self.navigationView.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: 0)
             })
         })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRefresh()
+//        setupRefresh()
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
         (tableView as UIScrollView).delegate = self
-//        let height: CGFloat = 35.5
-//        tableView.rowHeight = height
-        // ceil(tableView的高度 / cell的高度)
-//        let count = ceil(PADeviceSize.screenHeight / height)
-//        debugLog("需要创建的cell个数 = \(count)")
         
         setupData()
 //        tableView.estimatedRowHeight = 20
@@ -91,6 +85,14 @@ class TableViewController_CellHeight: BaseViewController {
         }
         paNavigationBarHidden = true
         setupNavigationView()
+        
+        let window = UIApplication.shared.keyWindow
+        let guideView = PAIntegrationGuideView.instanceFromXib()
+        guideView.frame = window!.frame
+        guideView.didmiss = {
+            guideView.removeFromSuperview()
+        }
+        window!.addSubview(guideView)
     }
     
     let navigationView = PACustomNavigationView.instanceFromXib()
@@ -105,11 +107,6 @@ class TableViewController_CellHeight: BaseViewController {
         navigationView.tapBackButton = { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        (tableView as UIScrollView).contentOffset.y = -200
     }
     
     var dataSource: [String] = []
@@ -171,32 +168,6 @@ extension TableViewController_CellHeight: UIScrollViewDelegate {
         } else {
             activityView.isHidden = true
         }
-//        if scrollView.contentInset.top > 0 {
-//            headerImageView.frame.size.height = 151 + scrollView.contentInset.top
-//            headerImageView.frame.origin.y = -scrollView.contentInset.top
-//        }
-        
-//        if distance <= 0 {
-//            var alpha = -Float(distance / UIScreen.navigationHeight)
-//            alpha = min(1, alpha)
-//            navigationView.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: alpha)
-//            if alpha > 0.5 {
-//                navigationView.backButton.tintColor = UIColor.black
-//            } else {
-//                navigationView.backButton.tintColor = UIColor.white
-//            }
-//        } else {
-//            // 导航的透明度控制
-//            var alpha = Float(distance / 151)
-////            alpha = max(0, alpha)
-//            alpha = min(1, alpha)
-//            navigationView.backgroundColor = UIColor(R: 255, G: 255, B: 255, A: alpha)
-//            if alpha > 0.5 {
-//                navigationView.backButton.tintColor = UIColor.black
-//            } else {
-//                navigationView.backButton.tintColor = UIColor.white
-//            }
-//        }
         
     }
     
@@ -236,14 +207,27 @@ extension TableViewController_CellHeight: UITableViewDelegate {
 //        return 0
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PATableViewModelDemoController()
+//        let vc = PATableViewModelDemoController()
 //        vc.view.backgroundColor = UIColor.white
-        if indexPath.row % 2 == 0 {
-            navigationController?.pushViewController(vc, animated: true)
-        } else {
-            navigationController?.pushViewController(vc, animated: true)
-        }
+//        if indexPath.row % 2 == 0 {
+//            navigationController?.pushViewController(vc, animated: true)
+//        } else {
+//            navigationController?.pushViewController(vc, animated: true)
+//        }
+        guard let cell = tableView.cellForRow(at: indexPath) as? CustomTableViewCell else { return }
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let point = window.convert(cell.rightView.center, from: cell.contentView)
+        
+        blackView.backgroundColor = UIColor.black
+        blackView.center = point
+        let coverView = UIView(frame: window.frame)
+        coverView.backgroundColor = UIColor.black
+        coverView.alpha = 0.3
+        window.addSubview(coverView)
+        blackView.removeFromSuperview()
+        window.addSubview(blackView)
     }
     
 }

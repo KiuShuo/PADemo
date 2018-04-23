@@ -10,6 +10,7 @@
 import UIKit
 import SDWebImage
 //import WJExtension
+import YYModel
 
 class DetailViewController: BaseViewController {
     
@@ -64,6 +65,8 @@ class DetailViewController: BaseViewController {
         view.addSubview(label)
         
         setupNavigationItem()
+        
+        testYYModel()
     }
     
     func setupNavigationItem() {
@@ -153,6 +156,17 @@ class DetailViewController: BaseViewController {
     }
     
 
+}
+
+// test YYModel
+extension DetailViewController {
+    
+    func testYYModel() {
+        let dic: [String: Any] = ["aNumber": 68.99, "name": "xcuo"]
+        let detailModel = DetailModel.yy_model(with: dic)
+        print(detailModel?.aNumber ?? "")
+    }
+    
 }
 
 // PAViewTest

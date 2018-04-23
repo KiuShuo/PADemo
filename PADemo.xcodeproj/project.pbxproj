@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8149C1C7B9C3A6A9A88A776D /* Pods_PADemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C64CF9E161A0D993766D1B /* Pods_PADemo.framework */; };
 		880FAF162007AFD5007CF8C1 /* LRProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FAF152007AFD5007CF8C1 /* LRProtocol.swift */; };
+		8D003D74208843B900FF4B28 /* PAIntegrationGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */; };
+		8D003D762088445700FF4B28 /* PAIntegrationGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */; };
 		8D0F5D6520510F3E00736B94 /* KSUIWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F5D6420510F3E00736B94 /* KSUIWebViewController.swift */; };
 		8D0F5D672051105500736B94 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 8D0F5D662051105500736B94 /* test.html */; };
 		8D10313E1ECE8791007F49CA /* TableViewController_CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10313D1ECE8791007F49CA /* TableViewController_CellHeight.swift */; };
@@ -151,6 +153,7 @@
 		8DDC6BFF1F25E441004DDA1B /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC6BFD1F25E441004DDA1B /* CollectionTableViewCell.xib */; };
 		8DDC6C041F25E48E004DDA1B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC6C021F25E48E004DDA1B /* CollectionViewCell.swift */; };
 		8DDC6C051F25E48E004DDA1B /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC6C031F25E48E004DDA1B /* CollectionViewCell.xib */; };
+		8DE1C16A208D8B040084A784 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE1C169208D8B040084A784 /* DetailModel.swift */; };
 		8DEF45771EB1BE6900CA4F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF45751EB1BE6900CA4F75 /* Main.storyboard */; };
 		8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF45781EB1BE6900CA4F75 /* Assets.xcassets */; };
 		8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEF457A1EB1BE6900CA4F75 /* LaunchScreen.storyboard */; };
@@ -216,6 +219,8 @@
 		698963C09D820B5FEECEE9E7 /* Pods-PADemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PADemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PADemo/Pods-PADemo.release.xcconfig"; sourceTree = "<group>"; };
 		880FAF152007AFD5007CF8C1 /* LRProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRProtocol.swift; sourceTree = "<group>"; };
 		8865647EF1F6C3D4634993D0 /* Pods_PANotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PANotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAIntegrationGuideView.swift; sourceTree = "<group>"; };
+		8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PAIntegrationGuideView.xib; sourceTree = "<group>"; };
 		8D0F5D6420510F3E00736B94 /* KSUIWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSUIWebViewController.swift; sourceTree = "<group>"; };
 		8D0F5D662051105500736B94 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		8D10313D1ECE8791007F49CA /* TableViewController_CellHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_CellHeight.swift; sourceTree = "<group>"; };
@@ -368,6 +373,7 @@
 		8DDC6BFD1F25E441004DDA1B /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
 		8DDC6C021F25E48E004DDA1B /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8DDC6C031F25E48E004DDA1B /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		8DE1C169208D8B040084A784 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		8DEF456E1EB1BE6900CA4F75 /* PADemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PADemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEF45761EB1BE6900CA4F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DEF45781EB1BE6900CA4F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -794,6 +800,7 @@
 		8DBB1AC01EC4604500D507E6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8DE1C168208D8AEB0084A784 /* Model */,
 				8D4687752058CDA400A9D1D8 /* ViewModel */,
 				8D1F53C81F453E4E005E89AE /* ViewController */,
 				8D1F53C71F453E4E005E89AE /* View */,
@@ -832,6 +839,8 @@
 				8D1031411ECE883A007F49CA /* CustomTableViewCell.swift */,
 				8D1031421ECE883A007F49CA /* CustomTableViewCell.xib */,
 				8D7BD45A1FECD68100B53815 /* SettingViewController.swift */,
+				8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */,
+				8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -975,6 +984,14 @@
 				8DDC6C031F25E48E004DDA1B /* CollectionViewCell.xib */,
 			);
 			path = "TableView+CollectionView";
+			sourceTree = "<group>";
+		};
+		8DE1C168208D8AEB0084A784 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DE1C169208D8B040084A784 /* DetailModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8DEF45651EB1BE6900CA4F75 = {
@@ -1278,6 +1295,7 @@
 				8D9FBACD1F68CF740084B54E /* PACalculateRulesCell.xib in Resources */,
 				8DCD7F151F58F1B10060957B /* PACalculatorMainMenuCell.xib in Resources */,
 				8DCA85871F385D20009F648F /* PAPersonCollectionViewCell.xib in Resources */,
+				8D003D762088445700FF4B28 /* PAIntegrationGuideView.xib in Resources */,
 				8D6BC7291FDD171C0004E1C6 /* PACustomNavigationView.xib in Resources */,
 				8D0F5D672051105500736B94 /* test.html in Resources */,
 				8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */,
@@ -1367,7 +1385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E983DC88B7EF7FFC4F94D0F8 /* [CP] Embed Pods Frameworks */ = {
@@ -1448,6 +1466,7 @@
 				8D4041E21FFF5C8E0065308F /* LRRegistViewController.swift in Sources */,
 				8D7BD4591FECB10B00B53815 /* PAPlaceholderTextView.swift in Sources */,
 				8D66E93C1EE1361400DBBE41 /* UIColor+Extension.swift in Sources */,
+				8D003D74208843B900FF4B28 /* PAIntegrationGuideView.swift in Sources */,
 				880FAF162007AFD5007CF8C1 /* LRProtocol.swift in Sources */,
 				8D42C8671F1355B400061C9C /* AppDelegate+APNs.swift in Sources */,
 				8D80D2181FFE351E0080386B /* Timer+WeakSelf.swift in Sources */,
@@ -1499,6 +1518,7 @@
 				8D744B661F44298900A42548 /* AlertCustomView.swift in Sources */,
 				8D80D2011FFE302C0080386B /* RegisterViewModel.swift in Sources */,
 				8DC71B0C1FFE2350001BA435 /* SimpleValidationViewController.swift in Sources */,
+				8DE1C16A208D8B040084A784 /* DetailModel.swift in Sources */,
 				8D1136371F4BE0F000DCB258 /* PACycleContainerView.swift in Sources */,
 				8DC71B0E1FFE296E001BA435 /* ValidationService.swift in Sources */,
 				8D1031431ECE883A007F49CA /* CustomTableViewCell.swift in Sources */,
