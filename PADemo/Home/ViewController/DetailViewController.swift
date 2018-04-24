@@ -66,7 +66,7 @@ class DetailViewController: BaseViewController {
         
         setupNavigationItem()
         
-        testYYModel()
+//        testYYModel()
     }
     
     func setupNavigationItem() {
@@ -162,9 +162,11 @@ class DetailViewController: BaseViewController {
 extension DetailViewController {
     
     func testYYModel() {
-        let dic: [String: Any] = ["aNumber": 68.99, "name": "xcuo"]
+        let dic: [String: Any] = ["aNumber": 68.99, "name": "xcuo", "age": 12]
         let detailModel = DetailModel.yy_model(with: dic)
         print(detailModel?.aNumber ?? "")
+        print("age = \(detailModel?.age ?? "")")
+//        print("ageStr = \(detailModel?.ageStr ?? "")")
     }
     
 }

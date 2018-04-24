@@ -3,7 +3,7 @@
 import UIKit
 
 // double -> String -> ... > String
-let aDouble: Double = 64.99
+let aDouble: Double = 499.99//506.69//64.99
 print("aDouble = \(aDouble)")
 let aStr =  NSString.init(format: "%f", aDouble)
 print("aStr = \(aStr)")

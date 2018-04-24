@@ -49,6 +49,8 @@
 		8D42C88C1F13754B00061C9C /* PANotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8D42C87E1F13754B00061C9C /* PANotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8D4687772058CDB900A9D1D8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4687762058CDB900A9D1D8 /* HomeViewModel.swift */; };
 		8D46877A2058CEB400A9D1D8 /* ObserverSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4687792058CEB300A9D1D8 /* ObserverSet.swift */; };
+		8D4A75DF208F1CFC000F6BF7 /* SearchResultViewController_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */; };
+		8D4A75E1208F2DD7000F6BF7 /* SearchContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A75E0208F2DD7000F6BF7 /* SearchContentsViewController.swift */; };
 		8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */; };
 		8D5654261FC431FB008EE1CF /* PAAlertViewDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5654251FC431FB008EE1CF /* PAAlertViewDelegater.swift */; };
 		8D5654281FC432E6008EE1CF /* PABaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */; };
@@ -264,6 +266,8 @@
 		8D42C8891F13754B00061C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D4687762058CDB900A9D1D8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8D4687792058CEB300A9D1D8 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
+		8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController_1.swift; sourceTree = "<group>"; };
+		8D4A75E0208F2DD7000F6BF7 /* SearchContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentsViewController.swift; sourceTree = "<group>"; };
 		8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
 		8D5654251FC431FB008EE1CF /* PAAlertViewDelegater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAAlertViewDelegater.swift; sourceTree = "<group>"; };
 		8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PABaseAlertView.swift; sourceTree = "<group>"; };
@@ -690,8 +694,10 @@
 			children = (
 				8D6D13561ECB68A00084BBA8 /* SearchViewController.swift */,
 				8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */,
+				8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */,
 				8D6E2C961EF8EBCA00934C9B /* TextfieldViewController.swift */,
 				8D6E2C981EF8EDBA00934C9B /* TextFieldDetailViewController.swift */,
+				8D4A75E0208F2DD7000F6BF7 /* SearchContentsViewController.swift */,
 			);
 			path = SearchController;
 			sourceTree = "<group>";
@@ -1498,6 +1504,7 @@
 				8DBB1AC51EC4604500D507E6 /* CustomNavigationItemController.swift in Sources */,
 				8DDC0EC51F57DCDA0035BE44 /* PACalculatorModel.swift in Sources */,
 				8D6512711F3DA3ED00D9E434 /* PASegmentedView.swift in Sources */,
+				8D4A75DF208F1CFC000F6BF7 /* SearchResultViewController_1.swift in Sources */,
 				8D65125E1F3BF24E00D9E434 /* PASegmentControl.swift in Sources */,
 				8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */,
 				8D1F53CB1F453E4E005E89AE /* DetailViewController.swift in Sources */,
@@ -1531,6 +1538,7 @@
 				8D6512741F3DA43100D9E434 /* PASegmentTestViewController.swift in Sources */,
 				8D4041E41FFF7D980065308F /* LRxSwiftViewController.swift in Sources */,
 				8DDC0ECE1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift in Sources */,
+				8D4A75E1208F2DD7000F6BF7 /* SearchContentsViewController.swift in Sources */,
 				8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */,
 				8DDC0EC31F57D9A60035BE44 /* PAListViewController.swift in Sources */,
 				8D5654281FC432E6008EE1CF /* PABaseAlertView.swift in Sources */,

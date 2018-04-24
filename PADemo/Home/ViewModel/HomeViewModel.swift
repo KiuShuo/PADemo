@@ -25,7 +25,7 @@ class HomeViewModel {
     
     // 获取数据
     func fetchData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             if let bundlePath = Bundle.main.path(forResource: "ControllerModel", ofType: "plist"),
                 let resultDic = NSDictionary(contentsOfFile: bundlePath) as? [String: Any],
                 let controllerModelDics = resultDic["result"] as? [[String: String]] {

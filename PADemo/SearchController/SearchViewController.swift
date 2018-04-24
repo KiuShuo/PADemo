@@ -6,8 +6,13 @@
 //  Copyright © 2017年 shuo. All rights reserved.
 //
 
+// http://qmuiteam.com/ios/
+// https://github.com/QMUI/QMUI_iOS
+// https://github.com/boai/BAWeChat
+
 import UIKit
 import IQKeyboardManager
+import QMUIKit
 
 class SearchViewController:  BaseViewController {
     
@@ -34,6 +39,7 @@ class SearchViewController:  BaseViewController {
         // 当点击搜索框后仍显示当前界面时，通过该变量控制是否显示灰色蒙层
         searchController.dimsBackgroundDuringPresentation = true
         searchController.hidesNavigationBarDuringPresentation = true
+        searchController.searchBar.frame.size.height = 48
         searchController.delegate = self
         return searchController
     }()
@@ -45,7 +51,6 @@ class SearchViewController:  BaseViewController {
         tableView.estimatedRowHeight = 44.0
         setupTableView()
         setupSearchBar()
-        
         if #available(iOS 11.0, *) {
             
         } else {
@@ -123,7 +128,14 @@ extension SearchViewController: UITableViewDataSource {
 }
 
 extension SearchViewController: UITableViewDelegate {
-    //
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let qmui_searchVC = QMUISearchController()
+//        qmui_searchVC.searchResultsDelegate = self
+//        qmui_searchVC. =
+//        navigationController?.pushViewController(qmui_searchVC, animated: true)
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
@@ -133,9 +145,12 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        if !needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
-            searchResultController.tableView.isHidden = false
-        }
+        let offSetY = searchResultController.tableView.contentOffset.y
+        let contentInsetTop = searchResultController.tableView.contentInset.top
+        print("offSetY = \(offSetY), contentInsetTop = \(contentInsetTop)")
+//        if !needShowCurrentViewWhenClickSearchBarBeforeiOS11 {
+//            searchResultController.tableView.isHidden = false
+//        }
     }
     
 }
@@ -157,4 +172,12 @@ extension SearchViewController: UISearchControllerDelegate {
 //    }
 
 }
+
+//extension SearchViewController: QMUISearchControllerDelegate {
+//    func searchController(_ searchController: QMUISearchController!, updateResultsForSearch searchString: String!) {
+//        //
+//    }
+//
+//
+//}
 

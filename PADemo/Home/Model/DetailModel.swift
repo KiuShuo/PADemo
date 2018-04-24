@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import YYModel
 
-class DetailModel: NSObject {
+class DetailModel: NSObject, YYModel {
     var aNumber: String?
     var name: String?
+    var age: String = ""
+//    var age: Int = 0
+    
+//     modelCustomPropertyMapper
+//    private func modelCustomPropertyMapper() -> [String : Any]? {
+//        return ["age": "age", "ageStr": "age"]
+//    }
 }
