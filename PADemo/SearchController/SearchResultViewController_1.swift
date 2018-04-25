@@ -18,30 +18,30 @@ class SearchResultViewController_1: BaseViewController, UITableViewDelegate, UIT
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        automaticallyAdjustsScrollViewInsets = true
         tableView.backgroundColor = UIColor.green
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
         definesPresentationContext = true
-//        if #available(iOS 11.0, *) {
-//            tableView.contentInsetAdjustmentBehavior = .never
-//        }
-//        if UIDevice.isIPHONE_X {
-//            tableView.mas_makeConstraints { (make) in
-//                make!.edges.equalTo()(self.view)!.insets()(UIEdgeInsets.init(top: 99,
-//                                                                             left: 0,
-//                                                                             bottom: 0,
-//                                                                             right: 0))
-//            }
-//        } else {
-//            tableView.mas_makeConstraints { (make) in
-//                make!.edges.equalTo()(self.view)!.insets()(UIEdgeInsets.init(top: UIScreen.navigationHeight,
-//                                                                             left: 0,
-//                                                                             bottom: 0,
-//                                                                             right: 0))
-//            }
-//        }
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+        // 由于searchBar有一个_UISearchBarContainerView类型的父视图，所以需要调整tableView的距离顶部的位置
+        if UIDevice.isIPHONE_X {
+            tableView.mas_makeConstraints { (make) in
+                make!.edges.equalTo()(self.view)!.insets()(UIEdgeInsets.init(top: 99,
+                                                                             left: 0,
+                                                                             bottom: 0,
+                                                                             right: 0))
+            }
+        } else {
+            tableView.mas_makeConstraints { (make) in
+                make!.edges.equalTo()(self.view)!.insets()(UIEdgeInsets.init(top: UIScreen.navigationHeight,
+                                                                             left: 0,
+                                                                             bottom: 0,
+                                                                             right: 0))
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

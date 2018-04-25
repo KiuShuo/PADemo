@@ -73,7 +73,7 @@
 		8D6BC7271FDD17150004E1C6 /* PACustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6BC7261FDD17150004E1C6 /* PACustomNavigationView.swift */; };
 		8D6BC7291FDD171C0004E1C6 /* PACustomNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6BC7281FDD171C0004E1C6 /* PACustomNavigationView.xib */; };
 		8D6D13571ECB68A00084BBA8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D13561ECB68A00084BBA8 /* SearchViewController.swift */; };
-		8D6D13591ECB6B7F0084BBA8 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */; };
+		8D6D13591ECB6B7F0084BBA8 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D13581ECB6B7F0084BBA8 /* SearchResultTableViewController.swift */; };
 		8D6D135D1ECB6EE90084BBA8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D135C1ECB6EE90084BBA8 /* Style.swift */; };
 		8D6D13651ECB71B20084BBA8 /* PABaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6D13641ECB71B20084BBA8 /* PABaseNavigationController.swift */; };
 		8D6DABE92024434F00D6C114 /* NoteTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6DABE82024434F00D6C114 /* NoteTimerViewController.swift */; };
@@ -292,7 +292,7 @@
 		8D6BC7261FDD17150004E1C6 /* PACustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACustomNavigationView.swift; sourceTree = "<group>"; };
 		8D6BC7281FDD171C0004E1C6 /* PACustomNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PACustomNavigationView.xib; sourceTree = "<group>"; };
 		8D6D13561ECB68A00084BBA8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		8D6D13581ECB6B7F0084BBA8 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		8D6D135C1ECB6EE90084BBA8 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		8D6D13641ECB71B20084BBA8 /* PABaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PABaseNavigationController.swift; sourceTree = "<group>"; };
 		8D6DABE82024434F00D6C114 /* NoteTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTimerViewController.swift; sourceTree = "<group>"; };
@@ -693,7 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6D13561ECB68A00084BBA8 /* SearchViewController.swift */,
-				8D6D13581ECB6B7F0084BBA8 /* SearchResultViewController.swift */,
+				8D6D13581ECB6B7F0084BBA8 /* SearchResultTableViewController.swift */,
 				8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */,
 				8D6E2C961EF8EBCA00934C9B /* TextfieldViewController.swift */,
 				8D6E2C981EF8EDBA00934C9B /* TextFieldDetailViewController.swift */,
@@ -1543,7 +1543,7 @@
 				8DDC0EC31F57D9A60035BE44 /* PAListViewController.swift in Sources */,
 				8D5654281FC432E6008EE1CF /* PABaseAlertView.swift in Sources */,
 				8D80D2141FFE351E0080386B /* UIScreen+Extension.swift in Sources */,
-				8D6D13591ECB6B7F0084BBA8 /* SearchResultViewController.swift in Sources */,
+				8D6D13591ECB6B7F0084BBA8 /* SearchResultTableViewController.swift in Sources */,
 				8DB7C2941F4A923300E8FE53 /* BaseHeaderView.swift in Sources */,
 				8D7BD45F1FEDEC2C00B53815 /* UIButton+Extension.swift in Sources */,
 				8DF2C4741F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift in Sources */,
