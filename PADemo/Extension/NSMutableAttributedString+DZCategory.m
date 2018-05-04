@@ -1,9 +1,9 @@
 //
 //  NSMutableAttributedString+DZCategory.m
-//  wanjia2B
+//  feng
 //
 //  Created by lichao_liu on 16/8/24.
-//  Copyright © 2016年 pingan. All rights reserved.
+//  Copyright © 2016年 shuo. All rights reserved.
 //
 #import "NSMutableAttributedString+DZCategory.h"
 #import <CoreText/CoreText.h>

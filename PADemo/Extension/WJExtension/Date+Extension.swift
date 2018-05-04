@@ -1,9 +1,9 @@
 //
 //  NSDate+Extension.swift
-//  wanjia2B
+//  feng
 //
 //  Created by luozhijun on 2016/11/22.
-//  Copyright © 2016年 pingan. All rights reserved.
+//  Copyright © 2016年 shuo. All rights reserved.
 //
 
 import Foundation

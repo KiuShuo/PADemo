@@ -1,9 +1,9 @@
 //
 //  UIImage+Extension.swift
-//  wanjia2B
+//  feng
 //
 //  Created by luozhijun on 2016/10/26.
-//  Copyright © 2016年 pingan. All rights reserved.
+//  Copyright © 2016年 shuo. All rights reserved.
 //
 
 import Foundation

@@ -1,9 +1,9 @@
 //
 //  NSTimer+weakSelf.swift
-//  wanjia
+//  feng
 //
 //  Created by 沈维顺 on 16/9/8.
-//  Copyright © 2016年 pingan. All rights reserved.
+//  Copyright © 2016年 shuo. All rights reserved.
 //
 
 import UIKit

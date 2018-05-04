@@ -1,9 +1,9 @@
 //
 //  SettingItems.swift
-//  wanjia2B
+//  feng
 //
 //  Created by luozhijun on 2016/11/23.
-//  Copyright © 2017年 pingan. All rights reserved.
+//  Copyright © 2017年 shuo. All rights reserved.
 //
 
 typealias SettingItemAction = (SettingItem) -> Void

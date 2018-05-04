@@ -1,9 +1,9 @@
 //
 //  AppDelegate+APNs.swift
-//  wanjia2B
+//  feng
 //
 //  Created by shuo on 2017/6/9.
-//  Copyright © 2017年 pingan. All rights reserved.
+//  Copyright © 2017年 shuo. All rights reserved.
 //  APNs
 
 import Foundation

@@ -1,9 +1,9 @@
 //
 //  CKSlideSwitchView.swift
-//  wanjia2B
+//  feng
 //
 //  Created by luozhijun on 2017/6/26.
-//  Copyright © 2017年 pingan. All rights reserved.
+//  Copyright © 2017年 shuo. All rights reserved.
 //
 
 import UIKit

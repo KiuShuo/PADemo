@@ -1,9 +1,9 @@
 //
 //  UIColor+Extension.swift
-//  wanjia
+//  feng
 //
 //  Created by 周炳宇 on 16/4/12.
-//  Copyright © 2016年 pingan. All rights reserved.
+//  Copyright © 2016年 shuo. All rights reserved.
 //
 
 import UIKit

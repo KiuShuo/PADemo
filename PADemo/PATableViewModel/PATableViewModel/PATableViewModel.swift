@@ -1,9 +1,9 @@
 //
 //  PATableViewModel.swift
-//  wanjia
+//  feng
 //
 //  Created by shuoliu on 16/5/3.
-//  Copyright © 2016年 pingan. All rights reserved.
+//  Copyright © 2016年 shuo. All rights reserved.
 //   未来优化参考方案 https://github.com/fastred/ConfigurableTableViewController
 
 import Foundation

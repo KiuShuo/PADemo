@@ -3,84 +3,111 @@
 import UIKit
 
 // double -> String -> ... > String
-let aDouble: Double = 499.99//506.69//64.99
-print("aDouble = \(aDouble)")
-let aStr =  NSString.init(format: "%f", aDouble)
-print("aStr = \(aStr)")
-//String(describing: aDouble)
+//let aDouble: Double = 499.99//506.69//64.99
+//print("aDouble = \(aDouble)")
+//let aStr =  NSString.init(format: "%f", aDouble)
+//print("aStr = \(aStr)")
+////String(describing: aDouble)
+//
+//let aNum = NSNumber.init(value: aDouble)
+//print("aNum = \(aNum)")
+//
+//let newNum = NSDecimalNumber.init(value: aNum.doubleValue)
+//print("newNum = \(newNum)")
+//
+//let aNStr =  NSString.init(format: "%@", aNum)
+//print("aNStr = \(aNStr)")
+//
+////let num = NSNumber(floatLiteral: )
+//
+//
+//func isValidPhone(_ str: String?) -> Bool {
+//    let predicate = NSPredicate(format: "SELF MATCHES %@", "^1([3|4|5|6|7|8|9][0-9]{1})[0-9]{8}$")
+//    return predicate.evaluate(with: str)
+//}
+//isValidPhone("13000000000")
+//
+//
+//class Test {
+//    var dog: Dog? {
+//        didSet {
+//            print("dog 123")
+//        }
+//    }
+//    var person: Person? {
+//        didSet {
+//            print("person 123")
+//        }
+//    }
+//}
+//
+//class Dog {
+//    var name: String = "hehe" {
+//        didSet {
+//            print("dog newName = \(name)")
+//        }
+//    }
+//}
 
-let aNum = NSNumber.init(value: aDouble)
-print("aNum = \(aNum)")
+Date.timeIntervalSinceReferenceDate
 
-let newNum = NSDecimalNumber.init(value: aNum.doubleValue)
-print("newNum = \(newNum)")
+//class Person: NSObject {
+//    var name: String = "xiaoHong" {
+//        didSet {
+//            print("person newName = \(name)")
+//        }
+//    }
+//    var age: Int = 0
+//
+//    init(name: String, age: Int) {
+//        self.name = name
+//        self.age = age
+//    }
+//}
+//
+//let per1 = Person(name: "1", age: 1)
+//let per2 = Person(name: "2", age: 2)
+//let per3 = Person(name: "3", age: 3)
+//
+//var arr1: [AnyObject] = [per2, per1, per3]
+//if var arr2 = (arr1 as? [Person]) {
+//    arr2.sort { (p1, p2) -> Bool in
+//        return p1.age > p2.age
+//    }
+//    arr2
+//    arr1 = arr2
+//}
+//arr1
+//print("123")
 
-let aNStr =  NSString.init(format: "%@", aNum)
-print("aNStr = \(aNStr)")
-
-//let num = NSNumber(floatLiteral: )
-
-
-func isValidPhone(_ str: String?) -> Bool {
-    let predicate = NSPredicate(format: "SELF MATCHES %@", "^1([3|4|5|6|7|8|9][0-9]{1})[0-9]{8}$")
-    return predicate.evaluate(with: str)
-}
-isValidPhone("13000000000")
-
-
-class Test {
-    var dog: Dog? {
-        didSet {
-            print("dog 123")
-        }
-    }
-    var person: Person? {
-        didSet {
-            print("person 123")
-        }
-    }
-}
-
-class Dog {
-    var name: String = "hehe" {
-        didSet {
-            print("dog newName = \(name)")
-        }
-    }
-}
+//arr1.sort { (p1, p2) -> Bool in
+//    return p1.age > p2.age
+//}
 
 
-struct Person {
-    var name: String = "xiaoHong" {
-        didSet {
-            print("person newName = \(name)")
-        }
-    }
-}
-
-let dog = Dog()
-var per = Person()
-
-let test = Test()
-test.dog = dog
-test.person = per
-
-test.dog?.name = "haha"
-test.person?.name = "ming"
-
-test.dog?.name = "haha1"
-test.person?.name = "ming1hh"
-
-func formatFloat(f: Float) -> String {
-    if fmodf(f, 1) == 0 {
-        return String(format: "%.0f", f)
-    } else if fmodf(f * 10, 1) == 0 {
-        return String(format: "%.1f", f)
-    } else {
-        return String(format: "%.2f", f)
-    }
-}
-formatFloat(f: 10.99)
+//let dog = Dog()
+//var per = Person()
+//
+//let test = Test()
+//test.dog = dog
+//test.person = per
+//
+//test.dog?.name = "haha"
+//test.person?.name = "ming"
+//
+//test.dog?.name = "haha1"
+//test.person?.name = "ming1hh"
+//
+//func formatFloat(f: Float) -> String {
+//    if fmodf(f, 1) == 0 {
+//        return String(format: "%.0f", f)
+//    } else if fmodf(f * 10, 1) == 0 {
+//        return String(format: "%.1f", f)
+//    } else {
+//        return String(format: "%.2f", f)
+//    }
+//}
+//formatFloat(f: 10.99)
 //
 //var persons = [Person(), Person(), Person()]
 ////for (index, person) in <#items#> {

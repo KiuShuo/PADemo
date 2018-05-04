@@ -1,9 +1,9 @@
 //
 //  PASegmentedControl.swift
-//  wanjia2B
+//  feng
 //
 //  Created by 邵伟男 on 2017/5/26.
-//  Copyright © 2017年 pingan. All rights reserved.
+//  Copyright © 2017年 shuo. All rights reserved.
 //
 
 import UIKit

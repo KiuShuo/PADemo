@@ -11,6 +11,9 @@
 		880FAF162007AFD5007CF8C1 /* LRProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FAF152007AFD5007CF8C1 /* LRProtocol.swift */; };
 		8D003D74208843B900FF4B28 /* PAIntegrationGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */; };
 		8D003D762088445700FF4B28 /* PAIntegrationGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */; };
+		8D0DB101209C38B80048903E /* CoreAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0DB100209C38B80048903E /* CoreAnimationViewController.swift */; };
+		8D0DB104209C38E10048903E /* FPSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0DB102209C38E10048903E /* FPSTableViewCell.swift */; };
+		8D0DB105209C38E10048903E /* FPSTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0DB103209C38E10048903E /* FPSTableViewCell.xib */; };
 		8D0F5D6520510F3E00736B94 /* KSUIWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F5D6420510F3E00736B94 /* KSUIWebViewController.swift */; };
 		8D0F5D672051105500736B94 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 8D0F5D662051105500736B94 /* test.html */; };
 		8D10313E1ECE8791007F49CA /* TableViewController_CellHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10313D1ECE8791007F49CA /* TableViewController_CellHeight.swift */; };
@@ -164,6 +167,7 @@
 		8DF2C4721F554EA5007D5CC7 /* CKSliderSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2C4711F554EA5007D5CC7 /* CKSliderSwitchView.swift */; };
 		8DF2C4741F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2C4731F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift */; };
 		8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF362F11EDE9BA60095A78A /* PAView.swift */; };
+		8DF48237209969F1001938AA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF48236209969F1001938AA /* main.swift */; };
 		8DF8457B1F58FE08003DB6BA /* PACKSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8457A1F58FE08003DB6BA /* PACKSliderViewController.swift */; };
 		8DFE58231F176A9F0057BAD9 /* PAFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE58221F176A9F0057BAD9 /* PAFileManager.swift */; };
 		8DFE58251F176F9E0057BAD9 /* PAFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE58241F176F9E0057BAD9 /* PAFileManager.swift */; };
@@ -223,6 +227,9 @@
 		8865647EF1F6C3D4634993D0 /* Pods_PANotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PANotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAIntegrationGuideView.swift; sourceTree = "<group>"; };
 		8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PAIntegrationGuideView.xib; sourceTree = "<group>"; };
+		8D0DB100209C38B80048903E /* CoreAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationViewController.swift; sourceTree = "<group>"; };
+		8D0DB102209C38E10048903E /* FPSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSTableViewCell.swift; sourceTree = "<group>"; };
+		8D0DB103209C38E10048903E /* FPSTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FPSTableViewCell.xib; sourceTree = "<group>"; };
 		8D0F5D6420510F3E00736B94 /* KSUIWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSUIWebViewController.swift; sourceTree = "<group>"; };
 		8D0F5D662051105500736B94 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		8D10313D1ECE8791007F49CA /* TableViewController_CellHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_CellHeight.swift; sourceTree = "<group>"; };
@@ -392,6 +399,7 @@
 		8DF2C4711F554EA5007D5CC7 /* CKSliderSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKSliderSwitchView.swift; sourceTree = "<group>"; };
 		8DF2C4731F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAOffsetedSubviewButton.swift; sourceTree = "<group>"; };
 		8DF362F11EDE9BA60095A78A /* PAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAView.swift; sourceTree = "<group>"; };
+		8DF48236209969F1001938AA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8DF8457A1F58FE08003DB6BA /* PACKSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACKSliderViewController.swift; sourceTree = "<group>"; };
 		8DFE58221F176A9F0057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
 		8DFE58241F176F9E0057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
@@ -469,6 +477,32 @@
 				880FAF152007AFD5007CF8C1 /* LRProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		8D0DB0FD209C386E0048903E /* Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				8D0DB0FF209C38970048903E /* View */,
+				8D0DB0FE209C388B0048903E /* ViewController */,
+			);
+			path = Instruments;
+			sourceTree = "<group>";
+		};
+		8D0DB0FE209C388B0048903E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D0DB100209C38B80048903E /* CoreAnimationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8D0DB0FF209C38970048903E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D0DB102209C38E10048903E /* FPSTableViewCell.swift */,
+				8D0DB103209C38E10048903E /* FPSTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8D1136321F4BE0E300DCB258 /* CycleView */ = {
@@ -550,6 +584,7 @@
 				8D42C8681F1356EC00061C9C /* unbelievable.caf */,
 				8D42C8661F1355B400061C9C /* AppDelegate+APNs.swift */,
 				8D42C8641F1355A200061C9C /* AppDelegate.swift */,
+				8DF48236209969F1001938AA /* main.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -1028,6 +1063,7 @@
 		8DEF45701EB1BE6900CA4F75 /* PADemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D0DB0FD209C386E0048903E /* Instruments */,
 				8D6DABE6202442E600D6C114 /* Note */,
 				8D9E6E031FF36ED50028648C /* LearnRXSwift */,
 				8D94D36E1FA0417800CD24C1 /* LearnViewController */,
@@ -1300,6 +1336,7 @@
 				8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */,
 				8D9FBACD1F68CF740084B54E /* PACalculateRulesCell.xib in Resources */,
 				8DCD7F151F58F1B10060957B /* PACalculatorMainMenuCell.xib in Resources */,
+				8D0DB105209C38E10048903E /* FPSTableViewCell.xib in Resources */,
 				8DCA85871F385D20009F648F /* PAPersonCollectionViewCell.xib in Resources */,
 				8D003D762088445700FF4B28 /* PAIntegrationGuideView.xib in Resources */,
 				8D6BC7291FDD171C0004E1C6 /* PACustomNavigationView.xib in Resources */,
@@ -1463,6 +1500,7 @@
 				8D5654261FC431FB008EE1CF /* PAAlertViewDelegater.swift in Sources */,
 				8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */,
 				8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */,
+				8DF48237209969F1001938AA /* main.swift in Sources */,
 				8DBB1ACB1EC4606900D507E6 /* BaseViewController.swift in Sources */,
 				8DC71B0A1FFE2350001BA435 /* RXBaseViewController.swift in Sources */,
 				8D6E40491EB322C500E388C9 /* Model.swift in Sources */,
@@ -1494,6 +1532,7 @@
 				8D80D2111FFE351E0080386B /* Date+Extension.swift in Sources */,
 				8D6E2C9B1EF8EE7A00934C9B /* UIViewController+PAExtension.swift in Sources */,
 				8DCA857F1F385157009F648F /* PATableViewModelTestModel.swift in Sources */,
+				8D0DB101209C38B80048903E /* CoreAnimationViewController.swift in Sources */,
 				8D80D2161FFE351E0080386B /* Dictionary+Extension.swift in Sources */,
 				8D6512761F3DB34000D9E434 /* FoundationExtensions.swift in Sources */,
 				8D94D3721FA041C600CD24C1 /* LearnMenuViewController.swift in Sources */,
@@ -1534,6 +1573,7 @@
 				8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */,
 				8D0F5D6520510F3E00736B94 /* KSUIWebViewController.swift in Sources */,
 				8D6512721F3DA3ED00D9E434 /* PASegmentedControlView.swift in Sources */,
+				8D0DB104209C38E10048903E /* FPSTableViewCell.swift in Sources */,
 				8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */,
 				8D6512741F3DA43100D9E434 /* PASegmentTestViewController.swift in Sources */,
 				8D4041E41FFF7D980065308F /* LRxSwiftViewController.swift in Sources */,

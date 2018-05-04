@@ -10,12 +10,20 @@ import UIKit
 import Fabric
 import Crashlytics
 
-@UIApplicationMain
+//@UIApplicationMain
+// Swift没有了main.m文件，@UIApplicationMain是程序的入口
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let space2 = CFAbsoluteTimeGetCurrent() - startTime
+        
+        print("space2 = \(space2)")
+        
+        
         DispatchQueue.global().async {
             AMapServices.shared().apiKey = "PAGaodeMapCommonStruct.kGaodeMapKey"
         }
@@ -40,6 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             #endif
         paUtilTest()
         testReturn()
+        
+        let space3 = CFAbsoluteTimeGetCurrent() - startTime
+        
+        print("space3 = \(space3)")
+        
         return true
     }
     
