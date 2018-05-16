@@ -6,6 +6,15 @@
 //  Copyright © 2018年 shuo. All rights reserved.
 //
 
+/*
+ 参考资料：
+ 
+ [Swift之CoreText排版神器(长篇高能)](https://www.jianshu.com/p/e52a38e60e7c)
+ [基于 CoreText 的排版引擎：基础](https://blog.devtang.com/2015/06/27/using-coretext-1/)
+ 
+ */
+
+
 import UIKit
 
 class CTViewController: BaseViewController {
