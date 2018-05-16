@@ -96,7 +96,7 @@ extension PABaseNavigationController {
             if let clickAction = clickAction {
                 clickAction()
             } else {
-                _ = self.popViewController(animated: true)
+                self.popViewController(animated: true)
             }
         }
         button.contentHorizontalAlignment = .left

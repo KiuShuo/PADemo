@@ -11,8 +11,8 @@ import UIKit
 class CoreAnimationViewController: BaseViewController {
     
     let tableView = UITableView()
-    lazy var tableDelegater: PATableViewModelDemoControllerDelegater = {
-        let delegater = PATableViewModelDemoControllerDelegater()
+    lazy var tableDelegater: PATableDelegater = {
+        let delegater = PATableDelegater()
         delegater.viewController = self
         return delegater
     }()
@@ -22,9 +22,13 @@ class CoreAnimationViewController: BaseViewController {
         setupTableView()
         
         let cellModel = PACellModel(classType: FPSTableViewCell.self, height: 80)
-        let cellModels = [PACellModel](repeating: cellModel, count: 500)
+        let cellModels = [PACellModel](repeating: cellModel, count: 1)
         let sectionModel = PASectionModel(cellModelArr: cellModels)
         tableDelegater.sectionModels = [sectionModel]
+        tableDelegater.didSelectCell = { [weak self] _ in
+            let vc = CTViewController()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     func setupTableView() {

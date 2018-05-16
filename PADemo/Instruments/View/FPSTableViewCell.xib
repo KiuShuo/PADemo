@@ -17,7 +17,21 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="365" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自定义label的使用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmx-qB-rhm" customClass="LayerLabel" customModule="PADemo" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="345" height="59.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <color key="backgroundColor" red="0.11336495535714286" green="0.98108970154285713" blue="0.16278613011428575" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="cmx-qB-rhm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="adk-OD-vDQ"/>
+                    <constraint firstAttribute="bottom" secondItem="cmx-qB-rhm" secondAttribute="bottom" constant="10" id="bFR-Oc-ezu"/>
+                    <constraint firstItem="cmx-qB-rhm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="bSa-oM-kkm"/>
+                    <constraint firstAttribute="trailing" secondItem="cmx-qB-rhm" secondAttribute="trailing" constant="10" id="iBo-jF-4x1"/>
+                </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="47.5" y="116"/>
         </tableViewCell>

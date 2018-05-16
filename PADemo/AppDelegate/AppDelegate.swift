@@ -9,9 +9,15 @@
 import UIKit
 import Fabric
 import Crashlytics
+//import IFlyMSC
 
 //@UIApplicationMain
 // Swift没有了main.m文件，@UIApplicationMain是程序的入口
+
+class Person: NSObject {
+    var name: String = ""
+    var age: Int = 0
+}
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,10 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let space2 = CFAbsoluteTimeGetCurrent() - startTime
-        
-        print("space2 = \(space2)")
-        
         
         DispatchQueue.global().async {
             AMapServices.shared().apiKey = "PAGaodeMapCommonStruct.kGaodeMapKey"
@@ -49,10 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         paUtilTest()
         testReturn()
         
-        let space3 = CFAbsoluteTimeGetCurrent() - startTime
-        
-        print("space3 = \(space3)")
-        
         return true
     }
     
@@ -60,8 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UIScreen.width > 100 {
             return
         }
-        print("1")
-        print("2")
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -74,4 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("arrStr = \(arrStr)")
     }
 
+    func setupSMC() {
+        IFlySpeechUtility.createUtility("appid=5aeff098")
+    }
+
 }
+
+

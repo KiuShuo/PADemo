@@ -9,11 +9,11 @@ PODS:
   - EBForeNotification (1.0.7)
   - Fabric (1.6.11)
   - HexColors (2.3.0)
-  - IGListKit (3.1.1):
-    - IGListKit/Default (= 3.1.1)
-  - IGListKit/Default (3.1.1):
+  - IGListKit (3.4.0):
+    - IGListKit/Default (= 3.4.0)
+  - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
-  - IGListKit/Diffing (3.1.1)
+  - IGListKit/Diffing (3.4.0)
   - IQKeyboardManager (5.0.3)
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
@@ -81,7 +81,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   IGListKit:
-    :commit: 2f17cb5fdf2a9887ffa2db1c72fdc2646ecb97d1
+    :commit: cce5a462bb8e4e3cf5b4d0aeebfedb318e52cf09
     :git: https://github.com/Instagram/IGListKit.git
   UITableView+FDTemplateLayoutCell:
     :commit: c624e4db4c6bc3723ba971218aa5454dd59c7415
@@ -95,7 +95,7 @@ SPEC CHECKSUMS:
   EBForeNotification: d2426fa084f7af912c665b80529cfb3fe5dbdb79
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
-  IGListKit: cb97f405ae43e59fe1da74271e19427ec20d3c07
+  IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
   IQKeyboardManager: dc5b18b47e5170e4d150bb86dbee8c8a2fc48997
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1

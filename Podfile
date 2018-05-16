@@ -18,7 +18,7 @@ target 'PADemo' do
 #    pod 'WJExtension', :svn => $WJFrameworkUrl +'WJExtension', :tag => '1.1.2'
 
     #$WJFrameworkLocalUrl = '/Users/liushuo199/Documents/svnCheckOut/WJFramework/'
-    #pod 'WJExtension', :path => $WJFrameworkUrl +'WJExtension/tags/1.1.2'
+    #pod 'WJExtension', :path => $WJFrameworkLocalUrl +'WJExtension/tags/1.1.2'
     
     pod 'SDWebImage', '3.7.5'
     pod 'Masonry', '1.0.2'
