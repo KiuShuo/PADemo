@@ -21,7 +21,7 @@ class DetailViewController: BaseViewController {
         return storyboard.instantiateViewController(withIdentifier: String(describing: DetailViewController.self))
     }
     // "现场查看是否有铅衣等防护用品，且可使用；比如齿科的全景X光机；无放射科则不适用\n（需有照片）"
-    let text = "现场查看是否有铅衣等防护用品且可使用比如齿科的全景X光机无放射科则不适用（需有照片）"
+    let text = "现场查看是否有铅衣等防护用品且可使用比如齿科的全景X光机无放射科则不适用（需有照片）现场查看是否有铅衣等防护用品且可使用比如齿科的全景X光机无放射科则不适用（需有照片）"
     let shortText = "现场查看是否有铅衣等"
     let button = PAButton(type: .custom)
     
@@ -135,9 +135,17 @@ class DetailViewController: BaseViewController {
     }
 
     func attributedString() {
-        let label = PALabel(frame: CGRect(x: 10, y: 230, width: 200, height: 80))
+        let label = PALabel()
+        view.addSubview(label)
+        label.mas_makeConstraints { (make) in
+            make!.left.equalTo()(10)
+            make!.right.equalTo()(-10)
+            make!.top.equalTo()(220)
+        }
         label.numberOfLines = 0
         label.backgroundColor = UIColor.green
+        label.text = text
+        /*
         let originStr = text//"123456789012345678908875546888827364657681.56万"
         let mAtt = NSMutableAttributedString(string: originStr)
         let style = NSMutableParagraphStyle()
@@ -152,9 +160,8 @@ class DetailViewController: BaseViewController {
         label.textAlignment = .left
         label.verticalAlignment = .bottom
         label.attributedText = mAtt
-        view.addSubview(label)
+         */
     }
-    
 
 }
 

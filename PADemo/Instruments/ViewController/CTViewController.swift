@@ -60,19 +60,19 @@ class CTViewController: BaseViewController {
         //        print(font.xHeight)         //7.369140625
         //        print(font.leading)         //0.0
         
-        //        let ctextView = CTextView()
-        //        ctextView.frame = CGRectMake(10, 100, self.view.bounds.width - 20, 200)
-        //        ctextView.backgroundColor = UIColor.whiteColor()
-        //        self.view.addSubview(ctextView)
+        let ctextView = CTextView()
+        ctextView.frame = CGRect(x: 10, y: 100, width: self.view.bounds.width - 20, height: 200)
+        ctextView.backgroundColor = UIColor.white
+        self.view.addSubview(ctextView)
         
         
-        let ctURLView = CTURLView()
-        ctURLView.frame = CGRect(x: 10, y: 100, width: self.view.bounds.width - 20, height: 300)
-        ctURLView.backgroundColor = UIColor.gray
-        let mutableAttrStr = NSMutableAttributedString(string: ctURLView.str)
-        let size = ctURLView.sizeForText(mutableAttrStr: mutableAttrStr)
-        ctURLView.frame.size = size
-        self.view.addSubview(ctURLView)
+        //        let ctURLView = CTURLView()
+        //        ctURLView.frame = CGRect(x: 10, y: 100, width: self.view.bounds.width - 20, height: 300)
+        //        ctURLView.backgroundColor = UIColor.gray
+        //        let mutableAttrStr = NSMutableAttributedString(string: ctURLView.str)
+        //        let size = ctURLView.sizeForText(mutableAttrStr: mutableAttrStr)
+        //        ctURLView.frame.size = size
+        //        self.view.addSubview(ctURLView)
     }
 
 }

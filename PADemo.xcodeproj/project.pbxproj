@@ -50,6 +50,7 @@
 		8D42C8851F13754B00061C9C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42C8841F13754B00061C9C /* NotificationViewController.swift */; };
 		8D42C8881F13754B00061C9C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D42C8861F13754B00061C9C /* MainInterface.storyboard */; };
 		8D42C88C1F13754B00061C9C /* PANotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8D42C87E1F13754B00061C9C /* PANotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8D44D2A620C7DC640087B2BD /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D2A520C7DC640087B2BD /* DisplayView.m */; };
 		8D4687772058CDB900A9D1D8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4687762058CDB900A9D1D8 /* HomeViewModel.swift */; };
 		8D46877A2058CEB400A9D1D8 /* ObserverSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4687792058CEB300A9D1D8 /* ObserverSet.swift */; };
 		8D4A75DF208F1CFC000F6BF7 /* SearchResultViewController_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */; };
@@ -292,6 +293,8 @@
 		8D42C8841F13754B00061C9C /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		8D42C8871F13754B00061C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8D42C8891F13754B00061C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D44D2A420C7DC640087B2BD /* DisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayView.h; sourceTree = "<group>"; };
+		8D44D2A520C7DC640087B2BD /* DisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayView.m; sourceTree = "<group>"; };
 		8D4687762058CDB900A9D1D8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8D4687792058CEB300A9D1D8 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
 		8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController_1.swift; sourceTree = "<group>"; };
@@ -576,6 +579,8 @@
 				8D0DB102209C38E10048903E /* FPSTableViewCell.swift */,
 				8D0DB103209C38E10048903E /* FPSTableViewCell.xib */,
 				8D62D168209D8C44000E34BA /* LayerLabel.swift */,
+				8D44D2A420C7DC640087B2BD /* DisplayView.h */,
+				8D44D2A520C7DC640087B2BD /* DisplayView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1494,7 +1499,10 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKPromptResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1529,7 +1537,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E983DC88B7EF7FFC4F94D0F8 /* [CP] Embed Pods Frameworks */ = {
@@ -1551,6 +1559,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1566,6 +1575,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1682,6 +1692,7 @@
 				8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */,
 				8D6512741F3DA43100D9E434 /* PASegmentTestViewController.swift in Sources */,
 				8D4041E41FFF7D980065308F /* LRxSwiftViewController.swift in Sources */,
+				8D44D2A620C7DC640087B2BD /* DisplayView.m in Sources */,
 				8DDC0ECE1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift in Sources */,
 				8D4A75E1208F2DD7000F6BF7 /* SearchContentsViewController.swift in Sources */,
 				8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */,

@@ -92,6 +92,36 @@ extension KSUIWebViewController: UIWebViewDelegate {
         
     }
     
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if let urlStr = request.url?.absoluteString {
+            if urlStr.hasPrefix("pawjscheme") {
+                chongdingxiangjiaohu(urlString: urlStr)
+            }
+        }
+        return true
+    }
     
+    func chongdingxiangjiaohu(urlString: String) {
+        let components = urlString.components(separatedBy: "://")
+        if components.count > 1 {
+            let funcName = components[1].components(separatedBy: "?").first
+            let params = queryComponents(urlStr: urlString)
+            print("funcName = \(funcName ?? ""), params = \(params)")
+        }
+    }
     
+}
+
+func queryComponents(urlStr: String) -> [String: String] {
+    var components: [String: String] = [:]
+    guard let url = URL(string: urlStr),
+        let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems else {
+            return components
+    }
+    for item in queryItems {
+        if !item.name.isEmpty {
+            components[item.name] = item.value.noneNull
+        }
+    }
+    return components
 }

@@ -25,7 +25,7 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
-  - UITableView+FDTemplateLayoutCell (1.6)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
   - UMengAnalytics (4.2.4)
   - UMengUShare/Core (6.4.2):
     - UMengUShare/Network
@@ -64,18 +64,39 @@ DEPENDENCIES:
   - RxCocoa (= 4.0.0)
   - RxSwift (= 4.0.0)
   - SDWebImage (= 3.7.5)
-  - UITableView+FDTemplateLayoutCell (from `https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git`, branch `master`)
+  - "UITableView+FDTemplateLayoutCell (from `https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git`, branch `master`)"
   - UMengAnalytics (= 4.2.4)
   - UMengUShare/Social/QQ (= 6.4.2)
   - UMengUShare/Social/Sina (= 6.4.2)
   - UMengUShare/Social/WeChat (= 6.4.2)
   - YYModel (= 1.0.4)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AMap2DMap-NO-IDFA
+    - AMapFoundation-NO-IDFA
+    - AMapSearch-NO-IDFA
+    - Crashlytics
+    - EBForeNotification
+    - Fabric
+    - HexColors
+    - IQKeyboardManager
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - ObjectMapper
+    - RxCocoa
+    - RxSwift
+    - SDWebImage
+    - UMengAnalytics
+    - UMengUShare
+    - YYModel
+
 EXTERNAL SOURCES:
   IGListKit:
     :branch: master
     :git: https://github.com/Instagram/IGListKit.git
-  UITableView+FDTemplateLayoutCell:
+  "UITableView+FDTemplateLayoutCell":
     :branch: master
     :git: https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git
 
@@ -83,7 +104,7 @@ CHECKOUT OPTIONS:
   IGListKit:
     :commit: cce5a462bb8e4e3cf5b4d0aeebfedb318e52cf09
     :git: https://github.com/Instagram/IGListKit.git
-  UITableView+FDTemplateLayoutCell:
+  "UITableView+FDTemplateLayoutCell":
     :commit: c624e4db4c6bc3723ba971218aa5454dd59c7415
     :git: https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git
 
@@ -104,11 +125,11 @@ SPEC CHECKSUMS:
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
-  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: 740664d1dd5cc2fb2cc3325d61e4b35539aa9c78
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 8004abd569806debffd045b923200eb628d04f3a
+PODFILE CHECKSUM: 7e135f14933e74274fea91ddb9f9ce6922155811
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.2

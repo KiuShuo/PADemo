@@ -24,7 +24,14 @@
         </div>
         <button onclick="placeOrder('12345', '100');">下单</button>
         </div>
-
+        
+        </div>
+        <button onclick="gotoGoodDetails('1', '2');">详情</button>
+        </div>
+        
+        </div>
+        <button onclick="gotoGoodsMall();">首页</button>
+        </div>
         
         <script>
             
@@ -44,18 +51,14 @@
         
         function placeOrder(orderNum, price) {
             // 安卓
-            window.prompt("pawjscheme://placeOrderForWJCollege?orderNum="+orderNum+"&price"+price);
+<!--            window.prompt("pawjscheme://placeOrderForWJCollege?orderNum="+orderNum+"&price"+price);-->
             // iOS
             window.webkit.messageHandlers.placeOrderForWJCollege.postMessage({orderNum: orderNum, price: price});
-            
         }
         
         function wjShare(appSrc) {
             if(appSrc == 3){
-                
-                
                 return {"shareTitle":"学院","shareContent":"助力基层医疗，专注创新医疗"}
-                //return {"shareUrl": "www.baidu.com", "other": "123"}
             }
         }
         
@@ -63,6 +66,14 @@
                 return a + b;
             }
         
+        // 重定向的方式进行交互
+        function gotoGoodDetails(p1, p2) {
+            document.location="pawjscheme://gotoGoodDetails?prdId="+p1+"&creditBalance="+p2;
+        }
+        // 重定向的方式进行交互
+        function gotoGoodsMall() {
+            document.location="pawjscheme://gotoGoodsMall";
+        }
          </script>
     </body>
 </html>
