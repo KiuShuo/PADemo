@@ -14,7 +14,6 @@
  
  */
 
-
 import UIKit
 
 class CTViewController: BaseViewController {
@@ -62,9 +61,12 @@ class CTViewController: BaseViewController {
         
         let ctextView = CTextView()
         ctextView.frame = CGRect(x: 10, y: 100, width: self.view.bounds.width - 20, height: 200)
-        ctextView.backgroundColor = UIColor.white
-        self.view.addSubview(ctextView)
+        ctextView.backgroundColor = UIColor.green
+        view.addSubview(ctextView)
         
+        let displayView = DisplayView(frame: CGRect(x: 10, y: 310, width: self.view.bounds.width - 20, height: 200))
+        displayView.backgroundColor = UIColor.green
+        view.addSubview(displayView)
         
         //        let ctURLView = CTURLView()
         //        ctURLView.frame = CGRect(x: 10, y: 100, width: self.view.bounds.width - 20, height: 300)
