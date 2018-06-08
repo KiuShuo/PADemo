@@ -50,9 +50,9 @@ static CGFloat widthCallBacks(void * ref) {
     // 缩放方法，x轴缩放系数为1，表示不缩放；y轴缩放系数为-1，表示绕x轴旋转180度
     CGContextScaleCTM(context, 1, -1);
     
-    NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:@"这是一个有图片的富文本内容"];
+    NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:@"Core Text本身并不支持图片绘制，图片的绘制你还得通过Core Graphics来进行。只是Core Text可以通过CTRun的设置为你的图片在文本绘制的过程中留出适当的空间。这个设置就使用到CTRunDelegate了，CTRunDelegate作为CTRun相关属性或操作扩展的一个入口，使得我们可以对CTRun做一些自定义的行为。为图片留位置的方法就是加入一个空白的CTRun，自定义其ascent，descent，width等参数，使得绘制文本的时候留下空白位置给相应的图片。然后图片在相应的空白位置上使用Core Graphics接口进行绘制。"];
     
-    
+    /*
     // 插入图片所需要的代码逻辑
     // 设置一个回调结构体，告诉代理该回调哪些方法
     CTRunDelegateCallbacks callbacks;
@@ -71,7 +71,7 @@ static CGFloat widthCallBacks(void * ref) {
     CFAttributedStringSetAttribute((CFMutableAttributedStringRef)placeHolderAttrStr, CFRangeMake(0, 1), kCTRunDelegateAttributeName, delegate); // 给范围中字符串设置代理
     CFRelease(delegate); // 释放（__bridge进行C与OC数据类型的转换，C为非ARC，需要手动管理）
     [attributeStr insertAttributedString:placeHolderAttrStr atIndex:8]; // 将占位符插入富文本
-    
+    */
     
     // 绘制
     // 绘制文本
@@ -83,6 +83,7 @@ static CGFloat widthCallBacks(void * ref) {
     self.frameRef = frame;
     CTFrameDraw(frame, context); // 根据frame绘制文本
     
+    /*
     // 绘制图片
     self.imageFrameValues = [self imageFrame:frame];
     for (NSValue *imageFrameValue in self.imageFrameValues) {
@@ -90,9 +91,9 @@ static CGFloat widthCallBacks(void * ref) {
         UIImage *image = [UIImage imageNamed:@"guide_detail_0"];
         CGContextDrawImage(context, imageFrame, image.CGImage);
     }
+    */
     
     // 释放资源
-    
     CFRelease(path);
     CFRelease(frameSetter);
 }
@@ -176,7 +177,7 @@ static CGFloat widthCallBacks(void * ref) {
 // 字符串点击检查
 - (void)clickOnStrWithPoint:(CGPoint)point {
     CTFrameRef frame = self.frameRef;
-    NSArray *lines = (NSArray *)CTFrameGetLines(frame);
+    NSArray *lines = (NSArray *)CTFrameGetLines(frame); // 根据frame拿到所有line
     NSInteger count = lines.count;
     CGPoint origins[count]; // 建立一个起点数组
     CFRange ranges[count]; // 建立一个范围数组
@@ -187,10 +188,10 @@ static CGFloat widthCallBacks(void * ref) {
         CFRange range = CTLineGetStringRange(line);
         ranges[i] = range;
     }
-    for (int i = 0; i < _length; i++) {//逐字检查
+    for (int i = 0; i < _length; i++) {//逐字检查 遍历所有的文字
         long maxLoc;
         int lineNum;
-        for (int j = 0; ; j ++) {//获取对应字符所在CTLine的index
+        for (int j = 0; ; j ++) {//获取对应字符所在CTLine的index  获取lineNum
             CFRange range = ranges[j];
             maxLoc = range.location + range.length - 1;
             if (i <= maxLoc) {
@@ -199,7 +200,7 @@ static CGFloat widthCallBacks(void * ref) {
             }
         }
         CTLineRef line = (__bridge CTLineRef)lines[lineNum];//取到字符对应的CTLine
-        CGPoint origin = origins[lineNum];
+        CGPoint origin = origins[lineNum]; // 获取line对应的起点
         CGRect CTRunFrame = [self frameForCTRunWithIndex:i CTLine:line origin:origin];//计算对应字符的frame
         if ([self isFrame:CTRunFrame containsPoint:point]) {//如果点击位置在字符范围内，响应时间，跳出循环
             NSLog(@"您点击到了第 %d 个字符，位于第 %d 行，然而他没有响应事件。",i,lineNum + 1);//点击到文字，然而没有响应的处理。可以做其他处理
@@ -207,8 +208,6 @@ static CGFloat widthCallBacks(void * ref) {
         }
     }
     NSLog(@"您没有点击到文字");//没有点击到文字，可以做其他处理
-
-    
 }
 
 ///字符frame计算
@@ -227,9 +226,9 @@ static CGFloat widthCallBacks(void * ref) {
     CGFloat offsetY = origin.y;//取到CTLine的起点Y
     CGFloat lineAscent;//初始化上下边距的变量
     CGFloat lineDescent;
-    NSArray * runs = (__bridge NSArray *)CTLineGetGlyphRuns(line);//获取所有CTRun
+    NSArray * runs = (__bridge NSArray *)CTLineGetGlyphRuns(line);//获取line对应的所有CTRun
     CTRunRef runCurrent;
-    for (int k = 0; k < runs.count; k ++) {//获取当前点击的CTRun
+    for (int k = 0; k < runs.count; k ++) {//获取当前字符对应的index的CTRun
         CTRunRef run = (__bridge CTRunRef)runs[k];
         CFRange range = CTRunGetStringRange(run);
         NSRange rangeOC = NSMakeRange(range.location, range.length);

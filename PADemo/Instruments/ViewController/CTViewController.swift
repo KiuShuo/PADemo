@@ -11,6 +11,11 @@
  
  [Swift之CoreText排版神器(长篇高能)](https://www.jianshu.com/p/e52a38e60e7c)
  [基于 CoreText 的排版引擎：基础](https://blog.devtang.com/2015/06/27/using-coretext-1/)
+ [CoreText实现图文混排之点击事件](https://www.jianshu.com/p/51c47329203e)
+ [CoreText实现图文混排之文字环绕及点击算法](https://www.jianshu.com/p/e154047b0f98)
+ 
+ [CoreText实现图文混排之尺寸估算及文本选择](https://www.jianshu.com/p/602682b683d6)
+ [coreText自定义富文本Label](https://blog.csdn.net/bihailantian1988/article/details/7696204)
  
  */
 
@@ -35,7 +40,7 @@ class CTViewController: BaseViewController {
         ////        label.textColor = UIColor.yellowColor()
         //
         //        let mutableAttrStr = NSMutableAttributedString(string: str)
-        //        mutableAttrStr.addAttributes(dic, range: NSMakeRange(0, 2))
+        //a        mutableAttrStr.addAttributes(dic, range: NSMakeRange(0, 2))
         //        mutableAttrStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFontOfSize(13),NSAttributedStringKey.underlineStyle: 1 ], range: NSMakeRange(2,8))
         //        label.attributedText = mutableAttrStr
         
@@ -64,7 +69,7 @@ class CTViewController: BaseViewController {
         ctextView.backgroundColor = UIColor.green
         view.addSubview(ctextView)
         
-        let displayView = DisplayView(frame: CGRect(x: 10, y: 310, width: self.view.bounds.width - 20, height: 200))
+        let displayView = DisplayView(frame: CGRect(x: 10, y: 310, width: self.view.bounds.width - 20, height: 100))
         displayView.backgroundColor = UIColor.green
         view.addSubview(displayView)
         

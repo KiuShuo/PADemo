@@ -34,12 +34,12 @@ class CTextView: UIView {
         let mutableAttrStr = NSMutableAttributedString(string: attrString)
         let framesetter = CTFramesetterCreateWithAttributedString(mutableAttrStr)
         let frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, mutableAttrStr.length), path.cgPath, nil)
-        
+        CTFrameDraw(frame, context!)
+        /*
         // 6 取出CTLine 准备一行一行绘制
         let lines = CTFrameGetLines(frame)
         let lineCount = CFArrayGetCount(lines)
         
-       
         var lineOrigins:[CGPoint] = Array(repeating:CGPoint.zero, count:lineCount)
         
         //把frame里每一行的初始坐标写到数组里，注意CoreText的坐标是左下角为原点
@@ -51,31 +51,26 @@ class CTextView: UIView {
         let font = UIFont.systemFont(ofSize: 14)
         var frameY:CGFloat = 0
         // 计算每行的高度 (总高度除以行数)
-        let lineHeight = height/CGFloat(lineCount)
-        for i in 0..<lineCount{
-            
+        let lineHeight = height / CGFloat(lineCount)
+        for i in 0..<lineCount {
             let lineRef = unsafeBitCast(CFArrayGetValueAtIndex(lines,i), to: CTLine.self)
-            
-            var lineAscent:CGFloat = 0
-            var lineDescent:CGFloat = 0
-            var leading:CGFloat = 0
+            var lineAscent: CGFloat = 0
+            var lineDescent: CGFloat = 0
+            var leading: CGFloat = 0
             //该函数除了会设置好ascent,descent,leading之外，还会返回这行的宽度
             CTLineGetTypographicBounds(lineRef, &lineAscent, &lineDescent, &leading)
-            
             var lineOrigin = lineOrigins[i]
-            
             //计算y值(注意左下角是原点)
             frameY = height - CGFloat(i + 1)*lineHeight - font.descender
             //设置Y值
             lineOrigin.y = frameY
-            
             //绘制
             context?.textPosition = CGPoint(x: lineOrigin.x, y: lineOrigin.y)
             CTLineDraw(lineRef, context!)
-            
             //调整坐标
             frameY = frameY - lineDescent
         }
+ */
         //
 //        CTFrameDraw(frame,context!)
     }

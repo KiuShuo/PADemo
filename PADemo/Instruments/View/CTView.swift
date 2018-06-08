@@ -23,9 +23,7 @@ class CTView: UIView {
         
         // 3
         let path = CGMutablePath()
-        
-        let path1 = UIBezierPath(roundedRect: self.bounds, cornerRadius:self.bounds.size.width/2)
-        
+        let path1 = UIBezierPath(roundedRect: self.bounds, cornerRadius:self.bounds.size.width / 2)
         path.addRect(self.bounds)
         
         // 4
@@ -33,7 +31,7 @@ class CTView: UIView {
         
         let mutableAttrStr = NSMutableAttributedString(string: attrString)
         mutableAttrStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20),
-            NSAttributedStringKey.foregroundColor:UIColor.red], range: NSMakeRange(0, 20))
+                                      NSAttributedStringKey.foregroundColor:UIColor.red], range: NSMakeRange(0, 20))
         mutableAttrStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 13),NSAttributedStringKey.underlineStyle: 1 ], range: NSMakeRange(20,18))
         let framesetter = CTFramesetterCreateWithAttributedString(mutableAttrStr)
         let frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, mutableAttrStr.length), path1.cgPath, nil)
