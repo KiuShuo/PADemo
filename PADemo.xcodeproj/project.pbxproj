@@ -71,6 +71,7 @@
 		8D51A6C620A4296F00E8DE86 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D51A6AF20A4186800E8DE86 /* CoreTelephony.framework */; };
 		8D51A6C720A4298000E8DE86 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D51A6B520A418A500E8DE86 /* CoreLocation.framework */; };
 		8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */; };
+		8D559C3720CF72510077B7BA /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D559C3620CF72510077B7BA /* HomeViewCell.swift */; };
 		8D5654261FC431FB008EE1CF /* PAAlertViewDelegater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5654251FC431FB008EE1CF /* PAAlertViewDelegater.swift */; };
 		8D5654281FC432E6008EE1CF /* PABaseAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */; };
 		8D61BF57206CB91600597764 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D61BF56206CB91600597764 /* KVOViewController.swift */; };
@@ -315,6 +316,7 @@
 		8D51A6BF20A4191600E8DE86 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		8D51A6C420A41D3600E8DE86 /* IFlyTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFlyTViewController.swift; sourceTree = "<group>"; };
 		8D53DC0B1F614C6A00E36939 /* RoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
+		8D559C3620CF72510077B7BA /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		8D5654251FC431FB008EE1CF /* PAAlertViewDelegater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAAlertViewDelegater.swift; sourceTree = "<group>"; };
 		8D5654271FC432E6008EE1CF /* PABaseAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PABaseAlertView.swift; sourceTree = "<group>"; };
 		8D5C9D991EE6B26C00749599 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -615,6 +617,7 @@
 			children = (
 				8D1F53CD1F453E60005E89AE /* HomeTableViewCell.swift */,
 				8D1F53CE1F453E60005E89AE /* HomeTableViewCell.xib */,
+				8D559C3620CF72510077B7BA /* HomeViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1651,6 +1654,7 @@
 				8D94D3721FA041C600CD24C1 /* LearnMenuViewController.swift in Sources */,
 				8D304BD11FECAFBC00474A37 /* SettingCell.swift in Sources */,
 				8D6E112F1F441D1400C3620D /* AlertTestViewController.swift in Sources */,
+				8D559C3720CF72510077B7BA /* HomeViewCell.swift in Sources */,
 				8D8F0A1920AC2D7900FD50A3 /* CTViewController.swift in Sources */,
 				8DC26BD11F29937A001A831F /* PAFpsViewController.swift in Sources */,
 				8DF8457B1F58FE08003DB6BA /* PACKSliderViewController.swift in Sources */,

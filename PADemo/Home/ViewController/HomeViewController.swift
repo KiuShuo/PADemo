@@ -81,18 +81,18 @@ class HomeViewController: BaseViewController {
     
     func convertControllerModelsToSectionModels(controllerModels: [ControllerModel]) {
         let cellModels = controllerModels.map { controllerModel -> PACellModel in
-            var cellModel = PACellModel(classType: HomeTableViewCell.self)
+            var cellModel = PACellModel(classType: HomeViewCell.self)
             cellModel.dataModel = controllerModel
-            //cellModel.isEnforceFrameLayout = true
+//            cellModel.isEnforceFrameLayout = true
             return cellModel
         }
         tableDelegater.sectionModels = [PASectionModel(cellModelArr: cellModels)]
     }
 
 }
-
 class HomeViewControllerTableDelegater: PATableDelegater {
-    
+
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let cellModel = self.cellModel(indexPath)
@@ -119,5 +119,6 @@ class HomeViewControllerTableDelegater: PATableDelegater {
          */
         viewController?.navigationController?.pushViewController(toVC, animated: true)
     }
+     
 
 }

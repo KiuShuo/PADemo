@@ -13,7 +13,7 @@ class ControllerModel: NSObject, Mappable {
 
     var id: String?
     var identifier: String = ""
-    var descriotion: String = ""
+    var descriotion: String?
     var isStoryboard: Bool = false // 1:true 0:false
     private var isStoryboardStr: String? {
         didSet {
