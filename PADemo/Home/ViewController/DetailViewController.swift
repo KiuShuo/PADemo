@@ -104,11 +104,15 @@ class DetailViewController: BaseViewController {
         aStr.dz_setFont(eFont, range: aRange)
         
         
-        let label = UILabel(frame: CGRect(x: 0, y: 150, width: 100, height: 50))
+        let label = UILabel(frame: CGRect(x: 150, y: 150, width: 100, height: 50))
         view.addSubview(label)
         label.textColor = UIColor.white
         label.backgroundColor = UIColor.red
         label.attributedText = aStr
+        label.layer.shadowOpacity = 0.5 // 0-1 阴影的透明度
+        label.layer.shadowColor = UIColor.paGray.cgColor // 阴影的颜色
+        label.layer.shadowRadius = 0.5 // 阴影的模糊度
+        label.layer.shadowOffset = CGSize(width: -3, height: 3) // 默认(0, -3)控制阴影在水平方向和竖直方向的偏移量
     }
     
     func getImage(urlString: String) -> UIImage? {
