@@ -66,18 +66,27 @@ extension PATableDelegater: UITableViewDelegate {
             return cellHeight(tableDelegateConfigBlock)
         } else if cellModel.height > -1 {
             return cellModel.height
-        } else if tableView.rowHeight > -1 {
+        } else if cellModel.isRowHeight {
             return tableView.rowHeight
         }
         tableView.registCell(withCellModels: [cellModel])
-        let height =  tableView.fd_heightForCell(withIdentifier: cellModel.identifier, cacheBy: indexPath, configuration: { cell in
-            (cell as? UITableViewCell)?.bounds.size.width = tableView.bounds.width
-            (cell as? UITableViewCell)?.fd_enforceFrameLayout = cellModel.isEnforceFrameLayout
-            if var aCell = cell as? PATableViewCellProtocol {
-                aCell.dataModel = cellModel.dataModel
-            }
-        })
-        return height
+        if cellModel.isCacheCellHeight {
+            return tableView.fd_heightForCell(withIdentifier: cellModel.identifier, cacheBy: indexPath, configuration: { cell in
+                (cell as? UITableViewCell)?.bounds.size.width = tableView.bounds.width
+                (cell as? UITableViewCell)?.fd_enforceFrameLayout = cellModel.isEnforceFrameLayout
+                if var aCell = cell as? PATableViewCellProtocol {
+                    aCell.dataModel = cellModel.dataModel
+                }
+            })
+        } else {
+            return tableView.fd_heightForCell(withIdentifier: cellModel.identifier, configuration: { cell in
+                (cell as? UITableViewCell)?.bounds.size.width = tableView.bounds.width
+                (cell as? UITableViewCell)?.fd_enforceFrameLayout = cellModel.isEnforceFrameLayout
+                if var aCell = cell as? PATableViewCellProtocol {
+                    aCell.dataModel = cellModel.dataModel
+                }
+            })
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

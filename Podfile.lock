@@ -72,7 +72,7 @@ DEPENDENCIES:
   - YYModel (= 1.0.4)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AMap2DMap-NO-IDFA
     - AMapFoundation-NO-IDFA
     - AMapSearch-NO-IDFA
@@ -130,6 +130,6 @@ SPEC CHECKSUMS:
   UMengUShare: 740664d1dd5cc2fb2cc3325d61e4b35539aa9c78
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 8004abd569806debffd045b923200eb628d04f3a
+PODFILE CHECKSUM: 7e135f14933e74274fea91ddb9f9ce6922155811
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

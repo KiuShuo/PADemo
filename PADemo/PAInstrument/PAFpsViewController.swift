@@ -51,6 +51,21 @@ class PAFpsViewController: BaseViewController {
             default: ()
             }
         }
+        
+        tableViewDelegate.didSelectCell = { [weak self] params in
+            let rectInTableView = params.tableView.rectForRow(at: params.indexPath)
+            let rectInView = params.tableView.convert(rectInTableView, to: self?.view)
+            let showPoint = CGPoint(x: rectInView.origin.x + 32, y: rectInView.origin.y + 40)
+            self?.showMenuVC(point: showPoint)
+        }
+        
+    }
+    
+    func showMenuVC(point: CGPoint) {
+        let vc = MenuViewController(origin: point)
+        vc.dataSource = ["西医", "中医", "口腔"]
+        addChildViewController(vc)
+        view.addSubview(vc.view)
     }
 
 }

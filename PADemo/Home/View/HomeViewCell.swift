@@ -25,6 +25,25 @@ class HomeViewCell: UITableViewCell, PATableViewCellProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+//        addShadowView()
+        contentView.backgroundColor = UIColor.paBackground
+        backgroundColor = UIColor.paBackground
+    }
+    
+    func addShadowView() {
+        let view = UIView()
+//        contentView.addSubview(view)
+        contentView.insertSubview(view, at: 0)
+        view.mas_makeConstraints { (make) in
+            make!.top.equalTo()
+            make!.left.equalTo()(2)
+            make!.right.equalTo()(-2)
+            make!.bottom.equalTo()(0)
+        }
+        view.backgroundColor = UIColor.green
+        view.layoutIfNeeded()
+        view.addshadow(top: false, left: true, bottom: false, right: true, shadowRadius: 3)
+        view.layer.shadowColor = UIColor.red.cgColor
     }
 
 }

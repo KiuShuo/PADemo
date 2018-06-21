@@ -232,3 +232,56 @@ class UILabelPadding : UILabel {
     }
     
 }
+
+extension UIView {
+    
+    func setBottomShadow() {
+        layer.cornerRadius = 3
+//        clipsToBounds = true
+        layer.shadowColor = UIColor.paGray.cgColor
+        layer.shadowOffset = CGSize(width:0.25, height:3)
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = 1.0
+    }
+    
+    func addshadow(top: Bool, left: Bool, bottom: Bool, right: Bool, shadowRadius: CGFloat = 2.0) {
+        layer.masksToBounds = false
+        layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        layer.shadowRadius = shadowRadius
+        layer.shadowOpacity = 0.7
+        let path = UIBezierPath()
+        let x: CGFloat = 0
+        let y: CGFloat = 0
+        let viewWidth = self.frame.width
+        let viewHeight = self.frame.height
+        let centerX = viewWidth / 2
+        let centerY = viewHeight / 2
+        path.move(to: CGPoint(x: x, y: y))
+        if (!top) {
+            path.move(to: CGPoint(x: viewWidth, y: y))
+//            path.addLine(to: CGPoint(x: centerX, y: centerY))
+        } else {
+            path.addLine(to: CGPoint(x: viewWidth, y: y))
+        }
+        if (!right) {
+            path.move(to: CGPoint(x: viewWidth, y: viewHeight))
+//            path.addLine(to: CGPoint(x: centerX, y: centerY))
+        } else {
+            path.addLine(to: CGPoint(x: viewWidth, y: viewHeight))
+        }
+        if (!bottom) {
+            path.move(to: CGPoint(x: x, y: viewHeight))
+//            path.addLine(to: CGPoint(x: centerX, y: centerY))
+        } else {
+            path.addLine(to: CGPoint(x: x, y: viewHeight))
+        }
+        if (!left) {
+            path.move(to: CGPoint(x: x, y: y))
+//            path.addLine(to: CGPoint(x: centerX, y: centerY))
+        } else {
+            path.addLine(to: CGPoint(x: x, y: y))
+        }
+//        path.close()
+        layer.shadowPath = path.cgPath
+    }
+}

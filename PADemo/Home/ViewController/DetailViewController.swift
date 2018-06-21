@@ -28,7 +28,7 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         testPAButton()
-        attributedString()
+//        attributedString()
 //        testForPAView()
         
 //        let imageUrlStr = "https://cdn.pixabay.com/photo/2017/03/13/10/31/greylag-goose-2139296_640.jpg"
@@ -113,6 +113,31 @@ class DetailViewController: BaseViewController {
         label.layer.shadowColor = UIColor.paGray.cgColor // 阴影的颜色
         label.layer.shadowRadius = 0.5 // 阴影的模糊度
         label.layer.shadowOffset = CGSize(width: -3, height: 3) // 默认(0, -3)控制阴影在水平方向和竖直方向的偏移量
+        
+//        let frame = CGRect(x: 300, y: 150, width: 50, height: 50)
+//        let bottomView = UIView(frame: frame)
+//        bottomView.backgroundColor = UIColor.white
+//        bottomView.clipsToBounds = true
+//        bottomView.layer.cornerRadius = 3
+//        view.addSubview(bottomView)
+        
+        
+        let shadowView0 = ShadowView(frame: CGRect(x: 300, y: 100, width: 50, height: 50))
+        shadowView0.showShadow(top: true, left: true, bottom: false, right: true)
+        view.addSubview(shadowView0)
+        
+        let shadowView = ShadowView(frame: CGRect(x: 300, y: 150, width: 50, height: 50))
+        shadowView.showShadow(top: false, left: true, bottom: false, right: true)
+        view.addSubview(shadowView)
+        
+        let shadowView1 = ShadowView(frame: CGRect(x: 300, y: 200, width: 50, height: 50))
+        shadowView1.showShadow(top: false, left: true, bottom: true, right: true)
+        view.addSubview(shadowView1)
+
+//        let topFrame = CGRect(x: 2, y: 0, width: 46, height: 47)
+//        let topView = UIView(frame: topFrame)
+//        topView.backgroundColor = UIColor.white
+//        bottomView.addSubview(topView)
     }
     
     func getImage(urlString: String) -> UIImage? {

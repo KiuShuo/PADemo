@@ -25,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        var arr = ["1", "2", nil]
+        
+        let flat = arr.flatMap({$0})
+        print("flat = \(flat)")
+        
+        
+        
         DispatchQueue.global().async {
             AMapServices.shared().apiKey = "PAGaodeMapCommonStruct.kGaodeMapKey"
         }

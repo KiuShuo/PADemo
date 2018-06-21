@@ -15,6 +15,8 @@ struct PACellModel {
     var identifier: String
     /// 默认高度为-1时，由PATableDelegater内部计算高度，适用于约束加完全的cell
     var height: CGFloat = -1
+    /// 当设置过tableView.rowHeight时 且使用tableDelegater自动计算cell高度时，务必将该值设为true
+    var isRowHeight: Bool = false
     /// cell的注册方法 nib或class
     var isRegisterByClass: Bool = false
     /// cell的类型名
@@ -23,6 +25,7 @@ struct PACellModel {
     var dataModel: PAModelBaseProtocol? = nil
     var isEnforceFrameLayout: Bool = false
     var didSelecte: ((PACellModel) -> Void)? = nil
+    var isCacheCellHeight: Bool = true
     
     init(identifier: String, height: CGFloat, isRegisterByClass: Bool = false, classType: AnyClass? = nil) {
         self.identifier = identifier

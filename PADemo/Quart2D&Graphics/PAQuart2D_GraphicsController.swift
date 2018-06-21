@@ -42,7 +42,6 @@ class PAQuart2D_GraphicsController: BaseViewController {
         view04.backgroundColor = UIColor.green
         view.addSubview(view04)
         
-        
         let view05 = PAView05(frame: CGRect(x: 10, y: 150, width: 170, height: 300))
         view05.backgroundColor = UIColor.green
         view.addSubview(view05)
@@ -190,17 +189,30 @@ class PAView01: UIView {
         let context = UIGraphicsGetCurrentContext()
         // 描述路径
         let path = UIBezierPath()
-        let sourcePoint = CGPoint(x: 10, y: 10)
-        let endPoint = CGPoint(x: 40, y: 40)
+        let sourcePoint = CGPoint(x: 2, y: 10)
+        let endPoint = CGPoint(x: 2, y: 40)
         path.move(to: sourcePoint)
         path.addLine(to: endPoint)
         
+        let sourcePoint1 = CGPoint(x: 13, y: 10)
+        let endPoint1 = CGPoint(x: 43, y: 40)
+        
+        path.move(to: sourcePoint1)
+        path.addLine(to: endPoint1)
+        
         context?.addPath(path.cgPath)
-//        UIColor.white.setStroke() // 设置路径的颜色
-//        UIColor.red.setFill() // 设置填充颜色
-        UIColor.yellow.set()  // 设置路径和填充颜色
-        context?.setLineWidth(5) // 设置线宽
+        UIColor.white.setStroke() // 设置路径的颜色
+        //        UIColor.red.setFill() // 设置填充颜色
+        UIColor.paLightGray.set()  // 设置路径和填充颜色
+        context?.setLineWidth(2) // 设置线宽
         context?.strokePath() // 显示路径
+        
+        layer.shadowOpacity = 1
+        layer.shadowPath = path.cgPath
+        layer.shadowColor = UIColor.paGray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 3)
+        layer.shadowRadius = 5
+        
     }
     
 }

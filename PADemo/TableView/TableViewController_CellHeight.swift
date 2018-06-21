@@ -86,13 +86,13 @@ class TableViewController_CellHeight: BaseViewController {
         paNavigationBarHidden = true
         setupNavigationView()
         
-        let window = UIApplication.shared.keyWindow
-        let guideView = PAIntegrationGuideView.instanceFromXib()
-        guideView.frame = window!.frame
-        guideView.didmiss = {
-            guideView.removeFromSuperview()
-        }
-        window!.addSubview(guideView)
+//        let window = UIApplication.shared.keyWindow
+//        let guideView = PAIntegrationGuideView.instanceFromXib()
+//        guideView.frame = window!.frame
+//        guideView.didmiss = {
+//            guideView.removeFromSuperview()
+//        }
+//        window!.addSubview(guideView)
     }
     
     let navigationView = PACustomNavigationView.instanceFromXib()
@@ -209,25 +209,22 @@ extension TableViewController_CellHeight: UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = PATableViewModelDemoController()
-//        vc.view.backgroundColor = UIColor.white
-//        if indexPath.row % 2 == 0 {
-//            navigationController?.pushViewController(vc, animated: true)
-//        } else {
-//            navigationController?.pushViewController(vc, animated: true)
-//        }
-        guard let cell = tableView.cellForRow(at: indexPath) as? CustomTableViewCell else { return }
-        guard let window = UIApplication.shared.keyWindow else { return }
-        let point = window.convert(cell.rightView.center, from: cell.contentView)
-        
-        blackView.backgroundColor = UIColor.black
-        blackView.center = point
-        let coverView = UIView(frame: window.frame)
-        coverView.backgroundColor = UIColor.black
-        coverView.alpha = 0.3
-        window.addSubview(coverView)
-        blackView.removeFromSuperview()
-        window.addSubview(blackView)
+        let vc = PATableViewModelDemoController()
+        vc.view.backgroundColor = UIColor.white
+        navigationController?.pushViewController(vc, animated: true)
+//
+//        guard let cell = tableView.cellForRow(at: indexPath) as? CustomTableViewCell else { return }
+//        guard let window = UIApplication.shared.keyWindow else { return }
+//        let point = window.convert(cell.rightView.center, from: cell.contentView)
+//
+//        blackView.backgroundColor = UIColor.black
+//        blackView.center = point
+//        let coverView = UIView(frame: window.frame)
+//        coverView.backgroundColor = UIColor.black
+//        coverView.alpha = 0.3
+//        window.addSubview(coverView)
+//        blackView.removeFromSuperview()
+//        window.addSubview(blackView)
     }
     
 }

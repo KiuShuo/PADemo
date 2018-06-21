@@ -6,6 +6,14 @@
 //  Copyright © 2017年 shuo. All rights reserved.
 //
 
+/*
+ // tableView只更新cell高度不更新cell：
+// 直接写下面的代码，不要再在中间添加添加什么reloadRow...
+ tableView.beginUpdates()
+ tableView.endUpdates()
+ 
+ */
+
 import UIKit
 import Masonry
 
@@ -32,6 +40,9 @@ class PATableViewModelDemoController: BaseViewController {
             self?.navigationController?.popViewController(animated: true)
         }
     }
+    
+    var rows: [Int] = []
+    var inputText: [Int: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,9 +81,15 @@ class PATableViewModelDemoController: BaseViewController {
         tableView.reloadData()
     }
     
+    var persons: [PAPerson] = []
+    
     func setupSectionModels() -> [PASectionModel] {
         let dataSource = listTestModel.personList()
-        var sectionModel = PASectionModel(cellModel: PATableViewModelDemoCell.cellModel, dataModels: dataSource)
+        persons = dataSource
+        var cellModel = PATableViewModelDemoCell.cellModel
+        cellModel.isEnforceFrameLayout = true
+        cellModel.isCacheCellHeight = false
+        var sectionModel = PASectionModel(cellModel: cellModel, dataModels: dataSource)
         var headerViewModel = PAHeaderFooterViewModel(identifier: "headerView")
         let headerView = UITableViewHeaderFooterView(reuseIdentifier: "headerView")
         headerView.contentView.backgroundColor = UIColor.red
@@ -90,6 +107,21 @@ class PATableViewModelDemoController: BaseViewController {
         tableView.mas_makeConstraints { (make) in
             make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
         }
+        tableView.estimatedRowHeight = 10
+        
+        tableDelegater.configureCell = { [weak self] param in
+            if var aCell = param.cell as? PATableViewCellProtocol {
+                aCell.dataModel = param.cellModel.dataModel
+            }
+            self?.configure(cell: (param.cell as! PATableViewModelDemoCell), indexPath: param.indexPath)
+        }
+    }
+    
+    func configure(cell: PATableViewModelDemoCell, indexPath: IndexPath) {
+        cell.changeHeight = { [weak self] text in
+            self?.tableView.beginUpdates()
+            self?.tableView.endUpdates()
+        }
     }
     
 }
@@ -100,5 +132,21 @@ class PATableViewModelDemoControllerDelegater: PATableDelegater {
         let personListVC = PAPersonListViewController()
         viewController?.navigationController?.pushViewController(personListVC, animated: true)
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let cellModel = self.cellModel(indexPath)
+//        tableView.registCell(withCellModels: [cellModel])
+//        if cellModel.identifier == String(describing: PATableViewModelDemoCell.self) {
+//            let height = tableView.fd_heightForCell(withIdentifier: cellModel.identifier, configuration: { cell in
+//                (cell as? UITableViewCell)?.bounds.size.width = tableView.bounds.width
+//                (cell as? UITableViewCell)?.fd_enforceFrameLayout = cellModel.isEnforceFrameLayout
+//                if var aCell = cell as? PATableViewCellProtocol {
+//                    aCell.dataModel = cellModel.dataModel
+//                }
+//            })
+//            return height
+//        }
+//        return super.tableView(tableView, heightForRowAt: indexPath)
+//    }
     
 }
