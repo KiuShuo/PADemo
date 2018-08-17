@@ -19,6 +19,7 @@ struct PACellModel {
     var isRowHeight: Bool = false
     /// cell的注册方法 nib或class
     var isRegisterByClass: Bool = false
+    var isNeedRegister: Bool = true
     /// cell的类型名
     var classType: AnyClass?
     /// cell所需要的业务数据 复用比较多的cell中包含一个自己的CellDataModelClass，外部使用的地方统一生成该类型的Model

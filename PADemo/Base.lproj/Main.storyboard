@@ -49,32 +49,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="detaildetail" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ens-r6-AQG">
-                                                    <rect key="frame" x="10" y="41.5" width="317" height="16"/>
+                                                    <rect key="frame" x="20" y="10" width="307" height="47.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2i-QO-uXC">
-                                                    <rect key="frame" x="10" y="10" width="44" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ens-r6-AQG" secondAttribute="trailing" constant="20" symbolic="YES" id="0I2-FG-ajs"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="B2i-QO-uXC" secondAttribute="trailing" constant="20" symbolic="YES" id="0gr-ac-gGk"/>
-                                                <constraint firstItem="B2i-QO-uXC" firstAttribute="top" secondItem="Kou-wF-elt" secondAttribute="top" constant="10" id="5R6-Ua-rYW"/>
-                                                <constraint firstItem="Ens-r6-AQG" firstAttribute="top" secondItem="B2i-QO-uXC" secondAttribute="bottom" constant="10" id="8ZP-cf-yU4"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ens-r6-AQG" secondAttribute="bottom" constant="10" id="Fbp-b8-FKU"/>
-                                                <constraint firstItem="B2i-QO-uXC" firstAttribute="leading" secondItem="Kou-wF-elt" secondAttribute="leading" constant="10" id="Orw-eR-fMM"/>
-                                                <constraint firstItem="Ens-r6-AQG" firstAttribute="leading" secondItem="B2i-QO-uXC" secondAttribute="leading" id="iF1-pg-iVz"/>
+                                                <constraint firstItem="Ens-r6-AQG" firstAttribute="top" secondItem="Kou-wF-elt" secondAttribute="top" constant="10" id="fhV-gS-A0k"/>
+                                                <constraint firstItem="Ens-r6-AQG" firstAttribute="leading" secondItem="Kou-wF-elt" secondAttribute="leading" constant="20" id="mtV-8p-ESo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="detailLabel" destination="Ens-r6-AQG" id="dLX-Yq-vf8"/>
-                                            <outlet property="titleLabel" destination="B2i-QO-uXC" id="9dK-sC-FBl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

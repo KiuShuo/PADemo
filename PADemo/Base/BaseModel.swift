@@ -17,3 +17,12 @@ public protocol PAModelBaseProtocol {
 extension Mapper: PAModelBaseProtocol {
     
 }
+
+//extension NSObject: PAModelBaseProtocol {
+    //
+//}
+
+extension Array: PAModelBaseProtocol {
+    //
+}
+

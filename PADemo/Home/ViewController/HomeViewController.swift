@@ -74,6 +74,7 @@ class HomeViewController: BaseViewController {
     }
     
     func updateUI() {
+//        setupSectionModel()
         convertControllerModelsToSectionModels(controllerModels: viewModel.controllerModels)
         tableView.reloadData()
         let frame = CGRect(x: 0, y: 0, width: UIScreen.width - 28, height: 80)
@@ -85,14 +86,27 @@ class HomeViewController: BaseViewController {
         let cellModels = controllerModels.map { controllerModel -> PACellModel in
             var cellModel = PACellModel(classType: HomeViewCell.self)
             cellModel.dataModel = controllerModel
-            cellModel.height = 44
-//            cellModel.isEnforceFrameLayout = true
+            cellModel.isNeedRegister = false
             return cellModel
         }
 //        let sectionModels = cellModels.map { (cellModel) -> PASectionModel in
 //            return PASectionModel(cellModelArr: [cellModel])
 //        }
         tableDelegater.sectionModels = [PASectionModel(cellModelArr: cellModels)]
+    }
+    
+    func setupSectionModel() {
+        let model1 = DetailModel()
+        model1.aNumber = "#123 #23 #23 #34 #56"
+        let model2 = DetailModel()
+        model2.aNumber = "#23 #23 #23 #34 #56 #123 #23 #23 #34 #56"
+        let model3 = DetailModel()
+        model3.aNumber = "#31 #23 #23 #34 #56 #123 #23 #23 #34 #56"
+        let model4 = DetailModel()
+        model4.aNumber = "#40 #23 #23 #34 #56"
+        let models: [DetailModel] = [model1, model2, model3, model4]
+        let cellModel = PACellModel(classType: PAMovingDossierListCell.self, dataModel: models)
+        tableDelegater.sectionModels = [PASectionModel(cellModelArr: [cellModel])]
     }
 
 }
@@ -101,41 +115,9 @@ class HomeViewController: BaseViewController {
 
 class HomeViewControllerTableDelegater: PATableDelegater {
     
-    func insertBottomView(in parentView: UIView, needBottom: Bool = false) {
-         parentView.viewWithTag(201)?.removeFromSuperview()
-        
-//        parentView.backgroundColor = UIColor.paBackground
-//        parentView.clipsToBounds = true
-//        let bottomView = UIView()
-//        bottomView.clipsToBounds = true
-//        bottomView.tag = 201
-//        bottomView.backgroundColor = UIColor.white
-//        parentView.insertSubview(bottomView, at: 0)
-//        bottomView.mas_makeConstraints { (make) in
-//            make!.left.right().top().equalTo()
-//            make!.bottom.equalTo()(-2)
-//        }
-//        bottomView.setBottomShadow()
-        let shadowView = ShadowView()
-        shadowView.tag = 201
-        parentView.insertSubview(shadowView, at: 0)
-        shadowView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()
-        }
-        shadowView.layoutIfNeeded()
-        shadowView.showShadow(top: false, left: true, bottom: needBottom, right: true)
-    }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        
-//        cell.contentView.setBottomShadow()
-        if indexPath.row == sectionModels[indexPath.section].cellModelArr.count - 1 {
-            insertBottomView(in: cell.contentView, needBottom: true)
-        } else {
-            insertBottomView(in: cell.contentView)
-        }
         return cell
     }
 

@@ -8,8 +8,8 @@
 
 import UIKit
 import YYModel
-
-class DetailModel: NSObject, YYModel {
+//NSObject, YYModel,
+class DetailModel:  PAModelBaseProtocol {
     var aNumber: String?
     var name: String?
     var age: String = ""

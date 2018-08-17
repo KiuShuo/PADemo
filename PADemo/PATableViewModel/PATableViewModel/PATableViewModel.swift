@@ -39,6 +39,9 @@ extension UITableView {
             if hadRegistedIdentifiers.contains(identifier) {
                 continue
             }
+            if !cellModel.isNeedRegister {
+                continue
+            }
             if cellModel.isRegisterByClass {
                 register(cellModel.classType, forCellReuseIdentifier: identifier)
             } else {

@@ -67,6 +67,7 @@ class DetailViewController: BaseViewController {
         setupNavigationItem()
         
 //        testYYModel()
+        showPAReplicatorView()
     }
     
     func setupNavigationItem() {
@@ -104,40 +105,28 @@ class DetailViewController: BaseViewController {
         aStr.dz_setFont(eFont, range: aRange)
         
         
-        let label = UILabel(frame: CGRect(x: 150, y: 150, width: 100, height: 50))
-        view.addSubview(label)
+        let layer = UIView()
+        layer.frame = CGRect(x: 150, y: 150, width: 100, height: 250)
+        layer.backgroundColor = UIColor.white//.cgColor
+        layer.layer.shadowColor = UIColor.paGray.cgColor
+        layer.layer.shadowOffset = CGSize(width: 0, height: 5)
+        layer.layer.shadowOpacity = 0.7
+        layer.layer.cornerRadius = 3
+        self.view.addSubview(layer)
+        
+        let label = UILabel(frame: CGRect(x: 190, y: 150, width: 60, height: 50))
+//        view.addSubview(label)
         label.textColor = UIColor.white
         label.backgroundColor = UIColor.red
-        label.attributedText = aStr
-        label.layer.shadowOpacity = 0.5 // 0-1 阴影的透明度
-        label.layer.shadowColor = UIColor.paGray.cgColor // 阴影的颜色
-        label.layer.shadowRadius = 0.5 // 阴影的模糊度
-        label.layer.shadowOffset = CGSize(width: -3, height: 3) // 默认(0, -3)控制阴影在水平方向和竖直方向的偏移量
-        
-//        let frame = CGRect(x: 300, y: 150, width: 50, height: 50)
-//        let bottomView = UIView(frame: frame)
-//        bottomView.backgroundColor = UIColor.white
-//        bottomView.clipsToBounds = true
-//        bottomView.layer.cornerRadius = 3
-//        view.addSubview(bottomView)
-        
-        
-        let shadowView0 = ShadowView(frame: CGRect(x: 300, y: 100, width: 50, height: 50))
-        shadowView0.showShadow(top: true, left: true, bottom: false, right: true)
-        view.addSubview(shadowView0)
-        
-        let shadowView = ShadowView(frame: CGRect(x: 300, y: 150, width: 50, height: 50))
-        shadowView.showShadow(top: false, left: true, bottom: false, right: true)
-        view.addSubview(shadowView)
-        
-        let shadowView1 = ShadowView(frame: CGRect(x: 300, y: 200, width: 50, height: 50))
-        shadowView1.showShadow(top: false, left: true, bottom: true, right: true)
-        view.addSubview(shadowView1)
+//        label.attributedText = aStr
 
-//        let topFrame = CGRect(x: 2, y: 0, width: 46, height: 47)
-//        let topView = UIView(frame: topFrame)
-//        topView.backgroundColor = UIColor.white
-//        bottomView.addSubview(topView)
+//        label.layer.borderWidth = 10//UIScreen.separatorSize
+//        label.layer.borderColor = UIColor.paDividing.cgColor
+//        label.layer.cornerRadius = 1
+//        label.layer.shadowOpacity = 1 // 0-1 阴影的透明度
+//        label.layer.shadowColor = UIColor.green.cgColor // 阴影的颜色
+//        label.layer.shadowRadius = 3 // 阴影的模糊度
+//        label.layer.shadowOffset = CGSize(width: 0, height: 3) // 默认(0, -3)控制阴影在水平方向和竖直方向的偏移量
     }
     
     func getImage(urlString: String) -> UIImage? {
@@ -199,9 +188,9 @@ extension DetailViewController {
     
     func testYYModel() {
         let dic: [String: Any] = ["aNumber": 68.99, "name": "xcuo", "age": 12]
-        let detailModel = DetailModel.yy_model(with: dic)
-        print(detailModel?.aNumber ?? "")
-        print("age = \(detailModel?.age ?? "")")
+//        let detailModel = DetailModel.yy_model(with: dic)
+//        print(detailModel?.aNumber ?? "")
+//        print("age = \(detailModel?.age ?? "")")
 //        print("ageStr = \(detailModel?.ageStr ?? "")")
     }
     
@@ -258,6 +247,15 @@ extension DetailViewController {
         maskLayer.path = maskPath.cgPath
         
         view.layer.mask = maskLayer
+    }
+    
+}
+
+extension DetailViewController {
+    
+    func showPAReplicatorView() {
+        let replicatorView = PAReplicatorView(frame: CGRect(x: 10, y: 180, width: 53, height: 8))
+        view.addSubview(replicatorView)
     }
     
 }
@@ -382,4 +380,6 @@ struct PADateHandel {
         return dateFormatter.date(from: dateString)
     }
 }
+
+
 

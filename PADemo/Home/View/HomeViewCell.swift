@@ -11,39 +11,58 @@ import UIKit
 class HomeViewCell: UITableViewCell, PATableViewCellProtocol {
 
     @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
     
     var dataModel: PAModelBaseProtocol? {
         didSet {
             guard let controllerModel = dataModel as? ControllerModel else {
                 return
             }
-            titleLabel.text = controllerModel.identifier
-            detailLabel.text = controllerModel.descriotion
+            detailLabel.text = controllerModel.identifier + controllerModel.descriotion.noneNull
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        addShadowView()
-        contentView.backgroundColor = UIColor.paBackground
+        contentView.backgroundColor = UIColor.white
         backgroundColor = UIColor.paBackground
     }
     
-    func addShadowView() {
-        let view = UIView()
-//        contentView.addSubview(view)
-        contentView.insertSubview(view, at: 0)
-        view.mas_makeConstraints { (make) in
-            make!.top.equalTo()
-            make!.left.equalTo()(2)
-            make!.right.equalTo()(-2)
-            make!.bottom.equalTo()(0)
-        }
-        view.backgroundColor = UIColor.green
-        view.layoutIfNeeded()
-        view.addshadow(top: false, left: true, bottom: false, right: true, shadowRadius: 3)
-        view.layer.shadowColor = UIColor.red.cgColor
-    }
 
 }
+
+
+class HomeTestCell: UITableViewCell, PATableViewCellProtocol {
+    
+    var detailLabel: UILabel!
+    var dataModel: PAModelBaseProtocol? {
+        didSet {
+            guard let controllerModel = dataModel as? ControllerModel else {
+                return
+            }
+            detailLabel.text = controllerModel.identifier + controllerModel.descriotion.noneNull
+        }
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.awakeFromNib()
+        contentView.backgroundColor = UIColor.white
+        backgroundColor = UIColor.paBackground
+        detailLabel = UILabel()
+        detailLabel.numberOfLines = 0
+        contentView.addSubview(detailLabel)
+        detailLabel.mas_makeConstraints { (make) in
+            make!.left.equalTo()(10)
+            make!.top.equalTo()(10)
+            make!.right.equalTo()(-10)
+            make!.bottom.equalTo()(-10)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+}
+
