@@ -78,14 +78,14 @@ extension PASegmentTestViewController: PASegmentedViewDelegate {
     }
     
     func segmentedViewHeaderMinHeight(in segmentedView: PASegmentedView) -> CGFloat {
-        return 180
+        return 0
     }
     
     func segmentedView(_ view: PASegmentedView, didShow index: Int) {
         let tableView = self.tableViews[index]
         if tableView.isFirstLoad {
             tableView.isFirstLoad = false
-            tableView.mj_header.beginRefreshing()
+//            tableView.mj_header.beginRefreshing()
         }
         
         let size = CGSize(width: UIScreen.width, height: CGFloat.greatestFiniteMagnitude)

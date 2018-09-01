@@ -41,7 +41,7 @@ class PAIntegrationSituationTableView: UITableView {
             tableDelegater.sectionModels = [PATableViewModel.getSectionModel(cellModelTupleArr: (cellModel, 20))]
         }
         
-        setupRefresh()
+//         setupRefresh()
     }
     
     
