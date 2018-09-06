@@ -31,7 +31,6 @@ class WebViewController: BaseViewController {
         let request = URLRequest(url: urlEncode()!)
         webView.load(request)
         setupNavigationItem()
-        progressView.transform = CGAffineTransform(scaleX: 1.0, y: 1.5)
     }
     
     deinit {
@@ -69,30 +68,9 @@ class WebViewController: BaseViewController {
         navigationController?.pushViewController(webViewController, animated: true)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let request = URLRequest(url: urlEncode()!)
-        webView.load(request)
-    }
-    
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        super.motionBegan(motion, with: event)
-        let request = URLRequest(url: urlEncode()!)
-        webView.load(request)
-    }
-    
-    func getSubViews(view: UIView) {
-        for subView in view.subviews {
-            if subView.subviews.count > 0 {
-                getSubViews(view: subView)
-            } else {
-                print("subView = \(subView)")
-            }
-        }
-    }
-    
     // url编码
     func urlEncode() -> URL? {
-        let urlString = "http://www.baidu.com/"
+        let urlString = "https://www.google.com/"
         if let encodeUrlStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             debugLog("encodeUrlStr = \(encodeUrlStr)")
             if let decodeUrlString = encodeUrlStr.removingPercentEncoding {
@@ -118,7 +96,7 @@ extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         progressView.transform = CGAffineTransform(scaleX: 1.0, y: 1.4)
         progressView.isHidden = false
-        webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='#FF6602'", completionHandler: nil)
+        // webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='#FF6602'", completionHandler: nil)
         print("didStartProvisionalNavigation navigation")
     }
     
@@ -127,7 +105,7 @@ extension WebViewController: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='#FF6602'", completionHandler: nil)
+        // webView.evaluateJavaScript("document.getElementsByTagName('body')[0].style.background='#FF6602'", completionHandler: nil)
         print("didFailProvisionalNavigation navigation")
     }
     

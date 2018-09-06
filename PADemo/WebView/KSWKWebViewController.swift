@@ -94,9 +94,27 @@ extension KSWKWebViewController: WKScriptMessageHandler {
         }
     }
     
+    func chongdingxiangjiaohu(urlString: String) {
+        let components = urlString.components(separatedBy: "://")
+        if components.count > 1 {
+            let funcName = components[1].components(separatedBy: "?").first
+            let params = queryComponents(urlStr: urlString)
+            print("funcName = \(funcName ?? ""), params = \(params)")
+        }
+    }
+    
 }
 
 extension KSWKWebViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
+        if let url = navigationAction.request.url, url.scheme == "pawjscheme" {
+            chongdingxiangjiaohu(urlString: url.absoluteString)
+            decisionHandler(.cancel)
+            return
+        }
+        decisionHandler(.allow)
+    }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // 加载完页面后调用里面的JS代码

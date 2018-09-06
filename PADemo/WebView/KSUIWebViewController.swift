@@ -51,16 +51,17 @@ class KSUIWebViewController: BaseViewController {
     }
     
     var context: JSContext!
-}
-
-extension KSUIWebViewController: UIWebViewDelegate {
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        if let aContext = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext {
-            context = aContext
-        }
-        
+    // 使用JavaScript实现js与native的交互
+    func useJavaScriptCore() {
         // 原生调用JS
+//        let context = JSContext()
+        context.evaluateScript("var num = 5 + 5")
+        context.evaluateScript("var names = ['Grace', 'Ada', 'Margaret']")
+        context.evaluateScript("var triple = function(value) { return value * 3 }")
+        let tripleNum: JSValue = context.evaluateScript("triple(num)")
+        print(tripleNum.toNumber().intValue)
+        
         let jsValue = context.objectForKeyedSubscript("sumValue")
         let resultValue = jsValue?.call(withArguments: [1, 2])
         let result = resultValue?.toInt32()
@@ -89,17 +90,19 @@ extension KSUIWebViewController: UIWebViewDelegate {
         }
         let configureRightNavigationItemCovent = unsafeBitCast(configureRightNavigationItem, to: AnyObject.self)
         context.setObject(configureRightNavigationItemCovent, forKeyedSubscript: "addNavigationRightItem" as NSCopying & NSObjectProtocol)
-        
     }
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if let urlStr = request.url?.absoluteString {
-            if urlStr.hasPrefix("pawjscheme") {
-                chongdingxiangjiaohu(urlString: urlStr)
-            }
+}
+
+extension KSUIWebViewController: UIWebViewDelegate {
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        if let aContext = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext {
+            context = aContext
         }
-        return true
+        useJavaScriptCore()
     }
+    
     
     func chongdingxiangjiaohu(urlString: String) {
         let components = urlString.components(separatedBy: "://")

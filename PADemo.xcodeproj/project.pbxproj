@@ -919,8 +919,8 @@
 			children = (
 				8D82011F1ECB480C000809E4 /* WebViewController.swift */,
 				8D0F5D6420510F3E00736B94 /* KSUIWebViewController.swift */,
-				8D0F5D662051105500736B94 /* test.html */,
 				8D773A032052758E009241A2 /* KSWKWebViewController.swift */,
+				8D0F5D662051105500736B94 /* test.html */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
