@@ -70,7 +70,43 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "homeViewModelUpdate"), object: nil, queue: nil) { (notification) in
             self.viewModel = HomeViewModel(controllerModels: self.viewModel.controllerModels)
         }
+        
         viewModel.fetchData()
+    }
+    /*
+    func test() {
+        tableDelegater.cellHeight = { params -> CGFloat in
+            return 100
+        }
+        
+        tableDelegater.cellHeight = { params in
+            return 100
+        }
+        
+        tableDelegater.cellHeight = { (_) -> CGFloat in
+            return 100
+        }
+        
+        tableDelegater.cellHeight = { (_) in
+            return 100
+        }
+        
+        tableDelegater.cellHeight = { tableViewBlockParam in
+            //
+            return 123
+        }
+        
+        tableDelegater.cellHeight1 = { (tableView, indexPath, cellModel) in
+            return 100
+        }
+        
+        integrationInfoRequest { [weak self] in
+            //
+        }
+    }
+    */
+    func integrationInfoRequest(complete: (() -> Void)? = nil) {
+        //
     }
     
     func updateUI() {

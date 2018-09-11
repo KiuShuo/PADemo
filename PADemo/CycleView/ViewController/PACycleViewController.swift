@@ -25,6 +25,13 @@ class PACycleViewController: BaseViewController {
         setupSegmentControl()
         
         showList(index: 0)
+        solveGestureConflict()
+    }
+    
+    private func solveGestureConflict() {
+        if let screenEdgePanGestureRecognizer = (self.navigationController as? PABaseNavigationController)?.getScreenEdgePanGestureRecognizer() {
+            cycleContainewView.panGestureRecognizer.require(toFail: screenEdgePanGestureRecognizer)
+        }
     }
     
     private func setupSegmentControl() {

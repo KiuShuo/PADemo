@@ -48,5 +48,7 @@ target 'PADemo' do
     pod 'AMapFoundation-NO-IDFA', '1.3.4'
     
     pod 'YYModel', '1.0.4'
+    pod 'CodableAlamofire', '1.1.0'
+    pod 'Moya', '11.0.2'
 end
 

@@ -39,6 +39,8 @@
 		8D304BD01FECAFBC00474A37 /* SettingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D304BCE1FECAFBC00474A37 /* SettingItems.swift */; };
 		8D304BD11FECAFBC00474A37 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D304BCF1FECAFBC00474A37 /* SettingCell.swift */; };
 		8D3AC0341F34221100DF9E50 /* PAQuart2D_GraphicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */; };
+		8D3D6217214650E100F28906 /* LearnSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D6215214650E100F28906 /* LearnSwiftViewController.swift */; };
+		8D3D6218214650E100F28906 /* LearnSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3D6216214650E100F28906 /* LearnSwiftViewController.xib */; };
 		8D4041E21FFF5C8E0065308F /* LRRegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4041E11FFF5C8E0065308F /* LRRegistViewController.swift */; };
 		8D4041E41FFF7D980065308F /* LRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4041E31FFF7D980065308F /* LRxSwiftViewController.swift */; };
 		8D42C8651F1355A200061C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42C8641F1355A200061C9C /* AppDelegate.swift */; };
@@ -56,6 +58,15 @@
 		8D46877A2058CEB400A9D1D8 /* ObserverSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4687792058CEB300A9D1D8 /* ObserverSet.swift */; };
 		8D4A75DF208F1CFC000F6BF7 /* SearchResultViewController_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */; };
 		8D4A75E1208F2DD7000F6BF7 /* SearchContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A75E0208F2DD7000F6BF7 /* SearchContentsViewController.swift */; };
+		8D4B97A32147A2E80041C884 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A02147A2E80041C884 /* NetworkManager.swift */; };
+		8D4B97A42147A2E80041C884 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A12147A2E80041C884 /* NetworkAPI.swift */; };
+		8D4B97A52147A2E80041C884 /* NetworkParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A22147A2E80041C884 /* NetworkParams.swift */; };
+		8D4B97A72147A33F0041C884 /* LearnSwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A62147A33F0041C884 /* LearnSwiftModel.swift */; };
+		8D4B97A92147A9160041C884 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A82147A9160041C884 /* NetworkConfig.swift */; };
+		8D4B97AB2147B6960041C884 /* AModuleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97AA2147B6960041C884 /* AModuleAPI.swift */; };
+		8D4B97AD2147B9D20041C884 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97AC2147B9D20041C884 /* NetworkTool.swift */; };
+		8D4B97AF2147C3750041C884 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97AE2147C3750041C884 /* NetworkError.swift */; };
+		8D4B97B12147C5380041C884 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97B02147C5380041C884 /* Response.swift */; };
 		8D509A2B20D4C72F00EED776 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509A2A20D4C72F00EED776 /* MenuViewController.swift */; };
 		8D51A6A620A417E900E8DE86 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D51A6A520A417E900E8DE86 /* iflyMSC.framework */; };
 		8D51A6A820A4180B00E8DE86 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D51A6A720A4180B00E8DE86 /* libz.tbd */; };
@@ -291,6 +302,8 @@
 		8D304BCE1FECAFBC00474A37 /* SettingItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingItems.swift; sourceTree = "<group>"; };
 		8D304BCF1FECAFBC00474A37 /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		8D3AC0331F34221100DF9E50 /* PAQuart2D_GraphicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAQuart2D_GraphicsController.swift; sourceTree = "<group>"; };
+		8D3D6215214650E100F28906 /* LearnSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSwiftViewController.swift; sourceTree = "<group>"; };
+		8D3D6216214650E100F28906 /* LearnSwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnSwiftViewController.xib; sourceTree = "<group>"; };
 		8D4041E11FFF5C8E0065308F /* LRRegistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRRegistViewController.swift; sourceTree = "<group>"; };
 		8D4041E31FFF7D980065308F /* LRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRxSwiftViewController.swift; sourceTree = "<group>"; };
 		8D42C8621F13557000061C9C /* PADemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PADemo.entitlements; sourceTree = "<group>"; };
@@ -312,6 +325,15 @@
 		8D4687792058CEB300A9D1D8 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
 		8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController_1.swift; sourceTree = "<group>"; };
 		8D4A75E0208F2DD7000F6BF7 /* SearchContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentsViewController.swift; sourceTree = "<group>"; };
+		8D4B97A02147A2E80041C884 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8D4B97A12147A2E80041C884 /* NetworkAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		8D4B97A22147A2E80041C884 /* NetworkParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkParams.swift; sourceTree = "<group>"; };
+		8D4B97A62147A33F0041C884 /* LearnSwiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSwiftModel.swift; sourceTree = "<group>"; };
+		8D4B97A82147A9160041C884 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		8D4B97AA2147B6960041C884 /* AModuleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AModuleAPI.swift; sourceTree = "<group>"; };
+		8D4B97AC2147B9D20041C884 /* NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		8D4B97AE2147C3750041C884 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8D4B97B02147C5380041C884 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8D509A2A20D4C72F00EED776 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8D51A6A520A417E900E8DE86 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		8D51A6A720A4180B00E8DE86 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -693,6 +715,17 @@
 			path = "Quart2D&Graphics";
 			sourceTree = "<group>";
 		};
+		8D3D62102146482100F28906 /* SwiftLearn */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B979F2147A2E80041C884 /* Moya */,
+				8D3D6215214650E100F28906 /* LearnSwiftViewController.swift */,
+				8D3D6216214650E100F28906 /* LearnSwiftViewController.xib */,
+				8D4B97A62147A33F0041C884 /* LearnSwiftModel.swift */,
+			);
+			path = SwiftLearn;
+			sourceTree = "<group>";
+		};
 		8D42C8631F1355A200061C9C /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +775,21 @@
 				8D4687792058CEB300A9D1D8 /* ObserverSet.swift */,
 			);
 			path = ObserverSet;
+			sourceTree = "<group>";
+		};
+		8D4B979F2147A2E80041C884 /* Moya */ = {
+			isa = PBXGroup;
+			children = (
+				8D4B97AA2147B6960041C884 /* AModuleAPI.swift */,
+				8D4B97A12147A2E80041C884 /* NetworkAPI.swift */,
+				8D4B97A82147A9160041C884 /* NetworkConfig.swift */,
+				8D4B97A02147A2E80041C884 /* NetworkManager.swift */,
+				8D4B97AC2147B9D20041C884 /* NetworkTool.swift */,
+				8D4B97AE2147C3750041C884 /* NetworkError.swift */,
+				8D4B97A22147A2E80041C884 /* NetworkParams.swift */,
+				8D4B97B02147C5380041C884 /* Response.swift */,
+			);
+			path = Moya;
 			sourceTree = "<group>";
 		};
 		8D51A6A320A417A300E8DE86 /* MSCDemo */ = {
@@ -1204,6 +1252,7 @@
 		8DEF45701EB1BE6900CA4F75 /* PADemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D3D62102146482100F28906 /* SwiftLearn */,
 				8D51A6A320A417A300E8DE86 /* MSCDemo */,
 				8D0DB0FD209C386E0048903E /* Instruments */,
 				8D6DABE6202442E600D6C114 /* Note */,
@@ -1478,6 +1527,7 @@
 				8D42C8691F13570000061C9C /* unbelievable.caf in Resources */,
 				8D6512681F3C01CD00D9E434 /* PAIntegrationSituationTopView.xib in Resources */,
 				8DEF457C1EB1BE6900CA4F75 /* LaunchScreen.storyboard in Resources */,
+				8D3D6218214650E100F28906 /* LearnSwiftViewController.xib in Resources */,
 				8D9FBACD1F68CF740084B54E /* PACalculateRulesCell.xib in Resources */,
 				8DCD7F151F58F1B10060957B /* PACalculatorMainMenuCell.xib in Resources */,
 				8D0DB105209C38E10048903E /* FPSTableViewCell.xib in Resources */,
@@ -1587,6 +1637,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/EBForeNotification/EBForeNotification.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
@@ -1594,7 +1646,9 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1603,6 +1657,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EBForeNotification.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
@@ -1610,7 +1666,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -1671,6 +1729,7 @@
 				8DB5248220D55DAC003A6182 /* PAMovingDossierTableFooterView.swift in Sources */,
 				8D57359120F5D2A400847F75 /* PATeethCheckCell.swift in Sources */,
 				8DCA857B1F3850B9009F648F /* PACellModel.swift in Sources */,
+				8D4B97A92147A9160041C884 /* NetworkConfig.swift in Sources */,
 				8D304BD01FECAFBC00474A37 /* SettingItems.swift in Sources */,
 				8DCD7F141F58F1B10060957B /* PACalculatorMainMenuCell.swift in Sources */,
 				8D80D2151FFE351E0080386B /* Dispatch+Extension.swift in Sources */,
@@ -1691,6 +1750,7 @@
 				8D0DB101209C38B80048903E /* CoreAnimationViewController.swift in Sources */,
 				8D80D2161FFE351E0080386B /* Dictionary+Extension.swift in Sources */,
 				8D6512761F3DB34000D9E434 /* FoundationExtensions.swift in Sources */,
+				8D4B97A52147A2E80041C884 /* NetworkParams.swift in Sources */,
 				8D94D3721FA041C600CD24C1 /* LearnMenuViewController.swift in Sources */,
 				8D304BD11FECAFBC00474A37 /* SettingCell.swift in Sources */,
 				8D6E112F1F441D1400C3620D /* AlertTestViewController.swift in Sources */,
@@ -1703,6 +1763,7 @@
 				8D6512711F3DA3ED00D9E434 /* PASegmentedView.swift in Sources */,
 				8D4A75DF208F1CFC000F6BF7 /* SearchResultViewController_1.swift in Sources */,
 				8D65125E1F3BF24E00D9E434 /* PASegmentControl.swift in Sources */,
+				8D4B97A32147A2E80041C884 /* NetworkManager.swift in Sources */,
 				8D8F15A81EE7B0EC0019AC1C /* PATableViewModelDemoCell.swift in Sources */,
 				8D1F53CB1F453E4E005E89AE /* DetailViewController.swift in Sources */,
 				8DDC6C041F25E48E004DDA1B /* CollectionViewCell.swift in Sources */,
@@ -1714,6 +1775,7 @@
 				8D66E93D1EE1361400DBBE41 /* UIDevice+Extention.swift in Sources */,
 				8D46877A2058CEB400A9D1D8 /* ObserverSet.swift in Sources */,
 				8D6DABE92024434F00D6C114 /* NoteTimerViewController.swift in Sources */,
+				8D4B97AF2147C3750041C884 /* NetworkError.swift in Sources */,
 				8D673C901F14BCBC00175A6C /* LayoutConstraintsExtension.swift in Sources */,
 				8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */,
 				8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */,
@@ -1729,8 +1791,11 @@
 				8DC71B0E1FFE296E001BA435 /* ValidationService.swift in Sources */,
 				8D1031431ECE883A007F49CA /* CustomTableViewCell.swift in Sources */,
 				8D66E93F1EE1361400DBBE41 /* UImageView+Extension.swift in Sources */,
+				8D4B97A72147A33F0041C884 /* LearnSwiftModel.swift in Sources */,
 				8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */,
 				8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */,
+				8D4B97AB2147B6960041C884 /* AModuleAPI.swift in Sources */,
+				8D3D6217214650E100F28906 /* LearnSwiftViewController.swift in Sources */,
 				8D0F5D6520510F3E00736B94 /* KSUIWebViewController.swift in Sources */,
 				8D6512721F3DA3ED00D9E434 /* PASegmentedControlView.swift in Sources */,
 				8D0DB104209C38E10048903E /* FPSTableViewCell.swift in Sources */,
@@ -1761,13 +1826,16 @@
 				8D2F2FD11FD51CB4007E1F3B /* WebTableViewCell.swift in Sources */,
 				8DCA857D1F3850B9009F648F /* PATableViewModel.swift in Sources */,
 				8D65126D1F3C09F800D9E434 /* PAIntegrationSituationCell.swift in Sources */,
+				8D4B97A42147A2E80041C884 /* NetworkAPI.swift in Sources */,
 				8D509A2B20D4C72F00EED776 /* MenuViewController.swift in Sources */,
 				8D1F53D21F454342005E89AE /* BaseModel.swift in Sources */,
+				8D4B97B12147C5380041C884 /* Response.swift in Sources */,
 				8D8F15A51EE7B0500019AC1C /* PATableViewModelDemoController.swift in Sources */,
 				8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */,
 				8D6BC7271FDD17150004E1C6 /* PACustomNavigationView.swift in Sources */,
 				8D8F0A1420AC2D4D00FD50A3 /* CTextView.swift in Sources */,
 				8D99C5CF1EB9A609008B314E /* Utile.swift in Sources */,
+				8D4B97AD2147B9D20041C884 /* NetworkTool.swift in Sources */,
 				8DB597461F331D5800E21E8B /* PAFpsFile.swift in Sources */,
 				8D1F53CC1F453E4E005E89AE /* HomeViewController.swift in Sources */,
 				8D06A8EB20E0F1BC00F126E4 /* PAReplicatorView.swift in Sources */,
@@ -2061,6 +2129,57 @@
 				INFOPLIST_FILE = PADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EBForeNotification/EBForeNotification.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HexColors/HexColors.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IGListKit/IGListKit.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/UMengUShare\"",
+					"-mllvm",
+					"-chenxify-control-flow",
+					"-mllvm",
+					"-chenxify-control-flow-probability=10",
+					"-mllvm",
+					"-falsify-control-flow",
+					"-mllvm",
+					"-falsify-control-flow-percentage=10",
+					"-mllvm",
+					"-falsify-control-flow-probability=10",
+					"-mllvm",
+					"-encrypt-constant-string",
+					"-mllvm",
+					"-encrypt-constant-string-probability=30",
+					"-mllvm",
+					"-virtualize-basic-block",
+					"-mllvm",
+					"-virtualize-basic-block-probability=10",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2091,6 +2210,57 @@
 				INFOPLIST_FILE = PADemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EBForeNotification/EBForeNotification.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HexColors/HexColors.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IGListKit/IGListKit.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/UMengUShare\"",
+					"-mllvm",
+					"-chenxify-control-flow",
+					"-mllvm",
+					"-chenxify-control-flow-probability=10",
+					"\n-mllvm",
+					"-falsify-control-flow",
+					"-mllvm",
+					"-falsify-control-flow-percentage=10",
+					"\n-mllvm",
+					"-falsify-control-flow-probability=10",
+					"\n-mllvm",
+					"-encrypt-constant-string",
+					"-mllvm",
+					"-encrypt-constant-string-probability=30",
+					"\n-mllvm",
+					"-virtualize-basic-block",
+					"-mllvm",
+					"-virtualize-basic-block-probability=10",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
 				PRODUCT_NAME = "$(TARGET_NAME)";

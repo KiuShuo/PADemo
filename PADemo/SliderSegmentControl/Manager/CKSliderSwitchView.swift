@@ -85,7 +85,7 @@ class CKSlideSwitchView: UIView {
         return rootScrollView
     }()
     
-    fileprivate let topScrollView: UIScrollView = {
+    let topScrollView: UIScrollView = {
         let topSrollView = UIScrollView()
         topSrollView.backgroundColor                = UIColor.clear
         topSrollView.isPagingEnabled                = false

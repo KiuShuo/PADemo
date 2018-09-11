@@ -1,9 +1,12 @@
 PODS:
+  - Alamofire (4.7.3)
   - AMap2DMap-NO-IDFA (4.6.0):
     - AMapFoundation-NO-IDFA (~> 1.3)
   - AMapFoundation-NO-IDFA (1.3.4)
   - AMapSearch-NO-IDFA (4.5.0):
     - AMapFoundation-NO-IDFA (~> 1.2)
+  - CodableAlamofire (1.1.0):
+    - Alamofire (~> 4.0)
   - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
   - EBForeNotification (1.0.7)
@@ -18,7 +21,13 @@ PODS:
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.12)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
   - ObjectMapper (3.1.0)
+  - Result (3.2.4)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
@@ -51,6 +60,7 @@ DEPENDENCIES:
   - AMap2DMap-NO-IDFA (= 4.6.0)
   - AMapFoundation-NO-IDFA (= 1.3.4)
   - AMapSearch-NO-IDFA (= 4.5.0)
+  - CodableAlamofire (= 1.1.0)
   - Crashlytics (= 3.8.4)
   - EBForeNotification (= 1.0.7)
   - Fabric (= 1.6.11)
@@ -60,6 +70,7 @@ DEPENDENCIES:
   - Masonry (= 1.0.2)
   - MBProgressHUD (= 0.9.2)
   - MJRefresh (= 3.1.12)
+  - Moya (= 11.0.2)
   - ObjectMapper (= 3.1.0)
   - RxCocoa (= 4.0.0)
   - RxSwift (= 4.0.0)
@@ -73,9 +84,11 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - AMap2DMap-NO-IDFA
     - AMapFoundation-NO-IDFA
     - AMapSearch-NO-IDFA
+    - CodableAlamofire
     - Crashlytics
     - EBForeNotification
     - Fabric
@@ -84,7 +97,9 @@ SPEC REPOS:
     - Masonry
     - MBProgressHUD
     - MJRefresh
+    - Moya
     - ObjectMapper
+    - Result
     - RxCocoa
     - RxSwift
     - SDWebImage
@@ -109,9 +124,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AMap2DMap-NO-IDFA: 01c80e7e93568617b1b1b452cfec71f974f5bc8a
   AMapFoundation-NO-IDFA: 56b42e67233c8a883cfd448d94c4cb7380080741
   AMapSearch-NO-IDFA: c14f82f9f06533b033da001c94077c50d48cee25
+  CodableAlamofire: e2d2edcec7cf413f7862c30c8fa98eded27a83f9
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   EBForeNotification: d2426fa084f7af912c665b80529cfb3fe5dbdb79
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
@@ -121,7 +138,9 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
@@ -130,6 +149,6 @@ SPEC CHECKSUMS:
   UMengUShare: 740664d1dd5cc2fb2cc3325d61e4b35539aa9c78
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 7e135f14933e74274fea91ddb9f9ce6922155811
+PODFILE CHECKSUM: e82ca612d080b6f8b62678bfae6da442b88899e4
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2

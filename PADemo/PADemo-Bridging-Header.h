@@ -11,3 +11,4 @@
 #import <MAMapKit/MAMapKit.h>
 #import "IFlyMSC/IFlyMSC.h"
 #import "DisplayView.h"
+#import <CommonCrypto/CommonDigest.h>

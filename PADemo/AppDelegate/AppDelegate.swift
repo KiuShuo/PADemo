@@ -9,15 +9,11 @@
 import UIKit
 import Fabric
 import Crashlytics
+//import GodEye
 //import IFlyMSC
 
 //@UIApplicationMain
 // Swift没有了main.m文件，@UIApplicationMain是程序的入口
-
-class Person: NSObject {
-    var name: String = ""
-    var age: Int = 0
-}
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,11 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        var arr = ["1", "2", nil]
+        let number = NSNumber(integerLiteral: 23)
+        let value = Int(truncating: number)
+        print(number)
+        print(value)
+        let arr = ["1", "2", nil]
         
-        let flat = arr.flatMap({$0})
+        let flat = arr.compactMap({$0})
         print("flat = \(flat)")
-        
         
         
         DispatchQueue.global().async {
@@ -81,5 +80,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
-

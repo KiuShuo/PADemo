@@ -187,7 +187,7 @@ class DetailViewController: BaseViewController {
 extension DetailViewController {
     
     func testYYModel() {
-        let dic: [String: Any] = ["aNumber": 68.99, "name": "xcuo", "age": 12]
+//        let dic: [String: Any] = ["aNumber": 68.99, "name": "xcuo", "age": 12]
 //        let detailModel = DetailModel.yy_model(with: dic)
 //        print(detailModel?.aNumber ?? "")
 //        print("age = \(detailModel?.age ?? "")")

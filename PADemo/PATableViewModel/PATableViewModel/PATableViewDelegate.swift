@@ -24,6 +24,7 @@ class PATableDelegater: NSObject {
     var configureCell: ((_ tableViewBlockParam: PATableCellForRowBlock) -> Void)?
     var didSelectCell: ((_ tableViewBlockParam: PATableDelegateConfigBlock) -> Void)?
     var cellHeight: ((_ tableViewBlockParam: PATableDelegateConfigBlock) -> CGFloat)?
+    var cellHeight1: ((_ tableView: UITableView, _ indexPath: IndexPath, _ cellModel: PACellModel) -> CGFloat)?
     
     func cellModel(_ indexPath: IndexPath) -> PACellModel {
         return sectionModels[indexPath.section][indexPath]

@@ -254,8 +254,8 @@ extension UIView {
         let y: CGFloat = 0
         let viewWidth = self.frame.width
         let viewHeight = self.frame.height
-        let centerX = viewWidth / 2
-        let centerY = viewHeight / 2
+//        let centerX = viewWidth / 2
+//        let centerY = viewHeight / 2
         path.move(to: CGPoint(x: x, y: y))
         if (!top) {
             path.move(to: CGPoint(x: viewWidth, y: y))

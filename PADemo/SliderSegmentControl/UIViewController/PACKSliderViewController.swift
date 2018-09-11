@@ -9,14 +9,23 @@
 import UIKit
 
 class PACKSliderViewController: BaseViewController {
+    
+    let sliderView = CKSlideSwitchView(frame: CGRect(x: 0, y: 64, width: UIScreen.width, height: UIScreen.height - 64))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSliderView()
+        solveGestureConflict()
+    }
+    
+    private func solveGestureConflict() {
+        if let screenEdgePanGestureRecognizer = (self.navigationController as? PABaseNavigationController)?.getScreenEdgePanGestureRecognizer() {
+            sliderView.topScrollView.panGestureRecognizer.require(toFail: screenEdgePanGestureRecognizer)
+            sliderView.rootScrollView.panGestureRecognizer.require(toFail: screenEdgePanGestureRecognizer)
+        }
     }
     
     private func setupSliderView() {
-        let sliderView = CKSlideSwitchView(frame: CGRect(x: 0, y: 64, width: UIScreen.width, height: UIScreen.height - 64))
         sliderView.backgroundColor = UIColor.white
         sliderView.tabItemTitleNormalColor = UIColor.black
         sliderView.tabItemTitleSelectedColor = UIColor.paOrange

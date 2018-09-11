@@ -27,6 +27,17 @@ class PABaseNavigationController: UINavigationController {
         delegate = self
     }
     
+    func getScreenEdgePanGestureRecognizer() -> UIScreenEdgePanGestureRecognizer? {
+        if let gestureRecognizers = view.gestureRecognizers {
+            for ges in gestureRecognizers {
+                if ges is UIScreenEdgePanGestureRecognizer {
+                    return ges as? UIScreenEdgePanGestureRecognizer
+                }
+            }
+        }
+        return nil
+    }
+    
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if isPushing {
             return
