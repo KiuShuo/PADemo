@@ -62,11 +62,7 @@
 		8D4B97A42147A2E80041C884 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A12147A2E80041C884 /* NetworkAPI.swift */; };
 		8D4B97A52147A2E80041C884 /* NetworkParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A22147A2E80041C884 /* NetworkParams.swift */; };
 		8D4B97A72147A33F0041C884 /* LearnSwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A62147A33F0041C884 /* LearnSwiftModel.swift */; };
-		8D4B97A92147A9160041C884 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A82147A9160041C884 /* NetworkConfig.swift */; };
-		8D4B97AB2147B6960041C884 /* AModuleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97AA2147B6960041C884 /* AModuleAPI.swift */; };
 		8D4B97AD2147B9D20041C884 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97AC2147B9D20041C884 /* NetworkTool.swift */; };
-		8D4B97AF2147C3750041C884 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97AE2147C3750041C884 /* NetworkError.swift */; };
-		8D4B97B12147C5380041C884 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97B02147C5380041C884 /* Response.swift */; };
 		8D509A2B20D4C72F00EED776 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509A2A20D4C72F00EED776 /* MenuViewController.swift */; };
 		8D51A6A620A417E900E8DE86 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D51A6A520A417E900E8DE86 /* iflyMSC.framework */; };
 		8D51A6A820A4180B00E8DE86 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D51A6A720A4180B00E8DE86 /* libz.tbd */; };
@@ -329,11 +325,7 @@
 		8D4B97A12147A2E80041C884 /* NetworkAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		8D4B97A22147A2E80041C884 /* NetworkParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkParams.swift; sourceTree = "<group>"; };
 		8D4B97A62147A33F0041C884 /* LearnSwiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSwiftModel.swift; sourceTree = "<group>"; };
-		8D4B97A82147A9160041C884 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
-		8D4B97AA2147B6960041C884 /* AModuleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AModuleAPI.swift; sourceTree = "<group>"; };
 		8D4B97AC2147B9D20041C884 /* NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
-		8D4B97AE2147C3750041C884 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		8D4B97B02147C5380041C884 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8D509A2A20D4C72F00EED776 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8D51A6A520A417E900E8DE86 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		8D51A6A720A4180B00E8DE86 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -780,14 +772,10 @@
 		8D4B979F2147A2E80041C884 /* Moya */ = {
 			isa = PBXGroup;
 			children = (
-				8D4B97AA2147B6960041C884 /* AModuleAPI.swift */,
 				8D4B97A12147A2E80041C884 /* NetworkAPI.swift */,
-				8D4B97A82147A9160041C884 /* NetworkConfig.swift */,
 				8D4B97A02147A2E80041C884 /* NetworkManager.swift */,
 				8D4B97AC2147B9D20041C884 /* NetworkTool.swift */,
-				8D4B97AE2147C3750041C884 /* NetworkError.swift */,
 				8D4B97A22147A2E80041C884 /* NetworkParams.swift */,
-				8D4B97B02147C5380041C884 /* Response.swift */,
 			);
 			path = Moya;
 			sourceTree = "<group>";
@@ -1729,7 +1717,6 @@
 				8DB5248220D55DAC003A6182 /* PAMovingDossierTableFooterView.swift in Sources */,
 				8D57359120F5D2A400847F75 /* PATeethCheckCell.swift in Sources */,
 				8DCA857B1F3850B9009F648F /* PACellModel.swift in Sources */,
-				8D4B97A92147A9160041C884 /* NetworkConfig.swift in Sources */,
 				8D304BD01FECAFBC00474A37 /* SettingItems.swift in Sources */,
 				8DCD7F141F58F1B10060957B /* PACalculatorMainMenuCell.swift in Sources */,
 				8D80D2151FFE351E0080386B /* Dispatch+Extension.swift in Sources */,
@@ -1775,7 +1762,6 @@
 				8D66E93D1EE1361400DBBE41 /* UIDevice+Extention.swift in Sources */,
 				8D46877A2058CEB400A9D1D8 /* ObserverSet.swift in Sources */,
 				8D6DABE92024434F00D6C114 /* NoteTimerViewController.swift in Sources */,
-				8D4B97AF2147C3750041C884 /* NetworkError.swift in Sources */,
 				8D673C901F14BCBC00175A6C /* LayoutConstraintsExtension.swift in Sources */,
 				8D99C5CB1EB9A586008B314E /* NSNotificationCenter+PACenter.m in Sources */,
 				8DC26BCE1F299368001A831F /* PAFpsTableViewCell.swift in Sources */,
@@ -1794,7 +1780,6 @@
 				8D4B97A72147A33F0041C884 /* LearnSwiftModel.swift in Sources */,
 				8D99C5CD1EB9A5A1008B314E /* NotificationCenterController.swift in Sources */,
 				8D53DC0C1F614C6A00E36939 /* RoundViewController.swift in Sources */,
-				8D4B97AB2147B6960041C884 /* AModuleAPI.swift in Sources */,
 				8D3D6217214650E100F28906 /* LearnSwiftViewController.swift in Sources */,
 				8D0F5D6520510F3E00736B94 /* KSUIWebViewController.swift in Sources */,
 				8D6512721F3DA3ED00D9E434 /* PASegmentedControlView.swift in Sources */,
@@ -1829,7 +1814,6 @@
 				8D4B97A42147A2E80041C884 /* NetworkAPI.swift in Sources */,
 				8D509A2B20D4C72F00EED776 /* MenuViewController.swift in Sources */,
 				8D1F53D21F454342005E89AE /* BaseModel.swift in Sources */,
-				8D4B97B12147C5380041C884 /* Response.swift in Sources */,
 				8D8F15A51EE7B0500019AC1C /* PATableViewModelDemoController.swift in Sources */,
 				8DDC6BFB1F25E429004DDA1B /* TableViewController_CollectionView.swift in Sources */,
 				8D6BC7271FDD17150004E1C6 /* PACustomNavigationView.swift in Sources */,

@@ -49,13 +49,14 @@ class LearnSwiftViewController: BaseViewController {
     }
     
     @IBAction func request(_ sender: UIButton) {
-//        NetworkManager().netWorkRequest(NetworkAPI.wjRequest(params: ["pageNo": 1, "pageSize": 20, "pageId": "11", "activityTypeId": "4","app_code":"15006"]), completion: { (susscee) -> (Void) in
-//            //
-//        }, failed: { (error) -> (Void) in
-//            //
-//        }) { () -> (Void) in
-//            //
-//        }
+        provider.request(AModuleNetworkAPI.wjRequest(params: ["pageNo": 1, "pageSize": 20, "pageId": "11", "activityTypeId": "4","app_code":"15006"])) { (result) in
+            switch result {
+            case let .success(response):
+                print("response = \(response)")
+            case let .failure(error):
+                print("error = \(error)")
+            }
+        }
     }
 }
 
