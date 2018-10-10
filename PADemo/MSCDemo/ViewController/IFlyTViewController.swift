@@ -100,7 +100,7 @@ extension IFlyTViewController: IFlySpeechRecognizerDelegate {
     
     // 识别结果回调
     func onResults(_ results: [Any]!, isLast: Bool) {
-        print("results = \(results)")
+        print("results = \(String(describing: results))")
         var resultString = ""
         if results == nil {
             return

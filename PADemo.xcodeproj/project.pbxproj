@@ -136,7 +136,6 @@
 		8D80D2141FFE351E0080386B /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D80D2091FFE351E0080386B /* UIScreen+Extension.swift */; };
 		8D80D2151FFE351E0080386B /* Dispatch+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D80D20A1FFE351E0080386B /* Dispatch+Extension.swift */; };
 		8D80D2161FFE351E0080386B /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D80D20B1FFE351E0080386B /* Dictionary+Extension.swift */; };
-		8D80D2171FFE351E0080386B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D80D20C1FFE351E0080386B /* Info.plist */; };
 		8D80D2181FFE351E0080386B /* Timer+WeakSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D80D20D1FFE351E0080386B /* Timer+WeakSelf.swift */; };
 		8D80D2191FFE351E0080386B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D80D20E1FFE351E0080386B /* Array+Extension.swift */; };
 		8D8201201ECB480C000809E4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D82011F1ECB480C000809E4 /* WebViewController.swift */; };
@@ -208,7 +207,6 @@
 		8DF2C4721F554EA5007D5CC7 /* CKSliderSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2C4711F554EA5007D5CC7 /* CKSliderSwitchView.swift */; };
 		8DF2C4741F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF2C4731F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift */; };
 		8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF362F11EDE9BA60095A78A /* PAView.swift */; };
-		8DF48237209969F1001938AA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF48236209969F1001938AA /* main.swift */; };
 		8DF8457B1F58FE08003DB6BA /* PACKSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF8457A1F58FE08003DB6BA /* PACKSliderViewController.swift */; };
 		8DFE58231F176A9F0057BAD9 /* PAFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE58221F176A9F0057BAD9 /* PAFileManager.swift */; };
 		8DFE58251F176F9E0057BAD9 /* PAFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE58241F176F9E0057BAD9 /* PAFileManager.swift */; };
@@ -401,7 +399,6 @@
 		8D80D2091FFE351E0080386B /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		8D80D20A1FFE351E0080386B /* Dispatch+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dispatch+Extension.swift"; sourceTree = "<group>"; };
 		8D80D20B1FFE351E0080386B /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
-		8D80D20C1FFE351E0080386B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D80D20D1FFE351E0080386B /* Timer+WeakSelf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+WeakSelf.swift"; sourceTree = "<group>"; };
 		8D80D20E1FFE351E0080386B /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		8D82011F1ECB480C000809E4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -482,7 +479,6 @@
 		8DF2C4711F554EA5007D5CC7 /* CKSliderSwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKSliderSwitchView.swift; sourceTree = "<group>"; };
 		8DF2C4731F554FB7007D5CC7 /* PAOffsetedSubviewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAOffsetedSubviewButton.swift; sourceTree = "<group>"; };
 		8DF362F11EDE9BA60095A78A /* PAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAView.swift; sourceTree = "<group>"; };
-		8DF48236209969F1001938AA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8DF8457A1F58FE08003DB6BA /* PACKSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PACKSliderViewController.swift; sourceTree = "<group>"; };
 		8DFE58221F176A9F0057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
 		8DFE58241F176F9E0057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
@@ -724,7 +720,6 @@
 				8D42C8681F1356EC00061C9C /* unbelievable.caf */,
 				8D42C8661F1355B400061C9C /* AppDelegate+APNs.swift */,
 				8D42C8641F1355A200061C9C /* AppDelegate.swift */,
-				8DF48236209969F1001938AA /* main.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -943,7 +938,6 @@
 				8D80D2091FFE351E0080386B /* UIScreen+Extension.swift */,
 				8D80D20A1FFE351E0080386B /* Dispatch+Extension.swift */,
 				8D80D20B1FFE351E0080386B /* Dictionary+Extension.swift */,
-				8D80D20C1FFE351E0080386B /* Info.plist */,
 				8D80D20D1FFE351E0080386B /* Timer+WeakSelf.swift */,
 				8D80D20E1FFE351E0080386B /* Array+Extension.swift */,
 			);
@@ -1355,10 +1349,10 @@
 				8DEF456A1EB1BE6900CA4F75 /* Sources */,
 				8DEF456B1EB1BE6900CA4F75 /* Frameworks */,
 				8DEF456C1EB1BE6900CA4F75 /* Resources */,
-				E983DC88B7EF7FFC4F94D0F8 /* [CP] Embed Pods Frameworks */,
-				159FEE1F4B8EFD2320C5B205 /* [CP] Copy Pods Resources */,
 				8D42C8751F136D8C00061C9C /* Embed App Extensions */,
 				8D4597221F399DE700A888B5 /* ShellScript */,
+				54E4BB69EFE96C14A72E92CD /* [CP] Embed Pods Frameworks */,
+				997874A3C47698FA8EF398DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1420,7 +1414,7 @@
 					8D42C86D1F136D8C00061C9C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 6GA5676ZM3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1431,7 +1425,7 @@
 					8D42C87D1F13754B00061C9C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 6GA5676ZM3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1442,7 +1436,7 @@
 					8DEF456D1EB1BE6900CA4F75 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 6GA5676ZM3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1455,13 +1449,13 @@
 					};
 					8DEF45811EB1BE6900CA4F75 = {
 						CreatedOnToolsVersion = 8.3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8DEF456D1EB1BE6900CA4F75;
 					};
 					8DEF458C1EB1BE6900CA4F75 = {
 						CreatedOnToolsVersion = 8.3;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8DEF456D1EB1BE6900CA4F75;
 					};
@@ -1541,7 +1535,6 @@
 				8D1505F8204E408C00EB2112 /* NoteThreadViewController.xib in Resources */,
 				8D57359320F5D2A400847F75 /* PAMovingDossierListCell.xib in Resources */,
 				8DEF45771EB1BE6900CA4F75 /* Main.storyboard in Resources */,
-				8D80D2171FFE351E0080386B /* Info.plist in Resources */,
 				8DDC6C051F25E48E004DDA1B /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1563,62 +1556,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		159FEE1F4B8EFD2320C5B205 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-resources.sh",
-				"${PODS_ROOT}/AMap2DMap-NO-IDFA/MAMapKit.framework/AMap.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKPromptResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D4597221F399DE700A888B5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 74bb7fdc23f622142bcbb62da65d67521046c8d0 32b15e065024502e4a502bde40aa9470220cf8a702f38426c81a06de68698090";
-		};
-		A4A74C21CA57483223B08ED4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PADemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E983DC88B7EF7FFC4F94D0F8 /* [CP] Embed Pods Frameworks */ = {
+		54E4BB69EFE96C14A72E92CD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1668,6 +1606,59 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8D4597221F399DE700A888B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 74bb7fdc23f622142bcbb62da65d67521046c8d0 32b15e065024502e4a502bde40aa9470220cf8a702f38426c81a06de68698090";
+		};
+		997874A3C47698FA8EF398DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-resources.sh",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKPromptResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4A74C21CA57483223B08ED4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PADemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1697,7 +1688,6 @@
 				8D5654261FC431FB008EE1CF /* PAAlertViewDelegater.swift in Sources */,
 				8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */,
 				8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */,
-				8DF48237209969F1001938AA /* main.swift in Sources */,
 				8DBB1ACB1EC4606900D507E6 /* BaseViewController.swift in Sources */,
 				8DC71B0A1FFE2350001BA435 /* RXBaseViewController.swift in Sources */,
 				8D6E40491EB322C500E388C9 /* Model.swift in Sources */,
@@ -1924,8 +1914,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1942,8 +1931,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1960,8 +1948,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1979,8 +1966,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2145,24 +2131,6 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/UMengUShare\"",
-					"-mllvm",
-					"-chenxify-control-flow",
-					"-mllvm",
-					"-chenxify-control-flow-probability=10",
-					"-mllvm",
-					"-falsify-control-flow",
-					"-mllvm",
-					"-falsify-control-flow-percentage=10",
-					"-mllvm",
-					"-falsify-control-flow-probability=10",
-					"-mllvm",
-					"-encrypt-constant-string",
-					"-mllvm",
-					"-encrypt-constant-string-probability=30",
-					"-mllvm",
-					"-virtualize-basic-block",
-					"-mllvm",
-					"-virtualize-basic-block-probability=10",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
@@ -2171,8 +2139,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = toBWildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "PADemo/PADemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2226,24 +2193,6 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/UMengUShare\"",
-					"-mllvm",
-					"-chenxify-control-flow",
-					"-mllvm",
-					"-chenxify-control-flow-probability=10",
-					"\n-mllvm",
-					"-falsify-control-flow",
-					"-mllvm",
-					"-falsify-control-flow-percentage=10",
-					"\n-mllvm",
-					"-falsify-control-flow-probability=10",
-					"\n-mllvm",
-					"-encrypt-constant-string",
-					"-mllvm",
-					"-encrypt-constant-string-probability=30",
-					"\n-mllvm",
-					"-virtualize-basic-block",
-					"-mllvm",
-					"-virtualize-basic-block-probability=10",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pinganwanjia.family;
@@ -2251,8 +2200,7 @@
 				PROVISIONING_PROFILE = "e084a94c-42c8-4734-b71d-695f00d31803";
 				PROVISIONING_PROFILE_SPECIFIER = toBWildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "PADemo/PADemo-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -2266,8 +2214,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pingan.com.PADemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PADemo.app/PADemo";
 			};
 			name = Debug;
@@ -2281,8 +2228,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pingan.com.PADemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PADemo.app/PADemo";
 			};
 			name = Release;
@@ -2295,8 +2241,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pingan.com.PADemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = PADemo;
 			};
 			name = Debug;
@@ -2309,8 +2254,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pingan.com.PADemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = PADemo;
 			};
 			name = Release;

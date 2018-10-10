@@ -50,7 +50,7 @@ class SettingCell: UITableViewCell {
         textField.font                          = self.item?.subtitleFont
         textField.textColor                     = self.item?.subtitleColor
         textField.delegate                      = self
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldTextDidChange), name: .UITextFieldTextDidChange, object: textField)
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldTextDidChange), name: UITextField.textDidChangeNotification, object: textField)
         return textField
     }()
     /** textView */
@@ -91,7 +91,7 @@ class SettingCell: UITableViewCell {
     weak var previewingController: UIViewController?
     
     //MARK: Life Cycle
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(customBgImageView)
         customBgImageView.isUserInteractionEnabled = true
@@ -136,8 +136,8 @@ class SettingCell: UITableViewCell {
             titleLabel.textColor = item.titleColor
         }
         if item.required && item.shouldAddAsteriskMarkWhenRequired {
-            let attrTitle = NSMutableAttributedString(string: "* ", attributes: [NSAttributedStringKey.foregroundColor: UIColor.paOrange, NSAttributedStringKey.font: item.titleFont])
-            attrTitle.append(NSAttributedString(string: item.title.noneNull, attributes: [NSAttributedStringKey.font: item.titleFont, NSAttributedStringKey.foregroundColor: item.titleColor]))
+            let attrTitle = NSMutableAttributedString(string: "* ", attributes: [NSAttributedString.Key.foregroundColor: UIColor.paOrange, NSAttributedString.Key.font: item.titleFont])
+            attrTitle.append(NSAttributedString(string: item.title.noneNull, attributes: [NSAttributedString.Key.font: item.titleFont, NSAttributedString.Key.foregroundColor: item.titleColor]))
             titleLabel.attributedText = attrTitle
         } else {
             titleLabel.font = item.titleFont
@@ -203,7 +203,7 @@ class SettingCell: UITableViewCell {
             textField.keyboardType = item.keyboardType
             textField.text = item.subtitle
             textField.textAlignment = item.subtitleAlignment
-            textField.attributedPlaceholder = NSAttributedString(string: item.subtitlePlaceholder.noneNull, attributes: [NSAttributedStringKey.font: item.subtitlePlaceholderFont, NSAttributedStringKey.foregroundColor: item.subtitlePlaceholderColor])
+            textField.attributedPlaceholder = NSAttributedString(string: item.subtitlePlaceholder.noneNull, attributes: [NSAttributedString.Key.font: item.subtitlePlaceholderFont, NSAttributedString.Key.foregroundColor: item.subtitlePlaceholderColor])
             textField.textAlignment = item.subtitlePlaceholderAlignment
         } else {
             textField.removeFromSuperview()
@@ -234,7 +234,7 @@ class SettingCell: UITableViewCell {
         if let item = item as? SettingTextViewItem {
             customBgImageView.addSubview(textView)
             subtitleLabel.text = nil
-            textView.placeholderAttributes = [NSAttributedStringKey.font: item.subtitlePlaceholderFont, NSAttributedStringKey.foregroundColor: item.subtitlePlaceholderColor]
+            textView.placeholderAttributes = [NSAttributedString.Key.font: item.subtitlePlaceholderFont, NSAttributedString.Key.foregroundColor: item.subtitlePlaceholderColor]
             textView.isUserInteractionEnabled   = item.textViewEnable
             if isUserInteractionEnabled {
                 textView.textColor = item.subtitleColor

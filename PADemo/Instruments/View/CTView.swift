@@ -30,9 +30,9 @@ class CTView: UIView {
         let attrString = "Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!Hello CoreText!"
         
         let mutableAttrStr = NSMutableAttributedString(string: attrString)
-        mutableAttrStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20),
-                                      NSAttributedStringKey.foregroundColor:UIColor.red], range: NSMakeRange(0, 20))
-        mutableAttrStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 13),NSAttributedStringKey.underlineStyle: 1 ], range: NSMakeRange(20,18))
+        mutableAttrStr.addAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20),
+                                      NSAttributedString.Key.foregroundColor:UIColor.red], range: NSMakeRange(0, 20))
+        mutableAttrStr.addAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 13),NSAttributedString.Key.underlineStyle: 1 ], range: NSMakeRange(20,18))
         let framesetter = CTFramesetterCreateWithAttributedString(mutableAttrStr)
         let frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, mutableAttrStr.length), path1.cgPath, nil)
         

@@ -26,7 +26,7 @@ class PAFpsViewController: BaseViewController {
     func setupTableView() {
         view.addSubview(tableView)
         tableView.mas_makeConstraints { make in
-            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
+            make!.edges.equalTo()(UIEdgeInsets(top: UIScreen.navigationHeight, left: 0, bottom: 0, right: 0))
         }
         
         tableView.delegate = tableViewDelegate
@@ -64,7 +64,7 @@ class PAFpsViewController: BaseViewController {
     func showMenuVC(point: CGPoint) {
         let vc = MenuViewController(origin: point)
         vc.dataSource = ["西医", "中医", "口腔"]
-        addChildViewController(vc)
+        addChild(vc)
         view.addSubview(vc.view)
     }
 

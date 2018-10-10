@@ -194,7 +194,7 @@ extension CTURLView:UIGestureRecognizerDelegate{
         let atResults = atRegular?.matches(in: attrStr.string, options: NSRegularExpression.MatchingOptions.withTransparentBounds , range: NSMakeRange(0, attrStr.length))
         // 4
         for checkResult in atResults!{
-            attrStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: NSMakeRange(checkResult.range.location, checkResult.range.length))
+            attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSMakeRange(checkResult.range.location, checkResult.range.length))
             rangeArray.append(checkResult.range)
         }
         
@@ -204,7 +204,7 @@ extension CTURLView:UIGestureRecognizerDelegate{
         let atResults1 = atRegular1?.matches(in: attrStr.string, options: NSRegularExpression.MatchingOptions.withTransparentBounds , range: NSMakeRange(0, attrStr.length))
 
         for checkResult in atResults1!{
-            attrStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.blue, range: NSMakeRange(checkResult.range.location, checkResult.range.length))
+            attrStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.blue, range: NSMakeRange(checkResult.range.location, checkResult.range.length))
             rangeArray.append(checkResult.range)
         }
         

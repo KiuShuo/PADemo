@@ -14,7 +14,7 @@ class CollectionViewController: UICollectionViewController {
 
     static var collectionViewLayout: UICollectionViewFlowLayout = {
         let collectionViewLayout = UICollectionViewFlowLayout()
-        collectionViewLayout.scrollDirection = UICollectionViewScrollDirection.vertical
+        collectionViewLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
         collectionViewLayout.minimumInteritemSpacing = 0
         return collectionViewLayout
     }()

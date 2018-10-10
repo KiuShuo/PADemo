@@ -43,7 +43,7 @@ class MenuViewController: BaseViewController {
             self.view.layoutIfNeeded()
         }) { _ in
             self.view.removeFromSuperview()
-            self.removeFromParentViewController()
+            self.removeFromParent()
         }
     }
     

@@ -23,7 +23,7 @@ class LayerLabel: UILabel {
         text = super.text
         textColor = super.textColor
         font = super.font
-        textLayer.alignmentMode = kCAAlignmentJustified
+        textLayer.alignmentMode = CATextLayerAlignmentMode.justified
         textLayer.isWrapped = true
         self.layer.display()
     }

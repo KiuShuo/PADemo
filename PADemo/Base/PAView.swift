@@ -164,7 +164,7 @@ import Foundation
         }
     }
     
-    private func setBackgroundColor(_ color: UIColor?, for state: UIControlState) {
+    private func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         guard let color = color else {
             return
         }
@@ -218,12 +218,12 @@ class UILabelPadding : UILabel {
     }
     
     override func drawText(in rect: CGRect) {
-        super.drawText(in: UIEdgeInsetsInsetRect(rect, padding))
+        super.drawText(in: rect.inset(by: padding))
     }
     
     override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         let insets = self.padding
-        var rect = super.textRect(forBounds: UIEdgeInsetsInsetRect(bounds, insets), limitedToNumberOfLines: numberOfLines)
+        var rect = super.textRect(forBounds: bounds.inset(by: insets), limitedToNumberOfLines: numberOfLines)
         rect.origin.x    -= insets.left
         rect.origin.y    -= insets.top
         rect.size.width  += (insets.left + insets.right)

@@ -86,7 +86,7 @@ public class HangManager {
         }
         view?.center = center
         
-        let stateArr: [UIGestureRecognizerState] = [.ended,.failed,.cancelled]
+        let stateArr: [UIGestureRecognizer.State] = [.ended,.failed,.cancelled]
         if stateArr.contains(pan.state) && !style.contains(.freedom){
             // 手势结束后，动画移动view位置
             let spaceLeft:(CGFloat, HangType)  = (center.x - minCenterX, HangType.left)

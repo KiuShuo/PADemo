@@ -20,8 +20,8 @@ extension PASegmentControl {
         segmentControl.selectionIndicatorHeight = 2.0
         
         segmentControl.selectionIndicatorColor = UIColor.paOrange
-        segmentControl.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14.0), NSAttributedStringKey.foregroundColor: UIColor.paGray]
-        segmentControl.selectedTitleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14.0), NSAttributedStringKey.foregroundColor: UIColor.paOrange]
+        segmentControl.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0), NSAttributedString.Key.foregroundColor: UIColor.paGray]
+        segmentControl.selectedTitleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0), NSAttributedString.Key.foregroundColor: UIColor.paOrange]
         
         
         return segmentControl
@@ -78,18 +78,18 @@ class PASegmentControl: UIView {
         }
     }
     
-    public var titleTextAttributes: [NSAttributedStringKey: AnyObject] = [
-        NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14),
-        NSAttributedStringKey.foregroundColor: UIColor.black
+    public var titleTextAttributes: [NSAttributedString.Key: AnyObject] = [
+        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
+        NSAttributedString.Key.foregroundColor: UIColor.black
         ] {
         didSet {
             set(titleAttributes: titleTextAttributes, forControlState: .normal)
         }
     }
     
-    public var selectedTitleTextAttributes: [NSAttributedStringKey: AnyObject] = [
-        NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14),
-        NSAttributedStringKey.foregroundColor: UIColor.black
+    public var selectedTitleTextAttributes: [NSAttributedString.Key: AnyObject] = [
+        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
+        NSAttributedString.Key.foregroundColor: UIColor.black
         ] {
         didSet {
             set(titleAttributes: selectedTitleTextAttributes, forControlState: .selected)
@@ -139,7 +139,7 @@ class PASegmentControl: UIView {
     public override func willMove(toSuperview newSuperview: UIView?) {
         addSubview(segmentCollection)
         addSubview(selectionIndicator)
-        bringSubview(toFront: selectionIndicator)
+        bringSubviewToFront(selectionIndicator)
     }
     
     public override func updateConstraints() {
@@ -291,7 +291,7 @@ fileprivate extension PASegmentControl {
         segmentCollection.selectItem(at: IndexPath(item: selectedSegmentIndex, section: 0), animated: animated, scrollPosition: .centeredHorizontally)
     }
     
-    fileprivate func set(titleAttributes attributes: [NSAttributedStringKey: AnyObject], forControlState state: UIControlState) {
+    fileprivate func set(titleAttributes attributes: [NSAttributedString.Key: AnyObject], forControlState state: UIControl.State) {
         for cell in segmentCollection.visibleCells {
             if let textCell = cell as? PASegmentCell,
                 let title = textCell.displayButton.title(for: state) {

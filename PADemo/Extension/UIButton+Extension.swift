@@ -13,8 +13,8 @@ extension UIButton {
     class  func orangeBorderBtn(_ title:String,fontSize:CGFloat) -> UIButton {
         let btn = UIButton(type: .custom)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        btn.setTitleColor(UIColor.paOrange, for: UIControlState())
-        btn.setTitle(title, for: UIControlState())
+        btn.setTitleColor(UIColor.paOrange, for: UIControl.State())
+        btn.setTitle(title, for: UIControl.State())
         btn.setTitleColor(UIColor.paDeepBlack, for: .highlighted)
         btn.layer.borderColor = UIColor.paOrange.cgColor
         btn.layer.borderWidth = 1
@@ -23,9 +23,9 @@ extension UIButton {
     
     class func orangeBtn(_ title:String,fontSize:CGFloat) -> UIButton {
         let btn = UIButton.init(type: .custom)
-        btn.setTitle(title, for: UIControlState())
+        btn.setTitle(title, for: UIControl.State())
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        btn.setTitleColor(UIColor.paBackground2, for: UIControlState())
+        btn.setTitleColor(UIColor.paBackground2, for: UIControl.State())
         btn.setTitleColor(UIColor.paBlack, for: .highlighted)
         btn.setBackgroundImage(UIImage(color: UIColor.paOrange), for: .normal)
         btn.setBackgroundImage(UIImage(color: UIColor.paLightOrange), for: .highlighted)
@@ -36,9 +36,9 @@ extension UIButton {
     
     class func lightOrangeBtn(_ title:String,fontSize:CGFloat)-> UIButton {
         let btn = UIButton.init(type: .custom)
-        btn.setTitle(title, for: UIControlState())
+        btn.setTitle(title, for: UIControl.State())
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        btn.setTitleColor(UIColor.paBlack, for: UIControlState())
+        btn.setTitleColor(UIColor.paBlack, for: UIControl.State())
         btn.setTitleColor(UIColor.paBackground2, for: .highlighted)
         btn.setBackgroundImage(UIImage(color: UIColor.paLightOrange), for: .normal)
         btn.setBackgroundImage(UIImage(color: UIColor.paOrange), for: .highlighted)
@@ -52,9 +52,9 @@ extension UIButton {
         let btn = UIButton.init(type: .custom)
         let width:CGFloat = max(CGFloat(title.count),3.0) * fontSize + 8.0
         btn.frame = CGRect(x: 0, y: 0, width: width, height: 22)
-        btn.setTitle(title, for: UIControlState())
+        btn.setTitle(title, for: UIControl.State())
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        btn.setTitleColor(UIColor.paBlack, for: UIControlState())
+        btn.setTitleColor(UIColor.paBlack, for: UIControl.State())
         btn.setTitleColor(UIColor.paBackground2, for: .highlighted)
         btn.setBackgroundImage(UIImage(color: UIColor.paLightGray2), for: .normal)
         btn.setBackgroundImage(UIImage(color: UIColor.paOrange), for: .highlighted)
@@ -76,7 +76,7 @@ extension UIButton {
     
     class func createBtnWithImage(_ nomalImageName:String,highImageName:String?)->UIButton {
         let btn = UIButton.init(type: .custom)
-        btn.setBackgroundImage(UIImage(named: nomalImageName), for: UIControlState())
+        btn.setBackgroundImage(UIImage(named: nomalImageName), for: UIControl.State())
         if let highImageName = highImageName {
             btn.setBackgroundImage(UIImage(named: highImageName), for: .highlighted)
         }
@@ -85,9 +85,9 @@ extension UIButton {
     
     class func orangeBtn2(_ title:String,fontSize:CGFloat) -> UIButton {
         let btn = UIButton.init(type: .custom)
-        btn.setTitle(title, for: UIControlState())
+        btn.setTitle(title, for: UIControl.State())
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        btn.setTitleColor(UIColor.paBackground2, for: UIControlState())
+        btn.setTitleColor(UIColor.paBackground2, for: UIControl.State())
         btn.setTitleColor(UIColor.paBackground2, for: .highlighted)
         btn.setTitleColor(UIColor.white, for: .highlighted)
         btn.setBackgroundImage(UIImage(color: UIColor.paHighOrange), for: .highlighted)
@@ -112,9 +112,9 @@ extension UIButton {
         btn.setBackgroundImage(UIImage(color: highlightedBackgroundColor), for: .highlighted)
         btn.setBackgroundImage(UIImage(color: highlightedBackgroundColor), for:[.highlighted,.selected])
 
-        btn.setTitle(title, for: UIControlState())
+        btn.setTitle(title, for: UIControl.State())
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        btn.setTitleColor(normalColor, for: UIControlState())
+        btn.setTitleColor(normalColor, for: UIControl.State())
         btn.setTitleColor(selectedColor, for: .selected)
         btn.setTitleColor(highlightedColor, for: .highlighted)
         btn.setTitleColor(highlightedColor, for: [.highlighted,.selected])
@@ -142,17 +142,17 @@ extension UIButton {
         //位置相对变化方向与UIEdgeInsetsMake相对应的方向位置的值负相关，相反方向位置的值正相关
         switch type {
         case .horizontalLeft:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, -distance/2, 0, distance/2)
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, distance/2, 0, -distance/2)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: -distance/2, bottom: 0, right: distance/2)
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: distance/2, bottom: 0, right: -distance/2)
         case .horizontalright:
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, titleWidth+distance, 0, -(titleWidth+distance))
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageWidth+distance), 0, imageWidth+distance)
+            self.imageEdgeInsets = UIEdgeInsets(top: 0, left: titleWidth+distance, bottom: 0, right: -(titleWidth+distance))
+            self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -(imageWidth+distance), bottom: 0, right: imageWidth+distance)
         case .verticalTop:
-            self.imageEdgeInsets = UIEdgeInsetsMake(-(titleHeight+distance)/2, titleWidth/2, (titleHeight+distance)/2, -titleWidth/2)
-            self.titleEdgeInsets = UIEdgeInsetsMake((imageHeight+distance)/2, -imageWidth/2, -(imageHeight+distance)/2, imageWidth/2)
+            self.imageEdgeInsets = UIEdgeInsets(top: -(titleHeight+distance)/2, left: titleWidth/2, bottom: (titleHeight+distance)/2, right: -titleWidth/2)
+            self.titleEdgeInsets = UIEdgeInsets(top: (imageHeight+distance)/2, left: -imageWidth/2, bottom: -(imageHeight+distance)/2, right: imageWidth/2)
         case .verticalBottom:
-            self.imageEdgeInsets = UIEdgeInsetsMake((titleHeight+distance)/2, titleWidth/2, -(titleHeight+distance)/2, -titleWidth/2)
-            self.titleEdgeInsets = UIEdgeInsetsMake(-(imageHeight+distance)/2, -imageWidth/2, (imageHeight+distance)/2, imageWidth/2)
+            self.imageEdgeInsets = UIEdgeInsets(top: (titleHeight+distance)/2, left: titleWidth/2, bottom: -(titleHeight+distance)/2, right: -titleWidth/2)
+            self.titleEdgeInsets = UIEdgeInsets(top: -(imageHeight+distance)/2, left: -imageWidth/2, bottom: (imageHeight+distance)/2, right: imageWidth/2)
             
         }
         

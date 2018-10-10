@@ -30,7 +30,7 @@ class PAPersonSectionController: ListSectionController {
     }
     
     override func didUpdate(to object: Any) {
-        person = object as! PAPerson
+        person = object as? PAPerson
     }
     
     override func didSelectItem(at index: Int) {

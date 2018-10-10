@@ -46,7 +46,7 @@ class PAListCombineViewController: BaseViewController {
         setupTableView()
     }
     
-    func setupTableView(tableViewStyle: UITableViewStyle = .plain, tableDelegater: PATableDelegater = PATableDelegater()) {
+    func setupTableView(tableViewStyle: UITableView.Style = .plain, tableDelegater: PATableDelegater = PATableDelegater()) {
         self.tableView = {
             tableView = UITableView(frame: .zero, style: tableViewStyle)
             tableView.separatorStyle = .none
@@ -57,7 +57,7 @@ class PAListCombineViewController: BaseViewController {
         }()
         view.addSubview(tableView)
         tableView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
+            make!.edges.equalTo()(UIEdgeInsets(top: UIScreen.navigationHeight, left: 0, bottom: 0, right: 0))
         }
         tableDelegater.tableView = tableView
         self.tableDelegater = tableDelegater

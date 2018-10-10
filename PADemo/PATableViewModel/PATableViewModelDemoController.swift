@@ -105,7 +105,7 @@ class PATableViewModelDemoController: BaseViewController {
         view.addSubview(tableView)
         tableView.tableFooterView = UIView()
         tableView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()(UIEdgeInsetsMake(UIScreen.navigationHeight, 0, 0, 0))
+            make!.edges.equalTo()(UIEdgeInsets(top: UIScreen.navigationHeight, left: 0, bottom: 0, right: 0))
         }
         tableView.estimatedRowHeight = 10
         

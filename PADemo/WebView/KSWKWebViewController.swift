@@ -37,14 +37,16 @@ class KSWKWebViewController: BaseViewController {
         wkWebView.configuration.userContentController.add(self, name: "share")
         wkWebView.configuration.userContentController.add(self, name: "addShareButton")
         wkWebView.configuration.userContentController.add(self, name: "placeOrderForWJCollege")
+        wkWebView.configuration.userContentController.add(self, name: "toMyClinicViewController")
     }
     
     // 退出页面之前需要remove掉添加的script message，否则会造成内存泄漏
-    override func didMove(toParentViewController parent: UIViewController?) {
+    override func didMove(toParent parent: UIViewController?) {
         if parent == nil {
             wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: "share")
             wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: "addShareButton")
             wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: "placeOrderForWJCollege")
+            wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: "toMyClinicViewController")
         }
     }
     
@@ -90,6 +92,8 @@ extension KSWKWebViewController: WKScriptMessageHandler {
             if let body = message.body as? [String: String] {
                 print(body)
             }
+        case "toMyClinicViewController":
+            print("下单")
         default: ()
         }
     }

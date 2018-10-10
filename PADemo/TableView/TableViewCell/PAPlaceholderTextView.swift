@@ -69,12 +69,12 @@ class PACompoundImage: Equatable {
         }
     }
     
-    var placeholderAttributes: [NSAttributedStringKey: Any] = defaultPlaceholderAttributes {
+    var placeholderAttributes: [NSAttributedString.Key: Any] = defaultPlaceholderAttributes {
         didSet {
-            if let font = placeholderAttributes[NSAttributedStringKey.font] as? UIFont {
+            if let font = placeholderAttributes[NSAttributedString.Key.font] as? UIFont {
                 placeholderLabel.font = font
             }
-            if let color = placeholderAttributes[NSAttributedStringKey.foregroundColor] as? UIColor {
+            if let color = placeholderAttributes[NSAttributedString.Key.foregroundColor] as? UIColor {
                 placeholderLabel.textColor = color
             }
             setNeedsLayout()
@@ -89,8 +89,8 @@ class PACompoundImage: Equatable {
         }
     }
     
-    static private var defaultPlaceholderAttributes: [NSAttributedStringKey: Any] {
-        return [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+    static private var defaultPlaceholderAttributes: [NSAttributedString.Key: Any] {
+        return [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.lightGray]
     }
     private var placeholderLabel = UILabel()
     var placeholderX: CGFloat = 10 {
@@ -115,15 +115,15 @@ class PACompoundImage: Equatable {
     private func defaultOperation() {
         placeholderLabel               = UILabel()
         placeholderLabel.text          = placeholder
-        placeholderLabel.font          = placeholderAttributes[NSAttributedStringKey.font] as! UIFont
-        placeholderLabel.textColor     = placeholderAttributes[NSAttributedStringKey.foregroundColor] as! UIColor
+        placeholderLabel.font          = placeholderAttributes[NSAttributedString.Key.font] as? UIFont
+        placeholderLabel.textColor     = placeholderAttributes[NSAttributedString.Key.foregroundColor] as? UIColor
         placeholderLabel.numberOfLines = 0
         addSubview(placeholderLabel)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: .UITextViewTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextView.textDidChangeNotification, object: self)
     }
     
-    required init(placeholder: String?, placeholderAttributes: [NSAttributedStringKey: Any] = defaultPlaceholderAttributes, textContainer: NSTextContainer? = nil) {
+    required init(placeholder: String?, placeholderAttributes: [NSAttributedString.Key: Any] = defaultPlaceholderAttributes, textContainer: NSTextContainer? = nil) {
         super.init(frame: .zero, textContainer: textContainer)
         self.placeholder               = placeholder
         self.placeholderAttributes     = placeholderAttributes

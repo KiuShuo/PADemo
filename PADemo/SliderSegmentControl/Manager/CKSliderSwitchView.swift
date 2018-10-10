@@ -79,7 +79,7 @@ class CKSlideSwitchView: UIView {
         rootScrollView.showsVerticalScrollIndicator   = false
         rootScrollView.showsHorizontalScrollIndicator = false
         rootScrollView.backgroundColor                = UIColor.paBackground
-        rootScrollView.autoresizingMask               = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        rootScrollView.autoresizingMask               = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         rootScrollView.bounces                        = false
         rootScrollView.isPagingEnabled                = true
         return rootScrollView
@@ -91,7 +91,7 @@ class CKSlideSwitchView: UIView {
         topSrollView.isPagingEnabled                = false
         topSrollView.showsHorizontalScrollIndicator = false
         topSrollView.showsVerticalScrollIndicator   = false
-        topSrollView.autoresizingMask               = UIViewAutoresizing.flexibleWidth
+        topSrollView.autoresizingMask               = UIView.AutoresizingMask.flexibleWidth
         topSrollView.isScrollEnabled                = true
         return topSrollView
     }()

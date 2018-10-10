@@ -48,13 +48,13 @@ class NoteTimerViewController: BaseViewController {
                 })
             
                 self.perform(#selector(self.calculate), with: self, afterDelay: 2.0)
-                RunLoop.current.add(timer, forMode: .commonModes)
+                RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
                 RunLoop.current.run()
             }
         } else {
             // Fallback on earlier versions
             let timer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(handelTimerAction), userInfo: nil, repeats: true)
-            RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
+            RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
         }
     }
     

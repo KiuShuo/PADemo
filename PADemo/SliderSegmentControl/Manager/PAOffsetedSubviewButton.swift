@@ -35,7 +35,7 @@ class PAOffsetedSubviewButton: UIButton {
     required init(imageHeightRatio: CGFloat = 0.65, imageWidthRatio: CGFloat = 0, imageRounded: Bool = false, style: Int) {
         super.init(frame: .zero)
         self.style = style
-        self.setValue(NSNumber(value: UIButtonType.system.rawValue), forKey: "buttonType")
+        self.setValue(NSNumber(value: UIButton.ButtonType.system.rawValue), forKey: "buttonType")
         self.adjustsImageWhenHighlighted = false
         baseSetting()
         self.imageHeightRatio = imageHeightRatio

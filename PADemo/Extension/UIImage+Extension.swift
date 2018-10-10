@@ -26,7 +26,7 @@ extension UIImage {
     }
     
     /// 返回一张有圆角的图片
-    func roundingCorner(forRadius radius: CGFloat, atCorners corners: UIRectCorner = .allCorners, contentMode: UIViewContentMode = .scaleAspectFill, sizeToFit: CGSize = .zero) -> UIImage? {
+    func roundingCorner(forRadius radius: CGFloat, atCorners corners: UIRectCorner = .allCorners, contentMode: UIView.ContentMode = .scaleAspectFill, sizeToFit: CGSize = .zero) -> UIImage? {
         var usingSize = sizeToFit
         if usingSize == .zero {
             usingSize = self.size
@@ -115,12 +115,12 @@ extension UIImage {
         let rect = CGRect.init(x: 0, y: (self.size.height-height)*0.5, width: self.size.width, height: height)
         let style = NSMutableParagraphStyle()
         style.alignment = .center
-        (text as NSString).draw(in: rect , withAttributes: [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 12),NSAttributedStringKey.paragraphStyle:style,NSAttributedStringKey.foregroundColor:UIColor.white])
+        (text as NSString).draw(in: rect , withAttributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 12),NSAttributedString.Key.paragraphStyle:style,NSAttributedString.Key.foregroundColor:UIColor.white])
         
         
         if let watermarkImage = UIGraphicsGetImageFromCurrentImageContext() {
             UIGraphicsEndImageContext()
-            if let data = UIImagePNGRepresentation(watermarkImage) as NSData? {
+            if let data = watermarkImage.pngData() as NSData? {
                 data.write(toFile: pngPath, atomically: true)
                 
                 return watermarkImage

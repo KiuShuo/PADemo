@@ -6,9 +6,6 @@
 #import "NSMutableAttributedString+DZCategory.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "UMMobClick/MobClick.h"
-#import <AMapFoundationKit/AMapFoundationKit.h>
-#import <AMapSearchKit/AMapSearchKit.h>
-#import <MAMapKit/MAMapKit.h>
 #import "IFlyMSC/IFlyMSC.h"
 #import "DisplayView.h"
 #import <CommonCrypto/CommonDigest.h>

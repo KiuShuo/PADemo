@@ -22,7 +22,7 @@ class SettingItem: NSObject, NSCopying {
     var indexPath: IndexPath?
     /// cell是否可选中, 即didSelect代理方法是否响应
     var enable                   = false
-    var selectionStyle           = UITableViewCellSelectionStyle.default
+    var selectionStyle           = UITableViewCell.SelectionStyle.default
     /// cell本身或其子视图是否能接受事件
     var isUserInteractionEnabled = true
     var backgroundColor          = UIColor.white
@@ -175,7 +175,7 @@ class SettingImageGridItem: SettingItem {
     internal var internalImages   = [PACompoundImage]()
     var maxAmountInOneLine         = 4
     var imageCornerRadius: CGFloat = 4
-    var imageViewContentMode       = UIViewContentMode.scaleAspectFill
+    var imageViewContentMode       = UIView.ContentMode.scaleAspectFill
     var imageViewSize: CGSize {
         if UIDevice.isIPHONE_4_7 || UIDevice.isIPHONE_X {
             return CGSize(width: 80, height: 80)

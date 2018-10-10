@@ -33,15 +33,15 @@ class CTViewController: BaseViewController {
         //        NSMutableAttributedString
         
         //        let str = "这是一段用来测试的字符串 this is a string for test"
-        //        let dic = [NSAttributedStringKey.font:UIFont.boldSystemFontOfSize(20),
-        //            NSAttributedStringKey.foregroundColor:UIColor.redColor()]
+        //        let dic = [NSAttributedString.Key.font:UIFont.boldSystemFontOfSize(20),
+        //            NSAttributedString.Key.foregroundColor:UIColor.redColor()]
         ////        let attrStr = NSAttributedString(string: str, attributes: dic)
         ////        label.attributedText = attrStr
         ////        label.textColor = UIColor.yellowColor()
         //
         //        let mutableAttrStr = NSMutableAttributedString(string: str)
         //a        mutableAttrStr.addAttributes(dic, range: NSMakeRange(0, 2))
-        //        mutableAttrStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFontOfSize(13),NSAttributedStringKey.underlineStyle: 1 ], range: NSMakeRange(2,8))
+        //        mutableAttrStr.addAttributes([NSAttributedString.Key.font:UIFont.systemFontOfSize(13),NSAttributedString.Key.underlineStyle: 1 ], range: NSMakeRange(2,8))
         //        label.attributedText = mutableAttrStr
         
         

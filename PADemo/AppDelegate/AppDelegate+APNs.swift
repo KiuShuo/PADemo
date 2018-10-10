@@ -147,7 +147,7 @@ extension AppDelegate {
             content.subtitle = "创建于2017年07月10日的一条本地推送消息（这是消息的subtitle）"
             content.body = "发送这条消息是用来测试本地推送服务（这是消息内容的body）"
             content.badge = NSNumber(integerLiteral: 100)
-            content.sound = UNNotificationSound(named: "unbelievable.caf")
+            content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "unbelievable.caf"))
             content.userInfo = ["key1": "value1", "key2": "value2"]
             let identifier = "kiushuo.timeInterval.localNotification"
             let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)

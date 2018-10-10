@@ -58,6 +58,11 @@
 <!--            window.prompt("pawjscheme://placeOrderForWJCollege?orderNum="+orderNum+"&price"+price);-->
             // iOS
             window.webkit.messageHandlers.placeOrderForWJCollege.postMessage({orderNum: orderNum, price: price});
+
+            // 安卓
+<!--            window.prompt("pawjscheme://toMyClinicViewController");-->
+            // iOS
+<!--            window.webkit.messageHandlers.toMyClinicViewController.postMessage({});-->
         }
         
         function wjShare(appSrc) {

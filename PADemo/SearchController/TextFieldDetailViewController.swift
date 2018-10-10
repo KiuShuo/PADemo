@@ -42,8 +42,8 @@ class TextFieldDetailViewController: BaseViewController {
 //        print("viewDidLoad \(textField)")
         
         print("begin add notification")
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDismiss(_ :)), name: .UIKeyboardDidHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(_ :)), name: .UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDismiss(_ :)), name: UIResponder.keyboardDidHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(_ :)), name: UIResponder.keyboardDidShowNotification, object: nil)
         print("finish add notification")
         
         
@@ -79,7 +79,7 @@ class TextFieldDetailViewController: BaseViewController {
     
     // 上一个界面的键盘什么时候消失？ 注释fix1 发现 当本届还未定义textField时，上一个界面的键盘就消失了。
     @objc func keyboardDismiss(_ info: Notification) {
-        if let frame = (info.userInfo?[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue {
+        if let frame = (info.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue {
             print("消失键盘的高度： \(frame.size.width)")
         }
         // fix 4
@@ -87,7 +87,7 @@ class TextFieldDetailViewController: BaseViewController {
     }
     
     @objc func keyboardShow(_ info: Notification) {
-        if let frame = (info.userInfo?[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue {
+        if let frame = (info.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue {
             print("弹出键盘的高度： \(frame.size.width)")
         }
         print("show keyboard")

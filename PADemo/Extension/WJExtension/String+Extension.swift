@@ -71,20 +71,20 @@ public extension String {
 public extension String {
 
     public func height(width: CGFloat = CGFloat.greatestFiniteMagnitude, font: UIFont) -> CGFloat {
-        let attributes = [NSAttributedStringKey.font: font]
+        let attributes = [NSAttributedString.Key.font: font]
         return height(width: width, attributes: attributes)
     }
     
-    public func height(width: CGFloat = CGFloat.greatestFiniteMagnitude, attributes: [NSAttributedStringKey: Any]) -> CGFloat {
+    public func height(width: CGFloat = CGFloat.greatestFiniteMagnitude, attributes: [NSAttributedString.Key: Any]) -> CGFloat {
         if isEmpty || width == 0 {
             return 0
         }
         var attributeArr = attributes
-        if let paragraphStyle = attributeArr[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle {
+        if let paragraphStyle = attributeArr[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle {
             if paragraphStyle.lineBreakMode != .byWordWrapping && paragraphStyle.lineBreakMode != .byCharWrapping {
                 paragraphStyle.lineBreakMode = .byWordWrapping
             }
-            attributeArr[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            attributeArr[NSAttributedString.Key.paragraphStyle] = paragraphStyle
         }
 
         let size = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
@@ -93,11 +93,11 @@ public extension String {
     }
     
     public func width(height: CGFloat = CGFloat.greatestFiniteMagnitude, font: UIFont) -> CGFloat {
-        let attributes = [NSAttributedStringKey.font: font]
+        let attributes = [NSAttributedString.Key.font: font]
         return width(height: height, attributes: attributes)
     }
     
-    public func width(height: CGFloat = CGFloat.greatestFiniteMagnitude, attributes: [NSAttributedStringKey: Any]?) -> CGFloat {
+    public func width(height: CGFloat = CGFloat.greatestFiniteMagnitude, attributes: [NSAttributedString.Key: Any]?) -> CGFloat {
         if isEmpty || height == 0 {
             return 0
         }

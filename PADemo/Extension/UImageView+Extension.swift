@@ -12,7 +12,7 @@ extension UIImageView {
     /// 不触发离屏渲染地使imageView拥有圆角.
     /// 如果该过程成功, 则返回新的image, 否则返回nil
     @discardableResult
-    func roundingImage(forRadius cornerRadius: CGFloat, atCorners corners: UIRectCorner = .allCorners, contentMode: UIViewContentMode = .scaleAspectFill, sizeToFit: CGSize = CGSize.zero) -> UIImage? {
+    func roundingImage(forRadius cornerRadius: CGFloat, atCorners corners: UIRectCorner = .allCorners, contentMode: UIView.ContentMode = .scaleAspectFill, sizeToFit: CGSize = CGSize.zero) -> UIImage? {
         self.contentMode = contentMode
         
         var constraintSize = sizeToFit

@@ -182,8 +182,8 @@ class PAAlertView: UIView {
     }
     
     func addKeyboardNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_ :)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(_ :)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
@@ -203,7 +203,7 @@ class PAAlertView: UIView {
         guard let userInfo = notification.userInfo else {
             return
         }
-        guard let frame = (userInfo[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue else {
+        guard let frame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue else {
             return
         }
         let popupViewBottomMarginTop = popupView.frame.origin.y + popupView.frame.size.height
@@ -227,7 +227,7 @@ class PAAlertView: UIView {
         } else {
             if isWindowLevelAlert {
                 alertWindow = UIWindow(frame: UIScreen.main.bounds)
-                alertWindow?.windowLevel = UIWindowLevelAlert
+                alertWindow?.windowLevel = UIWindow.Level.alert
                 alertWindow?.isHidden = false
                 alertWindow?.backgroundColor = UIColor.clear
             } else {

@@ -12,7 +12,7 @@ import Crashlytics
 //import GodEye
 //import IFlyMSC
 
-//@UIApplicationMain
+@UIApplicationMain
 // Swift没有了main.m文件，@UIApplicationMain是程序的入口
 
 
@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let number = NSNumber(integerLiteral: 23)
         let value = Int(truncating: number)
         print(number)
@@ -30,10 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let flat = arr.compactMap({$0})
         print("flat = \(flat)")
         
-        
-        DispatchQueue.global().async {
-            AMapServices.shared().apiKey = "PAGaodeMapCommonStruct.kGaodeMapKey"
-        }
         replyPushNotificationAuthorization(application)
         
         Style.setupStyle()

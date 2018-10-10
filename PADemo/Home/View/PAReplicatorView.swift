@@ -41,7 +41,7 @@ class PAReplicatorView: UIView {
         moveRectangle.duration = 0.7
         moveRectangle.repeatCount = HUGE
         moveRectangle.isRemovedOnCompletion = false
-        moveRectangle.fillMode = kCAFillModeForwards
+        moveRectangle.fillMode = CAMediaTimingFillMode.forwards
         rectangle.add(moveRectangle, forKey: nil)
         
         replicatorLayer.instanceCount = 14

@@ -81,7 +81,7 @@ class TableViewController_CellHeight: BaseViewController {
         view.addSubview(tableView)
         extendedLayoutIncludesOpaqueBars = true
         tableView.mas_makeConstraints { (make) in
-            make!.edges.equalTo()(UIEdgeInsetsMake(0, 0, 0, 0))
+            make!.edges.equalTo()(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
         paNavigationBarHidden = true
         setupNavigationView()

@@ -86,7 +86,7 @@ class LearnMenuViewController: BaseViewController {
         style.lineSpacing = 1.8
         let length = detailDescribe.count
         let range = NSMakeRange(0, length)
-        mAttributedString.addAttributes([NSAttributedStringKey.paragraphStyle: style], range: range)
+        mAttributedString.addAttributes([NSAttributedString.Key.paragraphStyle: style], range: range)
         textView.attributedText = mAttributedString
         view.addSubview(textView)
         textView.mas_makeConstraints { (make) in

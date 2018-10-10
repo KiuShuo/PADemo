@@ -165,7 +165,7 @@ class PABaseAlertCoverViewDelegater: PAAlertCoverViewDelegate {
     }
     
     func alertCoverViewHeight() -> CGFloat {
-        let height = coverView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        let height = coverView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         return height
     }
     

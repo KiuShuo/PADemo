@@ -77,7 +77,7 @@ class DetailViewController: BaseViewController {
     
     @objc func clickRightBarButton() {
         let atimer = Timer(timeInterval: 1.0, target: self, selector: #selector(repeatDoSomething), userInfo: nil, repeats: true)
-        RunLoop.main.add(atimer, forMode: .commonModes)
+        RunLoop.main.add(atimer, forMode: RunLoop.Mode.common)
         atimer.fire()
         timer = atimer
     }
@@ -171,7 +171,7 @@ class DetailViewController: BaseViewController {
         let length = text.count
         let range = NSMakeRange(0, length)
         style.lineBreakMode = .byTruncatingTail
-        mAtt.addAttributes([NSAttributedStringKey.paragraphStyle: style], range: range)
+        mAtt.addAttributes([NSAttributedString.Key.paragraphStyle: style], range: range)
         mAtt.dz_setFont(UIFont.systemFont(ofSize: 11), range: NSMakeRange(originStr.count - 1, 1))
         mAtt.dz_setFont(UIFont.systemFont(ofSize: 24), range: NSMakeRange(0, originStr.count - 1))
         mAtt.dz_setBaselineOffset(1.5, range: NSMakeRange(originStr.count - 1, 1))
@@ -305,7 +305,7 @@ struct PAAttributedString {
         let replaceAttributedString = NSAttributedString(attachment: textAttachment)
         mAttributedString.replaceCharacters(in: range, with: replaceAttributedString)
 //
-        mAttributedString.addAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 10)], range: NSMakeRange(0, mAttributedString.length))
+        mAttributedString.addAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10)], range: NSMakeRange(0, mAttributedString.length))
 //        let resultString = mAttributedString.string
 //        debugLog("resultString = \(resultString)")
 //        let aRange = NSRange(location: 0, length: mAttributedString.length - 1)
