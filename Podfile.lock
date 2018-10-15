@@ -1,4 +1,25 @@
 PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - Alamofire (4.7.3)
   - CodableAlamofire (1.1.0):
     - Alamofire (~> 4.0)
@@ -6,22 +27,36 @@ PODS:
     - Fabric (~> 1.7.11)
   - EBForeNotification (1.0.7)
   - Fabric (1.7.11)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - HexColors (2.3.0)
+  - HMSegmentedControl (1.5.5)
   - IGListKit (3.4.0):
     - IGListKit/Default (= 3.4.0)
   - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.4.0)
   - IQKeyboardManager (5.0.3)
+  - lottie-ios (2.5.0)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
+  - MGSwipeTableCell (1.2.0)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - MTDates (0.12.0)
+  - "NSDate+Calendar (0.0.8)"
   - ObjectMapper (3.3.0)
+  - PureLayout (3.0.2)
+  - Reachability (3.2)
   - Result (3.2.4)
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
@@ -29,7 +64,10 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
+  - SSZipArchive (2.1.1)
+  - SVPullToRefresh (0.4.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
+  - "UITextView+Placeholder (1.0.9)"
   - UMengAnalytics (4.2.4)
   - UMengUShare/Core (6.4.2):
     - UMengUShare/Network
@@ -50,51 +88,82 @@ PODS:
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
   - YYModel (1.0.4)
+  - ZipKit (1.0.3)
 
 DEPENDENCIES:
+  - AFNetworking (= 2.5.4)
   - CodableAlamofire (= 1.1.0)
   - Crashlytics (= 3.10.7)
   - EBForeNotification (= 1.0.7)
   - Fabric (= 1.7.11)
+  - FMDB (= 2.6.2)
   - HexColors (= 2.3.0)
+  - HMSegmentedControl (~> 1.5.3)
   - IGListKit (from `https://github.com/Instagram/IGListKit.git`, branch `master`)
   - IQKeyboardManager (= 5.0.3)
+  - lottie-ios (= 2.5.0)
+  - Mantle (~> 2.0.6)
   - Masonry (= 1.0.2)
   - MBProgressHUD (= 0.9.2)
+  - MGSwipeTableCell (= 1.2.0)
+  - MJExtension (= 3.0.13)
   - MJRefresh (= 3.1.12)
   - Moya (= 11.0.2)
+  - MTDates (= 0.12.0)
+  - "NSDate+Calendar (= 0.0.8)"
   - ObjectMapper (= 3.3.0)
+  - PureLayout (= 3.0.2)
+  - Reachability (~> 3.2)
   - RxCocoa (= 4.3.1)
   - RxSwift (= 4.3.1)
   - SDWebImage (= 3.7.5)
+  - SSZipArchive (= 2.1.1)
+  - SVPullToRefresh (~> 0.4.1)
   - "UITableView+FDTemplateLayoutCell (from `https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git`, branch `master`)"
+  - "UITextView+Placeholder (= 1.0.9)"
   - UMengAnalytics (= 4.2.4)
   - UMengUShare/Social/QQ (= 6.4.2)
   - UMengUShare/Social/Sina (= 6.4.2)
   - UMengUShare/Social/WeChat (= 6.4.2)
   - YYModel (= 1.0.4)
+  - ZipKit (= 1.0.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Alamofire
     - CodableAlamofire
     - Crashlytics
     - EBForeNotification
     - Fabric
+    - FMDB
     - HexColors
+    - HMSegmentedControl
     - IQKeyboardManager
+    - lottie-ios
+    - Mantle
     - Masonry
     - MBProgressHUD
+    - MGSwipeTableCell
+    - MJExtension
     - MJRefresh
     - Moya
+    - MTDates
+    - "NSDate+Calendar"
     - ObjectMapper
+    - PureLayout
+    - Reachability
     - Result
     - RxCocoa
     - RxSwift
     - SDWebImage
+    - SSZipArchive
+    - SVPullToRefresh
+    - "UITextView+Placeholder"
     - UMengAnalytics
     - UMengUShare
     - YYModel
+    - ZipKit
 
 EXTERNAL SOURCES:
   IGListKit:
@@ -113,28 +182,43 @@ CHECKOUT OPTIONS:
     :git: https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git
 
 SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CodableAlamofire: e2d2edcec7cf413f7862c30c8fa98eded27a83f9
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
   EBForeNotification: d2426fa084f7af912c665b80529cfb3fe5dbdb79
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
+  HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
   IQKeyboardManager: dc5b18b47e5170e4d150bb86dbee8c8a2fc48997
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MGSwipeTableCell: adcc40c0bac67c38f05b7da40088b37446e687a5
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Moya: a725035953bc1c0eb1be505ab903984501d82440
+  MTDates: 6a67ac516501e0806bc1498f6ab7c2030ed1ab92
+  "NSDate+Calendar": 4aa9f6eb520bdbe7cfd82fbf6c7d35b9725c8188
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  "UITextView+Placeholder": 83895056749372c96febfb43f536c9b1aae3e08e
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: 740664d1dd5cc2fb2cc3325d61e4b35539aa9c78
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZipKit: 594735e7ad2fd3ee7349759681a0423a1b296572
 
-PODFILE CHECKSUM: 9b56230263bf08654774fbd5e9d6c069f037e41b
+PODFILE CHECKSUM: 8f547eb95acbd67fbef19fa455d02a891ba580eb
 
 COCOAPODS: 1.5.2
