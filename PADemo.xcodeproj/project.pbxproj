@@ -89,6 +89,7 @@
 		8D57359120F5D2A400847F75 /* PATeethCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D57358B20F5D2A400847F75 /* PATeethCheckCell.swift */; };
 		8D57359220F5D2A400847F75 /* PAMouthTherapyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D57358C20F5D2A400847F75 /* PAMouthTherapyCell.xib */; };
 		8D57359320F5D2A400847F75 /* PAMovingDossierListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D57358D20F5D2A400847F75 /* PAMovingDossierListCell.xib */; };
+		8D5B4528217835A100918A98 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5B4527217835A100918A98 /* Wireframe.swift */; };
 		8D61BF57206CB91600597764 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D61BF56206CB91600597764 /* KVOViewController.swift */; };
 		8D62D169209D8C44000E34BA /* LayerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D62D168209D8C44000E34BA /* LayerLabel.swift */; };
 		8D65125E1F3BF24E00D9E434 /* PASegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6512581F3BF24E00D9E434 /* PASegmentControl.swift */; };
@@ -350,6 +351,7 @@
 		8D57358B20F5D2A400847F75 /* PATeethCheckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATeethCheckCell.swift; sourceTree = "<group>"; };
 		8D57358C20F5D2A400847F75 /* PAMouthTherapyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAMouthTherapyCell.xib; sourceTree = "<group>"; };
 		8D57358D20F5D2A400847F75 /* PAMovingDossierListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAMovingDossierListCell.xib; sourceTree = "<group>"; };
+		8D5B4527217835A100918A98 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		8D5C9D991EE6B26C00749599 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8D5C9D9A1EE6B2D500749599 /* PADate.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PADate.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8D61BF56206CB91600597764 /* KVOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
@@ -994,7 +996,7 @@
 				880FAF142007AFC6007CF8C1 /* Protocol */,
 				8DC71B031FFE2350001BA435 /* Base */,
 				8DC71B071FFE2350001BA435 /* Controller */,
-				8DC71B061FFE2350001BA435 /* Server */,
+				8DC71B061FFE2350001BA435 /* Service */,
 				8DC71B021FFE2350001BA435 /* ViewModel */,
 			);
 			path = LearnRXSwift;
@@ -1094,12 +1096,13 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		8DC71B061FFE2350001BA435 /* Server */ = {
+		8DC71B061FFE2350001BA435 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				8DC71B0D1FFE296E001BA435 /* ValidationService.swift */,
+				8D5B4527217835A100918A98 /* Wireframe.swift */,
 			);
-			path = Server;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		8DC71B071FFE2350001BA435 /* Controller */ = {
@@ -1806,6 +1809,7 @@
 				8D0DB104209C38E10048903E /* FPSTableViewCell.swift in Sources */,
 				8D12DBF01EB1C992005B9AE9 /* Extension.swift in Sources */,
 				8D6512741F3DA43100D9E434 /* PASegmentTestViewController.swift in Sources */,
+				8D5B4528217835A100918A98 /* Wireframe.swift in Sources */,
 				8D4041E41FFF7D980065308F /* LRxSwiftViewController.swift in Sources */,
 				8D44D2A620C7DC640087B2BD /* DisplayView.m in Sources */,
 				8DDC0ECE1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift in Sources */,

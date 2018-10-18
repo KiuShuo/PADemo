@@ -23,6 +23,7 @@ class SimpleValidationViewController: RXBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // 有户名是否有效
         let userNameValid = userNameOutlet.rx.text.orEmpty.map { text -> Bool in
             return text.count >= self.minimalUsernameLength
@@ -45,8 +46,9 @@ class SimpleValidationViewController: RXBaseViewController {
     }
     
     func showAlertView() {
-        let alertView = UIAlertView(title: "登录", message: "是否确定登录？", delegate: nil, cancelButtonTitle: "确定")
-        alertView.show()
+        let alertViewController = UIAlertController(title: "登录", message: "是否确定登录？", preferredStyle: .alert)
+        alertViewController.addAction(UIAlertAction(title: "好的", style: .cancel, handler: nil))
+        present(alertViewController, animated: true, completion: nil)
     }
     
     func showLearnRxSwiftViewController() {
