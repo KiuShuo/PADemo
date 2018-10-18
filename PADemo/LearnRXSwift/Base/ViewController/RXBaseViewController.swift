@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class RXBaseViewController: UIViewController {
+class RXBaseViewController: BaseViewController {
 
     var disposeBag = DisposeBag()
     

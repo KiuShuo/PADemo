@@ -25,7 +25,8 @@ class SimpleValidationViewController: RXBaseViewController {
         super.viewDidLoad()
         
         // 有户名是否有效
-        let userNameValid = userNameOutlet.rx.text.orEmpty.map { text -> Bool in
+        let userNameValid = userNameOutlet.rx.text.orEmpty.map { [weak self] text -> Bool in
+            guard let `self` = self else { return false }
             return text.count >= self.minimalUsernameLength
         }.share(replay: 1)
         // share 共享资源的意思
@@ -34,7 +35,10 @@ class SimpleValidationViewController: RXBaseViewController {
         userNameValid.bind(to: passwordOutlet.rx.isEnabled).disposed(by: disposeBag)
         
         // 密码是否有效
-        let passwordValid = passwordOutlet.rx.text.orEmpty.map { $0.count >= self.minimalPasswordLength }.share(replay: 1)
+        let passwordValid = passwordOutlet.rx.text.orEmpty.map { [weak self] text -> Bool in
+            guard let `self` = self else { return false }
+            return text.count >= self.minimalPasswordLength
+        }.share(replay: 1)
         passwordValid.bind(to: passworkValidOutlet.rx.isHidden).disposed(by: disposeBag)
         
         // 所有输入是否有效
