@@ -45,7 +45,7 @@ class RegisterViewModel {
         }.share(replay: 1)
         
 //        repeatPasswordUsable = repeatPassword.asObservable().map({ repeatPassword in
-//            return service.validateRepeatPassword(password.value, <#T##repeatPassword: String##String#>)
+//            return service.validateRepeatPassword(self.password.value, repeatPassword)
 //        })
         
     }
