@@ -45,22 +45,5 @@ target 'PADemo' do
     pod 'Moya', '11.0.2'
     pod 'AFNetworking', '3.2.1'
 
-    # #####
-#  pod 'AFNetworking', '= 2.5.4'
-#  pod 'SVPullToRefresh', '~> 0.4.1'
-#  pod 'HMSegmentedControl', '~> 1.5.3'
-#  pod 'NSDate+Calendar', '= 0.0.8'
-#  pod 'MTDates', '= 0.12.0'
-#  pod 'MGSwipeTableCell', '= 1.2.0'
-#  pod 'UITextView+Placeholder', '= 1.0.9'
-#  pod 'Reachability', '~> 3.2'
-#  pod 'Mantle', '~> 2.0.6'
-#  pod 'MJExtension', '= 3.0.13'
-#  pod 'SSZipArchive', '= 2.1.1'
-#  pod 'FMDB', '= 2.6.2'
-#  pod 'PureLayout', '= 3.0.2'
-#  pod 'ZipKit', '= 1.0.3' #only for test and develop env
-#  pod 'lottie-ios', '= 2.5.0'
-
 end
 
