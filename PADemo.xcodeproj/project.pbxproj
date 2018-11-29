@@ -140,6 +140,9 @@
 		8D80D2181FFE351E0080386B /* Timer+WeakSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D80D20D1FFE351E0080386B /* Timer+WeakSelf.swift */; };
 		8D80D2191FFE351E0080386B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D80D20E1FFE351E0080386B /* Array+Extension.swift */; };
 		8D8201201ECB480C000809E4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D82011F1ECB480C000809E4 /* WebViewController.swift */; };
+		8D8958E121ACF40C00E891B8 /* LearnSourceCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8958E021ACF40C00E891B8 /* LearnSourceCodeViewController.swift */; };
+		8D8958E621AD0FE900E891B8 /* LearnAFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8958E421AD0FE900E891B8 /* LearnAFViewController.swift */; };
+		8D8958E721AD0FE900E891B8 /* LearnAFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8958E521AD0FE900E891B8 /* LearnAFViewController.xib */; };
 		8D8D9CC11FDE2D6600A733B1 /* CustomRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D9CC01FDE2D6600A733B1 /* CustomRefreshNormalHeader.swift */; };
 		8D8F0A1420AC2D4D00FD50A3 /* CTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F0A1020AC2D4D00FD50A3 /* CTextView.swift */; };
 		8D8F0A1520AC2D4D00FD50A3 /* CTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F0A1120AC2D4D00FD50A3 /* CTView.swift */; };
@@ -415,6 +418,9 @@
 		8D80D20D1FFE351E0080386B /* Timer+WeakSelf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+WeakSelf.swift"; sourceTree = "<group>"; };
 		8D80D20E1FFE351E0080386B /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		8D82011F1ECB480C000809E4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		8D8958E021ACF40C00E891B8 /* LearnSourceCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSourceCodeViewController.swift; sourceTree = "<group>"; };
+		8D8958E421AD0FE900E891B8 /* LearnAFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnAFViewController.swift; sourceTree = "<group>"; };
+		8D8958E521AD0FE900E891B8 /* LearnAFViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnAFViewController.xib; sourceTree = "<group>"; };
 		8D8D9CC01FDE2D6600A733B1 /* CustomRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRefreshNormalHeader.swift; sourceTree = "<group>"; };
 		8D8F0A1020AC2D4D00FD50A3 /* CTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTextView.swift; sourceTree = "<group>"; };
 		8D8F0A1120AC2D4D00FD50A3 /* CTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTView.swift; sourceTree = "<group>"; };
@@ -980,6 +986,24 @@
 			path = PATableViewModel;
 			sourceTree = "<group>";
 		};
+		8D8958DE21ACF3A500E891B8 /* LearnSourceCode */ = {
+			isa = PBXGroup;
+			children = (
+				8D8958E021ACF40C00E891B8 /* LearnSourceCodeViewController.swift */,
+				8D8958DF21ACF3B100E891B8 /* LearnAFNetworking */,
+			);
+			path = LearnSourceCode;
+			sourceTree = "<group>";
+		};
+		8D8958DF21ACF3B100E891B8 /* LearnAFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				8D8958E421AD0FE900E891B8 /* LearnAFViewController.swift */,
+				8D8958E521AD0FE900E891B8 /* LearnAFViewController.xib */,
+			);
+			path = LearnAFNetworking;
+			sourceTree = "<group>";
+		};
 		8D94D36E1FA0417800CD24C1 /* LearnViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1247,6 +1271,7 @@
 		8DEF45701EB1BE6900CA4F75 /* PADemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D8958DE21ACF3A500E891B8 /* LearnSourceCode */,
 				8D3D62102146482100F28906 /* SwiftLearn */,
 				8D51A6A320A417A300E8DE86 /* MSCDemo */,
 				8D0DB0FD209C386E0048903E /* Instruments */,
@@ -1533,6 +1558,7 @@
 				8D0F5D672051105500736B94 /* test.html in Resources */,
 				8DEF45791EB1BE6900CA4F75 /* Assets.xcassets in Resources */,
 				8DDC6BFF1F25E441004DDA1B /* CollectionTableViewCell.xib in Resources */,
+				8D8958E721AD0FE900E891B8 /* LearnAFViewController.xib in Resources */,
 				8D57358E20F5D2A400847F75 /* PATeethCheckCell.xib in Resources */,
 				8D21990A1EB1F93A0024B5CB /* ControllerModel.plist in Resources */,
 				8D6E11301F441D1400C3620D /* AlertTestViewController.xib in Resources */,
@@ -1577,6 +1603,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/EBForeNotification/EBForeNotification.framework",
@@ -1597,6 +1624,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EBForeNotification.framework",
@@ -1700,6 +1728,7 @@
 			files = (
 				8DB7C2971F4ADEF200E8FE53 /* NSMutableAttributedString+DZCategory.m in Sources */,
 				8D5654261FC431FB008EE1CF /* PAAlertViewDelegater.swift in Sources */,
+				8D8958E621AD0FE900E891B8 /* LearnAFViewController.swift in Sources */,
 				8D8F15AB1EE7B1740019AC1C /* UIImage+Extension.swift in Sources */,
 				8DF362F21EDE9BA60095A78A /* PAView.swift in Sources */,
 				8DBB1ACB1EC4606900D507E6 /* BaseViewController.swift in Sources */,
@@ -1792,6 +1821,7 @@
 				8D6512741F3DA43100D9E434 /* PASegmentTestViewController.swift in Sources */,
 				8D5B4528217835A100918A98 /* Wireframe.swift in Sources */,
 				8D4041E41FFF7D980065308F /* LRxSwiftViewController.swift in Sources */,
+				8D8958E121ACF40C00E891B8 /* LearnSourceCodeViewController.swift in Sources */,
 				8D44D2A620C7DC640087B2BD /* DisplayView.m in Sources */,
 				8DDC0ECE1F57E7840035BE44 /* PACalculatorDetailMenuCell.swift in Sources */,
 				8D4A75E1208F2DD7000F6BF7 /* SearchContentsViewController.swift in Sources */,

@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - Alamofire (4.7.3)
   - CodableAlamofire (1.1.0):
     - Alamofire (~> 4.0)
@@ -52,6 +67,7 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - AFNetworking (= 3.2.1)
   - CodableAlamofire (= 1.1.0)
   - Crashlytics (= 3.10.7)
   - EBForeNotification (= 1.0.7)
@@ -76,6 +92,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Alamofire
     - CodableAlamofire
     - Crashlytics
@@ -113,6 +130,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CodableAlamofire: e2d2edcec7cf413f7862c30c8fa98eded27a83f9
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
@@ -135,6 +153,6 @@ SPEC CHECKSUMS:
   UMengUShare: 740664d1dd5cc2fb2cc3325d61e4b35539aa9c78
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: e5483791f8c537c025d26b926c403fbc2ab5edb6
+PODFILE CHECKSUM: eeb381d0388c596c4050f53f5f2e9a90bd9dc132
 
 COCOAPODS: 1.5.2

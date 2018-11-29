@@ -16,10 +16,10 @@ target 'PADemo' do
     
     #$WJFrameworkUrl = 'svn://172.19.21.212/wanjia/src/yidong/IOS/WJFramework/'
     #pod 'WJExtension', :svn => $WJFrameworkUrl +'WJExtension', :tag => '1.1.2'
-
+    
     #$WJFrameworkLocalUrl = '/Users/liushuo199/Documents/svnCheckOut/WJFramework/'
     #pod 'WJExtension', :path => $WJFrameworkLocalUrl +'WJExtension/tags/1.1.2'
-    
+#    pod 'WJUtil', :path => '/Users/liushuo199/Desktop/1.0.0'
     pod 'SDWebImage', '3.7.5'
     pod 'Masonry', '1.0.2'
     pod 'ObjectMapper', '3.3.0'
@@ -43,7 +43,7 @@ target 'PADemo' do
     pod 'YYModel', '1.0.4'
     pod 'CodableAlamofire', '1.1.0'
     pod 'Moya', '11.0.2'
-
+    pod 'AFNetworking', '3.2.1'
 
     # #####
 #  pod 'AFNetworking', '= 2.5.4'
