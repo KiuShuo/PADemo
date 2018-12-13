@@ -56,6 +56,8 @@
 		8D44D2A620C7DC640087B2BD /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D44D2A520C7DC640087B2BD /* DisplayView.m */; };
 		8D4687772058CDB900A9D1D8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4687762058CDB900A9D1D8 /* HomeViewModel.swift */; };
 		8D46877A2058CEB400A9D1D8 /* ObserverSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4687792058CEB300A9D1D8 /* ObserverSet.swift */; };
+		8D48009721B622B60082FC7F /* LearnViewController_AFURLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48009521B622B60082FC7F /* LearnViewController_AFURLSessionManager.swift */; };
+		8D48009821B622B60082FC7F /* LearnViewController_AFURLSessionManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D48009621B622B60082FC7F /* LearnViewController_AFURLSessionManager.xib */; };
 		8D4A75DF208F1CFC000F6BF7 /* SearchResultViewController_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */; };
 		8D4A75E1208F2DD7000F6BF7 /* SearchContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A75E0208F2DD7000F6BF7 /* SearchContentsViewController.swift */; };
 		8D4B97A32147A2E80041C884 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4B97A02147A2E80041C884 /* NetworkManager.swift */; };
@@ -332,6 +334,8 @@
 		8D44D2A520C7DC640087B2BD /* DisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayView.m; sourceTree = "<group>"; };
 		8D4687762058CDB900A9D1D8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8D4687792058CEB300A9D1D8 /* ObserverSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverSet.swift; sourceTree = "<group>"; };
+		8D48009521B622B60082FC7F /* LearnViewController_AFURLSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnViewController_AFURLSessionManager.swift; sourceTree = "<group>"; };
+		8D48009621B622B60082FC7F /* LearnViewController_AFURLSessionManager.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnViewController_AFURLSessionManager.xib; sourceTree = "<group>"; };
 		8D4A75DE208F1CFC000F6BF7 /* SearchResultViewController_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController_1.swift; sourceTree = "<group>"; };
 		8D4A75E0208F2DD7000F6BF7 /* SearchContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentsViewController.swift; sourceTree = "<group>"; };
 		8D4B97A02147A2E80041C884 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -1000,6 +1004,8 @@
 			children = (
 				8D8958E421AD0FE900E891B8 /* LearnAFViewController.swift */,
 				8D8958E521AD0FE900E891B8 /* LearnAFViewController.xib */,
+				8D48009521B622B60082FC7F /* LearnViewController_AFURLSessionManager.swift */,
+				8D48009621B622B60082FC7F /* LearnViewController_AFURLSessionManager.xib */,
 			);
 			path = LearnAFNetworking;
 			sourceTree = "<group>";
@@ -1553,6 +1559,7 @@
 				8DCD7F151F58F1B10060957B /* PACalculatorMainMenuCell.xib in Resources */,
 				8D0DB105209C38E10048903E /* FPSTableViewCell.xib in Resources */,
 				8DCA85871F385D20009F648F /* PAPersonCollectionViewCell.xib in Resources */,
+				8D48009821B622B60082FC7F /* LearnViewController_AFURLSessionManager.xib in Resources */,
 				8D003D762088445700FF4B28 /* PAIntegrationGuideView.xib in Resources */,
 				8D6BC7291FDD171C0004E1C6 /* PACustomNavigationView.xib in Resources */,
 				8D0F5D672051105500736B94 /* test.html in Resources */,
@@ -1748,6 +1755,7 @@
 				8DDC6BFE1F25E441004DDA1B /* CollectionTableViewCell.swift in Sources */,
 				8D6D13571ECB68A00084BBA8 /* SearchViewController.swift in Sources */,
 				8DB5248220D55DAC003A6182 /* PAMovingDossierTableFooterView.swift in Sources */,
+				8D48009721B622B60082FC7F /* LearnViewController_AFURLSessionManager.swift in Sources */,
 				8D57359120F5D2A400847F75 /* PATeethCheckCell.swift in Sources */,
 				8DCA857B1F3850B9009F648F /* PACellModel.swift in Sources */,
 				8D304BD01FECAFBC00474A37 /* SettingItems.swift in Sources */,

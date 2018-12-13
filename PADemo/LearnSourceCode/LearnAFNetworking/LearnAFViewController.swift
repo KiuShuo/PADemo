@@ -62,7 +62,7 @@ class LearnAFViewController: BaseViewController {
 }
 
 extension LearnAFViewController: URLSessionDelegate {
-
+    // 请求无效
     public func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
         print("error = \(error?.localizedDescription ?? "didBecomeInvalid")")
     }
@@ -79,6 +79,7 @@ extension LearnAFViewController: URLSessionDelegate {
         print("didReceive")
     }
 
+    // 当应用进入后台的时候改方法会被调用 可以在这里处理网络请求完成的回调
     public func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
         print("urlSessionDidFinishEvents")
     }
@@ -86,7 +87,8 @@ extension LearnAFViewController: URLSessionDelegate {
 
 extension LearnAFViewController: URLSessionTaskDelegate {
     
-    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+    // 当task出错的时候会调用改方法。如果error为nil也会调用改方法，表示task完成
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         DispatchQueue.main.async {
             self.activityIndicatorView.stopAnimating()
         }
@@ -95,6 +97,11 @@ extension LearnAFViewController: URLSessionTaskDelegate {
                 self.showImageView.image = UIImage(data: data)
             }
         }
+    }
+    
+    // 当请求需要认证的时候调用
+    func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        //
     }
     
 }

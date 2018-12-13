@@ -10,7 +10,7 @@ import UIKit
 
 class LearnSourceCodeViewController: PAListViewController {
 
-    private var names = ["AFNetworking"]
+    private var names = ["AFNetworking-URLSession", "AFNetworking-AFURLSessionManager"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +37,11 @@ class LearnSourceCodeViewController: PAListViewController {
                     return
             }
             switch name {
-            case "AFNetworking":
+            case "AFNetworking-URLSession":
                 let vc = LearnAFViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            case "AFNetworking-AFURLSessionManager":
+                let vc = LearnViewController_AFURLSessionManager()
                 self.navigationController?.pushViewController(vc, animated: true)
             default:()
             }
