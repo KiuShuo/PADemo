@@ -27,7 +27,7 @@ target 'PADemo' do
     pod 'IQKeyboardManager', '5.0.3'
     pod 'EBForeNotification', '1.0.7'
     pod 'UITableView+FDTemplateLayoutCell', :git => 'https://github.com/forkingdog/UITableView-FDTemplateLayoutCell.git', :branch => 'master'
-    pod 'IGListKit', :git => 'https://github.com/Instagram/IGListKit.git', :branch => 'master'
+    pod 'IGListKit','3.4.0' #:git => 'https://github.com/Instagram/IGListKit.git', :branch => 'master'
     pod 'Fabric', '1.7.11'
     pod 'Crashlytics', '3.10.7'
     pod 'RxSwift', '4.3.1'
