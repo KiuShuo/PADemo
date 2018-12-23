@@ -89,12 +89,12 @@ class PATableViewModelDemoController: BaseViewController {
         var cellModel = PATableViewModelDemoCell.cellModel
         cellModel.isEnforceFrameLayout = true
         cellModel.isCacheCellHeight = false
-        var sectionModel = PASectionModel(cellModel: cellModel, dataModels: dataSource)
-        var headerViewModel = PAHeaderFooterViewModel(identifier: "headerView")
-        let headerView = UITableViewHeaderFooterView(reuseIdentifier: "headerView")
-        headerView.contentView.backgroundColor = UIColor.red
-        headerViewModel.headerFooterView = headerView
-        sectionModel.footerViewModel = headerViewModel
+        let sectionModel = PASectionModel(cellModel: cellModel, dataModels: dataSource)
+//        var headerViewModel = PAHeaderFooterViewModel(identifier: "headerView")
+//        let headerView = UITableViewHeaderFooterView(reuseIdentifier: "headerView")
+//        headerView.contentView.backgroundColor = UIColor.red
+//        headerViewModel.headerFooterView = headerView
+//        sectionModel.footerViewModel = headerViewModel
         return [sectionModel]
     }
     

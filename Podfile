@@ -9,6 +9,12 @@ platform :ios, '8.0'
 #    end
 #end
 
+target 'IGListKitLearn' do
+    inhibit_all_warnings!
+    use_frameworks!
+    pod 'IGListKit','3.4.0'
+end
+
 
 target 'PADemo' do
     inhibit_all_warnings!

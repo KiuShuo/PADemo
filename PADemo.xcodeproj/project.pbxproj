@@ -8,7 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		2562830EFA8BDDECC4BD9774 /* Pods_PADemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C9FD5294AFDD8FD7FB11E4 /* Pods_PADemo.framework */; };
+		353728939AC30E9E801F61CD /* Pods_IGListKitLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD0E69C65C089CBC5C90C52 /* Pods_IGListKitLearn.framework */; };
 		880FAF162007AFD5007CF8C1 /* LRProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FAF152007AFD5007CF8C1 /* LRProtocol.swift */; };
+		88C734BE21CFDF3900133549 /* IGListKitLearnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734BD21CFDF3900133549 /* IGListKitLearnTests.swift */; };
+		88C734C921CFDF3900133549 /* IGListKitLearnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734C821CFDF3900133549 /* IGListKitLearnUITests.swift */; };
+		88C734F621CFDFB000133549 /* DateSortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734D721CFDFAF00133549 /* DateSortable.swift */; };
+		88C734F721CFDFB000133549 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734D821CFDFAF00133549 /* Message.swift */; };
+		88C734F821CFDFB000133549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734D921CFDFAF00133549 /* User.swift */; };
+		88C734F921CFDFB000133549 /* NSObject+IGListDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734DA21CFDFAF00133549 /* NSObject+IGListDiffable.swift */; };
+		88C734FA21CFDFB000133549 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734DB21CFDFAF00133549 /* Weather.swift */; };
+		88C734FB21CFDFB000133549 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734DC21CFDFAF00133549 /* JournalEntry.swift */; };
+		88C734FC21CFDFB000133549 /* SolFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734DD21CFDFAF00133549 /* SolFormatter.swift */; };
+		88C734FD21CFDFB000133549 /* ClassicFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734DF21CFDFAF00133549 /* ClassicFeedViewController.swift */; };
+		88C734FE21CFDFB000133549 /* WeatherSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734E121CFDFAF00133549 /* WeatherSummaryCell.swift */; };
+		88C734FF21CFDFB000133549 /* JournalEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734E221CFDFAF00133549 /* JournalEntryCell.swift */; };
+		88C7350021CFDFB000133549 /* JournalEntryDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734E321CFDFAF00133549 /* JournalEntryDateCell.swift */; };
+		88C7350121CFDFB000133549 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734E421CFDFAF00133549 /* CustomNavigationBar.swift */; };
+		88C7350221CFDFB000133549 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734E521CFDFAF00133549 /* MessageCell.swift */; };
+		88C7350321CFDFB000133549 /* WeatherDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734E621CFDFAF00133549 /* WeatherDetailCell.swift */; };
+		88C7350421CFDFB000133549 /* WxScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734E821CFDFAF00133549 /* WxScanner.swift */; };
+		88C7350521CFDFB000133549 /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734E921CFDFAF00133549 /* TextSize.swift */; };
+		88C7350621CFDFB000133549 /* Pathfinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734EA21CFDFAF00133549 /* Pathfinder.swift */; };
+		88C7350721CFDFB000133549 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734EB21CFDFAF00133549 /* Theme.swift */; };
+		88C7350821CFDFB000133549 /* JournalLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734EC21CFDFAF00133549 /* JournalLoader.swift */; };
+		88C7350921CFDFB000133549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C734EF21CFDFAF00133549 /* AppDelegate.swift */; };
+		88C7350A21CFDFB000133549 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88C734F121CFDFB000133549 /* OCRAStd.otf */; };
+		88C7350B21CFDFB000133549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C734F221CFDFB000133549 /* Assets.xcassets */; };
+		88C7350C21CFDFB000133549 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C734F321CFDFB000133549 /* LaunchScreen.storyboard */; };
 		8D003D74208843B900FF4B28 /* PAIntegrationGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */; };
 		8D003D762088445700FF4B28 /* PAIntegrationGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */; };
 		8D06A8EB20E0F1BC00F126E4 /* PAReplicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A8EA20E0F1BC00F126E4 /* PAReplicatorView.swift */; };
@@ -220,6 +246,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		88C734BA21CFDF3900133549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DEF45661EB1BE6900CA4F75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88C734A521CFDF3700133549;
+			remoteInfo = IGListKitLearn;
+		};
+		88C734C521CFDF3900133549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DEF45661EB1BE6900CA4F75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88C734A521CFDF3700133549;
+			remoteInfo = IGListKitLearn;
+		};
 		8D42C8731F136D8C00061C9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8DEF45661EB1BE6900CA4F75 /* Project object */;
@@ -276,11 +316,47 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4DD13403AAC27E0F5C4D5593 /* Pods-IGListKitLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGListKitLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IGListKitLearn/Pods-IGListKitLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		558E1E08579E39225467C89E /* Pods-PADemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PADemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PADemo/Pods-PADemo.debug.xcconfig"; sourceTree = "<group>"; };
 		698963C09D820B5FEECEE9E7 /* Pods-PADemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PADemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PADemo/Pods-PADemo.release.xcconfig"; sourceTree = "<group>"; };
 		75C9FD5294AFDD8FD7FB11E4 /* Pods_PADemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PADemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD0E69C65C089CBC5C90C52 /* Pods_IGListKitLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IGListKitLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		880FAF152007AFD5007CF8C1 /* LRProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRProtocol.swift; sourceTree = "<group>"; };
 		8865647EF1F6C3D4634993D0 /* Pods_PANotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PANotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C734A121CFDE9100133549 /* PADemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PADemo copy-Info.plist"; path = "/Users/liushuo/Documents/gitClone/PADemo/PADemo copy-Info.plist"; sourceTree = "<absolute>"; };
+		88C734A621CFDF3700133549 /* IGListKitLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGListKitLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C734B921CFDF3900133549 /* IGListKitLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IGListKitLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C734BD21CFDF3900133549 /* IGListKitLearnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListKitLearnTests.swift; sourceTree = "<group>"; };
+		88C734BF21CFDF3900133549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88C734C421CFDF3900133549 /* IGListKitLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IGListKitLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C734C821CFDF3900133549 /* IGListKitLearnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListKitLearnUITests.swift; sourceTree = "<group>"; };
+		88C734CA21CFDF3900133549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88C734D421CFDFAE00133549 /* IGListKitLearn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IGListKitLearn-Bridging-Header.h"; sourceTree = "<group>"; };
+		88C734D521CFDFAF00133549 /* LearnIGListKit-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LearnIGListKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		88C734D721CFDFAF00133549 /* DateSortable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSortable.swift; sourceTree = "<group>"; };
+		88C734D821CFDFAF00133549 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		88C734D921CFDFAF00133549 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		88C734DA21CFDFAF00133549 /* NSObject+IGListDiffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+IGListDiffable.swift"; sourceTree = "<group>"; };
+		88C734DB21CFDFAF00133549 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		88C734DC21CFDFAF00133549 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		88C734DD21CFDFAF00133549 /* SolFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolFormatter.swift; sourceTree = "<group>"; };
+		88C734DF21CFDFAF00133549 /* ClassicFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicFeedViewController.swift; sourceTree = "<group>"; };
+		88C734E121CFDFAF00133549 /* WeatherSummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSummaryCell.swift; sourceTree = "<group>"; };
+		88C734E221CFDFAF00133549 /* JournalEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntryCell.swift; sourceTree = "<group>"; };
+		88C734E321CFDFAF00133549 /* JournalEntryDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntryDateCell.swift; sourceTree = "<group>"; };
+		88C734E421CFDFAF00133549 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		88C734E521CFDFAF00133549 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		88C734E621CFDFAF00133549 /* WeatherDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailCell.swift; sourceTree = "<group>"; };
+		88C734E821CFDFAF00133549 /* WxScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WxScanner.swift; sourceTree = "<group>"; };
+		88C734E921CFDFAF00133549 /* TextSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
+		88C734EA21CFDFAF00133549 /* Pathfinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pathfinder.swift; sourceTree = "<group>"; };
+		88C734EB21CFDFAF00133549 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		88C734EC21CFDFAF00133549 /* JournalLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalLoader.swift; sourceTree = "<group>"; };
+		88C734EF21CFDFAF00133549 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88C734F121CFDFB000133549 /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
+		88C734F221CFDFB000133549 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88C734F421CFDFB000133549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88C734F521CFDFB000133549 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAIntegrationGuideView.swift; sourceTree = "<group>"; };
 		8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PAIntegrationGuideView.xib; sourceTree = "<group>"; };
 		8D06A8EA20E0F1BC00F126E4 /* PAReplicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAReplicatorView.swift; sourceTree = "<group>"; };
@@ -506,10 +582,33 @@
 		8DFE58221F176A9F0057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
 		8DFE58241F176F9E0057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
 		8DFE58261F176FA40057BAD9 /* PAFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAFileManager.swift; sourceTree = "<group>"; };
+		A5D2A50D38F6B810739B048B /* Pods-IGListKitLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGListKitLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-IGListKitLearn/Pods-IGListKitLearn.release.xcconfig"; sourceTree = "<group>"; };
 		BEE71AC7C102CFA6B6BB840A /* Pods_PANotificationContent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PANotificationContent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		88C734A321CFDF3700133549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353728939AC30E9E801F61CD /* Pods_IGListKitLearn.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C734B621CFDF3900133549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C734C121CFDF3900133549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D42C86B1F136D8C00061C9C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +685,7 @@
 				8D42C8811F13754B00061C9C /* UserNotificationsUI.framework */,
 				BEE71AC7C102CFA6B6BB840A /* Pods_PANotificationContent.framework */,
 				75C9FD5294AFDD8FD7FB11E4 /* Pods_PADemo.framework */,
+				7FD0E69C65C089CBC5C90C52 /* Pods_IGListKitLearn.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -595,6 +695,8 @@
 			children = (
 				558E1E08579E39225467C89E /* Pods-PADemo.debug.xcconfig */,
 				698963C09D820B5FEECEE9E7 /* Pods-PADemo.release.xcconfig */,
+				4DD13403AAC27E0F5C4D5593 /* Pods-IGListKitLearn.debug.xcconfig */,
+				A5D2A50D38F6B810739B048B /* Pods-IGListKitLearn.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -605,6 +707,114 @@
 				880FAF152007AFD5007CF8C1 /* LRProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		88C734A721CFDF3700133549 /* IGListKitLearn */ = {
+			isa = PBXGroup;
+			children = (
+				88C734EF21CFDFAF00133549 /* AppDelegate.swift */,
+				88C734ED21CFDFAF00133549 /* Base.lproj */,
+				88C734D521CFDFAF00133549 /* LearnIGListKit-Bridging-Header.h */,
+				88C734D621CFDFAF00133549 /* Models */,
+				88C734F021CFDFB000133549 /* Resources */,
+				88C734EE21CFDFAF00133549 /* SectionControllers */,
+				88C734E721CFDFAF00133549 /* Systems */,
+				88C734DE21CFDFAF00133549 /* ViewControllers */,
+				88C734E021CFDFAF00133549 /* Views */,
+				88C734D421CFDFAE00133549 /* IGListKitLearn-Bridging-Header.h */,
+			);
+			path = IGListKitLearn;
+			sourceTree = "<group>";
+		};
+		88C734BC21CFDF3900133549 /* IGListKitLearnTests */ = {
+			isa = PBXGroup;
+			children = (
+				88C734BD21CFDF3900133549 /* IGListKitLearnTests.swift */,
+				88C734BF21CFDF3900133549 /* Info.plist */,
+			);
+			path = IGListKitLearnTests;
+			sourceTree = "<group>";
+		};
+		88C734C721CFDF3900133549 /* IGListKitLearnUITests */ = {
+			isa = PBXGroup;
+			children = (
+				88C734C821CFDF3900133549 /* IGListKitLearnUITests.swift */,
+				88C734CA21CFDF3900133549 /* Info.plist */,
+			);
+			path = IGListKitLearnUITests;
+			sourceTree = "<group>";
+		};
+		88C734D621CFDFAF00133549 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88C734D721CFDFAF00133549 /* DateSortable.swift */,
+				88C734D821CFDFAF00133549 /* Message.swift */,
+				88C734D921CFDFAF00133549 /* User.swift */,
+				88C734DA21CFDFAF00133549 /* NSObject+IGListDiffable.swift */,
+				88C734DB21CFDFAF00133549 /* Weather.swift */,
+				88C734DC21CFDFAF00133549 /* JournalEntry.swift */,
+				88C734DD21CFDFAF00133549 /* SolFormatter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88C734DE21CFDFAF00133549 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88C734DF21CFDFAF00133549 /* ClassicFeedViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88C734E021CFDFAF00133549 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				88C734E121CFDFAF00133549 /* WeatherSummaryCell.swift */,
+				88C734E221CFDFAF00133549 /* JournalEntryCell.swift */,
+				88C734E321CFDFAF00133549 /* JournalEntryDateCell.swift */,
+				88C734E421CFDFAF00133549 /* CustomNavigationBar.swift */,
+				88C734E521CFDFAF00133549 /* MessageCell.swift */,
+				88C734E621CFDFAF00133549 /* WeatherDetailCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88C734E721CFDFAF00133549 /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				88C734E821CFDFAF00133549 /* WxScanner.swift */,
+				88C734E921CFDFAF00133549 /* TextSize.swift */,
+				88C734EA21CFDFAF00133549 /* Pathfinder.swift */,
+				88C734EB21CFDFAF00133549 /* Theme.swift */,
+				88C734EC21CFDFAF00133549 /* JournalLoader.swift */,
+			);
+			path = Systems;
+			sourceTree = "<group>";
+		};
+		88C734ED21CFDFAF00133549 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Base.lproj;
+			path = ../../../../Desktop/LearnIGListKit/LearnIGListKit/Base.lproj;
+			sourceTree = "<group>";
+		};
+		88C734EE21CFDFAF00133549 /* SectionControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SectionControllers;
+			sourceTree = "<group>";
+		};
+		88C734F021CFDFB000133549 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88C734F521CFDFB000133549 /* Info.plist */,
+				88C734F121CFDFB000133549 /* OCRAStd.otf */,
+				88C734F221CFDFB000133549 /* Assets.xcassets */,
+				88C734F321CFDFB000133549 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8D0DB0FD209C386E0048903E /* Instruments */ = {
@@ -1256,9 +1466,13 @@
 				8DEF45851EB1BE6900CA4F75 /* PADemoTests */,
 				8DEF45901EB1BE6900CA4F75 /* PADemoUITests */,
 				8D42C86F1F136D8C00061C9C /* PANotificationService */,
+				88C734A721CFDF3700133549 /* IGListKitLearn */,
+				88C734BC21CFDF3900133549 /* IGListKitLearnTests */,
+				88C734C721CFDF3900133549 /* IGListKitLearnUITests */,
 				8DEF456F1EB1BE6900CA4F75 /* Products */,
 				78BE11312486E3CE5C51B9B2 /* Pods */,
 				5A2E19194FA3E4C0DCEE8275 /* Frameworks */,
+				88C734A121CFDE9100133549 /* PADemo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1270,6 +1484,9 @@
 				8DEF458D1EB1BE6900CA4F75 /* PADemoUITests.xctest */,
 				8D42C86E1F136D8C00061C9C /* PANotificationService.appex */,
 				8D42C87E1F13754B00061C9C /* PANotificationContent.appex */,
+				88C734A621CFDF3700133549 /* IGListKitLearn.app */,
+				88C734B921CFDF3900133549 /* IGListKitLearnTests.xctest */,
+				88C734C421CFDF3900133549 /* IGListKitLearnUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1351,6 +1568,61 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		88C734A521CFDF3700133549 /* IGListKitLearn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C734CB21CFDF3900133549 /* Build configuration list for PBXNativeTarget "IGListKitLearn" */;
+			buildPhases = (
+				705A605F0E563A8767D68E9E /* [CP] Check Pods Manifest.lock */,
+				88C734A221CFDF3700133549 /* Sources */,
+				88C734A321CFDF3700133549 /* Frameworks */,
+				88C734A421CFDF3700133549 /* Resources */,
+				CF9C1F08D409B774C0A44EC5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IGListKitLearn;
+			productName = IGListKitLearn;
+			productReference = 88C734A621CFDF3700133549 /* IGListKitLearn.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88C734B821CFDF3900133549 /* IGListKitLearnTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C734CE21CFDF3900133549 /* Build configuration list for PBXNativeTarget "IGListKitLearnTests" */;
+			buildPhases = (
+				88C734B521CFDF3900133549 /* Sources */,
+				88C734B621CFDF3900133549 /* Frameworks */,
+				88C734B721CFDF3900133549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88C734BB21CFDF3900133549 /* PBXTargetDependency */,
+			);
+			name = IGListKitLearnTests;
+			productName = IGListKitLearnTests;
+			productReference = 88C734B921CFDF3900133549 /* IGListKitLearnTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		88C734C321CFDF3900133549 /* IGListKitLearnUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C734D121CFDF3900133549 /* Build configuration list for PBXNativeTarget "IGListKitLearnUITests" */;
+			buildPhases = (
+				88C734C021CFDF3900133549 /* Sources */,
+				88C734C121CFDF3900133549 /* Frameworks */,
+				88C734C221CFDF3900133549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88C734C621CFDF3900133549 /* PBXTargetDependency */,
+			);
+			name = IGListKitLearnUITests;
+			productName = IGListKitLearnUITests;
+			productReference = 88C734C421CFDF3900133549 /* IGListKitLearnUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		8D42C86D1F136D8C00061C9C /* PANotificationService */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D42C8771F136D8C00061C9C /* Build configuration list for PBXNativeTarget "PANotificationService" */;
@@ -1452,10 +1724,25 @@
 		8DEF45661EB1BE6900CA4F75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = shuo;
 				TargetAttributes = {
+					88C734A521CFDF3700133549 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						ProvisioningStyle = Automatic;
+					};
+					88C734B821CFDF3900133549 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 88C734A521CFDF3700133549;
+					};
+					88C734C321CFDF3900133549 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 88C734A521CFDF3700133549;
+					};
 					8D42C86D1F136D8C00061C9C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 6GA5676ZM3;
@@ -1524,11 +1811,38 @@
 				8DEF458C1EB1BE6900CA4F75 /* PADemoUITests */,
 				8D42C86D1F136D8C00061C9C /* PANotificationService */,
 				8D42C87D1F13754B00061C9C /* PANotificationContent */,
+				88C734A521CFDF3700133549 /* IGListKitLearn */,
+				88C734B821CFDF3900133549 /* IGListKitLearnTests */,
+				88C734C321CFDF3900133549 /* IGListKitLearnUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		88C734A421CFDF3700133549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C7350C21CFDFB000133549 /* LaunchScreen.storyboard in Resources */,
+				88C7350B21CFDFB000133549 /* Assets.xcassets in Resources */,
+				88C7350A21CFDFB000133549 /* OCRAStd.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C734B721CFDF3900133549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C734C221CFDF3900133549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D42C86C1F136D8C00061C9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1610,12 +1924,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/EBForeNotification/EBForeNotification.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
-				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -1631,12 +1945,12 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EBForeNotification.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -1653,6 +1967,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		705A605F0E563A8767D68E9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IGListKitLearn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8D4597221F399DE700A888B5 /* ShellScript */ = {
@@ -1708,9 +2040,70 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CF9C1F08D409B774C0A44EC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IGListKitLearn/Pods-IGListKitLearn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IGListKitLearn/Pods-IGListKitLearn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		88C734A221CFDF3700133549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C7350121CFDFB000133549 /* CustomNavigationBar.swift in Sources */,
+				88C734FC21CFDFB000133549 /* SolFormatter.swift in Sources */,
+				88C7350021CFDFB000133549 /* JournalEntryDateCell.swift in Sources */,
+				88C734FB21CFDFB000133549 /* JournalEntry.swift in Sources */,
+				88C7350221CFDFB000133549 /* MessageCell.swift in Sources */,
+				88C7350421CFDFB000133549 /* WxScanner.swift in Sources */,
+				88C7350821CFDFB000133549 /* JournalLoader.swift in Sources */,
+				88C7350621CFDFB000133549 /* Pathfinder.swift in Sources */,
+				88C7350921CFDFB000133549 /* AppDelegate.swift in Sources */,
+				88C734F921CFDFB000133549 /* NSObject+IGListDiffable.swift in Sources */,
+				88C734FE21CFDFB000133549 /* WeatherSummaryCell.swift in Sources */,
+				88C7350721CFDFB000133549 /* Theme.swift in Sources */,
+				88C734F621CFDFB000133549 /* DateSortable.swift in Sources */,
+				88C7350521CFDFB000133549 /* TextSize.swift in Sources */,
+				88C734F721CFDFB000133549 /* Message.swift in Sources */,
+				88C7350321CFDFB000133549 /* WeatherDetailCell.swift in Sources */,
+				88C734FF21CFDFB000133549 /* JournalEntryCell.swift in Sources */,
+				88C734F821CFDFB000133549 /* User.swift in Sources */,
+				88C734FA21CFDFB000133549 /* Weather.swift in Sources */,
+				88C734FD21CFDFB000133549 /* ClassicFeedViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C734B521CFDF3900133549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C734BE21CFDF3900133549 /* IGListKitLearnTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C734C021CFDF3900133549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C734C921CFDF3900133549 /* IGListKitLearnUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D42C86A1F136D8C00061C9C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1904,6 +2297,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		88C734BB21CFDF3900133549 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88C734A521CFDF3700133549 /* IGListKitLearn */;
+			targetProxy = 88C734BA21CFDF3900133549 /* PBXContainerItemProxy */;
+		};
+		88C734C621CFDF3900133549 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88C734A521CFDF3700133549 /* IGListKitLearn */;
+			targetProxy = 88C734C521CFDF3900133549 /* PBXContainerItemProxy */;
+		};
 		8D42C8741F136D8C00061C9C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D42C86D1F136D8C00061C9C /* PANotificationService */;
@@ -1927,6 +2330,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		88C734F321CFDFB000133549 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88C734F421CFDFB000133549 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		8D42C8861F13754B00061C9C /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1954,6 +2365,148 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		88C734CC21CFDF3900133549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD13403AAC27E0F5C4D5593 /* Pods-IGListKitLearn.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IGListKitLearn/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceui.IGListKitLearn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IGListKitLearn/IGListKitLearn-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88C734CD21CFDF3900133549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D2A50D38F6B810739B048B /* Pods-IGListKitLearn.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IGListKitLearn/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceui.IGListKitLearn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IGListKitLearn/IGListKitLearn-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		88C734CF21CFDF3900133549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IGListKitLearnTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceui.IGListKitLearnTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IGListKitLearn.app/IGListKitLearn";
+			};
+			name = Debug;
+		};
+		88C734D021CFDF3900133549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IGListKitLearnTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceui.IGListKitLearnTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IGListKitLearn.app/IGListKitLearn";
+			};
+			name = Release;
+		};
+		88C734D221CFDF3900133549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IGListKitLearnUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceui.IGListKitLearnUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IGListKitLearn;
+			};
+			name = Debug;
+		};
+		88C734D321CFDF3900133549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = IGListKitLearnUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceui.IGListKitLearnUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IGListKitLearn;
+			};
+			name = Release;
+		};
 		8D42C8781F136D8C00061C9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2317,6 +2870,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		88C734CB21CFDF3900133549 /* Build configuration list for PBXNativeTarget "IGListKitLearn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C734CC21CFDF3900133549 /* Debug */,
+				88C734CD21CFDF3900133549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88C734CE21CFDF3900133549 /* Build configuration list for PBXNativeTarget "IGListKitLearnTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C734CF21CFDF3900133549 /* Debug */,
+				88C734D021CFDF3900133549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88C734D121CFDF3900133549 /* Build configuration list for PBXNativeTarget "IGListKitLearnUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C734D221CFDF3900133549 /* Debug */,
+				88C734D321CFDF3900133549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8D42C8771F136D8C00061C9C /* Build configuration list for PBXNativeTarget "PANotificationService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
