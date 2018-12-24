@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.backgroundColor = UIColor.black
     let nav = UINavigationController(navigationBarClass: CustomNavigationBar.self, toolbarClass: nil)
-    nav.pushViewController(ClassicFeedViewController(), animated: false)
+//    nav.pushViewController(ClassicFeedViewController(), animated: false)
+    nav.pushViewController(FeedViewController(), animated: false)
     window?.rootViewController = nav
     window?.makeKeyAndVisible()
     return true

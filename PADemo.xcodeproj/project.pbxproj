@@ -35,6 +35,9 @@
 		88C7350A21CFDFB000133549 /* OCRAStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 88C734F121CFDFB000133549 /* OCRAStd.otf */; };
 		88C7350B21CFDFB000133549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C734F221CFDFB000133549 /* Assets.xcassets */; };
 		88C7350C21CFDFB000133549 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C734F321CFDFB000133549 /* LaunchScreen.storyboard */; };
+		88C7350F21D11CED00133549 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7350E21D11CED00133549 /* FeedViewController.swift */; };
+		88C7351121D12AC600133549 /* JournalSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7351021D12AC600133549 /* JournalSessionController.swift */; };
+		88C7351321D1306800133549 /* MessageSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7351221D1306800133549 /* MessageSectionController.swift */; };
 		8D003D74208843B900FF4B28 /* PAIntegrationGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */; };
 		8D003D762088445700FF4B28 /* PAIntegrationGuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */; };
 		8D06A8EB20E0F1BC00F126E4 /* PAReplicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A8EA20E0F1BC00F126E4 /* PAReplicatorView.swift */; };
@@ -356,6 +359,9 @@
 		88C734F221CFDFB000133549 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88C734F421CFDFB000133549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88C734F521CFDFB000133549 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88C7350E21D11CED00133549 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		88C7351021D12AC600133549 /* JournalSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalSessionController.swift; sourceTree = "<group>"; };
+		88C7351221D1306800133549 /* MessageSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSectionController.swift; sourceTree = "<group>"; };
 		8D003D73208843B900FF4B28 /* PAIntegrationGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAIntegrationGuideView.swift; sourceTree = "<group>"; };
 		8D003D752088445700FF4B28 /* PAIntegrationGuideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PAIntegrationGuideView.xib; sourceTree = "<group>"; };
 		8D06A8EA20E0F1BC00F126E4 /* PAReplicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAReplicatorView.swift; sourceTree = "<group>"; };
@@ -761,6 +767,7 @@
 			isa = PBXGroup;
 			children = (
 				88C734DF21CFDFAF00133549 /* ClassicFeedViewController.swift */,
+				88C7350E21D11CED00133549 /* FeedViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -801,6 +808,8 @@
 		88C734EE21CFDFAF00133549 /* SectionControllers */ = {
 			isa = PBXGroup;
 			children = (
+				88C7351021D12AC600133549 /* JournalSessionController.swift */,
+				88C7351221D1306800133549 /* MessageSectionController.swift */,
 			);
 			path = SectionControllers;
 			sourceTree = "<group>";
@@ -2075,8 +2084,11 @@
 				88C734F921CFDFB000133549 /* NSObject+IGListDiffable.swift in Sources */,
 				88C734FE21CFDFB000133549 /* WeatherSummaryCell.swift in Sources */,
 				88C7350721CFDFB000133549 /* Theme.swift in Sources */,
+				88C7351121D12AC600133549 /* JournalSessionController.swift in Sources */,
 				88C734F621CFDFB000133549 /* DateSortable.swift in Sources */,
+				88C7350F21D11CED00133549 /* FeedViewController.swift in Sources */,
 				88C7350521CFDFB000133549 /* TextSize.swift in Sources */,
+				88C7351321D1306800133549 /* MessageSectionController.swift in Sources */,
 				88C734F721CFDFB000133549 /* Message.swift in Sources */,
 				88C7350321CFDFB000133549 /* WeatherDetailCell.swift in Sources */,
 				88C734FF21CFDFB000133549 /* JournalEntryCell.swift in Sources */,
