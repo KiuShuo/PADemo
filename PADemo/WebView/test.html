@@ -71,9 +71,16 @@
             }
         }
         
-            function sumValue (a, b) {
-                return a + b;
+        function textModel (x) {
+            if (arguments.length > 1) {
+                return arguments[1]
             }
+            return x
+        }
+        
+        function sumValue (a, b) {
+            return a + b;
+        }
         
         // 重定向的方式进行交互
         function gotoGoodDetails(p1, p2) {

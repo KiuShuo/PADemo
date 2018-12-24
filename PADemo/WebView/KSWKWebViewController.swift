@@ -139,6 +139,26 @@ extension KSWKWebViewController: WKNavigationDelegate {
                 print(error ?? "success")
             }
         }
+        let message: String = "abc"
+        let errorMessage: String? = "error!!"
+        
+        if (errorMessage == nil) {
+            webView.evaluateJavaScript("textModel('\(message)')") { (response, error) in
+            if let result = response as? String {
+                print(result)
+            } else {
+                print(error ?? "success")
+            }
+        }
+        } else {
+            webView.evaluateJavaScript("textModel('\(message)', '\(String(describing: errorMessage))')") { (response, error) in
+                if let result = response as? String {
+                    print(result)
+                } else {
+                    print(error ?? "success")
+                }
+            }
+        }
     }
     
     

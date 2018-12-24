@@ -323,7 +323,6 @@
 		7FD0E69C65C089CBC5C90C52 /* Pods_IGListKitLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IGListKitLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		880FAF152007AFD5007CF8C1 /* LRProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRProtocol.swift; sourceTree = "<group>"; };
 		8865647EF1F6C3D4634993D0 /* Pods_PANotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PANotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		88C734A121CFDE9100133549 /* PADemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PADemo copy-Info.plist"; path = "/Users/liushuo/Documents/gitClone/PADemo/PADemo copy-Info.plist"; sourceTree = "<absolute>"; };
 		88C734A621CFDF3700133549 /* IGListKitLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGListKitLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C734B921CFDF3900133549 /* IGListKitLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IGListKitLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C734BD21CFDF3900133549 /* IGListKitLearnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGListKitLearnTests.swift; sourceTree = "<group>"; };
@@ -1472,7 +1471,6 @@
 				8DEF456F1EB1BE6900CA4F75 /* Products */,
 				78BE11312486E3CE5C51B9B2 /* Pods */,
 				5A2E19194FA3E4C0DCEE8275 /* Frameworks */,
-				88C734A121CFDE9100133549 /* PADemo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
