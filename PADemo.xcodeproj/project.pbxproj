@@ -720,7 +720,6 @@
 			isa = PBXGroup;
 			children = (
 				88C734EF21CFDFAF00133549 /* AppDelegate.swift */,
-				88C734ED21CFDFAF00133549 /* Base.lproj */,
 				88C734D521CFDFAF00133549 /* LearnIGListKit-Bridging-Header.h */,
 				88C734D621CFDFAF00133549 /* Models */,
 				88C734F021CFDFB000133549 /* Resources */,
@@ -797,14 +796,6 @@
 				88C734EC21CFDFAF00133549 /* JournalLoader.swift */,
 			);
 			path = Systems;
-			sourceTree = "<group>";
-		};
-		88C734ED21CFDFAF00133549 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Base.lproj;
-			path = ../../../../Desktop/LearnIGListKit/LearnIGListKit/Base.lproj;
 			sourceTree = "<group>";
 		};
 		88C734EE21CFDFAF00133549 /* SectionControllers */ = {
