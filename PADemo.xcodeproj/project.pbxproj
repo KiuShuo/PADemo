@@ -1924,7 +1924,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -1967,7 +1967,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PADemo/Pods-PADemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		705A605F0E563A8767D68E9E /* [CP] Check Pods Manifest.lock */ = {
@@ -2007,7 +2007,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PADemo/Pods-PADemo-resources.sh",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
@@ -2020,7 +2020,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PADemo/Pods-PADemo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PADemo/Pods-PADemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4A74C21CA57483223B08ED4 /* [CP] Check Pods Manifest.lock */ = {
@@ -2047,7 +2047,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-IGListKitLearn/Pods-IGListKitLearn-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-IGListKitLearn/Pods-IGListKitLearn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -2056,7 +2056,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IGListKitLearn/Pods-IGListKitLearn-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IGListKitLearn/Pods-IGListKitLearn-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

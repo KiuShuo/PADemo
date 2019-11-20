@@ -5,6 +5,8 @@
             <title>test javascript</title>
             </head>
     <body>
+        <iframe width="300" height="500" id="inlineFrameExample">
+            </iframe>
         <div>
             <!--为什么使用ttf.调用，下面会讲到-->
             <button onclick="nslog('JS与OC交互');">点击我然后看xcode的log</button>
@@ -84,13 +86,25 @@
         
         // 重定向的方式进行交互
         function gotoGoodDetails(p1, p2) {
-            document.location="pawjscheme://gotoGoodDetails?prdId="+p1+"&creditBalance="+p2;
+            
+<!--            document.getElementById('inlineFrameExample').src = "pawjscheme://gotoGoodDetails/first/?prdId="+p1+"&creditBalance="+p2;-->
+<!--            -->
+<!--            -->
+<!--            -->
+<!--            document.getElementById('inlineFrameExample').src = "pawjscheme://gotoGoodDetails/second/?prdId="+p1+"&creditBalance="+p2;-->
+            
+            
+            
+            document.location="pawjscheme://gotoGoodDetails/first/?prdId="+p1+"&creditBalance="+p2;
+            document.location="pawjscheme://gotoGoodDetails/second/?prdId="+p1+"&creditBalance="+p2;
+            setTimeout("gotoGoodsMall()", 100)
         }
         // 重定向的方式进行交互
         function gotoGoodsMall() {
             document.location="pawjscheme://gotoGoodsMall";
         }
          </script>
+        
     </body>
 </html>
 

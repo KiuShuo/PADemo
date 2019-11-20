@@ -91,7 +91,7 @@ DEPENDENCIES:
   - YYModel (= 1.0.4)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - Alamofire
     - CodableAlamofire
@@ -150,4 +150,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 360e128d0e092d7afaa496773ee76933d2c150b9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
